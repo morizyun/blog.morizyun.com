@@ -19,13 +19,14 @@
     <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
   
+
 
 </head>
 
@@ -51,7 +52,9 @@
         
           <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="http://morizyun.github.io">Japanese</a>
         
       </nav>
       <nav id="sub-nav">
@@ -83,14 +86,49 @@
     <h1 class="article-title" itemprop="name">
       How to use alternate created_at / updated_at column
     </h1>
+    <span class="sharing social_box" style="margin: 5px 0 0 0; display: inline-table;">
+      <ul class="social" style="margin-left: 0;margin-top: 10px;">
+        <li class="hatena">
+          <a href="http://b.hatena.ne.jp/entry/https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </li>
+        <li class="twitter">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" >Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </li>
+        <li class="facebook">
+          <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"></div>
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/{{ site.facebook_locale }}/all.js#appId={{ site.facebook_app_id }}&xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+        </li>
+      </ul>
+    </span>
   
 
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
-<a id="more"></a> 
+        <p>
+This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
+<br style="clear:both;"/><div style="margin: 10px 0 10px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4186413323075068"
+         data-ad-slot="4457377393"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
@@ -99,11 +137,27 @@
 <li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
 </ul>
 
+        <div style="margin: 10px 0 10px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4186413323075068"
+         data-ad-slot="4457377393"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" data-id="cj0yxjycq001k5trdq60hsrkl" class="article-share-link">Share</a>
       
+      <div style="width: 61px; margin-left: auto; display: block;">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" >Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
       
     </footer>
   </div>
@@ -135,43 +189,13 @@
         
           <aside id="sidebar">
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <div class="widget-wrap">
+    <h3 class="widget-title">Twitter</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+        <a class="twitter-timeline" data-height="1000" href="https://twitter.com/morizyune">Tweets by morizyune</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
-    </div>
-  </div>
-
+</div>
 
   
     
@@ -205,6 +229,16 @@
   </div>
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
 </aside>
         
       </div>
@@ -222,16 +256,15 @@
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="http://morizyun.github.io" class="mobile-nav-link">Japanese</a>
   
 </nav>
     
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script src="/js/script.js"></script>
