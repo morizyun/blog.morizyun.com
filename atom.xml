@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.morizyun.com/"/>
-  <updated>2017-04-01T10:40:41.000Z</updated>
+  <updated>2017-04-01T10:56:09.000Z</updated>
   <id>https://blog.morizyun.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/"/>
     <id>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/</id>
     <published>2017-03-24T15:00:00.000Z</published>
-    <updated>2017-04-01T10:40:41.000Z</updated>
+    <updated>2017-04-01T10:56:09.000Z</updated>
     
     <content type="html"><![CDATA[<p>This article describes effective procedures for Rubyists to setup new Mac OS Sierra.</p>
 <a id="more"></a>
@@ -572,6 +572,35 @@
   </entry>
   
   <entry>
+    <title>Export PostgreSQL table to CSV [COPY command]</title>
+    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
+    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>What are mock and stub used in unit testing?</title>
     <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
     <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
@@ -612,35 +641,6 @@
     <summary type="html">
     
       &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Export PostgreSQL table to CSV [COPY command]</title>
-    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
-    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
