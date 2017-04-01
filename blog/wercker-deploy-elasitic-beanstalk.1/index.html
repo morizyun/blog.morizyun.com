@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Deploy Rails App to ElasitcBeanstalk on wercker | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I published “wercker step” to deploy an application to Elastic Beanstalk instance using AWS CLI.
+morizyun/eb-deploy - GitHub
+This aritcle describes how to use the wercker  step and outline of the step">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Rails App to ElasitcBeanstalk on wercker">
+<meta property="og:url" content="https://blog.morizyun.com/blog/wercker-deploy-elasitic-beanstalk.1/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I published “wercker step” to deploy an application to Elastic Beanstalk instance using AWS CLI.
+morizyun/eb-deploy - GitHub
+This aritcle describes how to use the wercker  step and outline of the step">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deploy Rails App to ElasitcBeanstalk on wercker">
+<meta name="twitter:description" content="I published “wercker step” to deploy an application to Elastic Beanstalk instance using AWS CLI.
+morizyun/eb-deploy - GitHub
+This aritcle describes how to use the wercker  step and outline of the step">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wercker-deploy-elasitic-beanstalk.1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/wercker-deploy-elasitic-beanstalk.1/" class="article-date">
+  <time datetime="2016-11-11T15:00:00.000Z" itemprop="datePublished">2016-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Deploy Rails App to ElasitcBeanstalk on wercker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I published “wercker step” to deploy an application to Elastic Beanstalk instance using AWS CLI.</p>
+<p><strong><a href="https://github.com/morizyun/eb-deploy" target="_blank" rel="external">morizyun/eb-deploy - GitHub</a></strong></p>
+<p>This aritcle describes how to use the wercker  step and outline of the step.</p>
+<a id="more"></a> 
+<h2 id="Configuration-for-wercker"><a href="#Configuration-for-wercker" class="headerlink" title="Configuration for wercker"></a>Configuration for wercker</h2><p>In the wercker.yml of your application use the following step definition:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">-</span> <span class="string">morizyun/eb-deploy:</span></div><div class="line"><span class="attr">    access_key:</span> <span class="string">$AWS_ACCESS_KEY</span></div><div class="line"><span class="attr">    secret_key:</span> <span class="string">$AWS_SECRET_KEY</span></div><div class="line"><span class="attr">    app_name:</span>   <span class="string">$AWS_APP_NAME</span></div><div class="line"><span class="attr">    env_name:</span>   <span class="string">$AWS_ENV_NAME</span></div><div class="line"><span class="attr">    s3_bucket:</span>  <span class="string">$AWS_S3_BUCKET_NAME</span></div><div class="line"><span class="attr">    region:</span>     <span class="string">$AWS_REGION</span> <span class="string">(default:</span> <span class="string">ap-northeast-1)</span></div></pre></td></tr></table></figure>
+<h2 id="Outline-of-the-wercker-step"><a href="#Outline-of-the-wercker-step" class="headerlink" title="Outline of the wercker step"></a>Outline of the wercker step</h2><p>Source code of the wercker step is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> UNIXTIME=`date +%s`</div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_ACCESS_KEY</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  error <span class="string">'Please specify access_key'</span></div><div class="line">  <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_SECRET_KEY</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  error <span class="string">'Please specify secret_key'</span></div><div class="line">  <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  error <span class="string">'Please specify app_name'</span></div><div class="line">  <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_ENV_NAME</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  error <span class="string">'Please specify env_name'</span></div><div class="line">  <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_S3_BUCKET</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  error <span class="string">'Please specify s3 bucket'</span></div><div class="line">  <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$WERCKER_EB_DEPLOY_REGION</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  info <span class="string">'set default region as ap-northeast-1'</span></div><div class="line">  <span class="built_in">export</span> WERCKER_EB_DEPLOY_REGION=<span class="string">"ap-northeast-1"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line">info <span class="string">'Installing pip ...'</span></div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y python-pip libpython-all-dev zip</div><div class="line"></div><div class="line">info <span class="string">'Installing the AWS CLI ...'</span>;</div><div class="line">pip install awscli;</div><div class="line"><span class="built_in">export</span> PATH=~/.local/bin:<span class="variable">$PATH</span></div><div class="line">aws --version</div><div class="line"></div><div class="line">info <span class="string">'export set default values for AWS CLI tool ...'</span>;</div><div class="line"><span class="built_in">export</span> AMAZON_ACCESS_KEY_ID=<span class="variable">$WERCKER_EB_DEPLOY_ACCESS_KEY</span></div><div class="line"><span class="built_in">export</span> AMAZON_SECRET_ACCESS_KEY=<span class="variable">$WERCKER_EB_DEPLOY_SECRET_KEY</span></div><div class="line"><span class="built_in">export</span> AWS_DEFAULT_REGION=<span class="variable">$WERCKER_EB_DEPLOY_REGION</span></div><div class="line"><span class="built_in">export</span> EB_VERSION_LABEL=<span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span>.<span class="variable">$UNIXTIME</span></div><div class="line"><span class="built_in">export</span> EB_DESCRIPTION=<span class="variable">$WERCKER_EB_DEPLOY_ENV_NAME</span>,<span class="variable">$WERCKER_GIT_BRANCH</span></div><div class="line"><span class="built_in">export</span> S3_FILE_KEY=<span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span>/<span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span>.<span class="variable">$UNIXTIME</span>.zip</div><div class="line"><span class="built_in">export</span> AWS_CONFIG_FILE=<span class="variable">$HOME</span>/.aws/config</div><div class="line"></div><div class="line">info <span class="string">'create .aws/config ...'</span>;</div><div class="line">mkdir -p <span class="variable">$HOME</span>/.aws</div><div class="line"><span class="built_in">echo</span> <span class="string">'[default]'</span> &gt; <span class="variable">$HOME</span>/.aws/config</div><div class="line"><span class="built_in">echo</span> <span class="string">'output = json'</span> &gt;&gt; <span class="variable">$HOME</span>/.aws/config</div><div class="line"><span class="built_in">echo</span> <span class="string">"region = <span class="variable">$WERCKER_EB_DEPLOY_REGION</span>"</span> &gt;&gt; <span class="variable">$HOME</span>/.aws/config</div><div class="line"><span class="built_in">echo</span> <span class="string">"aws_access_key_id = <span class="variable">$WERCKER_EB_DEPLOY_ACCESS_KEY</span>"</span> &gt;&gt; <span class="variable">$HOME</span>/.aws/config</div><div class="line"><span class="built_in">echo</span> <span class="string">"aws_secret_access_key = <span class="variable">$WERCKER_EB_DEPLOY_SECRET_KEY</span>"</span> &gt;&gt; <span class="variable">$HOME</span>/.aws/config</div><div class="line"></div><div class="line">info <span class="string">'Compress source code ...'</span></div><div class="line">mkdir <span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span></div><div class="line">git archive HEAD --output=<span class="variable">$S3_FILE_KEY</span></div><div class="line"></div><div class="line">info <span class="string">'copy code to S3 ...'</span></div><div class="line">aws s3 cp --acl private <span class="variable">$S3_FILE_KEY</span> <span class="string">"s3://<span class="variable">$WERCKER_EB_DEPLOY_S3_BUCKET</span>/<span class="variable">$S3_FILE_KEY</span>"</span></div><div class="line"></div><div class="line">info <span class="string">'create elasticbeanstalk application-version ...'</span></div><div class="line">aws elasticbeanstalk create-application-version \</div><div class="line">    --region <span class="variable">$WERCKER_EB_DEPLOY_REGION</span> \</div><div class="line">    --application-name <span class="variable">$WERCKER_EB_DEPLOY_APP_NAME</span> \</div><div class="line">    --version-label <span class="variable">$EB_VERSION_LABEL</span> \</div><div class="line">    --description <span class="variable">$EB_DESCRIPTION</span> \</div><div class="line">    --source-bundle <span class="string">"&#123;\"S3Bucket\":\"<span class="variable">$WERCKER_EB_DEPLOY_S3_BUCKET</span>\", \"S3Key\":\"<span class="variable">$S3_FILE_KEY</span>\"&#125;"</span></div><div class="line"></div><div class="line">info <span class="string">'update elasticbeanstalk application ...'</span></div><div class="line">aws elasticbeanstalk update-environment \</div><div class="line">    --environment-name <span class="variable">$WERCKER_EB_DEPLOY_ENV_NAME</span> \</div><div class="line">    --description <span class="variable">$EB_DESCRIPTION</span>,<span class="variable">$WERCKER_GIT_COMMIT</span> \</div><div class="line">    --version-label <span class="variable">$EB_VERSION_LABEL</span></div></pre></td></tr></table></figure>
+<p>Happy Hacking!</p>
+<h2 id="GitHub-Repository"><a href="#GitHub-Repository" class="headerlink" title="GitHub Repository"></a>GitHub Repository</h2><p><strong><a href="https://github.com/morizyun/eb-deploy" target="_blank" rel="external">morizyun/eb-deploy - GitHub</a></strong></p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://github.com/koding/eb-deploy/blob/master/run.sh" target="_blank" rel="external">koding/eb-deploy: Wercker step for deploying elastic beanstalk</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/wercker-deploy-elasitic-beanstalk.1/" data-id="cj0yxjyco001f5trd5rtclebw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/ruby-upload-gziped-file-to-s3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How to upload gziped file to S3 from URL[Ruby]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/squid3-proxy-server-centos-linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Installation &amp; Configuration for Proxy service Squid3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

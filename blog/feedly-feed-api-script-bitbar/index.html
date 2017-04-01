@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Script to get your feed on Feedly for BitBar | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I made a script to get your feed by Feedly for BitBar which can put anything in your menu bar on Mac.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Script to get your feed on Feedly for BitBar">
+<meta property="og:url" content="https://blog.morizyun.com/blog/feedly-feed-api-script-bitbar/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I made a script to get your feed by Feedly for BitBar which can put anything in your menu bar on Mac.">
+<meta property="og:image" content="https://blog.morizyun.com/img/2016-04-24-feedly-feed-api-script-bitbar_1.jpg">
+<meta property="og:image" content="https://blog.morizyun.com/img/2016-04-24-feedly-feed-api-script-bitbar_2.jpg">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Script to get your feed on Feedly for BitBar">
+<meta name="twitter:description" content="I made a script to get your feed by Feedly for BitBar which can put anything in your menu bar on Mac.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/2016-04-24-feedly-feed-api-script-bitbar_1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-feedly-feed-api-script-bitbar" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/feedly-feed-api-script-bitbar/" class="article-date">
+  <time datetime="2016-04-23T15:00:00.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Script to get your feed on Feedly for BitBar
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I made a script to get your feed by Feedly for <strong><a href="https://getbitbar.com/" target="_blank" rel="external">BitBar</a></strong> which can put anything in your menu bar on Mac.</p>
+<p><img src="/img/2016-04-24-feedly-feed-api-script-bitbar_1.jpg" width="640" height="554" alt="feed_on_feedly"></p>
+<a id="more"></a> 
+<h2 id="Get-auth-token"><a href="#Get-auth-token" class="headerlink" title="Get auth token"></a>Get auth token</h2><p>Open the following URL by browser:<br><br>(If you use Twitter or etc for user authorization, please change provider.)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://cloud.feedly.com/v3/auth/auth?client_id=feedly&amp;redirect_uri=http://localhost&amp;scope=https://cloud.feedly.com/subscriptions&amp;response_type=code&amp;provider=google&amp;migrate=false</div></pre></td></tr></table></figure>
+<p>After the authorization in Feedly, please copy a code(XXX) in redirected URL.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">XXX in http://localhost/?code=XXX&amp;state=</div></pre></td></tr></table></figure>
+<p>Execute a following command in your terminal:<br><br>(Please feel the upper code to a following XXX.)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -s -d &apos;client_id=feedly&amp;client_secret=0XP4XQ07VVMDWBKUHTJM4WUQ&amp;grant_type=authorization_code&amp;redirect_uri=http%3A%2F%2Fwww.feedly.com%2Ffeedly.html&amp;code=XXX&apos; https://cloud.feedly.com/v3/auth/token</div></pre></td></tr></table></figure>
+<p>The upper command give you a <code>access_token</code> and <code>refresh_token</code>, So please use the <code>access_token</code>.</p>
+<h2 id="Set-the-script-to-BitBar"><a href="#Set-the-script-to-BitBar" class="headerlink" title="Set the script to BitBar"></a>Set the script to BitBar</h2><p>Please execute a following command in your terminal:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd /path/to/bitbar-plugin/</div><div class="line"></div><div class="line">$ wget https://raw.githubusercontent.com/morizyun/bitbar-plugins/features/add_feedly/Web/Feedly/feedly.rb -O feedly.1h.rb</div></pre></td></tr></table></figure>
+<p>Please enter the <code>access_token</code> which is received by Feedly to the <code>feedly.1h.rb</code>.</p>
+<p>So you can see your feed on Feedly in your menu bar!</p>
+<p><img src="/img/2016-04-24-feedly-feed-api-script-bitbar_2.jpg" width="640" height="554" alt="feed_on_feedly"></p>
+<h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><p>This is the script to get feed on Feedly.</p>
+<script src="http://gist-it.appspot.com/github/morizyun/bitbar-plugins/blob/features/add_feedly/Web/Feedly/feedly.rb"></script>
+
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><p>English</p>
+<ul>
+<li><strong><a href="http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html#class-Net::HTTP-label-Setting+Headers" target="_blank" rel="external">class Net::HTTP - Documentation</a></strong></li>
+<li><strong><a href="https://developer.feedly.com/v3/" target="_blank" rel="external">Overview feedly Cloud API</a></strong></li>
+</ul>
+</li>
+<li><p>Japanese</p>
+<ul>
+<li><strong><a href="http://syonx.hatenablog.com/entry/2015/05/07/042635" target="_blank" rel="external">http://syonx.hatenablog….</a></strong></li>
+<li><strong><a href="http://qiita.com/kawaz/items/5f03dde3c219bdbffc3b" target="_blank" rel="external">http://qiita.com/kawaz…</a></strong></li>
+<li><strong><a href="http://qiita.com/t-sagiri/items/0ea735f1ee8f1c52eab4" target="_blank" rel="external">http://qiita.com/t-sagiri…</a></strong></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/feedly-feed-api-script-bitbar/" data-id="cj0yxjybk000d5trd6blcm0hj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/ruby-rails-rspec-travis-ci-public-free/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How to run RSpec in Ruby on Rails by Travis CI
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/machine-learning-introduction-google/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Introduction of Machine Learning by Google</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

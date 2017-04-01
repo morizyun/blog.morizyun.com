@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React.js on ES6+ Tips for beginner | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article describes React.js on ES6+ tips for beginner.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js on ES6+ Tips for beginner">
+<meta property="og:url" content="https://blog.morizyun.com/blog/es6-plus-react-js-beginner-tips/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes React.js on ES6+ tips for beginner.">
+<meta property="og:updated_time" content="2017-04-01T06:22:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.js on ES6+ Tips for beginner">
+<meta name="twitter:description" content="This article describes React.js on ES6+ tips for beginner.">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-es6-plus-react-js-beginner-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/es6-plus-react-js-beginner-tips/" class="article-date">
+  <time datetime="2016-12-27T15:00:00.000Z" itemprop="datePublished">2016-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React.js on ES6+ Tips for beginner
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article describes React.js on ES6+ tips for beginner.</p>
+<a id="more"></a>
+<h2 id="React-Component"><a href="#React-Component" class="headerlink" title="React.Component"></a>React.Component</h2><h3 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// If using only props</span></div><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">  <span class="keyword">super</span>(props);</div><div class="line">  <span class="comment">//anything to do</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// If using props &amp; context</span></div><div class="line"><span class="keyword">constructor</span>(props, context) &#123;</div><div class="line">  <span class="keyword">super</span>(props, context);</div><div class="line">  <span class="comment">//anything to do</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="State-Initialization"><a href="#State-Initialization" class="headerlink" title="State Initialization"></a>State Initialization</h3><p>We should assign a object directly to <code>this.state</code> for initialization.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">  <span class="keyword">super</span>(props);</div><div class="line">  <span class="keyword">this</span>.state = &#123;<span class="attr">message</span>: <span class="string">''</span>&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">componentDidMount() &#123;</div><div class="line">  <span class="keyword">this</span>.setState(&#123;<span class="attr">message</span>: <span class="string">'fuga'</span>&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Sample title: &#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Binding-this-for-custom-method"><a href="#Binding-this-for-custom-method" class="headerlink" title="Binding this for custom method"></a>Binding this for custom method</h3><p>If you impliment a method that handles state, props or refs, you should bind <code>this</code> to the method.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">  <span class="keyword">super</span>(props);</div><div class="line">  <span class="keyword">this</span>.handleSubmit = <span class="keyword">this</span>.handleSubmit.bind(<span class="keyword">this</span>); <span class="comment">// &lt;= binding</span></div><div class="line">  <span class="keyword">this</span>.state = &#123;<span class="attr">message</span>: <span class="string">''</span>&#125;; </div><div class="line">&#125;</div><div class="line"></div><div class="line">handleSubmit()&#123;</div><div class="line">  <span class="keyword">var</span> name = ReactDOM.findDOMNode(<span class="keyword">this</span>.refs.name).value.trim();</div><div class="line">  <span class="keyword">var</span> email = ReactDOM.findDOMNode(<span class="keyword">this</span>.refs.email).value.trim();</div><div class="line">  <span class="comment">// do something</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">componentDidMount() &#123;</div><div class="line">  <span class="keyword">this</span>.setState(&#123;<span class="attr">message</span>: <span class="string">'hoge'</span>&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="props-Initialization-propType-Definition"><a href="#props-Initialization-propType-Definition" class="headerlink" title="props Initialization, propType Definition"></a>props Initialization, propType Definition</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">    <span class="attr">autoPlay</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">maxLoops</span>: <span class="number">10</span>,</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">static</span> propTypes = &#123;</div><div class="line">    <span class="attr">autoPlay</span>: React.PropTypes.bool.isRequired,</div><div class="line">    <span class="attr">maxLoops</span>: React.PropTypes.number.isRequired,</div><div class="line">    <span class="attr">posterFrameSrc</span>: React.PropTypes.string.isRequired,</div><div class="line">    <span class="attr">videoSrc</span>: React.PropTypes.string.isRequired,</div><div class="line">  &#125;</div><div class="line">  state = &#123;</div><div class="line">    <span class="attr">loopsRemaining</span>: <span class="keyword">this</span>.props.maxLoops,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="contextType-Definition"><a href="#contextType-Definition" class="headerlink" title="contextType Definition"></a>contextType Definition</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">  <span class="keyword">static</span> contextTypes = &#123;</div><div class="line">    <span class="attr">router</span>: React.PropTypes.object.isRequired</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Sample title: &#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://qiita.com/kuniken/items/2e850daa26a10b5098d6" target="_blank" rel="external">http://qiita.com/kuniken/items…</a></li>
+</ul>
+<h2 id="Module-System"><a href="#Module-System" class="headerlink" title="Module System"></a>Module System</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// components/ParentComponent.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> Component1 <span class="keyword">from</span> <span class="string">'./Component1'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Component1</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDom.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">ParentComponent</span> /&gt;</span>,</span></div><div class="line">  document.getElementById('components')</div><div class="line">);</div><div class="line"></div><div class="line">// components/Component1.jsx</div><div class="line">import React from 'react';</div><div class="line"></div><div class="line">// Export =&gt; Accept importing</div><div class="line">// Default =&gt; This class will be called default when it is imported</div><div class="line">export default class Comp1 extends React.Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        Comp 1.</div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://stackoverflow.com/questions/36426521/what-export-default-do-in-jsx" target="_blank" rel="external">http://stackoverflow.com/questions/36426521/what-export-default-do-in-jsx</a></li>
+<li><a href="http://qiita.com/HIGAX/items/28f3bec814928b7395da" target="_blank" rel="external">http://qiita.com/HIGAX/items/28f3bec814928b7395da</a></li>
+</ul>
+<h2 id="Insted-of-Mixin"><a href="#Insted-of-Mixin" class="headerlink" title="Insted of Mixin"></a>Insted of Mixin</h2><p>In ES6 Style, we can not use mixin in React.js.<br>So, I create function and use it.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib/DataBindComponent.jsx</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">handleChange</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> newState = &#123;&#125;;</div><div class="line">  newState[e.target.name] = e.target.value;</div><div class="line">  <span class="keyword">this</span>.setState(newState);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// components/Hello.jsx</span></div><div class="line"><span class="keyword">import</span> &#123;handleChange&#125; <span class="keyword">from</span> <span class="string">'../lib/DataBindComponent.jsx'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  state = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">''</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">     <span class="keyword">return</span> (</div><div class="line">       <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">name</span>=<span class="string">'name'</span> </span></span></div><div class="line">               <span class="attr">value</span>=<span class="string">&#123;this.state.name&#125;</span></div><div class="line">               <span class="attr">onChange</span>=<span class="string">&#123;handleChange.bind(this)&#125;</span> /&gt;</div><div class="line">     );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html" target="_blank" rel="external">https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html</a></li>
+<li><a href="https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html" target="_blank" rel="external">https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html</a></li>
+</ul>
+<h2 id="Allow-function"><a href="#Allow-function" class="headerlink" title="Allow function"></a>Allow function</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Manually bind, wherever you need to</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostInfo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="comment">// Manually bind this method to the component instance...</span></div><div class="line">    <span class="keyword">this</span>.handleOptionsButtonClick = <span class="keyword">this</span>.handleOptionsButtonClick.bind(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">  handleOptionsButtonClick(e) &#123;</div><div class="line">    <span class="comment">// ...to ensure that 'this' refers to the component instance here.</span></div><div class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">showOptionsModal</span>: <span class="literal">true</span>&#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus" target="_blank" rel="external">React on ES6+ · Babel</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/es6-plus-react-js-beginner-tips/" data-id="cj0yxjycu001p5trd0rf93lhj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/react-js-tips-useful-component/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          React.js Tips &amp; Useful Component Set for beginner
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/mock-stub-outline-rspec-ruby/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">What are mock and stub used in unit testing?</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

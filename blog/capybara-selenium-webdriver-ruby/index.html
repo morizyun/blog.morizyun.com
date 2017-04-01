@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ruby Capybara with selenium Cheat Sheat | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="“Capybara” is a library to helps you test web applications.This article is a cheat sheet for Ruby “Capybara“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Capybara with selenium Cheat Sheat">
+<meta property="og:url" content="https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="“Capybara” is a library to helps you test web applications.This article is a cheat sheet for Ruby “Capybara“">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby Capybara with selenium Cheat Sheat">
+<meta name="twitter:description" content="“Capybara” is a library to helps you test web applications.This article is a cheat sheet for Ruby “Capybara“">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-capybara-selenium-webdriver-ruby" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/capybara-selenium-webdriver-ruby/" class="article-date">
+  <time datetime="2016-10-07T15:00:00.000Z" itemprop="datePublished">2016-10-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ruby Capybara with selenium Cheat Sheat
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“Capybara” is a library to helps you test web applications.<br>This article is a cheat sheet for Ruby “<strong><a href="https://github.com/jnicklas/capybara" target="_blank" rel="external">Capybara</a></strong>“</p>
+<a id="more"></a> 
+<h2 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h2><p>Install Rubygem <code>capybara</code> and <code>selenium-webdriver</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ gem install capybara</div><div class="line">$ gem install selenium-webdriver</div></pre></td></tr></table></figure>
+<p>Write sample code to <code>capybara_sample_spec.rb</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'capybara/rspec'</span></div><div class="line"></div><div class="line">Capybara.default_driver = <span class="symbol">:selenium</span></div><div class="line"></div><div class="line">feature <span class="string">'Capybara Sample'</span> <span class="keyword">do</span></div><div class="line">  scenario <span class="string">'success something'</span> <span class="keyword">do</span></div><div class="line">    visit <span class="string">'http://example.com/'</span></div><div class="line">    fill_in(<span class="string">'name'</span>, <span class="symbol">with:</span> <span class="string">'Sample User'</span>)</div><div class="line">    click_button(<span class="string">'goto_next'</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>You can execute <code>capybara_sample_spec.rb</code> by RSpec:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rspec capybara_sample_spec.rb</div></pre></td></tr></table></figure>
+<h2 id="Click-Examples"><a href="#Click-Examples" class="headerlink" title="Click Examples"></a>Click Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Click button by id, text, title or alt of img tag</span></div><div class="line">click_button(<span class="string">'button text'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Click link by id, text, title or alt of img tag</span></div><div class="line">click_link(<span class="string">'link text'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Click button or link</span></div><div class="line">click_on(<span class="string">'button or link text'</span>)</div></pre></td></tr></table></figure>
+<h2 id="Interecting-with-Form-Examples"><a href="#Interecting-with-Form-Examples" class="headerlink" title="Interecting with Form Examples"></a>Interecting with Form Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Set text to text tag by id, name or label text</span></div><div class="line">fill_in(<span class="string">'some text'</span>, <span class="symbol">with:</span> <span class="string">'text_tag_selector'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Select pulldown by id, name or label text</span></div><div class="line">select(<span class="string">'some option'</span>, <span class="symbol">with:</span> <span class="string">'select_tag_selctor'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Select checkbox by id, name or label text</span></div><div class="line">check(<span class="string">'checkbox_selector'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Deselect checkbox by id, name or label text</span></div><div class="line">uncheck(<span class="string">'checkbox_selector'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Choose radio button by id, name or label text</span></div><div class="line">choose(<span class="string">'yes'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Attach file</span></div><div class="line">attach_file(<span class="string">'attach_file_selector'</span>, <span class="string">'/path/to/dog.jpg'</span>)</div></pre></td></tr></table></figure>
+<h2 id="Element-Examples"><a href="#Element-Examples" class="headerlink" title="Element Examples"></a>Element Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Find element by css</span></div><div class="line">find(<span class="symbol">:css</span>, <span class="string">'css selector'</span>, options)</div><div class="line"></div><div class="line"><span class="comment"># Find element by xpath</span></div><div class="line">find(<span class="symbol">:xpath</span>, <span class="string">'xpath value'</span>, option)</div><div class="line"></div><div class="line"><span class="comment"># Set some text to some input form</span></div><div class="line">find(<span class="symbol">:xpath</span>, <span class="string">'some xpath'</span>).set(<span class="string">'some text'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Show text in the element</span></div><div class="line">find(<span class="string">'id_selector'</span>, <span class="symbol">visible:</span> <span class="literal">false</span>).text</div><div class="line"></div><div class="line"><span class="comment"># Show value in the element</span></div><div class="line">find_field(<span class="string">'id_selector'</span>).value</div><div class="line"></div><div class="line"><span class="comment"># Check checkbox</span></div><div class="line">find(<span class="string">'checkbox_selector'</span>).checked?</div><div class="line"></div><div class="line"><span class="comment"># Check Selectbox</span></div><div class="line">find(<span class="string">'select_tag_selctor'</span>).selected?</div><div class="line"></div><div class="line"><span class="comment"># Check Visibility</span></div><div class="line">find(<span class="string">'a'</span>, <span class="symbol">text:</span> <span class="string">'next'</span>).visible?</div></pre></td></tr></table></figure>
+<h2 id="Querying-Examples"><a href="#Querying-Examples" class="headerlink" title="Querying Examples"></a>Querying Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Check existance of the element by css</span></div><div class="line">expect(page).to have_css(<span class="string">'#something'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Check existance of the element by xpath</span></div><div class="line">expect(page).to has_xpath(<span class="string">'#something'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Check existance of the element by content</span></div><div class="line">expect(page).to has_content(<span class="string">'#something'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Check no existance of the element by content</span></div><div class="line">expect(page).to has_no_content(<span class="string">'#something'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Check no existance of title</span></div><div class="line">expect(page).to has_title(<span class="string">'#something'</span>)</div></pre></td></tr></table></figure>
+<h2 id="Scope-Examples"><a href="#Scope-Examples" class="headerlink" title="Scope Examples"></a>Scope Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Scope with xpath</span></div><div class="line">within(<span class="string">"//li[@id='example']"</span>) <span class="keyword">do</span></div><div class="line">  fill_in <span class="string">'Full Name'</span>, <span class="symbol">with:</span> <span class="string">'John Due'</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># Scope with CSS</span></div><div class="line">within(<span class="symbol">:css</span>, <span class="string">"li#example"</span>) <span class="keyword">do</span></div><div class="line">  fill_in <span class="string">'Full Name'</span>, <span class="symbol">:with</span> =&gt; <span class="string">'John Due'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Other-Examples"><a href="#Other-Examples" class="headerlink" title="Other Examples"></a>Other Examples</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Waiting &amp; try to check the element for 30 seconds</span></div><div class="line">Capybara.using_wait_time(<span class="number">30</span>) <span class="keyword">do</span></div><div class="line">  expect(find(<span class="string">'#message'</span>)).to have_text(<span class="string">'Complete'</span>)</div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># Click alert</span></div><div class="line">accept_alert <span class="keyword">do</span></div><div class="line">  click_on <span class="string">'Show Alert'</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># Dismiss confirm</span></div><div class="line">dismiss_confirm <span class="keyword">do</span></div><div class="line">  click_on <span class="string">'Delete'</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># Execute JavaScript</span></div><div class="line">execute_script <span class="string">'window.scrollTo(0, 900)'</span></div><div class="line"></div><div class="line"><span class="comment"># Capture screen</span></div><div class="line">save_screenshot(<span class="string">'xxx.png'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Debugging</span></div><div class="line">save_and_open_page</div></pre></td></tr></table></figure>
+<h2 id="Using-Capybara-without-RSpec"><a href="#Using-Capybara-without-RSpec" class="headerlink" title="Using Capybara without RSpec"></a>Using Capybara without RSpec</h2><p>Sample code using Capybara without RSpec or other framework is as follows:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'capybara'</span></div><div class="line"></div><div class="line">Capybara.default_driver = <span class="symbol">:selenium</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CapybaraSampleClass</span></span></div><div class="line">  <span class="keyword">include</span> Capybara::DSL</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">sample_method</span></span></div><div class="line">    visit <span class="string">'http://example.selenium.com/'</span></div><div class="line">    fill_in(<span class="string">'name'</span>, <span class="symbol">with:</span> <span class="string">'sample user'</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">sample = CapybaraSampleClass.new</div><div class="line">sample.sample_method</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ruby cabybara_sample.rb</div></pre></td></tr></table></figure>
+<h2 id="Appendix-Page-Object"><a href="#Appendix-Page-Object" class="headerlink" title="Appendix: Page Object"></a>Appendix: Page Object</h2><p>A page object is an object-oriented class that serves as an interface to a page of your TEST.</p>
+<p>The Page Object Design Pattern provides the following advantages:</p>
+<ul>
+<li>There is a clean separation between test code and page specific code such as locators.</li>
+<li>There is a single repository for the services or operations offered by the page.</li>
+</ul>
+<p>Policy of the Page Object Design Patttern is as follows:</p>
+<ul>
+<li>Create a method to abstract controlling UI</li>
+<li>Return new Page Object if there is page transition</li>
+<li>Not include assertion logic in Page Object</li>
+<li>Should check successful of page transition</li>
+</ul>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://gist.github.com/zhengjia/428105" target="_blank" rel="external">capybara cheat sheet</a></li>
+<li><a href="http://cheatrags.com/capybara" target="_blank" rel="external">UI Testing with RSpec and Capybara [cheat sheet]</a></li>
+<li><a href="https://www.launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet" target="_blank" rel="external">Launch Academy: Codecabulary</a></li>
+<li><a href="http://www.rubydoc.info/github/jnicklas/capybara/master" target="_blank" rel="external">File: README — Documentation for jnicklas/capybara (master)</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/" data-id="cj0yxjycj00185trd1h023j0u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/rails-wercker-configuration/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Run CI on wercker with Ruby on Rails 5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/selenium-webdriver-ruby-browser-test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ruby selenium-webdriver Cheat Sheat</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

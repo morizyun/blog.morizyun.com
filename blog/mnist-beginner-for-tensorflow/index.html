@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MNIST For ML Beginners to Learn TensorFlow | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This aritcle is a memo about MNIST For ML Beginners to Learn TensorFlow.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MNIST For ML Beginners to Learn TensorFlow">
+<meta property="og:url" content="https://blog.morizyun.com/blog/mnist-beginner-for-tensorflow/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This aritcle is a memo about MNIST For ML Beginners to Learn TensorFlow.">
+<meta property="og:image" content="https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalargraph.png">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MNIST For ML Beginners to Learn TensorFlow">
+<meta name="twitter:description" content="This aritcle is a memo about MNIST For ML Beginners to Learn TensorFlow.">
+<meta name="twitter:image" content="https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalargraph.png">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mnist-beginner-for-tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/mnist-beginner-for-tensorflow/" class="article-date">
+  <time datetime="2016-07-27T15:00:00.000Z" itemprop="datePublished">2016-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MNIST For ML Beginners to Learn TensorFlow
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This aritcle is a memo about MNIST For ML Beginners to Learn TensorFlow.</p>
+<a id="more"></a> 
+<h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><p>You can download MNIST data as follows:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</div><div class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<h2 id="Dataset-Types"><a href="#Dataset-Types" class="headerlink" title="Dataset Types"></a>Dataset Types</h2><ul>
+<li>data_sets.train : 55000 images and labels, for primary training.</li>
+<li>data_sets.validation : 5000 images and labels, for iterative validation of training accuracy.</li>
+<li>data_sets.test : 10000 images and labels, for final testing of trained accuracy.</li>
+</ul>
+<h2 id="Data-Point"><a href="#Data-Point" class="headerlink" title="Data Point"></a>Data Point</h2><ul>
+<li>xs : a handwritten digit : 784(=28x28)</li>
+<li>ys : a corresponding label : mnist.train.labels (1 hot vectors)<ul>
+<li>For example, 3 would be [0, 0, 0, 1, 0, 0, 0, 0, 0, 0]</li>
+</ul>
+</li>
+</ul>
+<h2 id="Softmax-Regression"><a href="#Softmax-Regression" class="headerlink" title="Softmax Regression"></a>Softmax Regression</h2><ul>
+<li>First Step : We add up the evidence of our input being in certain classes</li>
+<li>Sencond Step: We convert that evidence into probabilities</li>
+</ul>
+<p><img src="https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalargraph.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line"><span class="comment"># Variables</span></div><div class="line">x = tf.placeholder(tf.float32, [<span class="keyword">None</span>, <span class="number">784</span>])</div><div class="line">W = tf.Variable(tf.zeros([<span class="number">784</span>, <span class="number">10</span>]))</div><div class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</div><div class="line"></div><div class="line"><span class="comment"># Softmax Regression</span></div><div class="line">y = tf.nn.softmax(tf.matmul(x, W) + b)</div></pre></td></tr></table></figure>
+<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><p>To implement cross-entropy:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Backpropagation algorithm</span></div><div class="line">y_ = tf.placeholder(tf.float32, [<span class="keyword">None</span>, <span class="number">10</span>])</div><div class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[<span class="number">1</span>]))</div><div class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.5</span>).minimize(cross_entropy)</div><div class="line"></div><div class="line"><span class="comment"># Initialize variables</span></div><div class="line">init = tf.initialize_all_variables()</div><div class="line"></div><div class="line"><span class="comment"># lunch the model in a Session</span></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line"><span class="comment"># Training</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</div><div class="line">  batch_xs, batch_ys = mnist.train.next_batch(<span class="number">100</span>)</div><div class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>), tf.argmax(y_,<span class="number">1</span>))</div><div class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</div><div class="line">print(sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;))</div></pre></td></tr></table></figure>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ python mnist_beginner.py</div><div class="line">#=&gt; Extracting MNIST_data/train-images-idx3-ubyte.gz</div><div class="line">#=&gt; Extracting MNIST_data/train-labels-idx1-ubyte.gz</div><div class="line">#=&gt; Extracting MNIST_data/t10k-images-idx3-ubyte.gz</div><div class="line">#=&gt; Extracting MNIST_data/t10k-labels-idx1-ubyte.gz</div><div class="line">#=&gt; 0.9197</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><strong><a href="https://en.wikipedia.org/wiki/Multinomial_logistic_regression" target="_blank" rel="external">Multinomial Logistic Regression</a></strong></li>
+<li><strong><a href="http://colah.github.io/posts/2015-08-Backprop/" target="_blank" rel="external">Calculus on Computational Graphs: Backpropagation</a></strong></li>
+</ul>
+<hr>
+<h2 id="Sample-Code"><a href="#Sample-Code" class="headerlink" title="Sample Code"></a>Sample Code</h2><ul>
+<li><strong><a href="https://github.com/morizyun/tensorflow_tutorial" target="_blank" rel="external">morizyun/tensorflow_tutorial</a></strong></li>
+<li><strong><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/mnist/mnist_softmax.py" target="_blank" rel="external">tensorflow/mnist_softmax.py at master · tensorflow/tensorflow</a></strong></li>
+</ul>
+<h2 id="Japanese-Description-for-TensorFlow-MNIST-For-ML-Beginners"><a href="#Japanese-Description-for-TensorFlow-MNIST-For-ML-Beginners" class="headerlink" title="Japanese Description for TensorFlow MNIST For ML Beginners"></a>Japanese Description for TensorFlow MNIST For ML Beginners</h2><ul>
+<li><strong><a href="http://qiita.com/uramonk/items/c207c948ccb6cd0a1346" target="_blank" rel="external">http://qiita.com/uramonk/items/c207c948ccb6cd0a1346</a></strong></li>
+<li><strong><a href="http://qiita.com/KojiOhki/items/ff6ae04d6cf02f1b6edf" target="_blank" rel="external">http://qiita.com/KojiOhki/items/ff6ae04d6cf02f1b6edf</a></strong></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/mnist-beginner-for-tensorflow/" data-id="cj0yxjyc7000w5trddjc7mext" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/tesorflow-installation-introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Installation &amp; Introduction for TensorFlow
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/tensor-flow-begineer-get-started-deep-learning-machine-2nd/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Beginning TensorFlow at 2nd day</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

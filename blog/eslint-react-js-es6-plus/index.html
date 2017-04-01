@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ESLint with React.js &amp; ES6+ | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.In this a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESLint with React.js & ES6+">
+<meta property="og:url" content="https://blog.morizyun.com/blog/eslint-react-js-es6-plus/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.In this a">
+<meta property="og:image" content="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&ASIN=B019HRGOPQ&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=morizyun00-22">
+<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=morizyun00-22&l=as2&o=9&a=B019HRGOPQ">
+<meta property="og:updated_time" content="2017-04-01T06:21:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ESLint with React.js & ES6+">
+<meta name="twitter:description" content="ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.In this a">
+<meta name="twitter:image" content="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&ASIN=B019HRGOPQ&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=morizyun00-22">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-eslint-react-js-es6-plus" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/eslint-react-js-es6-plus/" class="article-date">
+  <time datetime="2017-01-02T15:00:00.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ESLint with React.js &amp; ES6+
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.amazon.com/gp/product/B019HRGOPQ/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=247&creative=1211&creativeASIN=B019HRGOPQ&linkCode=as2&tag=morizyun00-22" target="_blank" rel="external"><img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&ASIN=B019HRGOPQ&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=morizyun00-22" width="150" style="float: left; margin: 0 20px 20px 0;"></a><img src="http://www.assoc-amazon.jp/e/ir?t=morizyun00-22&l=as2&o=9&a=B019HRGOPQ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.<br>In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.<br>In this article, I will explain the ESLint configuration for checking React.js written with ES6+.</p>
+<a id="more"></a>
+<h2 id="Style-Guide"><a href="#Style-Guide" class="headerlink" title="Style Guide"></a>Style Guide</h2><p>Aribnb’s style guide is really great and easy to understand. ESLint also check your code based on the style guide.</p>
+<ul>
+<li>JavaScript: <strong><a href="https://github.com/airbnb/javascript/tree/master/react" target="_blank" rel="external">airbnb/javascript</a></strong></li>
+<li>React.js: <strong><a href="https://github.com/airbnb/javascript/tree/master/react" target="_blank" rel="external">airbnb/javascript/react</a></strong></li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Install following libraries:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev eslint babel-eslint eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react</div></pre></td></tr></table></figure>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>ESLint configuration is as follows:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// .eslint.json</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</div><div class="line">  <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</div><div class="line">  <span class="string">"env"</span>: &#123;</div><div class="line">    <span class="string">"browser"</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"ecmaFeatures"</span>: &#123;</div><div class="line">    <span class="string">"classes"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"jsx"</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"plugins"</span>: [</div><div class="line">    <span class="string">"react"</span>,</div><div class="line">    <span class="string">"jsx-a11y"</span>,</div><div class="line">    <span class="string">"import"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"extends"</span>: [<span class="string">"eslint"</span>, <span class="string">"eslint:recommended"</span>, <span class="string">"plugin:react/recommended"</span>],</div><div class="line">  <span class="string">"parserOptions"</span>: &#123;</div><div class="line">    <span class="string">"ecmaVersion"</span>: <span class="number">7</span>,</div><div class="line">    <span class="string">"sourceType"</span>: <span class="string">"module"</span>,</div><div class="line">    <span class="string">"ecmaFeatures"</span>: &#123;</div><div class="line">      <span class="string">"jsx"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"rules"</span>: &#123;</div><div class="line">    <span class="string">"arrow-body-style"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"arrow-parens"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"arrow-spacing"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"eqeqeq"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"generator-star-spacing"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-duplicate-imports"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-eq-null"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-undefined"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-useless-computed-key"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-useless-constructor"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-useless-rename"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"no-var"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"object-shorthand"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"prefer-arrow-callback"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"prefer-const"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"prefer-rest-params"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"prefer-spread"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"prefer-template"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"rest-spread-spacing"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"semi"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"template-curly-spacing"</span>: <span class="string">"error"</span>,</div><div class="line">    <span class="string">"yield-star-spacing"</span>: <span class="string">"error"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Please see moore detail <strong><a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">Configuring ESLint</a></strong>.</p>
+<h2 id="Usage-in-Command-Line"><a href="#Usage-in-Command-Line" class="headerlink" title="Usage in Command Line"></a>Usage in Command Line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./node_modules/bin/eslint sample.js</div></pre></td></tr></table></figure>
+<h2 id="Usage-in-overcommit"><a href="#Usage-in-overcommit" class="headerlink" title="Usage in overcommit"></a>Usage in overcommit</h2><p><a href="https://github.com/brigade/overcommit" target="_blank" rel="external">overcommit</a> is a git hook management tool which can execute various command before git commit, push or etc.<br>The following configuration is how to use ESLint with overcommit.</p>
+<p>At first, overcommit configuration like this:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># .overcommit.yml (Add following comfigugration)</span></div><div class="line"><span class="attr">PreCommit:</span></div><div class="line">  <span class="comment"># Style Check for JavaScript</span></div><div class="line"><span class="attr">  EsLint:</span></div><div class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    command:</span> <span class="string">['./client/node_modules/.bin/eslint',</span> <span class="string">'client/components/*'</span><span class="string">,</span> <span class="string">'-c'</span><span class="string">,</span> <span class="string">'client/.eslintrc.json'</span><span class="string">]</span></div><div class="line"><span class="attr">    include:</span> <span class="string">'**/*.jsx'</span></div></pre></td></tr></table></figure>
+<p>Ater the configuration, execute <code>bundle exec overcommit --sign</code>, so ESLint will be executed automatically before <code>git push</code>.</p>
+<h2 id="Usage-in-wercker"><a href="#Usage-in-wercker" class="headerlink" title="Usage in wercker"></a>Usage in wercker</h2><p>The configuration of free CI <strong><a href="http://www.wercker.com/" target="_blank" rel="external">wercker</a></strong> is as follows:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="attr">eslint:</span></div><div class="line"><span class="attr">  steps:</span></div><div class="line"><span class="attr">    - bundle-install:</span></div><div class="line"><span class="attr">      jobs:</span> <span class="number">4</span></div><div class="line"></div><div class="line"><span class="attr">    - install-packages:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">Install</span> <span class="string">node.js,</span> <span class="string">build-essential,</span> <span class="string">libpq-dev</span></div><div class="line"><span class="attr">      packages:</span> <span class="string">build-essential</span> <span class="string">libpq-dev</span> <span class="string">nodejs</span> <span class="string">npm</span> <span class="string">nodejs-legacy</span></div><div class="line"></div><div class="line"><span class="attr">    - script:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">NPM</span> <span class="string">install</span></div><div class="line"><span class="attr">      code:</span> <span class="string">npm</span> <span class="string">install</span> <span class="bullet">-D</span></div><div class="line"></div><div class="line"><span class="attr">    - script:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">Run</span> <span class="string">ESLint</span></div><div class="line"><span class="attr">      code:</span> <span class="string">eslint</span> <span class="string">components/*</span> <span class="bullet">-c</span> <span class="string">.eslintrc.json</span></div></pre></td></tr></table></figure>
+<p>Happy Hacking!</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://qiita.com/mysticatea/items/f523dab04a25f617c87d" target="_blank" rel="external">http://qiita.com/mysticat…</a></li>
+<li><a href="http://qiita.com/tkrkt/items/b3b624ef32e05bd6bf55" target="_blank" rel="external">http://qiita.com/tkrkt/i…</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/eslint-react-js-es6-plus/" data-id="cj0yxjycz001y5trd1u2xnkmm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/postgresql-reindex-null-last/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/react-bootstrap-javascript-css-framework/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Wonderful react-bootstrap! We can use Bootstrap as a component!</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

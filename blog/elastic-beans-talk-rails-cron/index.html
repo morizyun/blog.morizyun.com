@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Deploy Rails 5 App to ElasticBeanstalk | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications.
+This article explains “How to deploy Ra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Rails 5 App to ElasticBeanstalk">
+<meta property="og:url" content="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications.
+This article explains “How to deploy Ra">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deploy Rails 5 App to ElasticBeanstalk">
+<meta name="twitter:description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications.
+This article explains “How to deploy Ra">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-elastic-beans-talk-rails-cron" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/elastic-beans-talk-rails-cron/" class="article-date">
+  <time datetime="2016-10-09T08:15:00.000Z" itemprop="datePublished">2016-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Deploy Rails 5 App to ElasticBeanstalk
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications.</p>
+<p>This article explains “How to deploy Rails App to Elasticbeanstalk”.</p>
+<a id="more"></a> 
+<h2 id="Create-IAM"><a href="#Create-IAM" class="headerlink" title="Create IAM"></a>Create IAM</h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/iam/home" target="_blank" rel="external">IAM Console</a></strong>“ <br></li>
+<li>2) Goto “Users” &gt; “Create New Users”</li>
+<li>3) Create user “elasticbean-deploy” and get <strong>Access Key ID</strong> &amp; <strong>Secret Access Key</strong></li>
+<li>4) Setup attachment policy</li>
+</ul>
+<h2 id="Create-SSH-Key"><a href="#Create-SSH-Key" class="headerlink" title="Create SSH Key"></a>Create SSH Key</h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/ec2/v2/home" target="_blank" rel="external">EC2 Console</a></strong>“</li>
+<li>2) Goto “Key Pairs” &gt; “Create Key Pair”</li>
+<li>3) Get SSH Key(“xxx.pem” file)</li>
+</ul>
+<h2 id="Create-New-Environement"><a href="#Create-New-Environement" class="headerlink" title="Create New Environement"></a>Create New Environement</h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/elasticbeanstalk/home" target="_blank" rel="external">Elasticbeanstalk Console</a></strong>“</li>
+<li>2) Goto “Action” &gt; “Create New Environement” &gt; “Web server environment”</li>
+<li>3) Set configuration and create RDS instance</li>
+</ul>
+<h2 id="Istallation-EB-CLI"><a href="#Istallation-EB-CLI" class="headerlink" title="Istallation EB CLI"></a>Istallation EB CLI</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install awsebcli</div></pre></td></tr></table></figure>
+<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Initialize</span></div><div class="line">$ eb init</div><div class="line"></div><div class="line"><span class="comment"># Set DATABASE_URL to env variables</span></div><div class="line">$ eb setenv DATABASE_URL=postgres://ID:PASSWORD@HOST:PORT/DB_NAME</div><div class="line"></div><div class="line"><span class="comment"># Set SECRET_KEY_BASE to env variables</span></div><div class="line">$ bundle <span class="built_in">exec</span> rake secret <span class="comment">#=&gt; xxxx</span></div><div class="line">$ eb setenv SECRET_KEY_BASE=xxxx</div></pre></td></tr></table></figure>
+<h2 id="Set-Custom-Configuration"><a href="#Set-Custom-Configuration" class="headerlink" title="Set Custom Configuration"></a>Set Custom Configuration</h2><h3 id="Setup-Tizezone"><a href="#Setup-Tizezone" class="headerlink" title="Setup Tizezone"></a>Setup Tizezone</h3><p>Add the following <code>.ebextensions/00-set-timezone.config</code> to your project:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">commands:</span></div><div class="line"><span class="attr">  set_time_zone:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">ln</span> <span class="bullet">-f</span> <span class="bullet">-s</span> <span class="string">/usr/share/zoneinfo/Japan</span> <span class="string">/etc/localtime</span></div></pre></td></tr></table></figure>
+<h3 id="Setup-Swap-Space"><a href="#Setup-Swap-Space" class="headerlink" title="Setup Swap Space"></a>Setup Swap Space</h3><p>Add the following <code>.ebextensions/01-set-swap-space.config</code> to your project if you want to use crontab:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">commands:</span></div><div class="line">  <span class="number">000</span><span class="attr">_dd:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">dd</span> <span class="string">if=/dev/zero</span> <span class="string">of=/swapfile</span> <span class="string">bs=1M</span> <span class="string">count=3072</span></div><div class="line">  <span class="number">001</span><span class="attr">_mkswap:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">mkswap</span> <span class="string">/swapfile</span></div><div class="line">  <span class="number">002</span><span class="attr">_swapon:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">swapon</span> <span class="string">/swapfile</span></div></pre></td></tr></table></figure>
+<h3 id="Setup-Crontab"><a href="#Setup-Crontab" class="headerlink" title="Setup Crontab"></a>Setup Crontab</h3><p>Add the following <code>.ebextensions/02-set-crontab.config</code> to your project if you want to use crontab:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="attr">files:</span></div><div class="line">  <span class="string">"/tmp/cron_jobs"</span> <span class="string">:</span></div><div class="line"><span class="attr">    mode:</span> <span class="string">"000777"</span></div><div class="line"><span class="attr">    content:</span> <span class="string">|</span></div><div class="line">      0 1 * * * /var/script/something.sh &gt; /dev/null 2&gt;&amp;1</div><div class="line"><span class="attr">    encoding:</span> <span class="string">plain</span></div><div class="line"><span class="attr">container_commands:</span></div><div class="line">  <span class="number">01</span><span class="attr">_delete_cron_jobs:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">"crontab -r || exit 0"</span></div><div class="line">  <span class="number">02</span><span class="attr">_add_cron_jobs:</span></div><div class="line"><span class="attr">    command:</span> <span class="string">"crontab /tmp/cron_jobs"</span></div><div class="line"><span class="attr">    leader_only:</span> <span class="literal">true</span></div><div class="line"><span class="attr">option_settings:</span></div><div class="line"><span class="attr">  - option_name:</span> <span class="string">RAILS_ENV</span></div><div class="line"><span class="attr">    value:</span> <span class="string">production</span></div><div class="line"><span class="attr">  - option_name:</span> <span class="string">RACK_ENV</span></div><div class="line"><span class="attr">    value:</span> <span class="string">production</span></div></pre></td></tr></table></figure>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Put Souce code to server</span></div><div class="line">$ eb deploy</div><div class="line"></div><div class="line"><span class="comment"># Create Database</span></div><div class="line">$ eb ssh</div><div class="line">$ <span class="built_in">cd</span> /var/app/current</div><div class="line">$ RAILS_ENV=production DATABASE_URL=postgres://ID:PASSWORD@HOST:PORT/DB_NAME rake db:create</div><div class="line"></div><div class="line"><span class="comment"># Deployment</span></div><div class="line">$ eb deploy</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.html" target="_blank" rel="external">Getting Started Using Elastic Beanstalk - AWS Elastic Beanstalk</a></li>
+<li><a href="http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob" target="_blank" rel="external">amazon web services - AWS Elastic Beanstalk, running a cronjob - Stack Overflow</a></li>
+<li><a href="http://stackoverflow.com/questions/21467384/creating-a-swap-file-drive-on-ec2-micro-instance-on-elastic-beanstalk-deploy" target="_blank" rel="external">php - creating a swap file/drive on ec2 micro instance on elastic beanstalk deploy - Stack Overflow</a></li>
+<li><a href="http://qiita.com/yoneapp/items/a1bea9d3a21a5505ef03" target="_blank" rel="external">http://qiita.com/yoneapp/items/a1bea9d3a21a5505ef03</a></li>
+<li><a href="http://qiita.com/jr_qrank/items/aadc076ebf93a2692d14" target="_blank" rel="external">http://qiita.com/jr_qrank/items/aadc076ebf93a2692d14</a></li>
+<li><a href="http://qiita.com/tak_nishida/items/912fda099e54b0292667" target="_blank" rel="external">http://qiita.com/tak_nishida/items/912fda099e54b0292667</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/" data-id="cj0yxjyck00195trd2o6fs9rv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/dokku-isntall-vultr-pass-mini-heroku/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Installing Dokku to Vultr
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/rails-wercker-configuration/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Run CI on wercker with Ruby on Rails 5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

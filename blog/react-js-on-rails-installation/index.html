@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>First Step for React.js on Rails | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article describes how to start React on Rails.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="First Step for React.js on Rails">
+<meta property="og:url" content="https://blog.morizyun.com/blog/react-js-on-rails-installation/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes how to start React on Rails.">
+<meta property="og:updated_time" content="2017-04-01T06:21:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="First Step for React.js on Rails">
+<meta name="twitter:description" content="This article describes how to start React on Rails.">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-js-on-rails-installation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/react-js-on-rails-installation/" class="article-date">
+  <time datetime="2016-12-29T15:00:00.000Z" itemprop="datePublished">2016-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      First Step for React.js on Rails
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article describes how to start React on Rails.</p>
+<a id="more"></a>
+<h2 id="Instration-Node-with-Mac-Homebrew"><a href="#Instration-Node-with-Mac-Homebrew" class="headerlink" title="Instration Node with Mac Homebrew"></a>Instration Node with Mac Homebrew</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew upgrade</div><div class="line">brew install node</div></pre></td></tr></table></figure>
+<h2 id="Creating-React-Sample-App"><a href="#Creating-React-Sample-App" class="headerlink" title="Creating React Sample App"></a>Creating React Sample App</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line">create-react-app hello-world</div><div class="line"><span class="built_in">cd</span> hello-world</div><div class="line">npm start</div></pre></td></tr></table></figure>
+<h2 id="Using-React-on-Rails"><a href="#Using-React-on-Rails" class="headerlink" title="Using React on Rails"></a>Using React on Rails</h2><p>In this section, we are using RubyGem <strong><a href="https://github.com/shakacode/react_on_rails" target="_blank" rel="external">react_on_rails</a></strong>.</p>
+<p>At first, add the following to your Gemfile and <code>bundle install</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'react_on_rails'</span></div></pre></td></tr></table></figure>
+<p>Commit this to git and please run following commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Run the generator with a sample "Hello World" App with React.js</span></div><div class="line">rails g react_on_rails:install</div><div class="line"></div><div class="line"><span class="comment"># Bundle &amp;&amp; NPM install:</span></div><div class="line">bundle &amp;&amp; npm install</div><div class="line"></div><div class="line"><span class="comment"># Start your Rails server:</span></div><div class="line">foreman start <span class="_">-f</span> Procfile.dev</div></pre></td></tr></table></figure>
+<p>Please see <a href="http://localhost:3000/hello_world" target="_blank" rel="external">http://localhost:3000/hello_world</a>.</p>
+<p>All JavaScript in React On Rails is loaded from npm: react-on-rails.<br>To manually install this, please execute following command like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> client &amp;&amp; npm i --saveDev react react-on-rails react-helmet nprogress</div></pre></td></tr></table></figure>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>Supporting following flow:</p>
+<ol>
+<li>Return HTML in first request</li>
+<li>In page transition, return JSON</li>
+<li>Do not show JSON when returning with browser back</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line"></div><div class="line">  private</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_action_path</span></span></div><div class="line">    <span class="string">"<span class="subst">#&#123;controller_path&#125;</span>#<span class="subst">#&#123;action_name&#125;</span>"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_common_props</span></span></div><div class="line">    &#123; <span class="symbol">actionPath:</span> _action_path &#125;</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_render_for_react</span><span class="params">(<span class="symbol">props:</span> &#123;&#125;, <span class="symbol">status:</span> <span class="number">200</span>)</span></span></div><div class="line">    <span class="keyword">if</span> request.format.json?</div><div class="line">      response.headers[<span class="string">'Cache-Control'</span>] = <span class="string">'no-cache, no-store'</span></div><div class="line">      response.headers[<span class="string">'Expires'</span>] = <span class="string">'Fri, 01 Jan 1990 00:00:00 GMT'</span></div><div class="line">      response.headers[<span class="string">'Pragma'</span>] = <span class="string">'no-cache'</span></div><div class="line">      render(</div><div class="line">        <span class="symbol">json:</span> &#123;</div><div class="line">          <span class="symbol">rootProps:</span> _common_props.merge(props)</div><div class="line">        &#125;,</div><div class="line">        <span class="symbol">status:</span> status</div><div class="line">      )</div><div class="line">    <span class="keyword">else</span></div><div class="line">      render(</div><div class="line">        <span class="symbol">html:</span> view_context.react_component(</div><div class="line">          <span class="string">'Router'</span>,</div><div class="line">          <span class="symbol">props:</span> &#123;</div><div class="line">            <span class="symbol">rootProps:</span> _common_props.merge(props)</div><div class="line">          &#125;.as_json</div><div class="line">        ),</div><div class="line">        <span class="symbol">layout:</span> <span class="literal">true</span>,</div><div class="line">        <span class="symbol">status:</span> status</div><div class="line">      )</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>Usage example is as follows:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticlesController</span> &lt; ApplicationController</span></div><div class="line">  <span class="comment"># GET /</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">index</span></span></div><div class="line">    _render_for_react(</div><div class="line">      <span class="symbol">props:</span> &#123;</div><div class="line">        <span class="symbol">articles:</span> Article.limit(<span class="number">20</span>)</div><div class="line">      &#125;</div><div class="line">    )</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="Entry-Point"><a href="#Entry-Point" class="headerlink" title="Entry Point"></a>Entry Point</h3><p>Entry point of shared JavaScript code is like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// client/entry_points/main.js</span></div><div class="line"><span class="keyword">import</span> ReactOnRails <span class="keyword">from</span> <span class="string">"react-on-rails"</span>;</div><div class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">"../components/Router"</span>;</div><div class="line"></div><div class="line">ReactOnRails.register(&#123; Router &#125;);</div></pre></td></tr></table></figure>
+<h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h3><ol>
+<li>Router selects Component by <code>actionPath</code></li>
+<li>Display progress bar during page transition</li>
+<li>Scroll to a top of a page after page transition</li>
+<li>Adjust browser history using pushState / popState</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"><span class="keyword">import</span> NProgress <span class="keyword">from</span> <span class="string">"nprogress"</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> Articles <span class="keyword">from</span> <span class="string">"../components/Articles"</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Router</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> propTypes = &#123;</div><div class="line">    <span class="attr">rootProps</span>:  React.PropTypes.object,</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">static</span> childContextTypes = &#123;</div><div class="line">    <span class="attr">onLinkClick</span>: React.PropTypes.func,</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  componentDidMount() &#123;</div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, () =&gt; &#123;</div><div class="line">      <span class="keyword">this</span>.transitTo(<span class="built_in">document</span>.location.href, &#123; <span class="attr">pushState</span>: <span class="literal">false</span> &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(...args) &#123;</div><div class="line">    <span class="keyword">super</span>(...args);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">rootProps</span>:    <span class="keyword">this</span>.props.rootProps,</div><div class="line">    &#125;;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  getComponent() &#123;</div><div class="line">    <span class="keyword">switch</span> (<span class="keyword">this</span>.state.rootProps.actionPath) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="string">"articles#index"</span>:</div><div class="line">        <span class="keyword">return</span> Articles;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  getChildContext() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">onLinkClick</span>: <span class="keyword">this</span>.onLinkClick.bind(<span class="keyword">this</span>),</div><div class="line">    &#125;;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  onLinkClick(event) &#123;</div><div class="line">    <span class="keyword">if</span> (!event.metaKey) &#123;</div><div class="line">      event.preventDefault();</div><div class="line">      <span class="keyword">const</span> anchorElement = event.currentTarget.pathname ? event.currentTarget : event.currentTarget.querySelector(<span class="string">"a"</span>);</div><div class="line">      <span class="keyword">this</span>.transitTo(anchorElement.href, &#123; <span class="attr">pushState</span>: <span class="literal">true</span> &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  transitTo(url, &#123; pushState &#125;) &#123;</div><div class="line">    NProgress.start();</div><div class="line">    $.ajax(&#123;</div><div class="line">      <span class="attr">url</span>: url,</div><div class="line">      <span class="attr">dataType</span>: <span class="string">'json'</span>,</div><div class="line">      <span class="attr">cache</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (pushState) &#123;</div><div class="line">          history.pushState(&#123;&#125;, <span class="string">""</span>, url);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">rootProps</span>: props.rootProps&#125;);</div><div class="line">        NProgress.done();</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span>) &#123;</div><div class="line">          <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;.bind(<span class="keyword">this</span>),</div><div class="line">      <span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params">xhr, status, err</span>) </span>&#123;</div><div class="line">        NProgress.done();</div><div class="line">        <span class="built_in">console</span>.error(url, status, err.toString());</div><div class="line">      &#125;.bind(<span class="keyword">this</span>)</div><div class="line">    &#125;);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> Component = <span class="keyword">this</span>.getComponent();</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...this.state.rootProps</span>&#125; <span class="attr">key</span>=<span class="string">&#123;this.state.requestId&#125;</span> /&gt;</span>;</span></div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><p>When a user clicks a link, a client communicates with the server with XHR and post a state to Router. </p>
+<p>So I use the original Link tag instead of a tag.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Link</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> contextTypes = &#123;</div><div class="line">    <span class="attr">onLinkClick</span>: React.PropTypes.func,</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  onClick(event) &#123;</div><div class="line">    <span class="keyword">this</span>.context.onLinkClick(event);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">onClick</span>=<span class="string">&#123;this.onClick.bind(this)&#125;</span> &#123;<span class="attr">...this.props</span>&#125;&gt;</span></span></div><div class="line">        &#123;this.props.children&#125;</div><div class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><code>Link</code> example is as follows:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>txt<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Title-Meta-Tags"><a href="#Title-Meta-Tags" class="headerlink" title="Title/Meta Tags"></a>Title/Meta Tags</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"><span class="keyword">import</span> Helmet <span class="keyword">from</span> <span class="string">"react-helmet"</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123;siteName, siteBaseUrl&#125; <span class="keyword">from</span> <span class="string">"../constants/service"</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Articles</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  pageUrl() &#123;</div><div class="line">    <span class="keyword">return</span> siteBaseUrl + <span class="string">"/articles"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  pageTitle() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"huga"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  pageDescription() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"hoge"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Helmet</span></span></div><div class="line">          <span class="attr">title</span>=<span class="string">&#123;this.pageTitle()&#125;</span></div><div class="line">          <span class="attr">link</span>=<span class="string">&#123;[</span></div><div class="line">            &#123;<span class="attr">rel:</span> "<span class="attr">canonical</span>", <span class="attr">href:</span> <span class="attr">this.pageUrl</span>()&#125;,</div><div class="line">            &#123;<span class="attr">rel:</span> '<span class="attr">alternate</span>', <span class="attr">href:</span> <span class="attr">this.pageUrl</span>()&#125;,</div><div class="line">          ]&#125;</div><div class="line">          <span class="attr">meta</span>=<span class="string">&#123;[</span></div><div class="line">            &#123;<span class="attr">property:</span> "<span class="attr">og:url</span>",          <span class="attr">content:</span> <span class="attr">this.pageUrl</span>()&#125;,</div><div class="line">            &#123;<span class="attr">property:</span> "<span class="attr">og:title</span>",        <span class="attr">content:</span> <span class="attr">this.pageTitle</span>()&#125;,</div><div class="line">            &#123;<span class="attr">property:</span> "<span class="attr">og:description</span>",  <span class="attr">content:</span> <span class="attr">this.pageDescription</span>()&#125;,</div><div class="line">            &#123;<span class="attr">name:</span> "<span class="attr">description</span>",         <span class="attr">content:</span> <span class="attr">this.pageDescription</span>()&#125;,</div><div class="line">          ]&#125;</div><div class="line">        /&gt;</div><div class="line">        //...</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Run-npm-install-in-ElasticBeansTalk"><a href="#Run-npm-install-in-ElasticBeansTalk" class="headerlink" title="Run npm install in ElasticBeansTalk"></a>Run npm install in ElasticBeansTalk</h2><p>This is a script to use <code>webpack</code> in deploy process of ElasticBeansTalk.<br>To use webpack you need to run <code>npm install</code> before<code>rake assets: precompile</code>.<br>(<code>10</code> is depend on each environment, so please fix it.)</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="attr">files:</span></div><div class="line">  <span class="string">"/opt/elasticbeanstalk/hooks/appdeploy/pre/10_install_node_modules.sh"</span> <span class="string">:</span></div><div class="line"><span class="attr">    mode:</span> <span class="string">"000744"</span></div><div class="line"><span class="attr">    owner:</span> <span class="string">root</span></div><div class="line"><span class="attr">    group:</span> <span class="string">root</span></div><div class="line"><span class="attr">    content:</span> <span class="string">|</span></div><div class="line">      #!/usr/bin/env bash</div><div class="line">      set -xe</div><div class="line">      EB_APP_STAGING_DIR=$(/opt/elasticbeanstalk/bin/get-config container -k app_staging_dir)</div><div class="line">      cd $EB_APP_STAGING_DIR/client</div><div class="line">      npm install</div><div class="line"><span class="attr">    encoding:</span> <span class="string">plain</span></div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><p>This article has created by the following Japanese articles. Thank you very much, <a href="https://twitter.com/r7kamura" target="_blank" rel="external">@r7kamura</a>!</p>
+<ul>
+<li><a href="http://r7kamura.hatenablog.com/entry/2016/10/10/173610" target="_blank" rel="external">http://r7kamura.hatenablog.com/entry/2016/10/10/173610</a></li>
+<li><a href="http://r7kamura.hatenablog.com/entry/2016/12/13/074119" target="_blank" rel="external">http://r7kamura.hatenablog.com/entry/2016/12/13/074119</a></li>
+<li><p><a href="http://r7kamura.hatenablog.com/entry/2016/10/03/001212" target="_blank" rel="external">http://r7kamura.hatenablog.com/entry/2016/10/03/001212</a></p>
+</li>
+<li><p><a href="https://facebook.github.io/react/docs/hello-world.html" target="_blank" rel="external">https://facebook.github.io/react/docs/hello-world.html</a></p>
+</li>
+<li><a href="https://facebook.github.io/react/tutorial/tutorial.html" target="_blank" rel="external">https://facebook.github.io/react/tutorial/tutorial.html</a></li>
+<li><a href="http://qiita.com/_muraham/items/22dec19e5d069560b40f" target="_blank" rel="external">http://qiita.com/_muraham/item…</a></li>
+</ul>
+<h2 id="Sample-App"><a href="#Sample-App" class="headerlink" title="Sample App"></a>Sample App</h2><ul>
+<li><a href="https://github.com/suzan2go/react-rails-redux-sample" target="_blank" rel="external">suzan2go/react-rails-redux-sample: Example of rails application with redux and react-rails</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/react-js-on-rails-installation/" data-id="cj0yxjycw001s5trduthmsghp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/react-js-css-module/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS-Modules with React.js
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/react-js-tips-useful-component/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React.js Tips &amp; Useful Component Set for beginner</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

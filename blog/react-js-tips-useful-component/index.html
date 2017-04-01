@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React.js Tips &amp; Useful Component Set for beginner | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article describes React.js tips &amp;amp; useful componet for beginner.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js Tips & Useful Component Set for beginner">
+<meta property="og:url" content="https://blog.morizyun.com/blog/react-js-tips-useful-component/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes React.js tips &amp;amp; useful componet for beginner.">
+<meta property="og:image" content="https://blog.morizyun.com/img/2016-12-29-react-js-tips-useful-component_1.jpg">
+<meta property="og:updated_time" content="2017-04-01T06:22:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.js Tips & Useful Component Set for beginner">
+<meta name="twitter:description" content="This article describes React.js tips &amp;amp; useful componet for beginner.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/2016-12-29-react-js-tips-useful-component_1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-js-tips-useful-component" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/react-js-tips-useful-component/" class="article-date">
+  <time datetime="2016-12-28T15:00:00.000Z" itemprop="datePublished">2016-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React.js Tips &amp; Useful Component Set for beginner
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article describes React.js tips &amp; useful componet for beginner.</p>
+<a id="more"></a>
+<h2 id="Useful-Component-Set-Material-UI"><a href="#Useful-Component-Set-Material-UI" class="headerlink" title="Useful Component Set: Material UI"></a>Useful Component Set: Material UI</h2><p><a href="https://github.com/callemall/material-ui" target="_blank"><br>  <img src="/img/2016-12-29-react-js-tips-useful-component_1.jpg" width="500" height="297"><br></a></p>
+<ul>
+<li><a href="https://github.com/callemall/material-ui" target="_blank" rel="external">https://github.com/callemall/material-ui</a></li>
+</ul>
+<p>It is a React Component sets supprting Google Material Design Guideline.</p>
+<ul>
+<li>There are a lot of components patttern &amp; it is high quality.</li>
+<li>Server Side Rendering is being considered.</li>
+<li>Some themes and color palettes are prepared.</li>
+</ul>
+<h2 id="Allow-function"><a href="#Allow-function" class="headerlink" title="Allow function"></a>Allow function</h2><p>The body of ES6 arrow functions share the same lexical <code>this</code> as the code that surrounds them.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// before</span></div><div class="line"><span class="keyword">var</span> getUserStoreStates = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> UserStore.getAjaxResult();</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// after</span></div><div class="line"><span class="keyword">const</span> getUserStoreStates = <span class="function"><span class="params">()</span> =&gt;</span> UserStore.getAjaxResult();</div><div class="line"></div><div class="line"><span class="keyword">const</span> ajax = &#123;</div><div class="line">  <span class="attr">get</span>  : <span class="function">(<span class="params">url, params, callback</span>) =&gt;</span> &#123;</div><div class="line">    request</div><div class="line">      .get(url)</div><div class="line">      .query(params)</div><div class="line">      .end(<span class="function">(<span class="params">err, res</span>) =&gt;</span> callback(err, res))</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Stateless-Functions"><a href="#Stateless-Functions" class="headerlink" title="Stateless Functions"></a>Stateless Functions</h2><p>Most of your components would be stateless functions:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">&#123;greet, name&#125;</span>) =&gt;</span> (</div><div class="line">  <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"commentBox"</span>&gt;</span></span></div><div class="line">    &#123;greet&#125;! I am a &#123;name&#125;.</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>);</div><div class="line">);</div><div class="line"></div><div class="line">App.propTypes = &#123;</div><div class="line">  <span class="attr">greet</span>: React.PropTypes.string.isRequired,</div><div class="line">  <span class="attr">name</span>: React.PropTypes.string.isRequired</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>A component can have a attribute to identify the component named <code>ref</code>.<br>All ref in the same componet are grouped into <code>refs</code>.</p>
+<p>If you write the following code:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ref</span>=<span class="string">"name"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ref</span>=<span class="string">"mail"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<p>You can access the element by <code>this.refs.name</code> or <code>this.refs.mail</code>.</p>
+<ul>
+<li><a href="http://qiita.com/kuniken/items/a22adda392ccc30011b1" target="_blank" rel="external">http://qiita.com/kuniken/…</a></li>
+</ul>
+<h2 id="Context-Usage"><a href="#Context-Usage" class="headerlink" title="Context Usage"></a>Context Usage</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// components/Parent.jsx</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Parent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> childContextTypes = &#123;</div><div class="line">    <span class="attr">onLick</span>: React.PropTypes.func,</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  getChildContext() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">onLick</span>: <span class="keyword">this</span>.onLick.bind(<span class="keyword">this</span>),</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  onLick(event) &#123;</div><div class="line">    <span class="comment">// do something...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// components/Child.jsx</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> contextTypes = &#123;</div><div class="line">    <span class="attr">onClick</span>: React.PropTypes.func.isRequired,</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  onClick = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.context.onClick(event);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">onClick</span>=<span class="string">&#123;this.onClick.bind(this)&#125;</span> &#123;<span class="attr">...this.props</span>&#125;&gt;</span></span></div><div class="line">        sample text</div><div class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Render-raw-html"><a href="#Render-raw-html" class="headerlink" title="Render raw html"></a>Render raw html</h2><p>It is possible to draw in raw HTML by using <code>dangerouslySetInnerHTML</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div className=<span class="string">"text"</span> dangerouslySetInnerHTML=&#123;&#123;<span class="attr">__html</span>: <span class="keyword">this</span>.props.message&#125;&#125;&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://mikazuki.hatenablog.jp/entry/2016/01/07/055556" target="_blank" rel="external">http://mikazuki.hatenablog.jp/entry/2016/01/07/055556</a></li>
+</ul>
+<h2 id="Using-React-addons"><a href="#Using-React-addons" class="headerlink" title="Using React addons"></a>Using React addons</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> children = React.addons.createFragment(&#123;</div><div class="line">  <span class="attr">right</span>: props.rightChildren,</div><div class="line">  <span class="attr">left</span>: props.leftChildren</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/addons.html" target="_blank" rel="external">https://facebook.github.io/react/docs/addons.html</a></li>
+<li><a href="https://facebook.github.io/react/docs/create-fragment.html" target="_blank" rel="external">https://facebook.github.io/react/docs/create-fragment.html</a></li>
+</ul>
+<h2 id="JS-Tips-Currency-Formatting"><a href="#JS-Tips-Currency-Formatting" class="headerlink" title="JS Tips: Currency Formatting"></a>JS Tips: Currency Formatting</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="built_in">Number</span>].toString().replace(<span class="regexp">/(\d)(?=(\d&#123;3&#125;)+$)/g</span> , <span class="string">'$1,'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://stackoverflow.com/questions/14467433/currency-formatting-in-javascript" target="_blank" rel="external">http://stackoverflow.com/questions/14467433/currency-formatting-in-javascript</a></li>
+</ul>
+<h2 id="Not-use-target-’-blank’"><a href="#Not-use-target-’-blank’" class="headerlink" title="Not use target=’_blank’"></a>Not use target=’_blank’</h2><p>In React.js, we should not use <code>target=&#39;_blank&#39;</code> in link tag.<br>We should add <code>rel=&quot;noreferrer noopener&quot;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">"react-dom"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">a</span></span></span></div><div class="line">        <span class="attr">href</span>=<span class="string">"http://example.com"</span></div><div class="line">        <span class="attr">target</span>=<span class="string">"_blank"</span></div><div class="line">        <span class="attr">rel</span>=<span class="string">"noreferrer noopener"</span></div><div class="line">      &gt;</div><div class="line">        Anchor Text</div><div class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Index</span> /&gt;</span>,</span></div><div class="line">  document.getElementById("root")</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="Trouble-shooting"><a href="#Trouble-shooting" class="headerlink" title="Trouble shooting"></a>Trouble shooting</h2><p>Error is as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught Invariant Violation: Objects are not valid as a React child (found: object with keys &#123;...&#125;). If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons.</div></pre></td></tr></table></figure>
+<p>Solution:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newArray = <span class="keyword">this</span>.state.oldArray.map(<span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">id</span>: obj.id, <span class="attr">url</span>: obj.url, &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">return</span> newArray[<span class="number">0</span>].url + newArray[<span class="number">0</span>].id</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus" target="_blank" rel="external">React on ES6+ · Babel</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/react-js-tips-useful-component/" data-id="cj0yxjycv001r5trdjhj143wb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/react-js-on-rails-installation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          First Step for React.js on Rails
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/es6-plus-react-js-beginner-tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React.js on ES6+ Tips for beginner</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

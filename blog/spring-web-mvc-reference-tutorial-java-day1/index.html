@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Spring Web MVC Reference &amp; Tutorials day1 | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Web MVC Reference & Tutorials day1">
+<meta property="og:url" content="https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta property="og:image" content="https://blog.morizyun.com/img/2016-08-08-spring-web-mvc-reference-tutorial-java-day1_1.jpg">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Web MVC Reference & Tutorials day1">
+<meta name="twitter:description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/2016-08-08-spring-web-mvc-reference-tutorial-java-day1_1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-spring-web-mvc-reference-tutorial-java-day1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/spring-web-mvc-reference-tutorial-java-day1/" class="article-date">
+  <time datetime="2016-08-07T15:00:00.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring Web MVC Reference &amp; Tutorials day1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I read <strong><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" target="_blank" rel="external">Web MVC framework - Reference Guide</a></strong>.<br>This article shows some basic ideas in Spring Web MVC.</p>
+<a id="more"></a> 
+<h2 id="Key-Design-Principle"><a href="#Key-Design-Principle" class="headerlink" title="Key Design Principle"></a>Key Design Principle</h2><p>A key design principle in Spring Web MVC and in Spring in general is<br>the “Open for extension, closed for modification” principle.</p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>Clear separation of roles</li>
+<li>Powerful and strightforward configuration of both framework and application class as JavaBeans</li>
+<li>Adaptability, non-insrusiveness, and flexibility</li>
+<li>Reusable business code, no need for duplication</li>
+<li>Customizable binding and validation</li>
+<li>Customizable handler mappning and view resolution</li>
+<li>Flexible model transfer</li>
+<li>Customizable locale, time zone and theme resolution</li>
+<li>A simple yet powerful JSP tag library, Spring tab library</li>
+<li>A JSP form tag library</li>
+<li>Beans whose lifecycle is scoped to the current HTTP request orf HTTP session</li>
+</ul>
+<h2 id="Front-Controller-Pattern"><a href="#Front-Controller-Pattern" class="headerlink" title="Front Controller Pattern"></a>Front Controller Pattern</h2><p>Spring MVC Architecture use “Front Controller Pattern”.</p>
+<p>Front Controller do the following processes:</p>
+<ul>
+<li>Receive client request</li>
+<li>Convert request data to Java Object</li>
+<li>Run input check(Bean Validation)</li>
+<li>Call Handler(Controller)</li>
+<li>Find View</li>
+<li>Reply response data to client</li>
+<li>Handle exception</li>
+</ul>
+<p><img src="/img/2016-08-08-spring-web-mvc-reference-tutorial-java-day1_1.jpg" width="640" height="381" alt="spring-mvc-front-cotnroller-japanese"></p>
+<h2 id="Arguments-for-Handler"><a href="#Arguments-for-Handler" class="headerlink" title="Arguments for Handler"></a>Arguments for Handler</h2><ul>
+<li>Model : Interface having data to send to transition destination</li>
+<li>RedirectAttributes : Interface having data to redirect destination</li>
+<li>JavaBeans like Form Class : JavaBeans class having request parameter</li>
+<li>BuindingResult : Interface having validation result by form input</li>
+<li>MultipartFile : Interface having file info which was uploaded by using multipart-request</li>
+<li>HttpEntity&lt;?&gt; Interface having request header and request body</li>
+<li>java.util.Locale : Client Locale</li>
+<li>java.util.TimeZone / java.time.ZoneId : Client time zone when you use Java 8</li>
+<li>java.security.Principal : Inteface having authorized client user info</li>
+<li>UriComponetsBuilder : Interface to build URI</li>
+</ul>
+<h2 id="RequetMapping"><a href="#RequetMapping" class="headerlink" title="RequetMapping"></a>RequetMapping</h2><p>The some attributes in <code>@RequestMapping</code> are as follows:</p>
+<ul>
+<li>value: Set request path or path pattern</li>
+<li>path: Alias of value attribute</li>
+<li>method: HTTP Method (GET, POST, PUT) for mapping rule</li>
+<li>params: Request Parameter for mapping rule</li>
+<li>headers: Request header for mapping rule</li>
+<li>consumes: Context-Type Header in request for mapping rule</li>
+<li>produces: Accept Header in reqest for mapping rule</li>
+<li>name: Original name for the mapping</li>
+</ul>
+<h2 id="Argument-Annotation"><a href="#Argument-Annotation" class="headerlink" title="Argument Annotation"></a>Argument Annotation</h2><h3 id="Request-Data"><a href="#Request-Data" class="headerlink" title="Request Data"></a>Request Data</h3><ul>
+<li>@PathValiable : Get value of path valiable in URL</li>
+<li>@MatrixVariable : Get matrix value in URL </li>
+<li>@RequestParam : Get value of request header</li>
+<li>@RequestHeader : Get value of request header</li>
+<li>@CookieValue : Get value in cookie</li>
+<li>@RequestBody : Get content of request body</li>
+</ul>
+<h3 id="Not-Request-Data"><a href="#Not-Request-Data" class="headerlink" title="Not Request Data"></a>Not Request Data</h3><ul>
+<li>@ModelAttribute : Get object of model as argment</li>
+<li>@Value : Ge value by replacing from place holder like (${})</li>
+</ul>
+<h2 id="Get-Request-Data"><a href="#Get-Request-Data" class="headerlink" title="Get Request Data"></a>Get Request Data</h2><ul>
+<li>@PathVariable : Get path variable</li>
+<li>@RequestParam : Get value of specified request parameter</li>
+<li>@RequestHeader : Get value of specified request header</li>
+<li>@CookieValue: Get value of specified request cookie</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"detail"</span>, method = RequestMethod.Get)</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">detail</span><span class="params">(@RequestParam String format)</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h2><h3 id="JavaBeans"><a href="#JavaBeans" class="headerlink" title="JavaBeans"></a>JavaBeans</h3><p>JavaBeans are classes that encapsulate many objects into a sible object.<br>The name “Bean” was given to encompass this standard, which aims to create<br>resusable software components for Java.</p>
+<p><strong><a href="https://en.wikipedia.org/wiki/JavaBeans" target="_blank" rel="external">JavaBeans - Wikipedia, the free encyclopedia</a></strong></p>
+<h3 id="Nullary"><a href="#Nullary" class="headerlink" title="Nullary"></a>Nullary</h3><p>The number of arguments or operands taken by a function or operator.</p>
+<h3 id="instantiate"><a href="#instantiate" class="headerlink" title="instantiate"></a>instantiate</h3><p>To represent(an abstraction) by a concreate instance</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/" data-id="cj0yxjycd00115trdoqoefe8u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/junit-java-unit-test-get-start/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JUnit Started Guide
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/spring-web-mvc-fill-form-and-show-the-post-result/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Fill Form and Echo the post by Spring Web MVC</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

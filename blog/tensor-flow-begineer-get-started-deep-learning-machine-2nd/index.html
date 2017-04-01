@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Beginning TensorFlow at 2nd day | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I started to learn Machine Learning and TensorFlow at 2nd day.This article shows TensorFlow tutorial codes and some description for ML term.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beginning TensorFlow at 2nd day">
+<meta property="og:url" content="https://blog.morizyun.com/blog/tensor-flow-begineer-get-started-deep-learning-machine-2nd/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I started to learn Machine Learning and TensorFlow at 2nd day.This article shows TensorFlow tutorial codes and some description for ML term.">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Beginning TensorFlow at 2nd day">
+<meta name="twitter:description" content="I started to learn Machine Learning and TensorFlow at 2nd day.This article shows TensorFlow tutorial codes and some description for ML term.">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tensor-flow-begineer-get-started-deep-learning-machine-2nd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/tensor-flow-begineer-get-started-deep-learning-machine-2nd/" class="article-date">
+  <time datetime="2016-07-24T15:00:00.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Beginning TensorFlow at 2nd day
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I started to learn Machine Learning and TensorFlow at 2nd day.<br>This article shows TensorFlow tutorial codes and some description for ML term.</p>
+<a id="more"></a> 
+<h2 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h2><p>To use TensorFlow you need to understand how TensorFlow</p>
+<ul>
+<li>Represents computations as graphs</li>
+<li>Executes graphs in the context of Sessions</li>
+<li>Represents data as tensors</li>
+<li>Maintains state with Variables</li>
+</ul>
+<h2 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h2><ul>
+<li>ops (short for operations) : Nodes in the graph</li>
+<li>Tensors : Data structure as an n-dimensional array or list having Rank, Shape and Type</li>
+<li>Tensor : A typed multi-dimensional array</li>
+<li>Construction phase : Assembling a graph to represent and train a neural network</li>
+<li>Execution phase : Using a session to execute repeatedly a set of training ops in the graph</li>
+</ul>
+<h2 id="Building-the-graph"><a href="#Building-the-graph" class="headerlink" title="Building the graph"></a>Building the graph</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line"><span class="comment"># Create a Constant op that produces a 1x2 matrix.  The op is</span></div><div class="line"><span class="comment"># added as a node to the default graph.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># The value returned by the constructor represents the output</span></div><div class="line"><span class="comment"># of the Constant op.</span></div><div class="line">matrix1 = tf.constant([[<span class="number">3.</span>, <span class="number">3.</span>]])</div><div class="line"></div><div class="line"><span class="comment"># Create another Constant that produces a 2x1 matrix.</span></div><div class="line">matrix2 = tf.constant([[<span class="number">2.</span>],[<span class="number">2.</span>]])</div><div class="line"></div><div class="line"><span class="comment"># Create a Matmul op that takes 'matrix1' and 'matrix2' as inputs.</span></div><div class="line"><span class="comment"># The returned value, 'product', represents the result of the matrix</span></div><div class="line"><span class="comment"># multiplication.</span></div><div class="line">product = tf.matmul(matrix1, matrix2)</div></pre></td></tr></table></figure>
+<p>The default graph now has three nodes: two constant() ops and one matmul() op.</p>
+<h2 id="Launching-the-graph-in-a-session"><a href="#Launching-the-graph-in-a-session" class="headerlink" title="Launching the graph in a session"></a>Launching the graph in a session</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Launch the default graph.</span></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line"><span class="comment"># To run the matmul op we call the session 'run()' method, passing 'product'</span></div><div class="line"><span class="comment"># which represents the output of the matmul op.  This indicates to the call</span></div><div class="line"><span class="comment"># that we want to get the output of the matmul op back.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># All inputs needed by the op are run automatically by the session.  They</span></div><div class="line"><span class="comment"># typically are run in parallel.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># The call 'run(product)' thus causes the execution of three ops in the</span></div><div class="line"><span class="comment"># graph: the two constants and matmul.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># The output of the op is returned in 'result' as a numpy `ndarray` object.</span></div><div class="line">result = sess.run(product)</div><div class="line">print(result)</div><div class="line"><span class="comment"># ==&gt; [[ 12.]]</span></div><div class="line"></div><div class="line"><span class="comment"># Close the Session when we're done.</span></div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+<h2 id="Interactive-Usage"><a href="#Interactive-Usage" class="headerlink" title="Interactive Usage"></a>Interactive Usage</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Enter an interactive TensorFlow Session.</span></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line">sess = tf.InteractiveSession()</div><div class="line"></div><div class="line">x = tf.Variable([<span class="number">1.0</span>, <span class="number">2.0</span>])</div><div class="line">a = tf.constant([<span class="number">3.0</span>, <span class="number">3.0</span>])</div><div class="line"></div><div class="line"><span class="comment"># Initialize 'x' using the run() method of its initializer op.</span></div><div class="line">x.initializer.run()</div><div class="line"></div><div class="line"><span class="comment"># Add an op to subtract 'a' from 'x'.  Run it and print the result</span></div><div class="line">sub = tf.sub(x, a)</div><div class="line">print(sub.eval())</div><div class="line"><span class="comment"># ==&gt; [-2. -1.]</span></div><div class="line"></div><div class="line"><span class="comment"># Close the Session when we're done.</span></div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+<h2 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h2><p>Variables maintain state across executions of the graph</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line"><span class="comment"># Create a Variable, that will be initialized to the scalar value 0.</span></div><div class="line">state = tf.Variable(<span class="number">0</span>, name=<span class="string">"counter"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Create an Op to add one to `state`.</span></div><div class="line"></div><div class="line">one = tf.constant(<span class="number">1</span>)</div><div class="line">new_value = tf.add(state, one)</div><div class="line">update = tf.assign(state, new_value)</div><div class="line"></div><div class="line"><span class="comment"># Variables must be initialized by running an `init` Op after having</span></div><div class="line"><span class="comment"># launched the graph.  We first have to add the `init` Op to the graph.</span></div><div class="line">init_op = tf.initialize_all_variables()</div><div class="line"></div><div class="line"><span class="comment"># Launch the graph and run the ops.</span></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">  <span class="comment"># Run the 'init' op</span></div><div class="line">  sess.run(init_op)</div><div class="line">  <span class="comment"># Print the initial value of 'state'</span></div><div class="line">  print(sess.run(state))</div><div class="line">  <span class="comment"># Run the op that updates 'state' and print 'state'.</span></div><div class="line">  <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">3</span>):</div><div class="line">    sess.run(update)</div><div class="line">    print(sess.run(state))</div><div class="line"></div><div class="line"><span class="comment"># output:</span></div><div class="line"></div><div class="line"><span class="comment"># 0</span></div><div class="line"><span class="comment"># 1</span></div><div class="line"><span class="comment"># 2</span></div><div class="line"><span class="comment"># 3</span></div></pre></td></tr></table></figure>
+<h2 id="Fetches"><a href="#Fetches" class="headerlink" title="Fetches"></a>Fetches</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line">input1 = tf.constant([<span class="number">3.0</span>])</div><div class="line">input2 = tf.constant([<span class="number">2.0</span>])</div><div class="line">input3 = tf.constant([<span class="number">5.0</span>])</div><div class="line">intermed = tf.add(input2, input3)</div><div class="line">mul = tf.mul(input1, intermed)</div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">  result = sess.run([mul, intermed])</div><div class="line">  print(result)</div><div class="line"></div><div class="line"><span class="comment"># output:</span></div><div class="line"><span class="comment"># [array([ 21.], dtype=float32), array([ 7.], dtype=float32)]</span></div></pre></td></tr></table></figure>
+<h2 id="Feeds"><a href="#Feeds" class="headerlink" title="Feeds"></a>Feeds</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line">input1 = tf.placeholder(tf.float32)</div><div class="line">input2 = tf.placeholder(tf.float32)</div><div class="line">output = tf.mul(input1, input2)</div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">  print(sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>], input2:[<span class="number">2.</span>]&#125;))</div><div class="line"></div><div class="line"><span class="comment"># output:</span></div><div class="line"><span class="comment"># [array([ 14.], dtype=float32)]</span></div></pre></td></tr></table></figure>
+<h2 id="Tensor-Ranks-Shapes-and-Types"><a href="#Tensor-Ranks-Shapes-and-Types" class="headerlink" title="Tensor Ranks, Shapes, and Types"></a>Tensor Ranks, Shapes, and Types</h2><h3 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h3><p>Examples of <code>Rank</code> are as follows:</p>
+<ul>
+<li>Rank 0 : Scalar (magnitude only) : s = 483</li>
+<li>Rank 1 : Vector (magnitude and direction) : v = [1.1, 2.2, 3.3]</li>
+<li>Rank 2 : Matrix (table of numbers) : m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</li>
+<li>Rank 3 : 3-Tensor (cube of numbers) : t = [[[2], [4], [6]], [[8], [10], [12]], [[14], [16], [18]]]</li>
+<li>Rank n : n-Tensor (you get the idea) : ….</li>
+</ul>
+<h3 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h3><p>The following list shows how these relate to one another:</p>
+<ul>
+<li>Rank 0 : Shape [] : Dimension number 0-D : A 0-D tensor. A scalar</li>
+<li>Rank 1 : Shape [D0] : Dimension number 1-D : A 1-D tensor with shape [5]</li>
+<li>Rank 2 : Shape [D0,D1] : Dimension number 2-D : A 2-D tensor with shape [3,4]</li>
+<li>Rank 3 : Shape [D0,D1,D2] : Dimension number 3-D : A 3-D tensor with shape [1,4,3]</li>
+<li>Rank n : Shape [D0,D1,…,D(n-1)] : Dimension number n-D : A tensor with shape [D0,D1,D(n-1)]</li>
+</ul>
+<p>Shapes can be represented via Python lists/tuples of inits.</p>
+<h3 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h3><p>There are folloing data types to tensor:</p>
+<ul>
+<li>DT_FLOAT / tf.float32 / 32 bits floating point.</li>
+<li>DT_DOUBLE / tf.float64 / 64 bits floating point.</li>
+<li>DT_INT8 / tf.int8 / 8 bits signed integer.</li>
+<li>DT_INT16 / tf.int16 / 16 bits signed integer.</li>
+<li>DT_INT32 / tf.int32 / 32 bits signed integer.</li>
+<li>DT_INT64 / tf.int64 / 64 bits signed integer.</li>
+<li>DT_UINT8 / tf.uint8 / 8 bits unsigned integer.</li>
+<li>DT_STRING / tf.string / Variable length byte arrays. Each element of a Tensor is a byte array.</li>
+<li>DT_BOOL / tf.bool / Boolean.</li>
+<li>DT_COMPLEX64 / tf.complex64 / Complex number made of two 32 bits floating points: real and imaginary parts.</li>
+<li>DT_COMPLEX128 / tf.complex128 / Complex number made of two 64 bits floating points: real and imaginary parts.</li>
+<li>DT_QINT8 / tf.qint8 / 8 bits signed integer used in quantized Ops.</li>
+<li>DT_QINT32 / tf.qint32 / 32 bits signed integer used in quantized Ops.</li>
+<li>DT_QUINT8 / tf.quint8 / 8 bits unsigned integer used in quantized Ops.</li>
+</ul>
+<h2 id="Introduction-to-Machine-Learning-Theory"><a href="#Introduction-to-Machine-Learning-Theory" class="headerlink" title="Introduction to Machine Learning Theory"></a>Introduction to Machine Learning Theory</h2><h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><h4 id="Supervised-machine-learning"><a href="#Supervised-machine-learning" class="headerlink" title="Supervised machine learning"></a>Supervised machine learning</h4><p>The program is “trained” on a pre-defined set of “training examples”,<br>which then caficiltates its ability to reach an accurate conclusion when given new data.</p>
+<h4 id="Unsupervised-machine-learning"><a href="#Unsupervised-machine-learning" class="headerlink" title="Unsupervised machine learning"></a>Unsupervised machine learning</h4><p>The program is vien a bunch of data and must find patterns and relationships therein.</p>
+<h2 id="Liner-Regression"><a href="#Liner-Regression" class="headerlink" title="Liner Regression"></a>Liner Regression</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># A linear regression learning algorithm example using TensorFlow library.</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> numpy</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line">rng = numpy.random</div><div class="line"></div><div class="line"><span class="comment"># Parameters</span></div><div class="line">learning_rate = <span class="number">0.01</span></div><div class="line">training_epochs = <span class="number">1000</span></div><div class="line">display_step = <span class="number">50</span></div><div class="line"></div><div class="line"><span class="comment"># Training Data</span></div><div class="line">train_X = numpy.asarray([<span class="number">3.3</span>,<span class="number">4.4</span>,<span class="number">5.5</span>,<span class="number">6.71</span>,<span class="number">6.93</span>,<span class="number">4.168</span>,<span class="number">9.779</span>,<span class="number">6.182</span>,<span class="number">7.59</span>,<span class="number">2.167</span>,</div><div class="line">                         <span class="number">7.042</span>,<span class="number">10.791</span>,<span class="number">5.313</span>,<span class="number">7.997</span>,<span class="number">5.654</span>,<span class="number">9.27</span>,<span class="number">3.1</span>])</div><div class="line">train_Y = numpy.asarray([<span class="number">1.7</span>,<span class="number">2.76</span>,<span class="number">2.09</span>,<span class="number">3.19</span>,<span class="number">1.694</span>,<span class="number">1.573</span>,<span class="number">3.366</span>,<span class="number">2.596</span>,<span class="number">2.53</span>,<span class="number">1.221</span>,</div><div class="line">                         <span class="number">2.827</span>,<span class="number">3.465</span>,<span class="number">1.65</span>,<span class="number">2.904</span>,<span class="number">2.42</span>,<span class="number">2.94</span>,<span class="number">1.3</span>])</div><div class="line">n_samples = train_X.shape[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># tf Graph Input</span></div><div class="line">X = tf.placeholder(<span class="string">"float"</span>)</div><div class="line">Y = tf.placeholder(<span class="string">"float"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Set model weights</span></div><div class="line">W = tf.Variable(rng.randn(), name=<span class="string">"weight"</span>)</div><div class="line">b = tf.Variable(rng.randn(), name=<span class="string">"bias"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Construct a linear model</span></div><div class="line">pred = tf.add(tf.mul(X, W), b)</div><div class="line"></div><div class="line"><span class="comment"># Mean squared error</span></div><div class="line">cost = tf.reduce_sum(tf.pow(pred-Y, <span class="number">2</span>))/(<span class="number">2</span>*n_samples)</div><div class="line"></div><div class="line"><span class="comment"># Gradient descent</span></div><div class="line">optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)</div><div class="line"></div><div class="line"><span class="comment"># Initializing the variables</span></div><div class="line">init = tf.initialize_all_variables()</div><div class="line"></div><div class="line"><span class="comment"># Launch the graph</span></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    sess.run(init)</div><div class="line"></div><div class="line">    <span class="comment"># Fit all training data</span></div><div class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(training_epochs):</div><div class="line">        <span class="keyword">for</span> (x, y) <span class="keyword">in</span> zip(train_X, train_Y):</div><div class="line">            sess.run(optimizer, feed_dict=&#123;X: x, Y: y&#125;)</div><div class="line"></div><div class="line">        <span class="comment">#Display logs per epoch step</span></div><div class="line">        <span class="keyword">if</span> (epoch+<span class="number">1</span>) % display_step == <span class="number">0</span>:</div><div class="line">            c = sess.run(cost, feed_dict=&#123;X: train_X, Y:train_Y&#125;)</div><div class="line">            print(<span class="string">"Epoch:"</span>, <span class="string">'%04d'</span> % (epoch+<span class="number">1</span>), <span class="string">"cost="</span>, <span class="string">"&#123;:.9f&#125;"</span>.format(c), \</div><div class="line">                <span class="string">"W="</span>, sess.run(W), <span class="string">"b="</span>, sess.run(b))</div><div class="line"></div><div class="line">    print(<span class="string">"Optimization Finished!"</span>)</div><div class="line">    training_cost = sess.run(cost, feed_dict=&#123;X: train_X, Y: train_Y&#125;)</div><div class="line">    print(<span class="string">"Training cost="</span>, training_cost, <span class="string">"W="</span>, sess.run(W), <span class="string">"b="</span>, sess.run(b), <span class="string">'\n'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#Graphic display</span></div><div class="line">    plt.plot(train_X, train_Y, <span class="string">'ro'</span>, label=<span class="string">'Original data'</span>)</div><div class="line">    plt.plot(train_X, sess.run(W) * train_X + sess.run(b), label=<span class="string">'Fitted line'</span>)</div><div class="line">    plt.legend()</div><div class="line">    plt.show()</div></pre></td></tr></table></figure>
+<h2 id="tf-contrib-learn-Quickstart"><a href="#tf-contrib-learn-Quickstart" class="headerlink" title="tf.contrib.learn Quickstart"></a>tf.contrib.learn Quickstart</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># Data sets</span></div><div class="line">IRIS_TRAINING = <span class="string">"iris_training.csv"</span></div><div class="line">IRIS_TEST = <span class="string">"iris_test.csv"</span></div><div class="line"></div><div class="line"><span class="comment"># Load datasets.</span></div><div class="line">training_set = tf.contrib.learn.datasets.base.load_csv(filename=IRIS_TRAINING, target_dtype=np.int)</div><div class="line">test_set = tf.contrib.learn.datasets.base.load_csv(filename=IRIS_TEST, target_dtype=np.int)</div><div class="line"></div><div class="line"><span class="comment"># set variable</span></div><div class="line">x_train, y_train = training_set.data, training_set.target</div><div class="line">x_test, y_test = test_set.data, test_set.target</div><div class="line"></div><div class="line"><span class="comment"># Build 3 layer DNN with 10, 20, 10 units respectively.</span></div><div class="line">classifier = tf.contrib.learn.DNNClassifier(hidden_units=[<span class="number">10</span>, <span class="number">40</span>, <span class="number">10</span>], n_classes=<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="comment"># Fit model.</span></div><div class="line">classifier.fit(x=x_train, y=y_train, steps=<span class="number">200</span>)</div><div class="line"></div><div class="line"><span class="comment"># Evaluate accuracy.</span></div><div class="line">accuracy_score = classifier.evaluate(x=x_test, y=y_test)[<span class="string">"accuracy"</span>]</div><div class="line">print(<span class="string">'Accuracy: &#123;0:f&#125;'</span>.format(accuracy_score))</div><div class="line"></div><div class="line"><span class="comment"># Classify two new flower samples.</span></div><div class="line">new_samples = np.array(</div><div class="line">    [[<span class="number">6.4</span>, <span class="number">3.2</span>, <span class="number">4.5</span>, <span class="number">1.5</span>], [<span class="number">5.8</span>, <span class="number">3.1</span>, <span class="number">5.0</span>, <span class="number">1.7</span>]], dtype=float)</div><div class="line">y = classifier.predict(new_samples)</div><div class="line"><span class="keyword">print</span> (<span class="string">'Predictions: &#123;&#125;'</span>.format(str(y)))</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><strong><a href="http://playground.tensorflow.org/" target="_blank" rel="external">A Neural Network Playground</a></strong></li>
+<li><strong><a href="https://en.wikipedia.org/wiki/Gradient_descent" target="_blank" rel="external">Gradient descent - Wikipedia</a></strong></li>
+</ul>
+<hr>
+<h2 id="Sample-Code"><a href="#Sample-Code" class="headerlink" title="Sample Code"></a>Sample Code</h2><p><strong><a href="https://github.com/morizyun/tensorflow_tutorial" target="_blank" rel="external">morizyun/tensorflow_tutorial</a></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/tensor-flow-begineer-get-started-deep-learning-machine-2nd/" data-id="cj0yxjyc6000v5trdilfnvlbn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/mnist-beginner-for-tensorflow/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MNIST For ML Beginners to Learn TensorFlow
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/python-setup-mac-el-capitan-virtualenv-matlab/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Setup Procedure for Python Development Environment</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

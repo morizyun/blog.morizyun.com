@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Re-Start to Learn JavaScript by MDN tutorial | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I read the following tutorial for re-introduction to JavaScript:
+A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Re-Start to Learn JavaScript by MDN tutorial">
+<meta property="og:url" content="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I read the following tutorial for re-introduction to JavaScript:
+A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta property="og:image" content="https://blog.morizyun.com/img/2016-04-12-re-start-to-learn-javascript-by-mdn-tutorial_1.jpg">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Re-Start to Learn JavaScript by MDN tutorial">
+<meta name="twitter:description" content="I read the following tutorial for re-introduction to JavaScript:
+A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/2016-04-12-re-start-to-learn-javascript-by-mdn-tutorial_1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-re-start-to-learn-javascript-by-mdn-tutorial" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/re-start-to-learn-javascript-by-mdn-tutorial/" class="article-date">
+  <time datetime="2016-04-11T15:00:00.000Z" itemprop="datePublished">2016-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Re-Start to Learn JavaScript by MDN tutorial
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank"><br>  <img src="/img/2016-04-12-re-start-to-learn-javascript-by-mdn-tutorial_1.jpg" style="max-width: 400px;"><br></a></p>
+<p>I read the following tutorial for re-introduction to JavaScript:</p>
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="external">A re-introduction to JavaScript (JS tutorial) - JavaScript</a></strong></p>
+<a id="more"></a> 
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>JavaScript was created in 1995 by Brendan Erich, who worked at Netscape.<br>It was originally called LiveScript at first, but it was renamed to JavaScript after an ill-fated marketing decision.</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>JavaScript’s diagram looks like this:</p>
+<ul>
+<li><strong>Number</strong></li>
+<li><strong>String</strong></li>
+<li><strong>Boolean</strong></li>
+<li><strong>Symbol (new in Edition 6)</strong></li>
+<li><strong>Object</strong><ul>
+<li><strong>Function</strong></li>
+<li><strong>Array</strong></li>
+<li><strong>Date</strong></li>
+<li><strong>RegExp</strong></li>
+</ul>
+</li>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li><strong>Error (Built-in)</strong></li>
+</ul>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>Numbers in JavaScript are “double-precision 64-bit format IEEE 754 values.”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.1</span> + <span class="number">0.2</span> <span class="comment">// 0.30000000000000004</span></div></pre></td></tr></table></figure>
+<p>You can convert a string to an integer using the built-in parseInt() function.<br>In old browsers strings beginning with a “0” are assumed to be octal (radix 8), but this hasn’t been the case since 2013.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Modern browsers:</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"123"</span>, <span class="number">10</span>); <span class="comment">// 123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>, <span class="number">10</span>); <span class="comment">// 10</span></div><div class="line"></div><div class="line"><span class="comment">// Old browsers:</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>);  <span class="comment">// 8</span></div><div class="line"></div><div class="line"><span class="comment">// Interesting examples:</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"0x10"</span>); <span class="comment">// 16</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"11"</span>, <span class="number">2</span>); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<p>A special value called NaN (short for “Not Number”) is returned:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">"hello"</span>, <span class="number">10</span>); <span class="comment">// NaN</span></div><div class="line"></div><div class="line"><span class="comment">// Test for NaN</span></div><div class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>JavaScript also has the special values Infinity and -Infinity:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> / <span class="number">0</span>;  <span class="comment">// Infinity</span></div><div class="line"><span class="number">-1</span> / <span class="number">0</span>; <span class="comment">// -Infinity</span></div><div class="line"></div><div class="line"><span class="comment">// Test for Infinity, -Infinity, NaN</span></div><div class="line"><span class="built_in">isFinite</span>(<span class="number">1</span>/<span class="number">0</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">isFinite</span>(-<span class="literal">Infinity</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">isFinite</span>(<span class="literal">NaN</span>); <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>Any value can be converted to a boolean according to the following rules:</p>
+<ol>
+<li>false, 0, empty strings (“”), NaN, null, and undefined all become false.</li>
+<li>All other values become true.</li>
+</ol>
+<p>Examples of Boolean() function as follows:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Boolean</span>(<span class="string">""</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">NaN</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">undefined</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="number">234</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="string">"234"</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>Boolean operations such as &amp;&amp; (logical and), || (logical or), and ! (logical not) are supported.<br>So, we don’t frequently need to use it.</p>
+<h2 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// + operator</span></div><div class="line"><span class="string">"3"</span> + <span class="number">4</span> + <span class="number">5</span>;  <span class="comment">// "345"</span></div><div class="line"> <span class="number">3</span> + <span class="number">4</span> + <span class="string">"5"</span>; <span class="comment">// "75"</span></div><div class="line"></div><div class="line"><span class="comment">// == operator</span></div><div class="line"> <span class="number">123</span> == <span class="string">"123"</span>; <span class="comment">// true</span></div><div class="line"> <span class="number">1</span> == <span class="literal">true</span>; <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> total = x + y;</div><div class="line">  <span class="keyword">return</span> total;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add(); <span class="comment">// NaN</span></div><div class="line">add(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 5</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</div><div class="line">    sum += <span class="built_in">arguments</span>[i];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>); <span class="comment">// 14</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">first, last</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.first = first;</div><div class="line">  <span class="keyword">this</span>.last = last;</div><div class="line"></div><div class="line">  <span class="keyword">this</span>.fullName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.first + <span class="string">" "</span> + <span class="keyword">this</span>.last;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">this</span>.fullNameReversed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.last + <span class="string">", "</span> + <span class="keyword">this</span>.first;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"Simon"</span>, <span class="string">"Willison"</span>)</div><div class="line">p.fullName(); <span class="comment">// "Simon Willison"</span></div><div class="line">p.fullNameReversed(); <span class="comment">// "Willison, Simon"</span></div></pre></td></tr></table></figure>
+<h2 id="Add-a-method-to-String-by-the-prototype-of-built-in-JavaScript"><a href="#Add-a-method-to-String-by-the-prototype-of-built-in-JavaScript" class="headerlink" title="Add a method to String by the prototype of built-in JavaScript"></a>Add a method to String by the prototype of built-in JavaScript</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"Simon"</span>;</div><div class="line"></div><div class="line"><span class="built_in">String</span>.prototype.reversed = <span class="function"><span class="keyword">function</span> <span class="title">reversed</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> r = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="keyword">this</span>.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --) &#123;</div><div class="line">    r += <span class="keyword">this</span>[i];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> r;</div><div class="line">&#125;</div><div class="line"></div><div class="line">s.reversed(); <span class="comment">// nomiS</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/" data-id="cj0yxjybf00095trdxow63tmq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/setup-gitlab-docker-in-local-mac/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Setup GitLab with Docker in local
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/ken-robinson-do-schools-kill-creativity/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Do schools kill creativity by Ken Robinson : TED2006</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

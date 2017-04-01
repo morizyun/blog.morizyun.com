@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How to post&amp;get Data through java.net.HttpURLConnection[Android/Java] | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article describes “How to post Data / get Data through java.net.HttpURLConnection to access the webservice”.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to post&get Data through java.net.HttpURLConnection[Android/Java]">
+<meta property="og:url" content="https://blog.morizyun.com/blog/android-httpurlconnection-get-post-url/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes “How to post Data / get Data through java.net.HttpURLConnection to access the webservice”.">
+<meta property="og:updated_time" content="2017-04-01T05:55:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to post&get Data through java.net.HttpURLConnection[Android/Java]">
+<meta name="twitter:description" content="This article describes “How to post Data / get Data through java.net.HttpURLConnection to access the webservice”.">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-android-httpurlconnection-get-post-url" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/android-httpurlconnection-get-post-url/" class="article-date">
+  <time datetime="2016-10-14T15:00:00.000Z" itemprop="datePublished">2016-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to post&amp;get Data through java.net.HttpURLConnection[Android/Java]
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article describes “How to post Data / get Data through java.net.HttpURLConnection to access the webservice”.</p>
+<a id="more"></a> 
+<p>Set allow domain to <code>res/xml/network_security_config.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">network-security-config</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">domain-config</span> <span class="attr">usesCleartextTraffic</span>=<span class="string">"false"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">domain</span> <span class="attr">includeSubdomains</span>=<span class="string">"true"</span>&gt;</span>example.com<span class="tag">&lt;/<span class="name">domain</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">domain-config</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">network-security-config</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Sample code for getting or posting data is as follows:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PostCall</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String USER_AGENT = <span class="string">"Mozilla/5.0 (Linux; &lt;Android Version&gt;; &lt;Build Tag etc.&gt;) AppleWebKit/&lt;WebKit Rev&gt; (KHTML, like Gecko) Chrome/&lt;Chrome Rev&gt; Mobile Safari/&lt;WebKit Rev&gt;"</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123;</div><div class="line">        String getResult = getUrl(<span class="keyword">new</span> URL(<span class="string">"http://example.com/get_end_point"</span>));</div><div class="line"></div><div class="line">        MyRequest request = <span class="keyword">new</span> MyRequest(something);</div><div class="line">        String postResult = postJson(<span class="keyword">new</span> URL(SCRAPED_HTML_URL_END_POINT), <span class="keyword">new</span> Gson().toJson(request));</div><div class="line">        String postResult = postJson(<span class="keyword">new</span> URL(<span class="string">"http://example.com/get_end_point"</span>), );</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getUrl</span><span class="params">(URL url)</span> </span>&#123;</div><div class="line">        HttpURLConnection c = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            c = (HttpURLConnection)url.openConnection();</div><div class="line">            c.setRequestProperty(<span class="string">"Content-length"</span>, <span class="string">"0"</span>);</div><div class="line">            c.setRequestProperty(<span class="string">"User-Agent"</span>, USER_AGENT);</div><div class="line">            c.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">            c.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</div><div class="line">            c.setUseCaches(<span class="keyword">false</span>);</div><div class="line">            c.setAllowUserInteraction(<span class="keyword">false</span>);</div><div class="line">            c.setConnectTimeout(<span class="number">3000</span>);</div><div class="line">            c.setReadTimeout(<span class="number">3000</span>);</div><div class="line"></div><div class="line">            c.connect();</div><div class="line">            <span class="keyword">int</span> status = c.getResponseCode();</div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (status) &#123;</div><div class="line">                <span class="keyword">case</span> <span class="number">200</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">201</span>:</div><div class="line">                    BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(c.getInputStream()));</div><div class="line">                    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        sb.append(line + <span class="string">"\n"</span>);</div><div class="line">                    &#125;</div><div class="line">                    br.close();</div><div class="line">                    <span class="keyword">return</span> sb.toString();</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException ex) &#123;</div><div class="line">            Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</div><div class="line">            Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (c != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    c.disconnect();</div><div class="line">                &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">postJson</span><span class="params">(URL url, String json)</span> </span>&#123;</div><div class="line">        HttpURLConnection c = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            c = (HttpURLConnection)url.openConnection();</div><div class="line">            c.setRequestProperty(<span class="string">"Content-length"</span>, String.valueOf(json.getBytes().length));</div><div class="line">            c.setRequestProperty(<span class="string">"User-Agent"</span>, USER_AGENT);</div><div class="line">            c.setRequestMethod(<span class="string">"POST"</span>);</div><div class="line">            c.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</div><div class="line">            c.setDoInput(<span class="keyword">true</span>);</div><div class="line">            c.setDoOutput(<span class="keyword">true</span>);</div><div class="line">            c.setUseCaches(<span class="keyword">false</span>);</div><div class="line">            c.setAllowUserInteraction(<span class="keyword">false</span>);</div><div class="line">            c.setConnectTimeout(<span class="number">3000</span>);</div><div class="line">            c.setReadTimeout(<span class="number">3000</span>);</div><div class="line"></div><div class="line">            OutputStream os = c.getOutputStream();</div><div class="line">            os.write(json.getBytes());</div><div class="line">            os.flush();</div><div class="line">            os.close();</div><div class="line"></div><div class="line">            c.connect();</div><div class="line">            <span class="keyword">int</span> status = c.getResponseCode();</div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (status) &#123;</div><div class="line">                <span class="keyword">case</span> <span class="number">200</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">201</span>:</div><div class="line">                    BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(c.getInputStream()));</div><div class="line">                    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        sb.append(line+<span class="string">"\n"</span>);</div><div class="line">                    &#125;</div><div class="line">                    br.close();</div><div class="line">                    <span class="keyword">return</span> sb.toString();</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException ex) &#123;</div><div class="line">            Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</div><div class="line">            Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (c != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    c.disconnect();</div><div class="line">                &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Create-Dummy-Endpoint"><a href="#Create-Dummy-Endpoint" class="headerlink" title="Create Dummy Endpoint"></a>Create Dummy Endpoint</h2><p><strong><a href="https://www.mockable.io" target="_blank" rel="external">mockable.io</a></strong> can create your API mock.</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/34288716/how-to-send-post-data-or-form-data-through-java-net-httpurlconnection-to-access" target="_blank" rel="external">rest - How to send Post Data or Form data through java.net.HttpURLConnection to access the webservices - Stack Overflow</a></li>
+<li><a href="http://qiita.com/yasumodev/items/a5cbac4278cd14c74899" target="_blank" rel="external">http://qiita.com/yasumodev…</a></li>
+<li><a href="https://developer.android.com/training/articles/security-config.html" target="_blank" rel="external">Network security - Android Developers</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/android-httpurlconnection-get-post-url/" data-id="cj0yxjycn001d5trd2rbw7l2j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/android-httpurlconnection-post-multipart/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How to post files with HttpURLConnection [Android/Java]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/dokku-isntall-vultr-pass-mini-heroku/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Installing Dokku to Vultr</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

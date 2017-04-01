@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RSpec tesiting for rake task [Ruby on Rails] | No Programming, No Life!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I summarized the procedure of the RSpec test in this article.Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSpec tesiting for rake task [Ruby on Rails]">
+<meta property="og:url" content="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I summarized the procedure of the RSpec test in this article.Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.">
+<meta property="og:updated_time" content="2017-04-01T06:22:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RSpec tesiting for rake task [Ruby on Rails]">
+<meta name="twitter:description" content="I summarized the procedure of the RSpec test in this article.Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.">
+  
+    <link rel="alternate" href="/atom.xml" title="No Programming, No Life!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Programming, No Life!</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I really love programming with Ruby, Java and JavaScript.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.morizyun.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-rake-rspec-testing-rails-ruby" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/rake-rspec-testing-rails-ruby/" class="article-date">
+  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/RSpec/">RSpec</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RSpec tesiting for rake task [Ruby on Rails]
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
+<a id="more"></a>
+<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
+<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
+<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/" data-id="cj0yxjyct001o5trde4kwtwxn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/copy-postgre-sql-csv-export-dump/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Export PostgreSQL table to CSV [COPY command]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Effective Procedures to Setup new Mac El Captain For Rubyist</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Postgresql/">Postgresql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RSpec/">RSpec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MiniMagick/">MiniMagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MiniMagick/" style="font-size: 10px;">MiniMagick</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Effective Procedures to Setup new Mac Sierra For Rubyist</a>
+          </li>
+        
+          <li>
+            <a href="/blog/minimagick-square-thumbnail-ruby/">Generate Square Thmumblnail by mini_magick[Ruby]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/casper-js-scraping-headless-browser/">Scraping by using CasperJS[JavaScript]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/postgresql-reindex-null-last/">PostgreSQL Tips [Data Size per Table, Reindex, NULLSLAST]</a>
+          </li>
+        
+          <li>
+            <a href="/blog/eslint-react-js-es6-plus/">ESLint with React.js &amp; ES6+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 morizyun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
