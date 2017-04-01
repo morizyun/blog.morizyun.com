@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.morizyun.com/"/>
-  <updated>2017-04-01T08:03:22.000Z</updated>
+  <updated>2017-04-01T08:20:16.000Z</updated>
   <id>https://blog.morizyun.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/"/>
     <id>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/</id>
     <published>2017-03-24T15:00:00.000Z</published>
-    <updated>2017-04-01T08:03:22.000Z</updated>
+    <updated>2017-04-01T08:20:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>This article describes effective procedures for Rubyists to setup new Mac OS Sierra.</p>
 <a id="more"></a>
@@ -619,6 +619,39 @@
   </entry>
   
   <entry>
+    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
+    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
+    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T06:22:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
+<a id="more"></a>
+<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
+<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
+<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Export PostgreSQL table to CSV [COPY command]</title>
     <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
     <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
@@ -648,34 +681,28 @@
   </entry>
   
   <entry>
-    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
-    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
-    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T06:22:20.000Z</updated>
+    <title>How to use alternate created_at / updated_at column</title>
+    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
+    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
+    <published>2016-11-28T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
     
-    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
-<a id="more"></a>
-<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
-<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
-<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
+    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
+<a id="more"></a> 
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
+<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
+      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
     
     </summary>
-    
-      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
     
     
   </entry>
@@ -763,33 +790,6 @@
     <summary type="html">
     
       &lt;p&gt;This article describes effective procedures for Rubyists to setup new Mac OS El Captain.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>How to use alternate created_at / updated_at column</title>
-    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
-    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
-    <published>2016-11-28T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
-<a id="more"></a> 
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
     
     </summary>
     
