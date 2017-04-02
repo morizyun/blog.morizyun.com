@@ -122,56 +122,6 @@ This article is a simple explanation of mock and stub used in unit testing.</p>
 
 
   
-    <article id="post-copy-postgre-sql-csv-export-dump" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/copy-postgre-sql-csv-export-dump/" class="article-date">
-  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/copy-postgre-sql-csv-export-dump/">Export PostgreSQL table to CSV [COPY command]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="article-excerpt">
-          <p>
-As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
-          
-          <p class="article-more-link">
-            <a href="/blog/copy-postgre-sql-csv-export-dump/#more">Read More</a>
-          </p>
-          
-        </div>
-      
-    </div>
-    <footer class="article-footer">
-      
-      <div style="width: 61px; margin-left: auto; display: block;">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" >Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-rake-rspec-testing-rails-ruby" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/rake-rspec-testing-rails-ruby/" class="article-date">
@@ -213,6 +163,56 @@ I summarized the procedure of the RSpec test in this article.<br>Since I summari
       
       <div style="width: 61px; margin-left: auto; display: block;">
         <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/" >Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-copy-postgre-sql-csv-export-dump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/copy-postgre-sql-csv-export-dump/" class="article-date">
+  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/copy-postgre-sql-csv-export-dump/">Export PostgreSQL table to CSV [COPY command]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="article-excerpt">
+          <p>
+As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
+          
+          <p class="article-more-link">
+            <a href="/blog/copy-postgre-sql-csv-export-dump/#more">Read More</a>
+          </p>
+          
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      <div style="width: 61px; margin-left: auto; display: block;">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" >Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       
