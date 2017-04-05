@@ -572,6 +572,35 @@
   </entry>
   
   <entry>
+    <title>Export PostgreSQL table to CSV [COPY command]</title>
+    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
+    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>What are mock and stub used in unit testing?</title>
     <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
     <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
@@ -647,62 +676,6 @@
     </summary>
     
       <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Export PostgreSQL table to CSV [COPY command]</title>
-    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
-    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>How to use alternate created_at / updated_at column</title>
-    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
-    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
-    <published>2016-11-28T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
-<a id="more"></a> 
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
-    
-    </summary>
     
     
   </entry>
@@ -797,6 +770,33 @@
   </entry>
   
   <entry>
+    <title>How to use alternate created_at / updated_at column</title>
+    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
+    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
+    <published>2016-11-28T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
+<a id="more"></a> 
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Prevent &#39;ArgumentError: invalid byte sequence in UTF-8&#39; on Faraday[Ruby]</title>
     <link href="https://blog.morizyun.com/blog/faraday-to-prevent-invalid-byte-sequence-error/"/>
     <id>https://blog.morizyun.com/blog/faraday-to-prevent-invalid-byte-sequence-error/</id>
@@ -817,6 +817,38 @@
       &lt;p&gt;This is a tips to prevent “&lt;strong&gt;ArgumentError: invalid byte sequence in UTF-8&lt;/strong&gt;“.&lt;/p&gt;
 &lt;h2 id=&quot;Sample-Code&quot;&gt;&lt;a href=&quot;#Sample-Code&quot; class=&quot;headerlink&quot; title=&quot;Sample Code&quot;&gt;&lt;/a&gt;Sample Code&lt;/h2&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;url = &lt;span class=&quot;string&quot;&gt;&quot;http://sample.com/search?q=%A0&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Faraday.get(url)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;ArgumentError:&lt;/span&gt; invalid byte sequence &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; UTF-&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Faraday.get(url.force_encoding(Encoding::BINARY))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;=&amp;gt; #&amp;lt;Faraday::Response:0x007fd8ca826ce8...&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Happy Hacking!&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Use Elasticcache with Elasticbeanstalk</title>
+    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
+    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
+    <published>2016-11-18T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
+<a id="more"></a> 
+<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
+<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
+<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
+<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
+</ul>
+<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
+<p>Happy Hacking!</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
+<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
     
     </summary>
     
@@ -853,38 +885,6 @@
     <summary type="html">
     
       &lt;p&gt;This article shows about cacing data &amp;amp; session management with Ruby on Rails. &lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Use Elasticcache with Elasticbeanstalk</title>
-    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
-    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
-    <published>2016-11-18T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
-<a id="more"></a> 
-<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
-<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
-<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
-<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
-</ul>
-<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
-<p>Happy Hacking!</p>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
-<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
     
     </summary>
     
