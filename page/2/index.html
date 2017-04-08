@@ -88,56 +88,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-copy-postgre-sql-csv-export-dump" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/copy-postgre-sql-csv-export-dump/" class="article-date">
-  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/copy-postgre-sql-csv-export-dump/">Export PostgreSQL table to CSV [COPY command]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="article-excerpt">
-          <p>
-As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
-          
-          <p class="article-more-link">
-            <a href="/blog/copy-postgre-sql-csv-export-dump/#more">Read More</a>
-          </p>
-          
-        </div>
-      
-    </div>
-    <footer class="article-footer">
-      
-      <div style="width: 61px; margin-left: auto; display: block;">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" >Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-mock-stub-outline-rspec-ruby" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/mock-stub-outline-rspec-ruby/" class="article-date">
@@ -236,10 +186,10 @@ I summarized the procedure of the RSpec test in this article.<br>Since I summari
 
 
   
-    <article id="post-setup-procedure-develop-ruby-rails-mac-el-captain" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-copy-postgre-sql-csv-export-dump" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" class="article-date">
-  <time datetime="2016-11-28T15:00:00.000Z" itemprop="datePublished">2016-11-29</time>
+    <a href="/blog/copy-postgre-sql-csv-export-dump/" class="article-date">
+  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
 </a>
     
   </div>
@@ -250,7 +200,7 @@ I summarized the procedure of the RSpec test in this article.<br>Since I summari
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/">Effective Procedures to Setup new Mac El Captain For Rubyist</a>
+      <a class="article-title" href="/blog/copy-postgre-sql-csv-export-dump/">Export PostgreSQL table to CSV [COPY command]</a>
     </h1>
   
 
@@ -260,10 +210,13 @@ I summarized the procedure of the RSpec test in this article.<br>Since I summari
       
         <div class="article-excerpt">
           <p>
-This article describes effective procedures for Rubyists to setup new Mac OS El Captain.</p>
+As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
           
           <p class="article-more-link">
-            <a href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/#more">Read More</a>
+            <a href="/blog/copy-postgre-sql-csv-export-dump/#more">Read More</a>
           </p>
           
         </div>
@@ -272,7 +225,7 @@ This article describes effective procedures for Rubyists to setup new Mac OS El 
     <footer class="article-footer">
       
       <div style="width: 61px; margin-left: auto; display: block;">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" >Tweet</a>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/" >Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       
@@ -320,6 +273,53 @@ This article shows 2 ways for “How to use alternate created_at/updated_at colu
       
       <div style="width: 61px; margin-left: auto; display: block;">
         <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/" >Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-setup-procedure-develop-ruby-rails-mac-el-captain" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" class="article-date">
+  <time datetime="2016-11-28T15:00:00.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/">Effective Procedures to Setup new Mac El Captain For Rubyist</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="article-excerpt">
+          <p>
+This article describes effective procedures for Rubyists to setup new Mac OS El Captain.</p>
+          
+          <p class="article-more-link">
+            <a href="/blog/setup-procedure-develop-ruby-rails-mac-el-captain/#more">Read More</a>
+          </p>
+          
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      <div style="width: 61px; margin-left: auto; display: block;">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-el-captain/" >Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       
@@ -379,53 +379,6 @@ This is a tips to prevent “<strong>ArgumentError: invalid byte sequence in UTF
 
 
   
-    <article id="post-redis-elasticbeanstalk-elasticcache-ruby" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/redis-elasticbeanstalk-elasticcache-ruby/" class="article-date">
-  <time datetime="2016-11-18T15:00:00.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/redis-elasticbeanstalk-elasticcache-ruby/">Use Elasticcache with Elasticbeanstalk</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="article-excerpt">
-          <p>
-This article describes how to use Elasticcache with Elasticbeanstalk.</p>
-          
-          <p class="article-more-link">
-            <a href="/blog/redis-elasticbeanstalk-elasticcache-ruby/#more">Read More</a>
-          </p>
-          
-        </div>
-      
-    </div>
-    <footer class="article-footer">
-      
-      <div style="width: 61px; margin-left: auto; display: block;">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/" >Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-redis-store-rails-rspec" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/redis-store-rails-rspec/" class="article-date">
@@ -463,6 +416,53 @@ This article shows about cacing data &amp; session management with Ruby on Rails
       
       <div style="width: 61px; margin-left: auto; display: block;">
         <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/redis-store-rails-rspec/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/redis-store-rails-rspec/" >Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-redis-elasticbeanstalk-elasticcache-ruby" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/redis-elasticbeanstalk-elasticcache-ruby/" class="article-date">
+  <time datetime="2016-11-18T15:00:00.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/redis-elasticbeanstalk-elasticcache-ruby/">Use Elasticcache with Elasticbeanstalk</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="article-excerpt">
+          <p>
+This article describes how to use Elasticcache with Elasticbeanstalk.</p>
+          
+          <p class="article-more-link">
+            <a href="/blog/redis-elasticbeanstalk-elasticcache-ruby/#more">Read More</a>
+          </p>
+          
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      <div style="width: 61px; margin-left: auto; display: block;">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/" >Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       
