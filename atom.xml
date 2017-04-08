@@ -572,53 +572,6 @@
   </entry>
   
   <entry>
-    <title>What are mock and stub used in unit testing?</title>
-    <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
-    <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article is a simple explanation of mock and stub used in unit testing.</p>
-<a id="more"></a>
-<h2 id="What-is-stub"><a href="#What-is-stub" class="headerlink" title="What is stub?"></a>What is stub?</h2><ul>
-<li>A stub is a small program routine that substitutes for a longer program.</li>
-<li>You should use a stub in order to pass to the code under test.</li>
-</ul>
-<h2 id="What-is-mock"><a href="#What-is-mock" class="headerlink" title="What is mock?"></a>What is mock?</h2><ul>
-<li>Mock is a method/object that simulates the behavior of a real method/object.</li>
-<li>A mock is an object that we can set expectations on, and which will verify that the expected actions have indeed occurred. </li>
-</ul>
-<h2 id="Why-do-need-mock-stub"><a href="#Why-do-need-mock-stub" class="headerlink" title="Why do need mock/stub?"></a>Why do need mock/stub?</h2><p>As for why it is necessary to reproduce method / object:</p>
-<ul>
-<li>If you try to test everything with “real method/data”, you have to prepare all processing and data.</li>
-<li>To make it easier to test objects like time.</li>
-</ul>
-<h2 id="Example-of-stub"><a href="#Example-of-stub" class="headerlink" title="Example of stub"></a>Example of stub</h2><p>If you want to return a specific value when a method of an object is called, prepare a stub like the following:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># When Foo#method is invoked, :return_value will be returned</span></div><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>For example, if you write like this, “count method of Array class will always return 20”.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">test_array = []</div><div class="line">test_array.stub(<span class="symbol">:count</span>).and_return(<span class="number">20</span>)</div><div class="line"></div><div class="line">puts test_array.count <span class="comment">#=&gt;20</span></div></pre></td></tr></table></figure>
-<h2 id="Example-of-mock"><a href="#Example-of-mock" class="headerlink" title="Example of mock"></a>Example of mock</h2><p>If you want to expect that a method is called with :argument, and want to return “:return_value” when called, you should prepare the following mock:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).with(<span class="symbol">:argument</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>Mock of instance method is as follow:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow_any_instance_of(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>The mock that generates the error like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_raise(<span class="string">"boom"</span>)</div></pre></td></tr></table></figure>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="https://relishapp.com/rspec/rspec-mocks/docs/configuring-responses/raising-an-error" target="_blank" rel="external">Raising an error - Configuring responses - RSpec Mocks - RSpec - Relish</a></li>
-<li><a href="http://stackoverflow.com/questions/14987141/rspec-stub-private-method%20" target="_blank" rel="external">ruby on rails - RSpec: Stub private method - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>RSpec tesiting for rake task [Ruby on Rails]</title>
     <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
     <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
@@ -674,6 +627,53 @@
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>What are mock and stub used in unit testing?</title>
+    <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
+    <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article is a simple explanation of mock and stub used in unit testing.</p>
+<a id="more"></a>
+<h2 id="What-is-stub"><a href="#What-is-stub" class="headerlink" title="What is stub?"></a>What is stub?</h2><ul>
+<li>A stub is a small program routine that substitutes for a longer program.</li>
+<li>You should use a stub in order to pass to the code under test.</li>
+</ul>
+<h2 id="What-is-mock"><a href="#What-is-mock" class="headerlink" title="What is mock?"></a>What is mock?</h2><ul>
+<li>Mock is a method/object that simulates the behavior of a real method/object.</li>
+<li>A mock is an object that we can set expectations on, and which will verify that the expected actions have indeed occurred. </li>
+</ul>
+<h2 id="Why-do-need-mock-stub"><a href="#Why-do-need-mock-stub" class="headerlink" title="Why do need mock/stub?"></a>Why do need mock/stub?</h2><p>As for why it is necessary to reproduce method / object:</p>
+<ul>
+<li>If you try to test everything with “real method/data”, you have to prepare all processing and data.</li>
+<li>To make it easier to test objects like time.</li>
+</ul>
+<h2 id="Example-of-stub"><a href="#Example-of-stub" class="headerlink" title="Example of stub"></a>Example of stub</h2><p>If you want to return a specific value when a method of an object is called, prepare a stub like the following:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># When Foo#method is invoked, :return_value will be returned</span></div><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>For example, if you write like this, “count method of Array class will always return 20”.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">test_array = []</div><div class="line">test_array.stub(<span class="symbol">:count</span>).and_return(<span class="number">20</span>)</div><div class="line"></div><div class="line">puts test_array.count <span class="comment">#=&gt;20</span></div></pre></td></tr></table></figure>
+<h2 id="Example-of-mock"><a href="#Example-of-mock" class="headerlink" title="Example of mock"></a>Example of mock</h2><p>If you want to expect that a method is called with :argument, and want to return “:return_value” when called, you should prepare the following mock:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).with(<span class="symbol">:argument</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>Mock of instance method is as follow:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow_any_instance_of(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>The mock that generates the error like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_raise(<span class="string">"boom"</span>)</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://relishapp.com/rspec/rspec-mocks/docs/configuring-responses/raising-an-error" target="_blank" rel="external">Raising an error - Configuring responses - RSpec Mocks - RSpec - Relish</a></li>
+<li><a href="http://stackoverflow.com/questions/14987141/rspec-stub-private-method%20" target="_blank" rel="external">ruby on rails - RSpec: Stub private method - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
     
     </summary>
     
