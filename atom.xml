@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.morizyun.com/"/>
-  <updated>2017-04-09T08:06:51.000Z</updated>
+  <updated>2017-04-09T08:35:08.000Z</updated>
   <id>https://blog.morizyun.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/"/>
     <id>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/</id>
     <published>2017-04-07T15:00:00.000Z</published>
-    <updated>2017-04-09T08:06:51.000Z</updated>
+    <updated>2017-04-09T08:35:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>This article describes effective procedures for Rubyists to setup new Mac OS Sierra.</p>
 <a id="more"></a>
@@ -332,9 +332,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="react" scheme="https://blog.morizyun.com/tags/react/"/>
-    
       <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
+    
+      <category term="react" scheme="https://blog.morizyun.com/tags/react/"/>
     
   </entry>
   
@@ -381,9 +381,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
-    
       <category term="React.js" scheme="https://blog.morizyun.com/tags/React-js/"/>
+    
+      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
     
   </entry>
   
@@ -827,38 +827,6 @@
   </entry>
   
   <entry>
-    <title>Use Elasticcache with Elasticbeanstalk</title>
-    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
-    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
-    <published>2016-11-18T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
-<a id="more"></a> 
-<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
-<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
-<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
-<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
-</ul>
-<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
-<p>Happy Hacking!</p>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
-<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Using Redis for caching &amp; session management with Ruby on Rails</title>
     <link href="https://blog.morizyun.com/blog/redis-store-rails-rspec/"/>
     <id>https://blog.morizyun.com/blog/redis-store-rails-rspec/</id>
@@ -888,6 +856,38 @@
     <summary type="html">
     
       &lt;p&gt;This article shows about cacing data &amp;amp; session management with Ruby on Rails. &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Use Elasticcache with Elasticbeanstalk</title>
+    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
+    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
+    <published>2016-11-18T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
+<a id="more"></a> 
+<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
+<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
+<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
+<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
+</ul>
+<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
+<p>Happy Hacking!</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
+<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
     
     </summary>
     
