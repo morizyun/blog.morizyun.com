@@ -575,6 +575,68 @@
   </entry>
   
   <entry>
+    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
+    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
+    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T06:22:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
+<a id="more"></a>
+<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
+<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
+<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Export PostgreSQL table to CSV [COPY command]</title>
+    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
+    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>What are mock and stub used in unit testing?</title>
     <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
     <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
@@ -617,68 +679,6 @@
       &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Export PostgreSQL table to CSV [COPY command]</title>
-    <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
-    <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>As PostgreSQL <code>COPY</code> command is convenient, I wrote this tips.<br>This command is easy and really useful, so please try it.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ psql</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Export product table to CSV file</span></div><div class="line">\copy (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span>) <span class="keyword">TO</span> <span class="string">'/tmp/produccts.csv'</span> DELIMITER <span class="string">','</span> CSV HEADER</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># If you want to see the csv including Shift-JIS(Japanese)</span></div><div class="line">nkf <span class="_">-s</span> /tmp/products.csv &gt; /tmp/converted.csv</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgresql-table" target="_blank" rel="external">How to import CSV file data into a PostgreSQL table? - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;As PostgreSQL &lt;code&gt;COPY&lt;/code&gt; command is convenient, I wrote this tips.&lt;br&gt;This command is easy and really useful, so please try it.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ psql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- Export product table to CSV file&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\copy (&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; products &lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;/tmp/produccts.csv&#39;&lt;/span&gt; DELIMITER &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; CSV HEADER&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If you want to see the csv including Shift-JIS(Japanese)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nkf &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /tmp/products.csv &amp;gt; /tmp/converted.csv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
-    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
-    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T06:22:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
-<a id="more"></a>
-<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
-<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
-<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
     
     
   </entry>
@@ -827,6 +827,38 @@
   </entry>
   
   <entry>
+    <title>Use Elasticcache with Elasticbeanstalk</title>
+    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
+    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
+    <published>2016-11-18T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
+<a id="more"></a> 
+<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
+<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
+<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
+<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
+</ul>
+<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
+<p>Happy Hacking!</p>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
+<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Using Redis for caching &amp; session management with Ruby on Rails</title>
     <link href="https://blog.morizyun.com/blog/redis-store-rails-rspec/"/>
     <id>https://blog.morizyun.com/blog/redis-store-rails-rspec/</id>
@@ -856,38 +888,6 @@
     <summary type="html">
     
       &lt;p&gt;This article shows about cacing data &amp;amp; session management with Ruby on Rails. &lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Use Elasticcache with Elasticbeanstalk</title>
-    <link href="https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/"/>
-    <id>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</id>
-    <published>2016-11-18T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article describes how to use Elasticcache with Elasticbeanstalk.</p>
-<a id="more"></a> 
-<h2 id="Prepare-Elasticcache"><a href="#Prepare-Elasticcache" class="headerlink" title="Prepare Elasticcache"></a>Prepare Elasticcache</h2><ul>
-<li>(1) Go to <strong><a href="https://ap-northeast-1.console.aws.amazon.com/elasticache" target="_blank" rel="external">Elasticcache Console</a></strong></li>
-<li>(2) Create new instance(Redis/Memcached) on Elasticcache</li>
-<li>(3) Create security group for the instance and configure it to use the instance by Elasticbeanstalk security group</li>
-</ul>
-<h2 id="Confirmation"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation</h2><p>You should confirm to connect the Elasticcache from Elasticbeanstalk instance.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># local</span></div><div class="line">$ eb ssh</div><div class="line"></div><div class="line"><span class="comment"># Elasticbeanstalk instance</span></div><div class="line">$ sudo su -</div><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ yum install -y git</div><div class="line">$ git <span class="built_in">clone</span> http://github.com/antirez/redis.git</div><div class="line">$ <span class="built_in">cd</span> redis &amp;&amp; git checkout 3.2 <span class="comment"># Please set newest Redis version</span></div><div class="line">$ make redis-cli</div><div class="line">$ <span class="built_in">cd</span> src</div><div class="line">$ ./redis-cli -h ELASTICCACHE_ENDPOINT -p ELASTICCACHE_PORT</div><div class="line"><span class="comment">#=&gt; ELASTICCACHE_ENDPOINT &gt; ... &lt;= successful!</span></div></pre></td></tr></table></figure>
-<p>Happy Hacking!</p>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/21795340/linux-install-redis-cli-only" target="_blank" rel="external">Linux - Install redis-cli only - Stack Overflow</a></li>
-<li><a href="http://qiita.com/u651601f/items/a0624601047db4f02808" target="_blank" rel="external">http://qiita.com/u651601f/items/a0624601047db4f02808</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article describes how to use Elasticcache with Elasticbeanstalk.&lt;/p&gt;
     
     </summary>
     
