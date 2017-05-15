@@ -144,7 +144,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;In this article, I would like to show a sample code to generate square thumbnail image by using &lt;strong&gt;&lt;a href=&quot;https://github.com/minimagick/minimagick&quot;&gt;Minimagick&lt;/a&gt;&lt;/strong&gt;&lt;br&gt; which is a Ruby wrapper for ImageMagic.&lt;/p&gt;
+      &lt;p&gt;In this article, I would like to show a sample code to generate square thumbnail image by using &lt;strong&gt;&lt;a href=&quot;https://github.com/minimagick/minimagick&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Minimagick&lt;/a&gt;&lt;/strong&gt;&lt;br&gt; which is a Ruby wrapper for ImageMagic.&lt;/p&gt;
     
     </summary>
     
@@ -182,7 +182,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;It is a tips that you can use when you want to scrape a page using JavaScript.&lt;br&gt;Since &lt;strong&gt;&lt;a href=&quot;http://casperjs.org/&quot;&gt;CasperJS&lt;/a&gt;&lt;/strong&gt; can be instaled easily by &lt;code&gt;npm&lt;/code&gt;, it is recomended to use in sever side.&lt;/p&gt;
+      &lt;p&gt;It is a tips that you can use when you want to scrape a page using JavaScript.&lt;br&gt;Since &lt;strong&gt;&lt;a href=&quot;http://casperjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CasperJS&lt;/a&gt;&lt;/strong&gt; can be instaled easily by &lt;code&gt;npm&lt;/code&gt;, it is recomended to use in sever side.&lt;/p&gt;
     
     </summary>
     
@@ -275,7 +275,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/B019HRGOPQ/ref=as_li_qf_sp_asin_il?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B019HRGOPQ&amp;linkCode=as2&amp;tag=morizyun00-22&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;ASIN=B019HRGOPQ&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=morizyun00-22&quot; width=&quot;150&quot; style=&quot;float: left; margin: 0 20px 20px 0;&quot; &gt;&lt;/a&gt;&lt;img src=&quot;http://www.assoc-amazon.jp/e/ir?t=morizyun00-22&amp;l=as2&amp;o=9&amp;a=B019HRGOPQ&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.&lt;br&gt;In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.&lt;br&gt;In this article, I will explain the ESLint configuration for checking React.js written with ES6+.&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/B019HRGOPQ/ref=as_li_qf_sp_asin_il?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B019HRGOPQ&amp;linkCode=as2&amp;tag=morizyun00-22&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;ASIN=B019HRGOPQ&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=morizyun00-22&quot; width=&quot;150&quot; style=&quot;float: left; margin: 0 20px 20px 0;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://www.assoc-amazon.jp/e/ir?t=morizyun00-22&amp;l=as2&amp;o=9&amp;a=B019HRGOPQ&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot;&gt;ESLint is a static lint tool for JavaScript. Before running your code, the tool find obvious bug.&lt;br&gt;In addtion, it helps to unify your code styles such as how to use parentheses and spaces, etc.&lt;br&gt;In this article, I will explain the ESLint configuration for checking React.js written with ES6+.&lt;/p&gt;
     
     </summary>
     
@@ -323,7 +323,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://react-bootstrap.github.io&quot;&gt;React-Bootstrap&lt;/a&gt;&lt;/strong&gt; is a library that can handle Bootstrap as a component of React.js.&lt;br&gt;By using this you can build code with a sense of combining React.js components, not Bootstrap’s CSS.&lt;br&gt;Also, as a whole your code becomes clearer, maintenance costs are suppressed as well!&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://react-bootstrap.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React-Bootstrap&lt;/a&gt;&lt;/strong&gt; is a library that can handle Bootstrap as a component of React.js.&lt;br&gt;By using this you can build code with a sense of combining React.js components, not Bootstrap’s CSS.&lt;br&gt;Also, as a whole your code becomes clearer, maintenance costs are suppressed as well!&lt;/p&gt;
     
     </summary>
     
@@ -332,9 +332,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
-    
       <category term="react" scheme="https://blog.morizyun.com/tags/react/"/>
+    
+      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
     
   </entry>
   
@@ -372,7 +372,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;I would like to introduce &lt;strong&gt;&lt;a href=&quot;https://github.com/gajus/react-css-modules&quot;&gt;react-css-modules&lt;/a&gt;&lt;/strong&gt; with React.js.&lt;br&gt;CSS-Module is a concept for seamless mapping of class names to CSS modules inside of React components.&lt;/p&gt;
+      &lt;p&gt;I would like to introduce &lt;strong&gt;&lt;a href=&quot;https://github.com/gajus/react-css-modules&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-css-modules&lt;/a&gt;&lt;/strong&gt; with React.js.&lt;br&gt;CSS-Module is a concept for seamless mapping of class names to CSS modules inside of React components.&lt;/p&gt;
     
     </summary>
     
@@ -381,9 +381,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="React.js" scheme="https://blog.morizyun.com/tags/React-js/"/>
-    
       <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
+    
+      <category term="React.js" scheme="https://blog.morizyun.com/tags/React-js/"/>
     
   </entry>
   
@@ -575,39 +575,6 @@
   </entry>
   
   <entry>
-    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
-    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
-    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T06:22:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
-<a id="more"></a>
-<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
-<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
-<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>What are mock and stub used in unit testing?</title>
     <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
     <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
@@ -684,28 +651,34 @@
   </entry>
   
   <entry>
-    <title>How to use alternate created_at / updated_at column</title>
-    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
-    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
-    <published>2016-11-28T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
+    <title>RSpec tesiting for rake task [Ruby on Rails]</title>
+    <link href="https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/"/>
+    <id>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T06:22:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
-<a id="more"></a> 
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<p>I summarized the procedure of the RSpec test in this article.<br>Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.</p>
+<a id="more"></a>
+<h2 id="Creating-a-Rake-task-file"><a href="#Creating-a-Rake-task-file" class="headerlink" title="Creating a Rake task file"></a>Creating a Rake task file</h2><p>The following command creates a Rake task file in <code>lib/tasks</code>: <br><br>(Please change “report”.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate task report</div></pre></td></tr></table></figure>
+<p>Please write the following code in the above <code>lib/tasks/report.rake</code>:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span> <span class="keyword">do</span></div><div class="line">  <span class="comment"># desc is required</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  </div><div class="line">  <span class="comment"># : Environment is required to access Rails environment</span></div><div class="line">  task <span class="symbol">generate:</span> <span class="symbol">:environment</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># Write something</span></div><div class="line">    ReportGenerator.generate</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>After the coding, you can execute <code>rake report:generate</code> command!</p>
+<h2 id="RSpec-for-rake-task"><a href="#RSpec-for-rake-task" class="headerlink" title="RSpec for rake task"></a>RSpec for rake task</h2><h3 id="Executing-rake-task-in-RSpec"><a href="#Executing-rake-task-in-RSpec" class="headerlink" title="Executing rake task in RSpec"></a>Executing rake task in RSpec</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rails_helper'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'rake'</span></div><div class="line"></div><div class="line">describe <span class="string">'rake task reporting'</span> <span class="keyword">do</span></div><div class="line">  before(<span class="symbol">:all</span>) <span class="keyword">do</span></div><div class="line">    @rake = Rake::Application.new</div><div class="line">    Rake.application = @rake</div><div class="line">    Rake.application.rake_require <span class="string">'tasks/report'</span> <span class="comment"># Point 1</span></div><div class="line">    Rake::Task.define_task(<span class="symbol">:environment</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  before(<span class="symbol">:each</span>) <span class="keyword">do</span></div><div class="line">    @rake[task].reenable  <span class="comment"># Point 2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  describe <span class="string">'report:generate'</span> <span class="keyword">do</span></div><div class="line">    let(<span class="symbol">:task</span>) &#123; <span class="string">'report:generate'</span> &#125;</div><div class="line">    it <span class="string">'is succeed'</span> <span class="keyword">do</span></div><div class="line">      expect(@rake[task].invoke).to be_truthy</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="Executing-model-method"><a href="#Executing-model-method" class="headerlink" title="Executing model method"></a>Executing model method</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:report</span></div><div class="line">  desc <span class="string">'Generate report'</span></div><div class="line">  it <span class="string">'generates report'</span> <span class="keyword">do</span></div><div class="line">    <span class="comment"># do something</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>It’s so simple to execute unit testing.<br>In addition, if you type ReportGenerator.generate on rails console, you can also perform exactly the same processing as the Rake task.</p>
 <h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
+<li><a href="http://qiita.com/kawakubox/items/26cf71a14bd5827175f6" target="_blank" rel="external">http://qiita.com/kawakubox…</a></li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
+      &lt;p&gt;I summarized the procedure of the RSpec test in this article.&lt;br&gt;Since I summarized it as simple as possible, please read through those who are trying to create Rake task for the first time.&lt;/p&gt;
     
     </summary>
+    
+      <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
     
     
   </entry>
@@ -793,6 +766,33 @@
     <summary type="html">
     
       &lt;p&gt;This article describes effective procedures for Rubyists to setup new Mac OS El Captain.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How to use alternate created_at / updated_at column</title>
+    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
+    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
+    <published>2016-11-28T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
+<a id="more"></a> 
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
     
     </summary>
     
@@ -913,7 +913,7 @@
 <li>Gzip the file and create a tmp file</li>
 <li>Upload the gziped file to S3 with <code>public_read</code> access control</li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">S3Utility</span></span></div><div class="line">  <span class="class"><span class="keyword">class</span> &lt;&lt; self</span></div><div class="line">    <span class="comment"># <span class="doctag">@return</span> [String] S3 URL</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">upload_by_url</span><span class="params">(<span class="symbol">from_url:</span>, <span class="symbol">object_key:</span>)</span></span></div><div class="line">      content = open(from_url).read</div><div class="line">      fail <span class="string">"fail to get url: <span class="subst">#&#123;from_url&#125;</span>"</span> <span class="keyword">if</span> content.blank?</div><div class="line"></div><div class="line">      temp = Tempfile.new.tap <span class="keyword">do</span> <span class="params">|t|</span></div><div class="line">        t.binmode</div><div class="line">        t.write(_gzip(content))</div><div class="line">        t.close</div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      obj = _bucket.object(object_key)</div><div class="line">      result = obj.upload_file(temp.path, <span class="symbol">acl:</span> <span class="string">'public-read'</span>, <span class="symbol">content_encoding:</span> <span class="string">'gzip'</span>)</div><div class="line">      fail <span class="string">"fail to upload url: <span class="subst">#&#123;from_url&#125;</span>, object_key: <span class="subst">#&#123;object_key&#125;</span>"</span> unless result</div><div class="line">      _url(object_key)</div><div class="line">    <span class="keyword">rescue</span> =&gt; e</div><div class="line">      Airbrake.notify(e)</div><div class="line">      <span class="literal">nil</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    private</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_url</span><span class="params">(object_key)</span></span></div><div class="line">      <span class="string">"https://<span class="subst">#&#123;ENV[<span class="string">'AMAZON_AWS_S3_BUCKET_NAME'</span>]&#125;</span>.s3-ap-northeast-1.amazonaws.com/<span class="subst">#&#123;object_key&#125;</span>"</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_bucket</span></span></div><div class="line">      @bucket <span class="params">||</span>= Aws::S3::Resource.new(</div><div class="line">          <span class="symbol">region:</span>            ENV[<span class="string">'AMAZON_AWS_REGION'</span>],</div><div class="line">          <span class="symbol">access_key_id:</span>     ENV[<span class="string">'AMAZON_AWS_ACCESS_KEY_ID'</span>],</div><div class="line">          <span class="symbol">secret_access_key:</span> ENV[<span class="string">'AMAZON_AWS_SECRET_ACCESS_KEY'</span>],</div><div class="line">      ).bucket(ENV[<span class="string">'AMAZON_AWS_S3_BUCKET_NAME'</span>])</div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_gzip</span><span class="params">(data)</span></span></div><div class="line">      sio = StringIO.new</div><div class="line">      gz = Zlib::GzipWriter.new(sio)</div><div class="line">      gz.write(data)</div><div class="line">      gz.close</div><div class="line">      sio.string</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">url = <span class="string">'http://example.com/hoge.jpg'</span></div><div class="line">object_key = <span class="string">'/images/hoge.jpg'</span></div><div class="line">S3Utility.upload_by(<span class="symbol">from_url:</span> url, <span class="symbol">object_key:</span> object_key)</div><div class="line"><span class="comment">#=&gt; https://xxx.s3-ap-northeast-1.amazonaws.com/images/hoge.jpg</span></div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">S3Utility</span></span></div><div class="line">  <span class="class"><span class="keyword">class</span> &lt;&lt; self</span></div><div class="line">    <span class="comment"># <span class="doctag">@return</span> [String] S3 URL</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">upload_by_url</span><span class="params">(<span class="symbol">from_url:</span>, <span class="symbol">object_key:</span>)</span></span></div><div class="line">      content = open(from_url).read</div><div class="line">      fail <span class="string">"fail to get url: <span class="subst">#&#123;from_url&#125;</span>"</span> <span class="keyword">if</span> content.blank?</div><div class="line"></div><div class="line">      temp = Tempfile.new.tap <span class="keyword">do</span> <span class="params">|t|</span></div><div class="line">        t.binmode</div><div class="line">        t.write(_gzip(content))</div><div class="line">        t.close</div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      obj = _bucket.object(object_key)</div><div class="line">      result = obj.upload_file(temp.path, <span class="symbol">acl:</span> <span class="string">'public-read'</span>, <span class="symbol">content_encoding:</span> <span class="string">'gzip'</span>)</div><div class="line">      fail <span class="string">"fail to upload url: <span class="subst">#&#123;from_url&#125;</span>, object_key: <span class="subst">#&#123;object_key&#125;</span>"</span> <span class="keyword">unless</span> result</div><div class="line">      _url(object_key)</div><div class="line">    <span class="keyword">rescue</span> =&gt; e</div><div class="line">      Airbrake.notify(e)</div><div class="line">      <span class="literal">nil</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    private</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_url</span><span class="params">(object_key)</span></span></div><div class="line">      <span class="string">"https://<span class="subst">#&#123;ENV[<span class="string">'AMAZON_AWS_S3_BUCKET_NAME'</span>]&#125;</span>.s3-ap-northeast-1.amazonaws.com/<span class="subst">#&#123;object_key&#125;</span>"</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_bucket</span></span></div><div class="line">      @bucket <span class="params">||</span>= Aws::S3::Resource.new(</div><div class="line">          <span class="symbol">region:</span>            ENV[<span class="string">'AMAZON_AWS_REGION'</span>],</div><div class="line">          <span class="symbol">access_key_id:</span>     ENV[<span class="string">'AMAZON_AWS_ACCESS_KEY_ID'</span>],</div><div class="line">          <span class="symbol">secret_access_key:</span> ENV[<span class="string">'AMAZON_AWS_SECRET_ACCESS_KEY'</span>],</div><div class="line">      ).bucket(ENV[<span class="string">'AMAZON_AWS_S3_BUCKET_NAME'</span>])</div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_gzip</span><span class="params">(data)</span></span></div><div class="line">      sio = StringIO.new</div><div class="line">      gz = Zlib::GzipWriter.new(sio)</div><div class="line">      gz.write(data)</div><div class="line">      gz.close</div><div class="line">      sio.string</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">url = <span class="string">'http://example.com/hoge.jpg'</span></div><div class="line">object_key = <span class="string">'/images/hoge.jpg'</span></div><div class="line">S3Utility.upload_by(<span class="symbol">from_url:</span> url, <span class="symbol">object_key:</span> object_key)</div><div class="line"><span class="comment">#=&gt; https://xxx.s3-ap-northeast-1.amazonaws.com/images/hoge.jpg</span></div></pre></td></tr></table></figure>
 <p>Happy Hacking!</p>
 <h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
 <li><a href="http://akasata.com/articles/292" target="_blank" rel="external">http://akasata.com/articles/292</a></li>
@@ -956,7 +956,7 @@
     <summary type="html">
     
       &lt;p&gt;I published “wercker step” to deploy an application to Elastic Beanstalk instance using AWS CLI.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/morizyun/eb-deploy&quot;&gt;morizyun/eb-deploy - GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/morizyun/eb-deploy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;morizyun/eb-deploy - GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This aritcle describes how to use the wercker  step and outline of the step.&lt;/p&gt;
     
     </summary>
