@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.morizyun.com/"/>
-  <updated>2017-07-22T08:10:10.000Z</updated>
+  <updated>2017-07-28T23:15:08.000Z</updated>
   <id>https://blog.morizyun.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/"/>
     <id>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/</id>
     <published>2017-07-21T15:00:00.000Z</published>
-    <updated>2017-07-22T08:10:10.000Z</updated>
+    <updated>2017-07-28T23:15:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>This article describes effective procedures for Rubyists to setup new Mac OS Sierra.</p>
 <a id="more"></a>
@@ -87,10 +87,12 @@
 <h2 id="Java-Optional"><a href="#Java-Optional" class="headerlink" title="Java (Optional)"></a>Java (Optional)</h2><p>Download JDK from <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java SE - Downloads / Oracle</a></strong> and install it.</p>
 <p>After install JDK, you should install Maven &amp; gradle too.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install homebrew/versions/maven32</div><div class="line">brew install gradle</div></pre></td></tr></table></figure>
-<p>After that, please write the bellow code in .zshrc or .bashrc:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Java</div><div class="line">export JAVA_HOME=`/usr/libexec/java_home -v 1.8`</div></pre></td></tr></table></figure>
+<p>After that, please write the bellow code in .zshrc:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Java</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=`/usr/libexec/java_home -v 1.8`</div></pre></td></tr></table></figure>
 <p>Please refer to <strong><a href="http://stackoverflow.com/questions/31215452/intellij-idea-importing-gradle-project-getting-java-home-not-defined-yet" target="_blank" rel="external">java - Intellij Idea: Importing Gradle project - getting JAVA_HOME not defined yet - Stack Overflow</a></strong> and set the SDK at the first start of IntelliJ Idea.</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Change-function-keys"><a href="#Change-function-keys" class="headerlink" title="Change function keys"></a>Change function keys</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Application &gt; System Preferences &gt; Keybord &gt; Use all F1, F2, etc...</div></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Shortcut-for-Ruby-dev"><a href="#Shortcut-for-Ruby-dev" class="headerlink" title="Shortcut for Ruby dev"></a>Shortcut for Ruby dev</h3><p>Please write the bellow code in .zshrc:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># nodebrew(Node.js)</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.nodebrew/current/bin:<span class="variable">$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># Rails</span></div><div class="line"><span class="built_in">alias</span> rspec=<span class="string">"bundle exec rspec"</span></div><div class="line"><span class="built_in">alias</span> rake=<span class="string">"bundle exec rake"</span></div><div class="line"><span class="built_in">alias</span> rubocop=<span class="string">"bundle exec rubocop"</span></div><div class="line"></div><div class="line"><span class="comment"># Overcommit</span></div><div class="line"><span class="built_in">alias</span> overcommit=<span class="string">"bundle exec overcommit"</span></div><div class="line"><span class="built_in">alias</span> rgit=<span class="string">"OVERCOMMIT_DISABLE=1 git"</span></div></pre></td></tr></table></figure>
+<h3 id="Change-function-keys"><a href="#Change-function-keys" class="headerlink" title="Change function keys"></a>Change function keys</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Application &gt; System Preferences &gt; Keybord &gt; Use all F1, F2, etc...</div></pre></td></tr></table></figure>
 <h3 id="Change-shortcut-to-change-active-window"><a href="#Change-shortcut-to-change-active-window" class="headerlink" title="Change shortcut to change active window"></a>Change shortcut to change active window</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Application &gt; System Preferences &gt; Keybord &gt; Shortcut &gt; Keybord &gt; Move focus next window</div></pre></td></tr></table></figure>
 <h3 id="Change-computer-name"><a href="#Change-computer-name" class="headerlink" title="Change computer name"></a>Change computer name</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Application &gt; System Preferences &gt; Sharing &gt; Computer Name</div></pre></td></tr></table></figure>
 <h3 id="Change-cursor-speed"><a href="#Change-cursor-speed" class="headerlink" title="Change cursor speed"></a>Change cursor speed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Application &gt; System Preferences &gt; Mouse &gt; Tracking Speed</div></pre></td></tr></table></figure>
@@ -328,9 +330,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
-    
       <category term="react" scheme="https://blog.morizyun.com/tags/react/"/>
+    
+      <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
     
   </entry>
   
@@ -377,9 +379,9 @@
     
       <category term="javascript" scheme="https://blog.morizyun.com/tags/javascript/"/>
     
-      <category term="React.js" scheme="https://blog.morizyun.com/tags/React-js/"/>
-    
       <category term="css" scheme="https://blog.morizyun.com/tags/css/"/>
+    
+      <category term="React.js" scheme="https://blog.morizyun.com/tags/React-js/"/>
     
   </entry>
   
@@ -571,53 +573,6 @@
   </entry>
   
   <entry>
-    <title>What are mock and stub used in unit testing?</title>
-    <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
-    <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
-    <published>2016-12-13T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article is a simple explanation of mock and stub used in unit testing.</p>
-<a id="more"></a>
-<h2 id="What-is-stub"><a href="#What-is-stub" class="headerlink" title="What is stub?"></a>What is stub?</h2><ul>
-<li>A stub is a small program routine that substitutes for a longer program.</li>
-<li>You should use a stub in order to pass to the code under test.</li>
-</ul>
-<h2 id="What-is-mock"><a href="#What-is-mock" class="headerlink" title="What is mock?"></a>What is mock?</h2><ul>
-<li>Mock is a method/object that simulates the behavior of a real method/object.</li>
-<li>A mock is an object that we can set expectations on, and which will verify that the expected actions have indeed occurred. </li>
-</ul>
-<h2 id="Why-do-need-mock-stub"><a href="#Why-do-need-mock-stub" class="headerlink" title="Why do need mock/stub?"></a>Why do need mock/stub?</h2><p>As for why it is necessary to reproduce method / object:</p>
-<ul>
-<li>If you try to test everything with “real method/data”, you have to prepare all processing and data.</li>
-<li>To make it easier to test objects like time.</li>
-</ul>
-<h2 id="Example-of-stub"><a href="#Example-of-stub" class="headerlink" title="Example of stub"></a>Example of stub</h2><p>If you want to return a specific value when a method of an object is called, prepare a stub like the following:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># When Foo#method is invoked, :return_value will be returned</span></div><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>For example, if you write like this, “count method of Array class will always return 20”.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">test_array = []</div><div class="line">test_array.stub(<span class="symbol">:count</span>).and_return(<span class="number">20</span>)</div><div class="line"></div><div class="line">puts test_array.count <span class="comment">#=&gt;20</span></div></pre></td></tr></table></figure>
-<h2 id="Example-of-mock"><a href="#Example-of-mock" class="headerlink" title="Example of mock"></a>Example of mock</h2><p>If you want to expect that a method is called with :argument, and want to return “:return_value” when called, you should prepare the following mock:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).with(<span class="symbol">:argument</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>Mock of instance method is as follow:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow_any_instance_of(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
-<p>The mock that generates the error like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_raise(<span class="string">"boom"</span>)</div></pre></td></tr></table></figure>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="https://relishapp.com/rspec/rspec-mocks/docs/configuring-responses/raising-an-error" target="_blank" rel="external">Raising an error - Configuring responses - RSpec Mocks - RSpec - Relish</a></li>
-<li><a href="http://stackoverflow.com/questions/14987141/rspec-stub-private-method%20" target="_blank" rel="external">ruby on rails - RSpec: Stub private method - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Export PostgreSQL table to CSV [COPY command]</title>
     <link href="https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/"/>
     <id>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</id>
@@ -675,6 +630,80 @@
     </summary>
     
       <category term="RSpec" scheme="https://blog.morizyun.com/categories/RSpec/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>What are mock and stub used in unit testing?</title>
+    <link href="https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/"/>
+    <id>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</id>
+    <published>2016-12-13T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article is a simple explanation of mock and stub used in unit testing.</p>
+<a id="more"></a>
+<h2 id="What-is-stub"><a href="#What-is-stub" class="headerlink" title="What is stub?"></a>What is stub?</h2><ul>
+<li>A stub is a small program routine that substitutes for a longer program.</li>
+<li>You should use a stub in order to pass to the code under test.</li>
+</ul>
+<h2 id="What-is-mock"><a href="#What-is-mock" class="headerlink" title="What is mock?"></a>What is mock?</h2><ul>
+<li>Mock is a method/object that simulates the behavior of a real method/object.</li>
+<li>A mock is an object that we can set expectations on, and which will verify that the expected actions have indeed occurred. </li>
+</ul>
+<h2 id="Why-do-need-mock-stub"><a href="#Why-do-need-mock-stub" class="headerlink" title="Why do need mock/stub?"></a>Why do need mock/stub?</h2><p>As for why it is necessary to reproduce method / object:</p>
+<ul>
+<li>If you try to test everything with “real method/data”, you have to prepare all processing and data.</li>
+<li>To make it easier to test objects like time.</li>
+</ul>
+<h2 id="Example-of-stub"><a href="#Example-of-stub" class="headerlink" title="Example of stub"></a>Example of stub</h2><p>If you want to return a specific value when a method of an object is called, prepare a stub like the following:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># When Foo#method is invoked, :return_value will be returned</span></div><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>For example, if you write like this, “count method of Array class will always return 20”.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">test_array = []</div><div class="line">test_array.stub(<span class="symbol">:count</span>).and_return(<span class="number">20</span>)</div><div class="line"></div><div class="line">puts test_array.count <span class="comment">#=&gt;20</span></div></pre></td></tr></table></figure>
+<h2 id="Example-of-mock"><a href="#Example-of-mock" class="headerlink" title="Example of mock"></a>Example of mock</h2><p>If you want to expect that a method is called with :argument, and want to return “:return_value” when called, you should prepare the following mock:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).with(<span class="symbol">:argument</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>Mock of instance method is as follow:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow_any_instance_of(Foo).to receive(<span class="symbol">:method</span>).and_return(<span class="symbol">:return_value</span>)</div></pre></td></tr></table></figure>
+<p>The mock that generates the error like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow(Foo).to receive(<span class="symbol">:method</span>).and_raise(<span class="string">"boom"</span>)</div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="https://relishapp.com/rspec/rspec-mocks/docs/configuring-responses/raising-an-error" target="_blank" rel="external">Raising an error - Configuring responses - RSpec Mocks - RSpec - Relish</a></li>
+<li><a href="http://stackoverflow.com/questions/14987141/rspec-stub-private-method%20" target="_blank" rel="external">ruby on rails - RSpec: Stub private method - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article is a simple explanation of mock and stub used in unit testing.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How to use alternate created_at / updated_at column</title>
+    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
+    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
+    <published>2016-11-28T15:00:00.000Z</published>
+    <updated>2017-04-01T05:55:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
+<a id="more"></a> 
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
+<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
+    
+    </summary>
     
     
   </entry>
@@ -762,33 +791,6 @@
     <summary type="html">
     
       &lt;p&gt;This article describes effective procedures for Rubyists to setup new Mac OS El Captain.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>How to use alternate created_at / updated_at column</title>
-    <link href="https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/"/>
-    <id>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</id>
-    <published>2016-11-28T15:00:00.000Z</published>
-    <updated>2017-04-01T05:55:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article shows 2 ways for “How to use alternate created_at/updated_at column.</p>
-<a id="more"></a> 
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Please add the following code to <code>config/initializers/timestamp.rb</code>.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> <span class="title">ActiveRecord</span></span></div><div class="line">  <span class="class"><span class="keyword">module</span> <span class="title">Timestamp</span></span></div><div class="line">    private</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_update</span></span></div><div class="line">      [<span class="symbol">:modifyed_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">timestamp_attributes_for_create</span></span></div><div class="line">      [<span class="symbol">:created_day</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Add-callback-to-model"><a href="#Add-callback-to-model" class="headerlink" title="Add callback to model"></a>Add callback to model</h2><p>Please add callback <code>before_update</code> to a model class like this:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> &lt; ApplicationRecord</span></div><div class="line">  before_update <span class="symbol">:set_modified_day</span></div><div class="line"></div><div class="line">  private</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">set_modified_day</span></span></div><div class="line">    <span class="keyword">self</span>.set_modified_day = Time.zone.now</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><ul>
-<li><a href="http://stackoverflow.com/questions/5173109/ruby-activerecord-how-to-use-alternate-updated-at-column" target="_blank" rel="external">ruby activerecord how to use alternate updated_at column - Stack Overflow</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article shows 2 ways for “How to use alternate created_at/updated_at column.&lt;/p&gt;
     
     </summary>
     
