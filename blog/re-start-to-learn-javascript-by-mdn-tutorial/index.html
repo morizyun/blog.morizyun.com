@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Re-Start to Learn JavaScript by MDN tutorial | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="I read the following tutorial for re-introduction to JavaScript: A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Re-Start to Learn JavaScript by MDN tutorial">
+<meta property="og:url" content="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I read the following tutorial for re-introduction to JavaScript: A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Re-Start to Learn JavaScript by MDN tutorial">
+<meta name="twitter:description" content="I read the following tutorial for re-introduction to JavaScript: A re-introduction to JavaScript (JS tutorial) - JavaScript">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Re-Start to Learn JavaScript by MDN tutorial</h1>
+    
+    <a href="/blog/re-start-to-learn-javascript-by-mdn-tutorial/" class="article-date"><time datetime="2016-04-12T04:00:00.000Z">2016-04-12</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank"><br>  <img src="/img/2016-04-12-re-start-to-learn-javascript-by-mdn-tutorial_1.jpg" style="max-width: 400px;"><br></a></p>
+<p>I read the following tutorial for re-introduction to JavaScript:</p>
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="noopener">A re-introduction to JavaScript (JS tutorial) - JavaScript</a></strong></p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Introduction" class="article-heading"> 🐰 <a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction<a class="article-anchor" href="#Introduction" aria-hidden="true"></a></h2><p>JavaScript was created in 1995 by Brendan Erich, who worked at Netscape.<br>It was originally called LiveScript at first, but it was renamed to JavaScript after an ill-fated marketing decision.</p>
+<h2 id="Overview" class="article-heading">👽 <a href="#Overview" class="headerlink" title="Overview"></a>Overview<a class="article-anchor" href="#Overview" aria-hidden="true"></a></h2><p>JavaScript’s diagram looks like this:</p>
+<ul>
+<li><strong>Number</strong></li>
+<li><strong>String</strong></li>
+<li><strong>Boolean</strong></li>
+<li><strong>Symbol (new in Edition 6)</strong></li>
+<li><strong>Object</strong><ul>
+<li><strong>Function</strong></li>
+<li><strong>Array</strong></li>
+<li><strong>Date</strong></li>
+<li><strong>RegExp</strong></li>
+</ul>
+</li>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li><strong>Error (Built-in)</strong></li>
+</ul>
+<h2 id="Number" class="article-heading"> 🎉 <a href="#Number" class="headerlink" title="Number"></a>Number<a class="article-anchor" href="#Number" aria-hidden="true"></a></h2><p>Numbers in JavaScript are “double-precision 64-bit format IEEE 754 values.”</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> <span class="comment">// 0.30000000000000004</span></span><br></pre></td></tr></tbody></table></figure>
+<p>You can convert a string to an integer using the built-in parseInt() function.<br>In old browsers strings beginning with a “0” are assumed to be octal (radix 8), but this hasn’t been the case since 2013.</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Modern browsers:</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"123"</span>, <span class="number">10</span>); <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>, <span class="number">10</span>); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Old browsers:</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>);  <span class="comment">// 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Interesting examples:</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0x10"</span>); <span class="comment">// 16</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"11"</span>, <span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></tbody></table></figure>
+<p>A special value called NaN (short for “Not Number”) is returned:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"hello"</span>, <span class="number">10</span>); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Test for NaN</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+<p>JavaScript also has the special values Infinity and -Infinity:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">1</span> / <span class="number">0</span>;  <span class="comment">// Infinity</span></span><br><span class="line"><span class="number">-1</span> / <span class="number">0</span>; <span class="comment">// -Infinity</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Test for Infinity, -Infinity, NaN</span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="number">1</span>/<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">isFinite</span>(-<span class="literal">Infinity</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="literal">NaN</span>); <span class="comment">// false</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Boolean" class="article-heading">😼 <a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean<a class="article-anchor" href="#Boolean" aria-hidden="true"></a></h2><p>Any value can be converted to a boolean according to the following rules:</p>
+<ol>
+<li>false, 0, empty strings (“”), NaN, null, and undefined all become false.</li>
+<li>All other values become true.</li>
+</ol>
+<p>Examples of Boolean() function as follows:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="string">""</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">NaN</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">undefined</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">234</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">"234"</span>); <span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Boolean operations such as && (logical and), || (logical or), and ! (logical not) are supported.<br>So, we don’t frequently need to use it.</p>
+<h2 id="Operator" class="article-heading"> 🎃 <a href="#Operator" class="headerlink" title="Operator"></a>Operator<a class="article-anchor" href="#Operator" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// + operator</span></span><br><span class="line"><span class="string">"3"</span> + <span class="number">4</span> + <span class="number">5</span>;  <span class="comment">// "345"</span></span><br><span class="line"> <span class="number">3</span> + <span class="number">4</span> + <span class="string">"5"</span>; <span class="comment">// "75"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// == operator</span></span><br><span class="line"> <span class="number">123</span> == <span class="string">"123"</span>; <span class="comment">// true</span></span><br><span class="line"> <span class="number">1</span> == <span class="literal">true</span>; <span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Functions" class="article-heading">🗻 <a href="#Functions" class="headerlink" title="Functions"></a>Functions<a class="article-anchor" href="#Functions" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>{</span><br><span class="line">  <span class="keyword">var</span> total = x + y;</span><br><span class="line">  <span class="keyword">return</span> total;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">add(); <span class="comment">// NaN</span></span><br><span class="line">add(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 5</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>{</span><br><span class="line">  <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i < <span class="built_in">arguments</span>.length; i++) {</span><br><span class="line">    sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>); <span class="comment">// 14</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">first, last</span>) </span>{</span><br><span class="line">  <span class="keyword">this</span>.first = first;</span><br><span class="line">  <span class="keyword">this</span>.last = last;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.fullName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.first + <span class="string">" "</span> + <span class="keyword">this</span>.last;</span><br><span class="line">  };</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.fullNameReversed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.last + <span class="string">", "</span> + <span class="keyword">this</span>.first;</span><br><span class="line">  };</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"Simon"</span>, <span class="string">"Willison"</span>)</span><br><span class="line">p.fullName(); <span class="comment">// "Simon Willison"</span></span><br><span class="line">p.fullNameReversed(); <span class="comment">// "Willison, Simon"</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Add-a-method-to-String-by-the-prototype-of-built-in-JavaScript" class="article-heading">🐞 <a href="#Add-a-method-to-String-by-the-prototype-of-built-in-JavaScript" class="headerlink" title="Add a method to String by the prototype of built-in JavaScript"></a>Add a method to String by the prototype of built-in JavaScript<a class="article-anchor" href="#Add-a-method-to-String-by-the-prototype-of-built-in-JavaScript" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"Simon"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.prototype.reversed = <span class="function"><span class="keyword">function</span> <span class="title">reversed</span>(<span class="params"></span>) </span>{</span><br><span class="line">  <span class="keyword">var</span> r = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="keyword">this</span>.length - <span class="number">1</span>; i >= <span class="number">0</span>; i --) {</span><br><span class="line">    r += <span class="keyword">this</span>[i];</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> r;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">s.reversed(); <span class="comment">// nomiS</span></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

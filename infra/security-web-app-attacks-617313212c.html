@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic Knowledge for Web Application Security | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//infra/security-web-app-attacks-617313212c.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en//infra/security-web-app-attacks-617313212c.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="In this article, I would like to share some common web application attacks and HTTP headers for protection by the attacks. AttacksCross-Site Request Forgery CSRF(Cross-Site Request Forgery) is an atta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Knowledge for Web Application Security">
+<meta property="og:url" content="https://blog.morizyun.com//infra/security-web-app-attacks-617313212c.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="In this article, I would like to share some common web application attacks and HTTP headers for protection by the attacks. AttacksCross-Site Request Forgery CSRF(Cross-Site Request Forgery) is an atta">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2019-05-09T11:50:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic Knowledge for Web Application Security">
+<meta name="twitter:description" content="In this article, I would like to share some common web application attacks and HTTP headers for protection by the attacks. AttacksCross-Site Request Forgery CSRF(Cross-Site Request Forgery) is an atta">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic Knowledge for Web Application Security</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com//infra/security-web-app-attacks-617313212c.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com//infra/security-web-app-attacks-617313212c.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com//infra/security-web-app-attacks-617313212c.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>In this article, I would like to share some common web application attacks and HTTP headers for protection by the attacks.</p>
+<h2 id="Attacks" class="article-heading">🐝 <a href="#Attacks" class="headerlink" title="Attacks"></a>Attacks<a class="article-anchor" href="#Attacks" aria-hidden="true"></a></h2><h3 id="Cross-Site-Request-Forgery" class="article-heading"><a href="#Cross-Site-Request-Forgery" class="headerlink" title="Cross-Site Request Forgery"></a>Cross-Site Request Forgery<a class="article-anchor" href="#Cross-Site-Request-Forgery" aria-hidden="true"></a></h3><blockquote>
+<p>CSRF(Cross-Site Request Forgery) is an attack that impersonates a trusted user and sends a website unwanted commands. This can be done, for example, by including malicious parameters in a URL behind a link that purports to go somewhere else.</p>
+</blockquote>
+<h3 id="Reflected-Cross-Site-Scripting-XSS" class="article-heading"><a href="#Reflected-Cross-Site-Scripting-XSS" class="headerlink" title="Reflected Cross-Site Scripting(XSS)"></a>Reflected Cross-Site Scripting(XSS)<a class="article-anchor" href="#Reflected-Cross-Site-Scripting-XSS" aria-hidden="true"></a></h3><h4 id="Reflected-Cross-Site-Scripting" class="article-heading"><a href="#Reflected-Cross-Site-Scripting" class="headerlink" title="Reflected Cross-Site Scripting"></a>Reflected Cross-Site Scripting<a class="article-anchor" href="#Reflected-Cross-Site-Scripting" aria-hidden="true"></a></h4><p><strong>Reflected Cross-Site Scripting</strong> occurs when an attacker injects executable code into an HTTP response. When an application is vulnerable to this type of attack it will send back unvalidated input to the client. It will enable the attacker to steal cookies, perform clipboard theft and modify the page itself.</p>
+<p>An example is <code>http://example.com/index.php?user=<"script">alert(123)</"script"></code>. If the user parameter inserts into DOM, it will be executed.</p>
+<h4 id="Stored-Cross-Site-Scripting" class="article-heading"><a href="#Stored-Cross-Site-Scripting" class="headerlink" title="Stored Cross-Site Scripting"></a>Stored Cross-Site Scripting<a class="article-anchor" href="#Stored-Cross-Site-Scripting" aria-hidden="true"></a></h4><p><strong>Stored Cross-Site Scripting</strong> occurs when the application stores user input which is not correctly filtered. It runs within the user’s browser under the privileges of the web application.</p>
+<h4 id="Protection" class="article-heading"><a href="#Protection" class="headerlink" title="Protection"></a>Protection<a class="article-anchor" href="#Protection" aria-hidden="true"></a></h4><p>You should not insert untrusted data into DOM & use HTML escape before inserting.</p>
+<h3 id="clickjacking" class="article-heading"><a href="#clickjacking" class="headerlink" title="clickjacking"></a>clickjacking<a class="article-anchor" href="#clickjacking" aria-hidden="true"></a></h3><blockquote>
+<p>Clickjacking, also known as a “UI redress attack”, is when an attacker uses multiple transparent or opaque layers to trick a user into clicking on a button or link on another page when they were intending to click on the top level page.</p>
+</blockquote>
+<p><a href="https://www.owasp.org/index.php/Clickjacking" target="_blank" rel="noopener">https://www.owasp.org/index.php/Clickjacking</a></p>
+<blockquote>
+<p>The attacker wants you to click something that you don”t actually want to click, and they do it by hiding the link/button behind something else that they can trick you into clicking on.</p>
+</blockquote>
+<p><a href="https://helmetjs.github.io/docs/frameguard/" target="_blank" rel="noopener">https://helmetjs.github.io/docs/frameguard/</a></p>
+<h3 id="Brute-Force-Attacks" class="article-heading"><a href="#Brute-Force-Attacks" class="headerlink" title="Brute Force Attacks"></a>Brute Force Attacks<a class="article-anchor" href="#Brute-Force-Attacks" aria-hidden="true"></a></h3><blockquote>
+<p>A brute force attack is a trait-and-error method used to obtain information such as a user password or personal identification number(PIN). In a brute force attack, automated software is used to generate a large number of consecutive guesses as to the value of the desired data. Brute force attacks may be used by criminals to crack encrypted data, or by security, analysts to test an organization’s network security.</p>
+</blockquote>
+<p><a href="https://www.techopedia.com/definition/18091/brute-force-attack" target="_blank" rel="noopener">https://www.techopedia.com/definition/18091/brute-force-attack</a></p>
+<h3 id="SQL-Injection" class="article-heading"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection<a class="article-anchor" href="#SQL-Injection" aria-hidden="true"></a></h3><p><strong>SQL Injection</strong> consists of injection of a partial or complete SQL query via user input. It can read sensitive information or be destructive as well.</p>
+<p>Take the following example:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = $<span class="keyword">id</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If the user enters <code>2 or 1 = 1</code>, the query becomes the following:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">2</span> <span class="keyword">or</span> <span class="number">1</span> = <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If the above query run, an attacker may get all user information.</p>
+<h3 id="Command-Injection" class="article-heading"><a href="#Command-Injection" class="headerlink" title="Command Injection"></a>Command Injection<a class="article-anchor" href="#Command-Injection" aria-hidden="true"></a></h3><p>Command Injection is a technique used by an attacker to run OS commands on a web server. With this approach, an atter might even get passwords to the system.</p>
+<p>In practice, if you have a URL like:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">https://example.com/downloads?file=sample.pdf</span><br></pre></td></tr></tbody></table></figure>
+<p>It could be turned into:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">https://example.com/downloads?file=%3Bcat%20/etc/passwd</span><br></pre></td></tr></tbody></table></figure>
+<p>In this example <code>%3B</code> becomes the semicolon<code>;</code>, so <code>cat /etc/passwd</code> can be run.</p>
+<p>To defend against this kind of attacks make sure that you always filter/sanitize user input.</p>
+<h2 id="ReDoS" class="article-heading">😀 <a href="#ReDoS" class="headerlink" title="ReDoS"></a>ReDoS<a class="article-anchor" href="#ReDoS" aria-hidden="true"></a></h2><p>Theis kind of attack exploits the fact that most Regular Expression implementations may reach extreme situations that cause them to work very slowly. <code>([a-zA-Z]+)</code> are vulnerable Regexp as a simple input like <code>aaaaaaaaaaaaaaaaaaa!</code> can cause heavy computation.</p>
+<p>You can easily check that your regexp is Evil Regexes or not by <strong><a href="https://github.com/substack/safe-regex" target="_blank" rel="noopener">safe-regex</a></strong>.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ node safe.js <span class="string">'(beep|boop)*'</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line">$ node safe.js <span class="string">'(a+){10}'</span></span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="HTTP-headers-for-protection" class="article-heading"> 🎂 <a href="#HTTP-headers-for-protection" class="headerlink" title="HTTP headers for protection"></a>HTTP headers for protection<a class="article-anchor" href="#HTTP-headers-for-protection" aria-hidden="true"></a></h2><p>Typical examples of HTTP headers for security are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Strict-Transport-Security</code>(HSTS)</td>
+<td>Enforce browsers to use HTTPS connections to server</td>
+</tr>
+<tr>
+<td><code>X-Frame-Option</code></td>
+<td>Provide clickjacking protection</td>
+</tr>
+<tr>
+<td><code>X-XSS-Protection</code></td>
+<td>Enable the Cross-Site Scriptings(XSS) filter built into most recent web browsers</td>
+</tr>
+<tr>
+<td><code>X-Content-Type-Option</code></td>
+<td>Prevent browsers from MIME-sniffing a response away from the declared content-type</td>
+</tr>
+<tr>
+<td><code>Content-Security-Policy</code></td>
+<td>Prevent a wide range of attacks, including Cross-Site scripting and other Cross-Site injections</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Strict-Transport-Security-HSTS" class="article-heading"><a href="#Strict-Transport-Security-HSTS" class="headerlink" title="Strict-Transport-Security (HSTS)"></a>Strict-Transport-Security (HSTS)<a class="article-anchor" href="#Strict-Transport-Security-HSTS" aria-hidden="true"></a></h3><p>*Strict-Transport-Security (HSTS)** header enforces secure (HTTP over SSL/TLS) connection to the server.</p>
+<p>If you define <code>max-age</code> in HSTS, a browser should automatically convert all HTTP requests to HTTPS.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">strict-transport-security:max-age=61138519</span><br></pre></td></tr></tbody></table></figure>
+<p>Testing for it is pretty straightforward:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -s -D- https://twitter.com/ | grep -i Strict</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="X-ContentType-Options" class="article-heading"><a href="#X-ContentType-Options" class="headerlink" title="X-ContentType-Options"></a>X-ContentType-Options<a class="article-anchor" href="#X-ContentType-Options" aria-hidden="true"></a></h3><blockquote>
+<p>The <code>X-Content-Type-Options</code> response HTTP header is a maker used by the server to indicate the MINE types advertised in the <code>Content-Type</code> headers should not be changed and be followed. This allows to opt-out of MIME type sniffing, or, in other words, it is a way to say that the webmasters knew what they were doing.</p>
+</blockquote>
+<h2 id="Use-Content-Security-Policy" class="article-heading"> 🐰 <a href="#Use-Content-Security-Policy" class="headerlink" title="Use Content Security Policy"></a>Use Content Security Policy<a class="article-anchor" href="#Use-Content-Security-Policy" aria-hidden="true"></a></h2><blockquote>
+<p>Content Security Policy(CSP) is an added layer of security that helps to detect and migrate certain types of attacks, including Cross-Site Scripting(XSS) and data injection attacks.</p>
+</blockquote>
+<p>An example of CSP is <code>Content-Security-Policy: default-src 'self' *.mydomain.com</code> in HTTP header. The header info shows trusted domain and its subdomains.</p>
+<h2 id="Session-Management" class="article-heading">🚕 <a href="#Session-Management" class="headerlink" title="Session Management"></a>Session Management<a class="article-anchor" href="#Session-Management" aria-hidden="true"></a></h2><h3 id="Cookie-Flag" class="article-heading"><a href="#Cookie-Flag" class="headerlink" title="Cookie Flag"></a>Cookie Flag<a class="article-anchor" href="#Cookie-Flag" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Secure</strong></td>
+<td>A browser to only send the cookie if the request is being sent over HTTPS.</td>
+</tr>
+<tr>
+<td><strong>HttpOnly</strong></td>
+<td>Help prevents attacks such as Cross-Site Scripting because it does not allow the cookie to be accessed via JavaScript.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Cookie-Scope" class="article-heading"><a href="#Cookie-Scope" class="headerlink" title="Cookie Scope"></a>Cookie Scope<a class="article-anchor" href="#Cookie-Scope" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domain</strong></td>
+<td>Compare against the domain of the server in which the requested URL. If the domain(sub-domain) matches then the path attribute will be checked next.</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td>If the path matches, then the cookie will be sent in the request.</td>
+</tr>
+<tr>
+<td><strong>Expires</strong></td>
+<td>The cookie is valid until the set date is exceeded.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Secure-Transmission" class="article-heading">👽 <a href="#Secure-Transmission" class="headerlink" title="Secure Transmission"></a>Secure Transmission<a class="article-anchor" href="#Secure-Transmission" aria-hidden="true"></a></h2><p>You have to test to check for certificate information by <strong><a href="https://nmap.org/" target="_blank" rel="noopener">nmap</a></strong>, like this:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nmap --script ssl-cert,ssl-enum-ciphers -p 443,465,993,995 www.example.com</span><br></pre></td></tr></tbody></table></figure>
+<p>You can test SSL/TLS vulnerabilities with <strong><a href="https://github.com/iSECPartners/sslyze" target="_blank" rel="noopener">SSLyze</a></strong>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">./sslyze.py --regular example.com:443</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Special-Thanks" class="article-heading"> 🐹 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSRF" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Glossary/CSRF</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-05-09T11:50:17.000Z" itemprop="dateModified">Last updated: 2019-05-09</time>
+                <a href="library-certbot-ssl-certificates-lets-encrypt.html" class="article-footer-next" title="Certbot"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Attacks"><span class="toc-text">Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Site-Request-Forgery"><span class="toc-text">Cross-Site Request Forgery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reflected-Cross-Site-Scripting-XSS"><span class="toc-text">Reflected Cross-Site Scripting(XSS)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Reflected-Cross-Site-Scripting"><span class="toc-text">Reflected Cross-Site Scripting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Stored-Cross-Site-Scripting"><span class="toc-text">Stored Cross-Site Scripting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Protection"><span class="toc-text">Protection</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clickjacking"><span class="toc-text">clickjacking</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Brute-Force-Attacks"><span class="toc-text">Brute Force Attacks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-Injection"><span class="toc-text">SQL Injection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Injection"><span class="toc-text">Command Injection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ReDoS"><span class="toc-text">ReDoS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-headers-for-protection"><span class="toc-text">HTTP headers for protection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Strict-Transport-Security-HSTS"><span class="toc-text">Strict-Transport-Security (HSTS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-ContentType-Options"><span class="toc-text">X-ContentType-Options</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Content-Security-Policy"><span class="toc-text">Use Content Security Policy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session-Management"><span class="toc-text">Session Management</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie-Flag"><span class="toc-text">Cookie Flag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie-Scope"><span class="toc-text">Cookie Scope</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Secure-Transmission"><span class="toc-text">Secure Transmission</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-Thanks"><span class="toc-text">Special Thanks</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Security</strong><a href="security-web-app-attacks.html" class="sidebar-link current">Attack to Web</a><strong class="sidebar-title">Library</strong><a href="library-certbot-ssl-certificates-lets-encrypt.html" class="sidebar-link">Certbot</a><a href="library-squid3-proxy-server-centos-linux.html" class="sidebar-link">sidebar.infra.library-squid3-proxy-server-centos-linux</a><a href="library-fluentd-ui-install-mac.html" class="sidebar-link">fluentd</a><a href="library-sentry-docker-setup.html" class="sidebar-link">sidebar.infra.library-sentry-docker-setup</a><strong class="sidebar-title">Git</strong><a href="git-reset-revert-rollback.html" class="sidebar-link">git reset</a><a href="git-branch-remote-cleanup.html" class="sidebar-link">Cleanup branches</a><strong class="sidebar-title">Docker</strong><a href="docker-volume.html" class="sidebar-link">Docker Volume</a><a href="docker-helpful-tips.html" class="sidebar-link">Helpful Tips</a><strong class="sidebar-title">Google Platform</strong><a href="gcp-google-app-engine-flexible-environment.html" class="sidebar-link">GAE/Flexible</a><a href="gcp-google-cloud-build-configuration-yml.html" class="sidebar-link">sidebar.infra.gcp-google-cloud-build-configuration-yml</a><a href="gcp-google-cloud-storage-cdn-ssl-setup.html" class="sidebar-link">sidebar.infra.gcp-google-cloud-storage-cdn-ssl-setup</a><strong class="sidebar-title">GitLab</strong><a href="gitlab-ci-add-runner.html" class="sidebar-link">Private CI Runner</a><strong class="sidebar-title">Nginx</strong><a href="nginx-security-conf.html" class="sidebar-link">Secure conf</a><strong class="sidebar-title">Server Setup</strong><a href="server-setup-ssh-key-generation.html" class="sidebar-link">SSH key Configuration</a><strong class="sidebar-title">Bash</strong><a href="bash-script-basic-tips.html" class="sidebar-link">Bash Script</a><strong class="sidebar-title">HTML/CSS</strong><a href="css-html-useful-tips.html" class="sidebar-link">HTML/CSS Useful Tips</a><strong class="sidebar-title">Heroku</strong><a href="heroku-useful-tips.html" class="sidebar-link">Useful Tips</a><strong class="sidebar-title">Redis</strong><a href="redis-configuration-tips.html" class="sidebar-link">Configuration Tips</a><strong class="sidebar-title">Cold Fusion</strong><a href="cold-fusion-basic-setup-mac.html" class="sidebar-link">Setup With Docker(Mac)</a><a href="cold-fusion-basic-grammer.html" class="sidebar-link">Grammer (Cheat Sheet)</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Security</strong><a href="security-web-app-attacks.html" class="mobile-nav-link current">Attack to Web</a><strong class="mobile-nav-title">Library</strong><a href="library-certbot-ssl-certificates-lets-encrypt.html" class="mobile-nav-link">Certbot</a><a href="library-squid3-proxy-server-centos-linux.html" class="mobile-nav-link">sidebar.infra.library-squid3-proxy-server-centos-linux</a><a href="library-fluentd-ui-install-mac.html" class="mobile-nav-link">fluentd</a><a href="library-sentry-docker-setup.html" class="mobile-nav-link">sidebar.infra.library-sentry-docker-setup</a><strong class="mobile-nav-title">Git</strong><a href="git-reset-revert-rollback.html" class="mobile-nav-link">git reset</a><a href="git-branch-remote-cleanup.html" class="mobile-nav-link">Cleanup branches</a><strong class="mobile-nav-title">Docker</strong><a href="docker-volume.html" class="mobile-nav-link">Docker Volume</a><a href="docker-helpful-tips.html" class="mobile-nav-link">Helpful Tips</a><strong class="mobile-nav-title">Google Platform</strong><a href="gcp-google-app-engine-flexible-environment.html" class="mobile-nav-link">GAE/Flexible</a><a href="gcp-google-cloud-build-configuration-yml.html" class="mobile-nav-link">sidebar.infra.gcp-google-cloud-build-configuration-yml</a><a href="gcp-google-cloud-storage-cdn-ssl-setup.html" class="mobile-nav-link">sidebar.infra.gcp-google-cloud-storage-cdn-ssl-setup</a><strong class="mobile-nav-title">GitLab</strong><a href="gitlab-ci-add-runner.html" class="mobile-nav-link">Private CI Runner</a><strong class="mobile-nav-title">Nginx</strong><a href="nginx-security-conf.html" class="mobile-nav-link">Secure conf</a><strong class="mobile-nav-title">Server Setup</strong><a href="server-setup-ssh-key-generation.html" class="mobile-nav-link">SSH key Configuration</a><strong class="mobile-nav-title">Bash</strong><a href="bash-script-basic-tips.html" class="mobile-nav-link">Bash Script</a><strong class="mobile-nav-title">HTML/CSS</strong><a href="css-html-useful-tips.html" class="mobile-nav-link">HTML/CSS Useful Tips</a><strong class="mobile-nav-title">Heroku</strong><a href="heroku-useful-tips.html" class="mobile-nav-link">Useful Tips</a><strong class="mobile-nav-title">Redis</strong><a href="redis-configuration-tips.html" class="mobile-nav-link">Configuration Tips</a><strong class="mobile-nav-title">Cold Fusion</strong><a href="cold-fusion-basic-setup-mac.html" class="mobile-nav-link">Setup With Docker(Mac)</a><a href="cold-fusion-basic-grammer.html" class="mobile-nav-link">Grammer (Cheat Sheet)</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

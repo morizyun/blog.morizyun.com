@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Final feature sets of ECMAScript 2018 | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en/javascript/syntax-new-feature-ecma-script-2018.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="In this article, I would like to share final features in ECMAScript by the awsome article. Asynchronous Iteration Detail Description http://2ality.com/2016/10/asynchronous-iteration.html   Outline Sup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Final feature sets of ECMAScript 2018">
+<meta property="og:url" content="https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="In this article, I would like to share final features in ECMAScript by the awsome article. Asynchronous Iteration Detail Description http://2ality.com/2016/10/asynchronous-iteration.html   Outline Sup">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-02-01T02:57:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Final feature sets of ECMAScript 2018">
+<meta name="twitter:description" content="In this article, I would like to share final features in ECMAScript by the awsome article. Asynchronous Iteration Detail Description http://2ality.com/2016/10/asynchronous-iteration.html   Outline Sup">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Final feature sets of ECMAScript 2018</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>In this article, I would like to share final features in ECMAScript by <strong><a href="http://2ality.com/2017/02/ecmascript-2018.html" target="_blank" rel="noopener">the awsome article</a></strong>.</p>
+<h2 id="Asynchronous-Iteration" class="article-heading">🐯 <a href="#Asynchronous-Iteration" class="headerlink" title="Asynchronous Iteration"></a>Asynchronous Iteration<a class="article-anchor" href="#Asynchronous-Iteration" aria-hidden="true"></a></h2><ul>
+<li>Detail Description<ul>
+<li><a href="http://2ality.com/2016/10/asynchronous-iteration.html" target="_blank" rel="noopener">http://2ality.com/2016/10/asynchronous-iteration.html</a></li>
+</ul>
+</li>
+<li>Outline<ul>
+<li>Support data that is delivered asynchronously</li>
+</ul>
+</li>
+<li>Use case<ul>
+<li>Lines of text, read asynchronously from a file or an HTTP connection</li>
+</ul>
+</li>
+</ul>
+<p>Sample code:</p>
+<p>If you want to call asynchronously API multiple time, you could execute in parallel using <code>Promise.all</code> and execute as follows:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">(<span class="keyword">async</span>() => {</span><br><span class="line">  <span class="keyword">const</span> dataList = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">    fetch(<span class="string">'http://example.com/api/hoge'</span>),</span><br><span class="line">    fetch(<span class="string">'http://example.com/api/fuga'</span>)</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> data <span class="keyword">of</span> dataList) {</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  }</span><br><span class="line">})();</span><br></pre></td></tr></tbody></table></figure>
+<p>But if you use a lot of API, it is difficult to manage the code. You could rewrite this by using <strong>Asynchronous Iteration</strong>:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">(<span class="keyword">async</span>() => {</span><br><span class="line">  <span class="keyword">const</span> promises = [<span class="string">'hoge'</span>, <span class="string">'fuga'</span>].map(<span class="function">(<span class="params">path</span>) =></span> {</span><br><span class="line">    fetch(<span class="string">`http://example.com/api/<span class="subst">${path}</span>`</span>);</span><br><span class="line">  })</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> data <span class="keyword">of</span> promises) {</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  }</span><br><span class="line">})();</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Rest-Spread-Properties" class="article-heading">🐠 <a href="#Rest-Spread-Properties" class="headerlink" title="Rest/Spread Properties"></a>Rest/Spread Properties<a class="article-anchor" href="#Rest-Spread-Properties" aria-hidden="true"></a></h2><ul>
+<li>Detail<ul>
+<li><a href="http://2ality.com/2016/10/rest-spread-properties.html" target="_blank" rel="noopener">http://2ality.com/2016/10/rest-spread-properties.html</a></li>
+</ul>
+</li>
+<li>Outline<ul>
+<li>The rest operator <code>...</code> in object destructuring</li>
+<li>The spread operator (…) in object literals</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Rest Properties</span></span><br><span class="line"><span class="keyword">const</span> obj = {<span class="attr">foo</span>: <span class="number">1</span>, <span class="attr">bar</span>: <span class="number">2</span>, <span class="attr">baz</span>: <span class="number">3</span>};</span><br><span class="line"><span class="keyword">const</span> {foo, ...rest} = obj;</span><br><span class="line"><span class="comment">// Same as:</span></span><br><span class="line"><span class="comment">// const foo = 1;</span></span><br><span class="line"><span class="comment">// const rest = {bar: 2, baz: 3};</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Spread properties</span></span><br><span class="line">x; <span class="comment">// 1</span></span><br><span class="line">y; <span class="comment">// 2</span></span><br><span class="line">z; <span class="comment">// { a: 3, b: 4, x: 5 }</span></span><br><span class="line"><span class="keyword">const</span> n = { x, y, ...z }</span><br><span class="line"><span class="built_in">console</span>.log(n); <span class="comment">// { x:5, y: 2, a: 3, b: 4 }</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RegExp-named-capture-groups" class="article-heading"> 🎉 <a href="#RegExp-named-capture-groups" class="headerlink" title="RegExp: named capture groups"></a>RegExp: named capture groups<a class="article-anchor" href="#RegExp-named-capture-groups" aria-hidden="true"></a></h2><p>It is about identifying capture groups via name in RegExp:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/</day></month></year></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj.groups.year; <span class="comment">// 1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj.groups.month; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj.groups.day; <span class="comment">// 31</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RegExp-Unicode-property-escapes" class="article-heading">🚕 <a href="#RegExp-Unicode-property-escapes" class="headerlink" title="RegExp: Unicode property escapes"></a>RegExp: Unicode property escapes<a class="article-anchor" href="#RegExp-Unicode-property-escapes" aria-hidden="true"></a></h2><p>In the Unicode standard, each character has properties - metadata descripbing it.<br>We can use the Unicode properties in JavaScript RegExp:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> re = <span class="regexp">/^\p{General_Category=Decimal_Number}+$/u</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(re.test(<span class="string">'123'</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(re.test(<span class="string">'123foo456'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(re.test(<span class="string">'１２3４5𝟞𝟕'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RegExp-lookbehind-assetions" class="article-heading">😀 <a href="#RegExp-lookbehind-assetions" class="headerlink" title="RegExp: lookbehind assetions"></a>RegExp: lookbehind assetions<a class="article-anchor" href="#RegExp-lookbehind-assetions" aria-hidden="true"></a></h2><p><code>(?<= ...)< code> indicates <strong>lookbehind assetions</strong>:</=></code></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Before ES2018</span></span><br><span class="line"><span class="keyword">const</span> result = <span class="string">'123$456 $789 $ 000'</span></span><br><span class="line">  .match(<span class="regexp">/\$\d+/g</span>)</span><br><span class="line">  .map(<span class="function"><span class="params">x</span>=></span> x.slice(<span class="number">1</span>));</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// ['456', '789']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Using lookbehind assetions</span></span><br><span class="line"><span class="keyword">const</span> result = <span class="string">'123$456 $789 $ 000'</span>.match(<span class="regexp">/(?<=\$)\d+ g< span>);</=\$)\d+></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// ['456', '789'] <= no $< span></=></span><br></span></span></pre></td></tr></tbody></table></figure>
+<h2 id="RegExp-s-dotAll-flag-for-regular-expressions" class="article-heading">🐝 <a href="#RegExp-s-dotAll-flag-for-regular-expressions" class="headerlink" title="RegExp: s (dotAll) flag for regular expressions"></a>RegExp: s (dotAll) flag for regular expressions<a class="article-anchor" href="#RegExp-s-dotAll-flag-for-regular-expressions" aria-hidden="true"></a></h2><p>If you add flag <code>/s</code> to a regular expression, <code>.</code> matches line terminator character:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">/^.$/s.test(<span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Promise-prototype-finally" class="article-heading"> 🏀 <a href="#Promise-prototype-finally" class="headerlink" title="Promise.prototype.finally()"></a><code>Promise.prototype.finally()</code><a class="article-anchor" href="#Promise-prototype-finally" aria-hidden="true"></a></h2><p><code>Promise.prototype.finally()</code> works as follows:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">promise</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =></span> {···})</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =></span> {···})</span><br><span class="line">  .finally(<span class="function"><span class="params">()</span> =></span> {···});</span><br></pre></td></tr></tbody></table></figure>
+<p><code>finally()</code> callbac is always executed. Compare:</p>
+<ul>
+<li><code>then()</code> callback is only executed if promise if fulfilled</li>
+<li><code>cathc()</code> callback is only executed:<ul>
+<li>If promise is rejected</li>
+<li>If then’s callback throws an exception</li>
+<li>returns a rejected Promise.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Special-Thanks" class="article-heading"> 🎳 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="https://qiita.com/shisama/items/f7029822a5848592cbc2#async-iteration" target="_blank" rel="noopener">https://qiita.com/shisama/items/f7029822a5848592cbc2#async-iteration</a></li>
+<li><a href="https://qiita.com/nabepon/items/b59e959809060158be8b" target="_blank" rel="noopener">https://qiita.com/nabepon/items/b59e959809060158be8b</a></li>
+<li><a href="https://qiita.com/uhyo/items/13e8bd7e616f83a463e5" target="_blank" rel="noopener">https://qiita.com/uhyo/items/13e8bd7e616f83a463e5</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-02-01T02:57:39.000Z" itemprop="dateModified">Last updated: 2018-01-31</time>
+                <a href="library-react-router-redux.html" class="article-footer-prev" title="React-Router"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="syntax-new-feature-ecma-script-2017.html" class="article-footer-next" title="ES 2017"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Asynchronous-Iteration"><span class="toc-text">Asynchronous Iteration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rest-Spread-Properties"><span class="toc-text">Rest/Spread Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp-named-capture-groups"><span class="toc-text">RegExp: named capture groups</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp-Unicode-property-escapes"><span class="toc-text">RegExp: Unicode property escapes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp-lookbehind-assetions"><span class="toc-text">RegExp: lookbehind assetions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp-s-dotAll-flag-for-regular-expressions"><span class="toc-text">RegExp: s (dotAll) flag for regular expressions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-prototype-finally"><span class="toc-text">Promise.prototype.finally()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-Thanks"><span class="toc-text">Special Thanks</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-security-tips-for-node-js.html" class="sidebar-link">Security Tips</a><a href="basic-useful-grammer-snippets.html" class="sidebar-link">Useful JS Tips</a><a href="basic-useful-typescript-tips.html" class="sidebar-link">Useful TS Tips</a><a href="basic-package-json.html" class="sidebar-link">package.json</a><strong class="sidebar-title">Library/TypeScript</strong><a href="library-typescript-express-tutorial.html" class="sidebar-link">Express</a><a href="library-typescript-tslint-prettier-husky-git-hook.html" class="sidebar-link">tslint/husky</a><a href="library-typescript-jest-unit-test.html" class="sidebar-link">Jest</a><a href="library-typescript-raven-sentry-error-catch.html" class="sidebar-link">Sentry(Raven)</a><a href="library-typescript-dotenv-environment-variable.html" class="sidebar-link">dotenv</a><a href="library-typescript-pino-logger.html" class="sidebar-link">pino(logger)</a><a href="library-typescript-create-react-app-ts.html" class="sidebar-link">create-react-app</a><a href="library-typescript-apollo-server-client-graphql.html" class="sidebar-link">Apollo Server/Client</a><a href="library-typescript-typeorm-or-mapper-db.html" class="sidebar-link">TypeORM</a><strong class="sidebar-title">Library</strong><a href="library-serverless-framework-aws-lambda.html" class="sidebar-link">Serverless</a><a href="library-prettier-code-formatter.html" class="sidebar-link">Prettier</a><a href="library-parsley-form-validation.html" class="sidebar-link">Parsley</a><a href="library-nvm.html" class="sidebar-link">nvm</a><a href="library-nextjs.html" class="sidebar-link">Next.js</a><a href="library-nuxtjs.html" class="sidebar-link">Nuxt.js</a><a href="library-npm-check-updates.html" class="sidebar-link">npm-check-updates</a><a href="library-terminus.html" class="sidebar-link">Useful Tools</a><a href="library-moment-js.html" class="sidebar-link">Moment.js</a><strong class="sidebar-title">Nuxt.js Library</strong><a href="library-nuxt-cookie-universal-nuxt-typescript.html" class="sidebar-link">cookie-universal-nuxt</a><a href="library-nuxt-axios-plugin-module-typescript.html" class="sidebar-link">Axios</a><a href="library-nuxt-sentry-error-tracking-typescript.html" class="sidebar-link">Sentry</a><strong class="sidebar-title">TypeScript Tutorial</strong><a href="typescript-tutorial-nuxt-firebase-bulma-navbar-vue.html" class="sidebar-link">Nuxt with Firebase Auth</a><a href="typescript-tutorial-react-app-firebase-authentication.html" class="sidebar-link">Firebase Auth & React</a><a href="typescript-tutorial-react-app-redux-firebase-authentication.html" class="sidebar-link">Firebase Auth & Redux</a><a href="typescript-tutorial-firebase-auth-graphql-react.html" class="sidebar-link">GraphQL with Firebase Auth</a><strong class="sidebar-title">React.js</strong><a href="react-healpful-tips.html" class="sidebar-link">Helpful Tips</a><a href="redux-saga-beginner-guide.html" class="sidebar-link">Redux-Saga</a><a href="library-react-router-redux.html" class="sidebar-link">React-Router</a><strong class="sidebar-title">Syntax</strong><a href="syntax-new-feature-ecma-script-2018.html" class="sidebar-link current">ES 2018</a><a href="syntax-new-feature-ecma-script-2017.html" class="sidebar-link">ES 2017</a><strong class="sidebar-title">GitLab</strong><a href="gitlab-ci-gitlab-ci-yml.html" class="sidebar-link">.gitlab-ci.yml</a><strong class="sidebar-title">Docker</strong><a href="docker-dockerfile-basic-nodejs.html" class="sidebar-link">Basic Dockerfile</a><strong class="sidebar-title">Setup</strong><a href="setup-intellij-mac.html" class="sidebar-link">IntelliJ</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-security-tips-for-node-js.html" class="mobile-nav-link">Security Tips</a><a href="basic-useful-grammer-snippets.html" class="mobile-nav-link">Useful JS Tips</a><a href="basic-useful-typescript-tips.html" class="mobile-nav-link">Useful TS Tips</a><a href="basic-package-json.html" class="mobile-nav-link">package.json</a><strong class="mobile-nav-title">Library/TypeScript</strong><a href="library-typescript-express-tutorial.html" class="mobile-nav-link">Express</a><a href="library-typescript-tslint-prettier-husky-git-hook.html" class="mobile-nav-link">tslint/husky</a><a href="library-typescript-jest-unit-test.html" class="mobile-nav-link">Jest</a><a href="library-typescript-raven-sentry-error-catch.html" class="mobile-nav-link">Sentry(Raven)</a><a href="library-typescript-dotenv-environment-variable.html" class="mobile-nav-link">dotenv</a><a href="library-typescript-pino-logger.html" class="mobile-nav-link">pino(logger)</a><a href="library-typescript-create-react-app-ts.html" class="mobile-nav-link">create-react-app</a><a href="library-typescript-apollo-server-client-graphql.html" class="mobile-nav-link">Apollo Server/Client</a><a href="library-typescript-typeorm-or-mapper-db.html" class="mobile-nav-link">TypeORM</a><strong class="mobile-nav-title">Library</strong><a href="library-serverless-framework-aws-lambda.html" class="mobile-nav-link">Serverless</a><a href="library-prettier-code-formatter.html" class="mobile-nav-link">Prettier</a><a href="library-parsley-form-validation.html" class="mobile-nav-link">Parsley</a><a href="library-nvm.html" class="mobile-nav-link">nvm</a><a href="library-nextjs.html" class="mobile-nav-link">Next.js</a><a href="library-nuxtjs.html" class="mobile-nav-link">Nuxt.js</a><a href="library-npm-check-updates.html" class="mobile-nav-link">npm-check-updates</a><a href="library-terminus.html" class="mobile-nav-link">Useful Tools</a><a href="library-moment-js.html" class="mobile-nav-link">Moment.js</a><strong class="mobile-nav-title">Nuxt.js Library</strong><a href="library-nuxt-cookie-universal-nuxt-typescript.html" class="mobile-nav-link">cookie-universal-nuxt</a><a href="library-nuxt-axios-plugin-module-typescript.html" class="mobile-nav-link">Axios</a><a href="library-nuxt-sentry-error-tracking-typescript.html" class="mobile-nav-link">Sentry</a><strong class="mobile-nav-title">TypeScript Tutorial</strong><a href="typescript-tutorial-nuxt-firebase-bulma-navbar-vue.html" class="mobile-nav-link">Nuxt with Firebase Auth</a><a href="typescript-tutorial-react-app-firebase-authentication.html" class="mobile-nav-link">Firebase Auth & React</a><a href="typescript-tutorial-react-app-redux-firebase-authentication.html" class="mobile-nav-link">Firebase Auth & Redux</a><a href="typescript-tutorial-firebase-auth-graphql-react.html" class="mobile-nav-link">GraphQL with Firebase Auth</a><strong class="mobile-nav-title">React.js</strong><a href="react-healpful-tips.html" class="mobile-nav-link">Helpful Tips</a><a href="redux-saga-beginner-guide.html" class="mobile-nav-link">Redux-Saga</a><a href="library-react-router-redux.html" class="mobile-nav-link">React-Router</a><strong class="mobile-nav-title">Syntax</strong><a href="syntax-new-feature-ecma-script-2018.html" class="mobile-nav-link current">ES 2018</a><a href="syntax-new-feature-ecma-script-2017.html" class="mobile-nav-link">ES 2017</a><strong class="mobile-nav-title">GitLab</strong><a href="gitlab-ci-gitlab-ci-yml.html" class="mobile-nav-link">.gitlab-ci.yml</a><strong class="mobile-nav-title">Docker</strong><a href="docker-dockerfile-basic-nodejs.html" class="mobile-nav-link">Basic Dockerfile</a><strong class="mobile-nav-title">Setup</strong><a href="setup-intellij-mac.html" class="mobile-nav-link">IntelliJ</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

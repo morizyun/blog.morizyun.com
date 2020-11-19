@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic for stream [Java] | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//java/basic-stream-b17ed58390.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en//java/basic-stream-b17ed58390.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="Stream is a convenient API which is introduced in Java 8 for aggregating values of aggregates such as arrays and collections. In this article, I would like to introduce basic knowledge of Stream. filt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic for stream [Java]">
+<meta property="og:url" content="https://blog.morizyun.com//java/basic-stream-b17ed58390.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="Stream is a convenient API which is introduced in Java 8 for aggregating values of aggregates such as arrays and collections. In this article, I would like to introduce basic knowledge of Stream. filt">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-01-28T05:42:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic for stream [Java]">
+<meta name="twitter:description" content="Stream is a convenient API which is introduced in Java 8 for aggregating values of aggregates such as arrays and collections. In this article, I would like to introduce basic knowledge of Stream. filt">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic for stream [Java]</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com//java/basic-stream-b17ed58390.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com//java/basic-stream-b17ed58390.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com//java/basic-stream-b17ed58390.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>Stream is a convenient API which is introduced in Java 8 for aggregating values of aggregates such as arrays and collections.</p>
+<p>In this article, I would like to introduce basic knowledge of Stream.</p>
+<h2 id="filter" class="article-heading">👽 <a href="#filter" class="headerlink" title="filter"></a><code>filter</code><a class="article-anchor" href="#filter" aria-hidden="true"></a></h2><p><code>filter()</code> returns some elements of this stream that match the given predicate.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">List<string> sampleList = Arrays.asList(<span class="string">"a1"</span>, <span class="string">"a2"</span>, <span class="string">"b1"</span>, <span class="string">"c2"</span>, <span class="string">"c1"</span>);</string></span><br><span class="line"></span><br><span class="line">sampleList</span><br><span class="line">  .stream()</span><br><span class="line">  .filter(s -> s.startsWith(<span class="string">"a"</span>))</span><br><span class="line">  .map(String::toUpperCase)</span><br><span class="line">  .sorted()</span><br><span class="line">  .forEach(System.out::println); <span class="comment">// => A1 A2</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="count" class="article-heading">🐝 <a href="#count" class="headerlink" title="count"></a><code>count</code><a class="article-anchor" href="#count" aria-hidden="true"></a></h2><p><code>count()</code> method in stream API counts the elements in stream object.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">articles.stream().filter(i -> i.isDraft()).count() <span class="comment">//=> n</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="noneMatch" class="article-heading"> 🏀 <a href="#noneMatch" class="headerlink" title="noneMatch"></a><code>noneMatch</code><a class="article-anchor" href="#noneMatch" aria-hidden="true"></a></h2><p><code>noneMatch()</code> method is a method which takes argument as a Predicate and if none of element of stream matches the given Predicate, then it returns true otherwise false.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">articles.stream().noneMatch(i -> i.isDraft())  </span><br><span class="line">articles.stream().noneMatch(ArticleForm::isDraft)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Instream-range" class="article-heading"> 😸 <a href="#Instream-range" class="headerlink" title="Instream.range"></a><code>Instream.range</code><a class="article-anchor" href="#Instream-range" aria-hidden="true"></a></h2><p><code>Instream.range(int startInclusive, int endExclusive)</code> returns a sequential ordered stream elements from startInclusive(inclusive) to endExclusive(exclusive) by an incremental step of 1.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">IntStream.range(<span class="number">1</span>, <span class="number">4</span>).forEach(System.out::println);</span><br><span class="line"><span class="comment">// => 1, 2, 3</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Stream-Optional-Value" class="article-heading"> 🍄 <a href="#Stream-Optional-Value" class="headerlink" title="Stream Optional Value"></a>Stream Optional Value<a class="article-anchor" href="#Stream-Optional-Value" aria-hidden="true"></a></h2><p><code>java.util.Optional<t> class</t></code> is a wrapper for a non-null value that may or may not contain a non-null value.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> Optional<article> article = Articles.stream()</article></span><br><span class="line">    .filter(a -> a.getId() == <span class="number">1</span>)</span><br><span class="line">    .findFirst();</span><br></pre></td></tr></tbody></table></figure>
+<p>To get and use the value from <code>Optional</code>, write it as follows:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">article.ifPresent(value -> System.out.println(<span class="string">"Article.id is"</span> + article.getId()));</span><br><span class="line"></span><br><span class="line">formOpt.ifPresent(article -> {</span><br><span class="line">    article.setTitle(<span class="string">"hoge"</span>);</span><br><span class="line">    article.setContent(<span class="string">"fuga"</span>);</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p><code>ifPresent(Consumer<? super T> action)</code> method from the Optional class takes an action on the value contained in Optional object.</p>
+<h2 id="Add-original-validation" class="article-heading"> 🐰 <a href="#Add-original-validation" class="headerlink" title="Add original validation"></a>Add original validation<a class="article-anchor" href="#Add-original-validation" aria-hidden="true"></a></h2><p>In this section, I would like to introduce how to add an original validation.</p>
+<h3 id="Annotation-class" class="article-heading"><a href="#Annotation-class" class="headerlink" title="Annotation class"></a>Annotation class<a class="article-anchor" href="#Annotation-class" aria-hidden="true"></a></h3><p>Initially, please create an annotation class:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.validation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.Constraint;</span><br><span class="line"><span class="keyword">import</span> javax.validation.Payload;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Constraint</span>(validatedBy = {ArticleTitleValidator.class})</span><br><span class="line"><span class="meta">@Target</span>({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER})</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ArticleTitle {</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">message</span><span class="params">()</span> <span class="keyword">default</span> "</span>{com.example.validation.ArticleTitle.message}<span class="string">";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Class<?>[] groups() default {};</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Class<? extends Payload>[] payload() default {};</span></span><br><span class="line"><span class="string">}</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Validation-class" class="article-heading"><a href="#Validation-class" class="headerlink" title="Validation class"></a>Validation class<a class="article-anchor" href="#Validation-class" aria-hidden="true"></a></h3><p>Please add validation class:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.validation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.StringUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidator;</span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidatorContext;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArticleTitleValidator</span> <span class="keyword">implements</span> <span class="title">ConstraintValidator</span><<span class="title">ArticleTitle</span>, <span class="title">String</span>> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    ArticleService service;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">(ArticleTitle constraint)</span> </span>{</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String value, ConstraintValidatorContext context)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isEmpty(value)) {</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> service.findByTitle(value) == <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Set-validation-message" class="article-heading"><a href="#Set-validation-message" class="headerlink" title="Set validation message"></a>Set validation message<a class="article-anchor" href="#Set-validation-message" aria-hidden="true"></a></h3><p>Please define a validation message in <strong>Unicode</strong>. <code>native2ascii</code> command can convert UTF-8 to Unicode or ASCII.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">native2ascii</span><br><span class="line"><span class="comment"># Input any words or file path which should be converted</span></span><br></pre></td></tr></tbody></table></figure>
+<p>You should add a converted sentence to <code>ValidationMessages.properties</code>:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">com.example.validation.ArticleTitle.message=\u30bf\u30a4\u30c8\u30eb\u306f\u30e6\u30cb\u30fc\u30af\u306b\u3057\u3066\u304f\u3060\u3055\u3044</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Apply-validator" class="article-heading"><a href="#Apply-validator" class="headerlink" title="Apply validator"></a>Apply validator<a class="article-anchor" href="#Apply-validator" aria-hidden="true"></a></h3><p>You can apply your original validator to your code:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.validation;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> </span>{</span><br><span class="line">  <span class="meta">@ArticleTitle</span></span><br><span class="line">  <span class="keyword">private</span> String title;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Special-Thanks" class="article-heading">😀 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/" target="_blank" rel="noopener">http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/</a></li>
+<li><a href="https://terasolunaorg.github.io/guideline/public_review/ArchitectureInDetail/Validation.html#how-to-extend" target="_blank" rel="noopener">https://terasolunaorg.github.io/guideline/public_review/ArchitectureInDetail/Validation.html#how-to-extend</a></li>
+<li><a href="http://www.java2s.com/Tutorials/Java/Java_Stream/0035__Java_Optional.htm" target="_blank" rel="noopener">http://www.java2s.com/Tutorials/Java/Java_Stream/0035__Java_Optional.htm</a></li>
+<li><a href="http://www.ne.jp/asahi/hishidama/home/tech/java/stream.html" target="_blank" rel="noopener">http://www.ne.jp/asahi/hishidama/home/tech/java/stream.html</a></li>
+<li><a href="http://www.task-notes.com/entry/20150521/1432177200" target="_blank" rel="noopener">http://www.task-notes.com/entry/20150521/1432177200</a></li>
+<li><a href="https://www.ibm.com/developerworks/jp/java/library/j-java8idioms5/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/jp/java/library/j-java8idioms5/index.html</a></li>
+<li><a href="https://www.concretepage.com/java/jdk-8/java-8-stream-concat-count-sorted-distinct-example" target="_blank" rel="noopener">https://www.concretepage.com/java/jdk-8/java-8-stream-concat-count-sorted-distinct-example</a></li>
+<li><a href="https://www.concretepage.com/java/jdk-8/java-8-stream-allmatch-anymatch-nonematch-example" target="_blank" rel="noopener">https://www.concretepage.com/java/jdk-8/java-8-stream-allmatch-anymatch-nonematch-example</a></li>
+<li><a href="http://morizyun.github.io/java/spring-framework-validation.html" target="_blank" rel="noopener">http://morizyun.github.io/java/spring-framework-validation.html</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-28T05:42:13.000Z" itemprop="dateModified">Last updated: 2018-01-28</time>
+                <a href="basic-date.html" class="article-footer-prev" title="Date"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="basic-grammer.html" class="article-footer-next" title="Grammer"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-text">filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#count"><span class="toc-text">count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#noneMatch"><span class="toc-text">noneMatch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instream-range"><span class="toc-text">Instream.range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stream-Optional-Value"><span class="toc-text">Stream Optional Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-original-validation"><span class="toc-text">Add original validation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Annotation-class"><span class="toc-text">Annotation class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Validation-class"><span class="toc-text">Validation class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-validation-message"><span class="toc-text">Set validation message</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply-validator"><span class="toc-text">Apply validator</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-Thanks"><span class="toc-text">Special Thanks</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-array.html" class="sidebar-link">Array</a><a href="basic-date.html" class="sidebar-link">Date</a><a href="basic-stream.html" class="sidebar-link current">Stream</a><a href="basic-grammer.html" class="sidebar-link">Grammer</a><strong class="sidebar-title">Kotlin</strong><a href="kotlin-basic-grammer.html" class="sidebar-link">Basic Grammer</a><strong class="sidebar-title">Library</strong><a href="library-mybatis-tips.html" class="sidebar-link">MyBatis</a><a href="library-thymeleaf-tips.html" class="sidebar-link">Thymeleaf</a><a href="library-hamcrest-assertion-matcher.html" class="sidebar-link">Hamcrest</a><a href="library-jjwt-jwt-json-web-token.html" class="sidebar-link">jjwt/Kotlin</a><strong class="sidebar-title">Spring Framework</strong><a href="spring-resttemplate-debug-logging.html" class="sidebar-link">Logging for RestTemplate</a><a href="spring-framework-annotation.html" class="sidebar-link">Annotation</a><a href="spring-configuration-env-variable.html" class="sidebar-link">Environment Variables</a><a href="spring-configuration-transaction.html" class="sidebar-link">Transaction Management</a><strong class="sidebar-title">Setup</strong><a href="setup-intellij-code-check.html" class="sidebar-link">Setup tool with IntelliJ</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-array.html" class="mobile-nav-link">Array</a><a href="basic-date.html" class="mobile-nav-link">Date</a><a href="basic-stream.html" class="mobile-nav-link current">Stream</a><a href="basic-grammer.html" class="mobile-nav-link">Grammer</a><strong class="mobile-nav-title">Kotlin</strong><a href="kotlin-basic-grammer.html" class="mobile-nav-link">Basic Grammer</a><strong class="mobile-nav-title">Library</strong><a href="library-mybatis-tips.html" class="mobile-nav-link">MyBatis</a><a href="library-thymeleaf-tips.html" class="mobile-nav-link">Thymeleaf</a><a href="library-hamcrest-assertion-matcher.html" class="mobile-nav-link">Hamcrest</a><a href="library-jjwt-jwt-json-web-token.html" class="mobile-nav-link">jjwt/Kotlin</a><strong class="mobile-nav-title">Spring Framework</strong><a href="spring-resttemplate-debug-logging.html" class="mobile-nav-link">Logging for RestTemplate</a><a href="spring-framework-annotation.html" class="mobile-nav-link">Annotation</a><a href="spring-configuration-env-variable.html" class="mobile-nav-link">Environment Variables</a><a href="spring-configuration-transaction.html" class="mobile-nav-link">Transaction Management</a><strong class="mobile-nav-title">Setup</strong><a href="setup-intellij-code-check.html" class="mobile-nav-link">Setup tool with IntelliJ</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

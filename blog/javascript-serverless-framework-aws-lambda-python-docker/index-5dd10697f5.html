@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Serverless framework for Node.js/Python with Docker | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//blog/javascript-serverless-framework-aws-lambda-python-docker/index-5dd10697f5.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="Serverless is toolkit for deploying and operating serverless framework due to focus your application.In this article, I would like to introduce how to build basic lambda API by Node.js/Python with Doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Serverless framework for Node.js&#x2F;Python with Docker">
+<meta property="og:url" content="https://blog.morizyun.com//blog/javascript-serverless-framework-aws-lambda-python-docker/index-5dd10697f5.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="Serverless is toolkit for deploying and operating serverless framework due to focus your application.In this article, I would like to introduce how to build basic lambda API by Node.js/Python with Doc">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-07-23T10:07:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Serverless framework for Node.js&#x2F;Python with Docker">
+<meta name="twitter:description" content="Serverless is toolkit for deploying and operating serverless framework due to focus your application.In this article, I would like to introduce how to build basic lambda API by Node.js/Python with Doc">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Serverless framework for Node.js/Python with Docker</h1>
+    
+    <a href="/blog/javascript-serverless-framework-aws-lambda-python-docker/" class="article-date"><time datetime="2018-06-28T04:00:00.000Z">2018-06-28</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/javascript-serverless-framework-aws-lambda-python-docker/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/javascript-serverless-framework-aws-lambda-python-docker/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/javascript-serverless-framework-aws-lambda-python-docker/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><strong><a href="https://serverless.com/" target="_blank" rel="noopener">Serverless</a></strong> is toolkit for deploying and operating serverless framework due to focus your application.<br>In this article, I would like to introduce how to build basic lambda API by Node.js/Python with Docker.</p>
+<h2 id="Installation" class="article-heading">🚌 <a href="#Installation" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yarn global add serverless</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create project folder (e.g. serverless-sample)</span></span><br><span class="line">mkdir serverless-sample</span><br><span class="line"><span class="built_in">cd</span> serverless-sample</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Docker-Config-for-Python" class="article-heading">😀 <a href="#Docker-Config-for-Python" class="headerlink" title="Docker Config for Python"></a>Docker Config for Python<a class="article-anchor" href="#Docker-Config-for-Python" aria-hidden="true"></a></h2><p>If you want to develop a function with Python, it is better to use Dockerfile, because it is easy to use pip library in lambda.</p>
+<p>Create <code>Dockerfile</code> for development:</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># update apt-get</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update -y && apt-get upgrade -y</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Nodejs 8</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> curl -sL https://deb.nodesource.com/setup_8.x | bash -</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y nodejs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># install dev tool</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y vim</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># install aws-cli</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> pip install awscli</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># install serverless framework</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm install -g serverless</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># change work directory</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir -p /app</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Also, create <code>docker-compose.yml</code>:</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.5'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  serverless:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">.</span></span><br><span class="line"><span class="attr">    tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    stdin_open:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">serverless</span></span><br><span class="line"><span class="attr">    working_dir:</span> <span class="string">/app</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">.:/app</span></span><br><span class="line"><span class="attr">    container_name:</span> <span class="string">serverless</span></span><br><span class="line"><span class="attr">    env_file:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">.env.docker</span></span><br><span class="line"><span class="attr">    logging:</span></span><br><span class="line"><span class="attr">      driver:</span> <span class="string">"json-file"</span></span><br><span class="line"><span class="attr">      options:</span></span><br><span class="line"><span class="attr">        max-size:</span> <span class="string">"10m"</span></span><br><span class="line"><span class="attr">        max-file:</span> <span class="string">"3"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>After then, create <code>.env.docker</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">aws_access_key_id=YOUR_ACCESS_KEY_ID</span><br><span class="line">aws_secret_access_key=YOUR_SECRET_ACCESS_KEY</span><br></pre></td></tr></tbody></table></figure>
+<p>Please add your AWS Access information and do not commit the <code>.env.docker</code> file in git repository.</p>
+<h2 id="Start-the-image-for-dev" class="article-heading"> 🏀 <a href="#Start-the-image-for-dev" class="headerlink" title="Start the image for dev"></a>Start the image for dev<a class="article-anchor" href="#Start-the-image-for-dev" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br><span class="line">docker-compose <span class="built_in">exec</span> serverless /bin/bash</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Set-AWS-Access-key" class="article-heading">🐠 <a href="#Set-AWS-Access-key" class="headerlink" title="Set AWS Access key"></a>Set AWS Access key<a class="article-anchor" href="#Set-AWS-Access-key" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sls config credentials --provider aws --key <span class="variable">$AWS_ACCESS_KEY_ID</span> --secret <span class="variable">$AWS_SECRET_ACCESS_KEY</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-lambda-function-with-Pytnon3-template" class="article-heading">🐡 <a href="#Create-lambda-function-with-Pytnon3-template" class="headerlink" title="Create lambda function with Pytnon3 template"></a>Create lambda function with Pytnon3 template<a class="article-anchor" href="#Create-lambda-function-with-Pytnon3-template" aria-hidden="true"></a></h2><p>Create new service:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Create service with Python 3.x</span></span><br><span class="line">sls create -t aws-python3 -p py3test</span><br></pre></td></tr></tbody></table></figure>
+<p>Modify <code>serverless.yml</code> configuration file:<br>(<code>diff --no-index --unified=1 serverless.org.yml serverless.yml</code>):</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">@@ -25,3 +25,3 @@ provider:</span><br><span class="line"> <span class="comment">#  stage: dev</span></span><br><span class="line">-<span class="comment">#  region: us-east-1</span></span><br><span class="line">+  region: ap-northeast-1</span><br><span class="line"></span><br><span class="line">@@ -63,6 +63,6 @@ <span class="built_in">functions</span>:</span><br><span class="line"> <span class="comment">#    Check the event documentation for details</span></span><br><span class="line">-<span class="comment">#    events:</span></span><br><span class="line">-<span class="comment">#      - http:</span></span><br><span class="line">-<span class="comment">#          path: users/create</span></span><br><span class="line">-<span class="comment">#          method: get</span></span><br><span class="line">+    events:</span><br><span class="line">+      - http:</span><br><span class="line">+          path: users/create</span><br><span class="line">+          method: get</span><br><span class="line"> <span class="comment">#      - s3: ${env:BUCKET}</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Confirm-developing-function" class="article-heading">🐯 <a href="#Confirm-developing-function" class="headerlink" title="Confirm developing function"></a>Confirm developing function<a class="article-anchor" href="#Confirm-developing-function" aria-hidden="true"></a></h2><p>Enable to confirm your devloping function on local</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Call the function</span></span><br><span class="line">sls invoke <span class="built_in">local</span> -f hello</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Deploy-code-to-AWS" class="article-heading">🗻 <a href="#Deploy-code-to-AWS" class="headerlink" title="Deploy code to AWS"></a>Deploy code to AWS<a class="article-anchor" href="#Deploy-code-to-AWS" aria-hidden="true"></a></h2><p>After development, you can deploy your code by one command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sls deploy -v</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Confirm-the-deployed-function" class="article-heading"> 🎂 <a href="#Confirm-the-deployed-function" class="headerlink" title="Confirm the deployed function"></a>Confirm the deployed function<a class="article-anchor" href="#Confirm-the-deployed-function" aria-hidden="true"></a></h2><p>Enable to confirm your devloping function on local or you can call your API by <code>curl</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Call the function</span></span><br><span class="line">sls invoke -f hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># Call the function's API by curl</span></span><br><span class="line">curl https://xxx.execute-api.ap-northeast-1.amazonaws.com/dev/users/create</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Add-pip-libraries-for-lambda" class="article-heading">🐞 <a href="#Add-pip-libraries-for-lambda" class="headerlink" title="Add pip libraries for lambda"></a>Add pip libraries for lambda<a class="article-anchor" href="#Add-pip-libraries-for-lambda" aria-hidden="true"></a></h2><p>If you want to use library, please install pip libraries as follows:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># In docker</span></span><br><span class="line">pip install requests -t /app/lib/requests</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Remove-deployed-function" class="article-heading"> 🎃 <a href="#Remove-deployed-function" class="headerlink" title="Remove deployed function"></a>Remove deployed function<a class="article-anchor" href="#Remove-deployed-function" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sls remove</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Configuration-serverless-yml" class="article-heading"> 🍮 <a href="#Configuration-serverless-yml" class="headerlink" title="Configuration (serverless.yml)"></a>Configuration (serverless.yml)<a class="article-anchor" href="#Configuration-serverless-yml" aria-hidden="true"></a></h2><h3 id="Memory-Size-Timeout-etc-in-AWS-lambda" class="article-heading"><a href="#Memory-Size-Timeout-etc-in-AWS-lambda" class="headerlink" title="Memory Size, Timeout, etc in AWS lambda"></a>Memory Size, Timeout, etc in AWS lambda<a class="article-anchor" href="#Memory-Size-Timeout-etc-in-AWS-lambda" aria-hidden="true"></a></h3><p>You can configure memory size and timeout for function in AWS lambda:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://serverless.com/framework/docs/providers/aws/guide/functions/</span></span><br><span class="line"><span class="attr">provider:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">aws</span></span><br><span class="line"><span class="attr">  runtime:</span> <span class="string">python3.6</span></span><br><span class="line"><span class="attr">  memorySize:</span> <span class="number">128</span> <span class="comment"># optional, in MB, default is 1024</span></span><br><span class="line"><span class="attr">  timeout:</span> <span class="number">10</span> <span class="comment"># optional, in seconds, default is 6</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail, please see <a href="https://serverless.com/framework/docs/providers/aws/guide/functions/" target="_blank" rel="noopener">https://serverless.com/framework/docs/providers/aws/guide/functions/</a> .</p>
+<h3 id="Including-excluding-file-or-folder" class="article-heading"><a href="#Including-excluding-file-or-folder" class="headerlink" title="Including/excluding file or folder"></a>Including/excluding file or folder<a class="article-anchor" href="#Including-excluding-file-or-folder" aria-hidden="true"></a></h3><p>Please configure including/excluding a file or a folder.</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># you can add packaging information here</span></span><br><span class="line"><span class="comment"># https://serverless.com/framework/docs/providers/aws/guide/packaging/</span></span><br><span class="line"><span class="attr">package:</span></span><br><span class="line"><span class="attr">  exclude:</span> <span class="comment"># excluding file or folder</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">src/**</span></span><br><span class="line"><span class="attr">  include:</span> <span class="comment"># including file or folder</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">src/function/handler.js</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail, please see <a href="https://serverless.com/framework/docs/providers/aws/guide/packaging/" target="_blank" rel="noopener">https://serverless.com/framework/docs/providers/aws/guide/packaging/</a></p>
+<h3 id="Cron-Scheduled-job-configuration" class="article-heading"><a href="#Cron-Scheduled-job-configuration" class="headerlink" title="Cron(Scheduled job) configuration"></a>Cron(Scheduled job) configuration<a class="article-anchor" href="#Cron-Scheduled-job-configuration" aria-hidden="true"></a></h3><p>Enable to configure cron/scheduled job.</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Cron (scheduled job) information</span></span><br><span class="line"><span class="attr">functions:</span></span><br><span class="line"><span class="attr">  crawl:</span></span><br><span class="line"><span class="attr">    handler:</span> <span class="string">crawl</span></span><br><span class="line"><span class="attr">    events:</span></span><br><span class="line"><span class="attr">      - schedule:</span> <span class="string">rate(2</span> <span class="string">hours)</span></span><br><span class="line"><span class="attr">      - schedule:</span> <span class="string">cron(0</span> <span class="number">12</span> <span class="string">*</span> <span class="string">*</span> <span class="string">?</span> <span class="string">*)</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail, please see <a href="https://serverless.com/framework/docs/providers/aws/events/schedule/" target="_blank" rel="noopener">https://serverless.com/framework/docs/providers/aws/events/schedule/</a></p>
+<h2 id="Impression" class="article-heading">😼 <a href="#Impression" class="headerlink" title="Impression"></a>Impression<a class="article-anchor" href="#Impression" aria-hidden="true"></a></h2><p>My impression for serverless is as follows:</p>
+<ul>
+<li>A deploy command (<code>serverless deploy</code>) is simple and useful to create the required IAM, set up CloudWatch logs, set up S3 for deployment, deploy, etc.</li>
+<li>Cron (CloudWatch Events) needs just a line to YAML, there are a lot of useful configurations.</li>
+<li>I thought that it was easy for using Google Cloud Function to manage credential on GCP, I tried a little, but it was buggy. I think that serverless is useful in only AWS lambda.<ul>
+<li>There are some problems in GCF and serverless. Also, GCF is beta yet.</li>
+</ul>
+</li>
+<li>I found <a href="https://github.com/serverless/serverless-graphql" target="_blank" rel="noopener">https://github.com/serverless/serverless-graphql</a> . If it becomes better, it is a good option for GraphQL server.</li>
+</ul>
+<h2 id="Appendix-Google-Cloud-function-with-Node-js" class="article-heading">🐮 <a href="#Appendix-Google-Cloud-function-with-Node-js" class="headerlink" title="[Appendix] Google Cloud function with Node.js"></a>[Appendix] Google Cloud function with Node.js<a class="article-anchor" href="#Appendix-Google-Cloud-function-with-Node-js" aria-hidden="true"></a></h2><h3 id="Supported-Node-js-version" class="article-heading"><a href="#Supported-Node-js-version" class="headerlink" title="Supported Node.js version"></a>Supported Node.js version<a class="article-anchor" href="#Supported-Node-js-version" aria-hidden="true"></a></h3><p>Node version is 6.14.0, so please be careful: <a href="https://cloud.google.com/functions/docs/writing/" target="_blank" rel="noopener">https://cloud.google.com/functions/docs/writing/</a> .</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'6.14.0'</span> > .nvmrc</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Quick-Start" class="article-heading"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start<a class="article-anchor" href="#Quick-Start" aria-hidden="true"></a></h3><p>Create a project:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">serverless create --template google-nodejs --path gcf-nodejs</span><br></pre></td></tr></tbody></table></figure>
+<p>Install npm libraries:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> gcf-nodejs</span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Create-your-credential" class="article-heading"><a href="#Create-your-credential" class="headerlink" title="Create your credential"></a>Create your credential<a class="article-anchor" href="#Create-your-credential" aria-hidden="true"></a></h3><p><a href="https://serverless.com/framework/docs/providers/google/guide/credentials" target="_blank" rel="noopener">https://serverless.com/framework/docs/providers/google/guide/credentials</a></p>
+<h3 id="Deploy-your-code" class="article-heading"><a href="#Deploy-your-code" class="headerlink" title="Deploy your code"></a>Deploy your code<a class="article-anchor" href="#Deploy-your-code" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">serverless deploy</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Confirmation" class="article-heading"><a href="#Confirmation" class="headerlink" title="Confirmation"></a>Confirmation<a class="article-anchor" href="#Confirmation" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Confirm your code by function</span></span><br><span class="line">serverless invoke --<span class="keyword">function</span> first</span><br><span class="line"></span><br><span class="line"><span class="comment"># Confirm your code by API</span></span><br><span class="line">curl https://us-central1-price-rank-production.cloudfunctions.net/http</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="More-detail" class="article-heading"><a href="#More-detail" class="headerlink" title="More detail"></a>More detail<a class="article-anchor" href="#More-detail" aria-hidden="true"></a></h3><p>If you want to know more detail, please see <a href="https://serverless.com/framework/docs/providers/google/guide/quick-start/" target="_blank" rel="noopener">https://serverless.com/framework/docs/providers/google/guide/quick-start/</a> .</p>
+<h3 id="Concerns" class="article-heading"><a href="#Concerns" class="headerlink" title="Concerns"></a>Concerns<a class="article-anchor" href="#Concerns" aria-hidden="true"></a></h3><ul>
+<li>SLA is not guaranteed because it is in beta test.</li>
+<li>It is impossible to configure environment variable like AWS.</li>
+<li>There is no mechanism like cron, scheduled job.</li>
+<li>It is thought that the test with GCP is not done much.</li>
+</ul>
+<h2 id="Appendix" class="article-heading"> 🎉 <a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix<a class="article-anchor" href="#Appendix" aria-hidden="true"></a></h2><h3 id="Manage-permission-for-your-Lambda-function" class="article-heading"><a href="#Manage-permission-for-your-Lambda-function" class="headerlink" title="Manage permission for your Lambda function"></a>Manage permission for your Lambda function<a class="article-anchor" href="#Manage-permission-for-your-Lambda-function" aria-hidden="true"></a></h3><p>If your function read/edit data in <strong>DynamoDB table</strong>, you can add these additional permission statements directly in your <code>serverless.yml</code>:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">provider:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">aws</span></span><br><span class="line"><span class="attr">  runtime:</span> <span class="string">nodejs6.10</span></span><br><span class="line"><span class="attr">  iamRoleStatements:</span></span><br><span class="line"><span class="attr">    - Effect:</span> <span class="string">"Allow"</span></span><br><span class="line"><span class="attr">      Action:</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">Query</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">Scan</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">GetItem</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">PutItem</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">UpdateItem</span></span><br><span class="line"><span class="attr">       - dynamodb:</span><span class="string">DeleteItem</span></span><br><span class="line"><span class="attr">      Resource:</span> <span class="string">"arn:aws:dynamodb:us-west-2:111110002222:table/my-new-table"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more details, please see <a href="https://serverless.com/blog/abcs-of-iam-permissions/" target="_blank" rel="noopener">https://serverless.com/blog/abcs-of-iam-permissions/</a> .</p>
+<h3 id="Python-Load-and-delete-a-credential" class="article-heading"><a href="#Python-Load-and-delete-a-credential" class="headerlink" title="Python / Load and delete a credential"></a>Python / Load and delete a credential<a class="article-anchor" href="#Python-Load-and-delete-a-credential" aria-hidden="true"></a></h3><p>Load and delete a credential data from environment variable in AWS lambda:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_credential</span><span class="params">()</span>:</span></span><br><span class="line">    credential_data = os.environ[<span class="string">'CREDENTIAL_DATA'</span>]</span><br><span class="line">    <span class="keyword">if</span> len(credential_data) <= <span class="number">1</=></span>:<br><span class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'No CREDENTIAL_DATA'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># In AWS lambda, you can write only /tmp folder</span></span><br><span class="line">    credential_file = os.environ[<span class="string">'APPLICATION_CREDENTIALS'</span>]</span><br><span class="line">    <span class="keyword">with</span> open(credential_file, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        print(<span class="string">'Credential file {} created.'</span>.format(credential_file))</span><br><span class="line">        f.write(credential_data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_credential</span><span class="params">()</span>:</span></span><br><span class="line">    credential_file = os.environ[<span class="string">'APPLICATION_CREDENTIALS'</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        os.remove(credential_file)</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="References" class="article-heading"> 🍄 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://dev.classmethod.jp/cloud/aws/serverless-framework-with-python-3-6/" target="_blank" rel="noopener">https://dev.classmethod.jp/cloud/aws/serverless-framework-with-python-3-6/</a></li>
+<li><a href="https://qiita.com/bremen/items/7e9407349d74a6a62822" target="_blank" rel="noopener">https://qiita.com/bremen/items/7e9407349d74a6a62822</a></li>
+<li><a href="https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

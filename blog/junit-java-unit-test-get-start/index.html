@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>JUnit Started Guide | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/junit-java-unit-test-get-start/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="I read JUnit4 Official GitHub Wiki:junit-team/junit4 Official GitHub Wiki">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JUnit Started Guide">
+<meta property="og:url" content="https://blog.morizyun.com/blog/junit-java-unit-test-get-start/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I read JUnit4 Official GitHub Wiki:junit-team/junit4 Official GitHub Wiki">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JUnit Started Guide">
+<meta name="twitter:description" content="I read JUnit4 Official GitHub Wiki:junit-team/junit4 Official GitHub Wiki">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">JUnit Started Guide</h1>
+    
+    <a href="/blog/junit-java-unit-test-get-start/" class="article-date"><time datetime="2016-08-12T04:00:00.000Z">2016-08-12</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/junit-java-unit-test-get-start/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/junit-java-unit-test-get-start/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/junit-java-unit-test-get-start/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>I read JUnit4 Official GitHub Wiki:<br><strong><a href="https://github.com/junit-team/junit4/wiki" target="_blank" rel="noopener">junit-team/junit4 Official GitHub Wiki</a></strong></p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Assertions" class="article-heading"> 🏀 <a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions<a class="article-anchor" href="#Assertions" aria-hidden="true"></a></h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AssertTests</span> </span>{</span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertArrayEquals</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">byte</span>[] expected = <span class="string">"trial"</span>.getBytes();</span><br><span class="line">    <span class="keyword">byte</span>[] actual = <span class="string">"trial"</span>.getBytes();</span><br><span class="line">    assertArrayEquals(<span class="string">"failure - byte arrays not same"</span>, expected, actual);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertEquals</span><span class="params">()</span> </span>{</span><br><span class="line">    assertEquals(<span class="string">"failure - strings are not equal"</span>, <span class="string">"text"</span>, <span class="string">"text"</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertFalse</span><span class="params">()</span> </span>{</span><br><span class="line">    assertFalse(<span class="string">"failure - should be false"</span>, <span class="keyword">false</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertNotNull</span><span class="params">()</span> </span>{</span><br><span class="line">    assertNotNull(<span class="string">"should not be null"</span>, <span class="keyword">new</span> Object());</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertNotSame</span><span class="params">()</span> </span>{</span><br><span class="line">    assertNotSame(<span class="string">"should not be same Object"</span>, <span class="keyword">new</span> Object(), <span class="keyword">new</span> Object());</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertNull</span><span class="params">()</span> </span>{</span><br><span class="line">    assertNull(<span class="string">"should be null"</span>, <span class="keyword">null</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertSame</span><span class="params">()</span> </span>{</span><br><span class="line">    Integer aNumber = Integer.valueOf(<span class="number">768</span>);</span><br><span class="line">    assertSame(<span class="string">"should be same"</span>, aNumber, aNumber);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// JUnit Matchers assertThat</span></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertThatBothContainsString</span><span class="params">()</span> </span>{</span><br><span class="line">    assertThat(<span class="string">"albumen"</span>, both(containsString(<span class="string">"a"</span>)).and(containsString(<span class="string">"b"</span>)));</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertThatHasItems</span><span class="params">()</span> </span>{</span><br><span class="line">    assertThat(Arrays.asList(<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>), hasItems(<span class="string">"one"</span>, <span class="string">"three"</span>));</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertThatEveryItemContainsString</span><span class="params">()</span> </span>{</span><br><span class="line">    assertThat(Arrays.asList(<span class="keyword">new</span> String[] { <span class="string">"fun"</span>, <span class="string">"ban"</span>, <span class="string">"net"</span> }), everyItem(containsString(<span class="string">"n"</span>)));</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Core Hamcrest Matchers with assertThat</span></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertThatHamcrestCoreMatchers</span><span class="params">()</span> </span>{</span><br><span class="line">    assertThat(<span class="string">"good"</span>, allOf(equalTo(<span class="string">"good"</span>), startsWith(<span class="string">"good"</span>)));</span><br><span class="line">    assertThat(<span class="string">"good"</span>, not(allOf(equalTo(<span class="string">"bad"</span>), equalTo(<span class="string">"good"</span>))));</span><br><span class="line">    assertThat(<span class="string">"good"</span>, anyOf(equalTo(<span class="string">"bad"</span>), equalTo(<span class="string">"good"</span>)));</span><br><span class="line">    assertThat(<span class="number">7</span>, not(CombinableMatcher.<integer> either(equalTo(<span class="number">3</span>)).or(equalTo(<span class="number">4</span>))));</integer></span><br><span class="line">    assertThat(<span class="keyword">new</span> Object(), not(sameInstance(<span class="keyword">new</span> Object())));</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAssertTrue</span><span class="params">()</span> </span>{</span><br><span class="line">    assertTrue(<span class="string">"failure - should be true"</span>, <span class="keyword">true</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>Readable failure messages. Compare:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">assertTrue(responseString.contains("color") || responseString.contains("colour"));</span><br><span class="line">// ==> failure message: </span><br><span class="line">// java.lang.AssertionError:</span><br><span class="line"></span><br><span class="line">assertThat(responseString, anyOf(containsString("color"), containsString("colour")));</span><br><span class="line">// ==> failure message:</span><br><span class="line">// java.lang.AssertionError: </span><br><span class="line">// Expected: (a string containing "color" or a string containing "colour")</span><br><span class="line">//      got: "Please choose a font"</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Exception-testing" class="article-heading">🗽 <a href="#Exception-testing" class="headerlink" title="Exception testing"></a>Exception testing<a class="article-anchor" href="#Exception-testing" aria-hidden="true"></a></h2><p>The @Test annotation has an optional parameter “expected” that takes as values subclasses of Throwable.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span>(expected = IndexOutOfBoundsException.class) </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">empty</span><span class="params">()</span> </span>{ </span><br><span class="line">     <span class="keyword">new</span> ArrayList<object>().get(<span class="number">0</span>); </object></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>More detail is as follows: <strong><a href="https://code.google.com/archive/p/hamcrest/wikis/Tutorial.wiki" target="_blank" rel="noopener">hamcrest - Tutorial.wiki</a></strong></p>
+<h2 id="Ignore" class="article-heading">🗻 <a href="#Ignore" class="headerlink" title="Ignore"></a>Ignore<a class="article-anchor" href="#Ignore" aria-hidden="true"></a></h2><p>Note that <code>@Ignore</code> takes an optional parameter (a String)<br>if you want to record a reason why a test is being ignored.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@Ignore</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Sample</span><span class="params">()</span> </span>{</span><br><span class="line">    assertTrue(<span class="keyword">false</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Assumptions" class="article-heading">👽 <a href="#Assumptions" class="headerlink" title="Assumptions"></a>Assumptions<a class="article-anchor" href="#Assumptions" aria-hidden="true"></a></h2><p>The default JUnit runner treats tests with failing assumptions as ignored.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assume.*</span><br><span class="line"><span class="meta">@Test</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">filenameIncludesUsername</span><span class="params">()</span> </span>{</span><br><span class="line">    assumeThat(File.separatorChar, is(<span class="string">'/'</span>));</span><br><span class="line">    assertThat(<span class="keyword">new</span> User(<span class="string">"optimus"</span>).configFileName(), is(<span class="string">"configfiles/optimus.cfg"</span>));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">correctBehaviorWhenFilenameIsNull</span><span class="params">()</span> </span>{</span><br><span class="line">    assumeTrue(bugFixed(<span class="string">"13356"</span>));  <span class="comment">// bugFixed is not included in JUnit</span></span><br><span class="line">    assertThat(parse(<span class="keyword">null</span>), is(<span class="keyword">new</span> NullDocument()));</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>A failing assumption in a @Before or @BeforeClass method will have the same effect<br>as a failing assumption in each @Test method of the class.</p>
+<h2 id="Rules" class="article-heading">😀 <a href="#Rules" class="headerlink" title="Rules"></a>Rules<a class="article-anchor" href="#Rules" aria-hidden="true"></a></h2><p>Rules allow very flexible addition or redefinition of the behavior of each test method in a test class.</p>
+<h3 id="TemporaryFolder-Rules" class="article-heading"><a href="#TemporaryFolder-Rules" class="headerlink" title="TemporaryFolder Rules"></a>TemporaryFolder Rules<a class="article-anchor" href="#TemporaryFolder-Rules" aria-hidden="true"></a></h3><p>The TemporaryFolder Rule allows creation of files and folders that are deleted when the test method finishes </p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">HasTempFolder</span> </span>{</span><br><span class="line">  <span class="meta">@Rule</span></span><br><span class="line">  <span class="keyword">public</span> TemporaryFolder folder = <span class="keyword">new</span> TemporaryFolder();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testUsingTempFolder</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">    File createdFile = folder.newFile(<span class="string">"myfile.txt"</span>);</span><br><span class="line">    File createdFolder = folder.newFolder(<span class="string">"subfolder"</span>);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="ExternalResource-Rules" class="article-heading"><a href="#ExternalResource-Rules" class="headerlink" title="ExternalResource Rules"></a>ExternalResource Rules<a class="article-anchor" href="#ExternalResource-Rules" aria-hidden="true"></a></h3><p>ExternalResource is a base class for Rules (like TemporaryFolder) that set up<br>an external resource before a test, and guarantee to tear it down afterward:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UsesExternalResource</span> </span>{</span><br><span class="line">  Server myServer = <span class="keyword">new</span> Server();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Rule</span></span><br><span class="line">  <span class="keyword">public</span> ExternalResource resource = <span class="keyword">new</span> ExternalResource() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>{</span><br><span class="line">      myServer.connect();</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span> </span>{</span><br><span class="line">      myServer.disconnect();</span><br><span class="line">    };</span><br><span class="line">  };</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFoo</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">new</span> Client().run(myServer);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="ErrorCollector-Rules" class="article-heading"><a href="#ErrorCollector-Rules" class="headerlink" title="ErrorCollector Rules"></a>ErrorCollector Rules<a class="article-anchor" href="#ErrorCollector-Rules" aria-hidden="true"></a></h3><p>The ErrorCollector Rule allows execution of a test to continue afte the first problem is found:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UsesErrorCollectorTwice</span> </span>{</span><br><span class="line">  <span class="meta">@Rule</span></span><br><span class="line">  <span class="keyword">public</span> ErrorCollector collector = <span class="keyword">new</span> ErrorCollector();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">example</span><span class="params">()</span> </span>{</span><br><span class="line">    collector.addError(<span class="keyword">new</span> Throwable(<span class="string">"first thing went wrong"</span>));</span><br><span class="line">    collector.addError(<span class="keyword">new</span> Throwable(<span class="string">"second thing went wrong"</span>));</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="ExceptedException-RUles" class="article-heading"><a href="#ExceptedException-RUles" class="headerlink" title="ExceptedException RUles"></a>ExceptedException RUles<a class="article-anchor" href="#ExceptedException-RUles" aria-hidden="true"></a></h3><p>The ExpectedException RUle allows in-test specification of expected exception types and messages:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">HasExpectedException</span> </span>{</span><br><span class="line">  <span class="meta">@Rule</span></span><br><span class="line">  <span class="keyword">public</span> ExpectedException thrown = ExpectedException.none();</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">throwsNothing</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">throwsNullPointerException</span><span class="params">()</span> </span>{</span><br><span class="line">    thrown.expect(NullPointerException.class);</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">throwsNullPointerExceptionWithMessage</span><span class="params">()</span> </span>{</span><br><span class="line">    thrown.expect(NullPointerException.class);</span><br><span class="line">    thrown.expectMessage(<span class="string">"happened?"</span>);</span><br><span class="line">    thrown.expectMessage(startsWith(<span class="string">"What"</span>));</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"What happened?"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Test-fixtures" class="article-heading">🐯 <a href="#Test-fixtures" class="headerlink" title="Test fixtures"></a>Test fixtures<a class="article-anchor" href="#Test-fixtures" aria-hidden="true"></a></h2><p>A test fixture is a fixed state of a set of objects used as a baseline for running tests.</p>
+<p>An example of usage:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.Closeable;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.After;</span><br><span class="line"><span class="keyword">import</span> org.junit.AfterClass;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.BeforeClass;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFixturesExample</span> </span>{</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ExpensiveManagedResource</span> <span class="keyword">implements</span> <span class="title">Closeable</span> </span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>{}</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ManagedResource</span> <span class="keyword">implements</span> <span class="title">Closeable</span> </span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>{}</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@BeforeClass</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setUpClass</span><span class="params">()</span> </span>{</span><br><span class="line">    System.out.println(<span class="string">"@BeforeClass setUpClass"</span>);</span><br><span class="line">    myExpensiveManagedResource = <span class="keyword">new</span> ExpensiveManagedResource();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@AfterClass</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">tearDownClass</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">    System.out.println(<span class="string">"@AfterClass tearDownClass"</span>);</span><br><span class="line">    myExpensiveManagedResource.close();</span><br><span class="line">    myExpensiveManagedResource = <span class="keyword">null</span>;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> ManagedResource myManagedResource;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> ExpensiveManagedResource myExpensiveManagedResource;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">println</span><span class="params">(String string)</span> </span>{</span><br><span class="line">    System.out.println(string);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Before</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">this</span>.println(<span class="string">"@Before setUp"</span>);</span><br><span class="line">    <span class="keyword">this</span>.myManagedResource = <span class="keyword">new</span> ManagedResource();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@After</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tearDown</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">    <span class="keyword">this</span>.println(<span class="string">"@After tearDown"</span>);</span><br><span class="line">    <span class="keyword">this</span>.myManagedResource.close();</span><br><span class="line">    <span class="keyword">this</span>.myManagedResource = <span class="keyword">null</span>;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">this</span>.println(<span class="string">"@Test test1()"</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">this</span>.println(<span class="string">"@Test test2()"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>Will Output something like the following:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@BeforeClass setUpClass</span><br><span class="line">@Before setUp</span><br><span class="line">@Test test2()</span><br><span class="line">@After tearDown</span><br><span class="line">@Before setUp</span><br><span class="line">@Test test1()</span><br><span class="line">@After tearDown</span><br><span class="line">@AfterClass tearDownClass</span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Run CI on wercker with Ruby on Rails 5 | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/rails-wercker-configuration/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="This article describe how to run RSpec on wercker for Rails 5 application.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Run CI on wercker with Ruby on Rails 5">
+<meta property="og:url" content="https://blog.morizyun.com/blog/rails-wercker-configuration/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describe how to run RSpec on wercker for Rails 5 application.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Run CI on wercker with Ruby on Rails 5">
+<meta name="twitter:description" content="This article describe how to run RSpec on wercker for Rails 5 application.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Run CI on wercker with Ruby on Rails 5</h1>
+    
+    <a href="/blog/rails-wercker-configuration/" class="article-date"><time datetime="2016-10-09T20:20:00.000Z">2016-10-09</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/rails-wercker-configuration/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/rails-wercker-configuration/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/rails-wercker-configuration/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>This article describe how to run RSpec on wercker for Rails 5 application.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Preparation" class="article-heading">🏈 <a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation<a class="article-anchor" href="#Preparation" aria-hidden="true"></a></h2><h3 id="Sign-up-Log-in-to-wercker" class="article-heading"><a href="#Sign-up-Log-in-to-wercker" class="headerlink" title="Sign up / Log in to wercker"></a>Sign up / Log in to wercker<a class="article-anchor" href="#Sign-up-Log-in-to-wercker" aria-hidden="true"></a></h3><p> <strong><a href="https://app.wercker.com/sessions/new" target="_blank" rel="noopener">Sign up / Log in - wercker</a></strong></p>
+<h3 id="Add-application" class="article-heading"><a href="#Add-application" class="headerlink" title="Add application"></a>Add application<a class="article-anchor" href="#Add-application" aria-hidden="true"></a></h3><p><img src="/img/2016-10-09-rails-wercker-configuration_1.jpg" width="589" height="163" alt="wercker_creating_application"></p>
+<h3 id="Registration-repository" class="article-heading"><a href="#Registration-repository" class="headerlink" title="Registration repository"></a>Registration repository<a class="article-anchor" href="#Registration-repository" aria-hidden="true"></a></h3><p><img src="/img/2016-10-09-rails-wercker-configuration_2.jpg" width="640" height="519" alt="choose_repository"></p>
+<h3 id="Configure-Access" class="article-heading"><a href="#Configure-Access" class="headerlink" title="Configure Access"></a>Configure Access<a class="article-anchor" href="#Configure-Access" aria-hidden="true"></a></h3><p><img src="/img/2016-10-09-rails-wercker-configuration_3.jpg" width="640" height="347" alt="configure_access"></p>
+<h2 id="Adding-wercker-yml-to-your-project" class="article-heading">🐡 <a href="#Adding-wercker-yml-to-your-project" class="headerlink" title="Adding wercker.yml to your project"></a>Adding wercker.yml to your project<a class="article-anchor" href="#Adding-wercker-yml-to-your-project" aria-hidden="true"></a></h2><p>Please add <code>wercker.yml</code> to your project root. Official document is as follows:</p>
+<p><strong><a href="http://devcenter.wercker.com/docs/index.html" target="_blank" rel="noopener">wercker - docs</a></strong></p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">box:</span> <span class="attr">ruby:2.3.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can also use services such as databases. Read more on our dev center:</span></span><br><span class="line"><span class="comment"># http://devcenter.wercker.com/docs/services/index.html</span></span><br><span class="line"><span class="comment"># http://devcenter.wercker.com/docs/services/postgresql.html</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  - id:</span> <span class="string">postgres</span></span><br><span class="line"><span class="attr">    env:</span></span><br><span class="line"><span class="attr">      POSTGRES_PASSWORD:</span> <span class="string">secret_password</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://devcenter.wercker.com/docs/pipelines/index.html</span></span><br><span class="line"><span class="attr">unit-test:</span></span><br><span class="line">  <span class="comment"># http://devcenter.wercker.com/docs/steps/index.html</span></span><br><span class="line"><span class="attr">  steps:</span></span><br><span class="line"><span class="attr">    - bundle-install:</span></span><br><span class="line"><span class="attr">      jobs:</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Prepare postgresql for Rails</span></span><br><span class="line"><span class="attr">    - rails-database-yml:</span></span><br><span class="line"><span class="attr">        service:</span> <span class="string">postgresql-docker</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    - install-packages:</span></span><br><span class="line"><span class="attr">        name:</span> <span class="string">Install</span> <span class="string">node.js,</span> <span class="string">build-essential,</span> <span class="string">libpq-dev</span></span><br><span class="line"><span class="attr">        packages:</span> <span class="string">build-essential</span> <span class="string">libpq-dev</span> <span class="string">nodejs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    - script:</span></span><br><span class="line"><span class="attr">        name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">db</span></span><br><span class="line"><span class="attr">        code:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          RAILS_ENV=test bundle exec rake db:schema:load</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span><span class="attr">    - script:</span></span><br><span class="line"><span class="attr">        name:</span> <span class="string">Run</span> <span class="string">RSpec</span></span><br><span class="line"><span class="attr">        code:</span> <span class="string">bundle</span> <span class="string">exec</span> <span class="string">rspec</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  after-steps:</span></span><br><span class="line"><span class="attr">    - slack-notifier:</span></span><br><span class="line"><span class="attr">      url:</span> <span class="string">$SLACK_URL</span></span><br><span class="line"><span class="attr">      channel:</span> <span class="string">$SLACK_CHANNEL</span></span><br><span class="line"><span class="attr">      username:</span> <span class="string">werckerbot</span></span><br><span class="line"><span class="attr">      notify_on:</span> <span class="string">failed</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Add-your-environment-variables" class="article-heading"> 🍄 <a href="#Add-your-environment-variables" class="headerlink" title="Add your environment variables"></a>Add your environment variables<a class="article-anchor" href="#Add-your-environment-variables" aria-hidden="true"></a></h2><p>Please set environment variables to application environment variable on wercker.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">SLACK_URL https://webhook.slack.com/xxx</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/img/2016-10-09-rails-wercker-configuration_4.jpg" width="640" height="161" alt="env_variables"></p>
+<h2 id="Run-CI-on-wercker" class="article-heading">🐠 <a href="#Run-CI-on-wercker" class="headerlink" title="Run CI on wercker"></a>Run CI on wercker<a class="article-anchor" href="#Run-CI-on-wercker" aria-hidden="true"></a></h2><p>After adding <code>wercker.yml</code> and <code>git commit & git push</code>, you can run your CI scrpit on wercker!</p>
+<p><img src="/img/2016-10-09-rails-wercker-configuration_5.jpg" width="640" height="466" alt="run_wercker"></p>
+<h2 id="Appendix-Deploy-to-Elasticbeanstalk" class="article-heading">🗽 <a href="#Appendix-Deploy-to-Elasticbeanstalk" class="headerlink" title="Appendix: Deploy to Elasticbeanstalk"></a>Appendix: Deploy to Elasticbeanstalk<a class="article-anchor" href="#Appendix-Deploy-to-Elasticbeanstalk" aria-hidden="true"></a></h2><p>If you want to deploy by wercker, please use following configuration:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  steps:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">hotakasaito/elastic-beanstalk-deploy:</span></span><br><span class="line"><span class="attr">        key:</span> <span class="string">$AMAZON_KEY</span></span><br><span class="line"><span class="attr">        secret:</span> <span class="string">$AMAZON_SECRET_KEY</span></span><br><span class="line"><span class="attr">        app_name:</span> <span class="string">My</span> <span class="string">Application</span></span><br><span class="line"><span class="attr">        env_name:</span> <span class="string">production</span></span><br><span class="line"><span class="attr">        region:</span> <span class="string">ap-northeast-1</span></span><br><span class="line"><span class="attr">        nohup:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        opts:</span> <span class="bullet">--debug</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail please read <strong><a href="https://app.wercker.com/applications/55d31be3eedf3c32070080d6/tab/details" target="_blank" rel="noopener">hotakasaito/elastic-beanstalk-deploy</a></strong>.</p>
+<h2 id="Special-Thanks" class="article-heading"> 🎉 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="http://uchinoinu.hatenablog.jp/entry/2016/06/15/092318" target="_blank" rel="noopener">How to use new wercker to deploy to Heroku</a></li>
+<li><a href="http://qiita.com/mikage014/items/b89b1113b4e88009da18" target="_blank" rel="noopener">Deploy to Heroku from wercker</a></li>
+<li><a href="https://docs.docker.com/compose/rails/" target="_blank" rel="noopener">Quickstart: Compose and Rails</a></li>
+<li><a href="https://masutaka.net/chalow/2014-10-04-1.html" target="_blank" rel="noopener">wercker with capistrano in JP</a></li>
+<li><a href="http://qiita.com/hotakasaito/items/e79c3c82e48997b14cad" target="_blank" rel="noopener">http://qiita.com/hotakasaito/…</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

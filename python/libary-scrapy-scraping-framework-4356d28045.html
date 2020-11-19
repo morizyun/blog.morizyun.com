@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic tutorial for Scrapy [Scraping framework] | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//python/libary-scrapy-scraping-framework-4356d28045.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en//python/libary-scrapy-scraping-framework-4356d28045.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="Scrapy is scrapying OSS tool for extracting the data you need from websites. In addition, Scrapy Cloud - Scrapyinghub is a powerful and useful platform to run Scrapy cralwer. This article describes ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic tutorial for Scrapy [Scraping framework]">
+<meta property="og:url" content="https://blog.morizyun.com//python/libary-scrapy-scraping-framework-4356d28045.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="Scrapy is scrapying OSS tool for extracting the data you need from websites. In addition, Scrapy Cloud - Scrapyinghub is a powerful and useful platform to run Scrapy cralwer. This article describes ba">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-07-19T22:36:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic tutorial for Scrapy [Scraping framework]">
+<meta name="twitter:description" content="Scrapy is scrapying OSS tool for extracting the data you need from websites. In addition, Scrapy Cloud - Scrapyinghub is a powerful and useful platform to run Scrapy cralwer. This article describes ba">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic tutorial for Scrapy [Scraping framework]</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com//python/libary-scrapy-scraping-framework-4356d28045.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com//python/libary-scrapy-scraping-framework-4356d28045.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com//python/libary-scrapy-scraping-framework-4356d28045.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><strong><a href="https://scrapy.org/" target="_blank" rel="noopener">Scrapy</a></strong> is scrapying OSS tool for extracting the data you need from websites. In addition, <strong><a href="https://scrapinghub.com/scrapy-cloud" target="_blank" rel="noopener">Scrapy Cloud - Scrapyinghub</a></strong> is a powerful and useful platform to run Scrapy cralwer. This article describes basic tutorial for Scrapy.</p>
+<h2 id="Installation" class="article-heading">🐠 <a href="#Installation" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation" aria-hidden="true"></a></h2><p>Install Scrapy and Scrapyinghub library at the first time:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install scrapy shub</span><br></pre></td></tr></tbody></table></figure>
+<p>After then, please create a new project for Scrapy:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">scrapy startproject PROJECT_NAME</span><br><span class="line"><span class="built_in">cd</span> PROJECT_NAME</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-Spider" class="article-heading"> 🎳 <a href="#Create-Spider" class="headerlink" title="Create Spider"></a>Create Spider<a class="article-anchor" href="#Create-Spider" aria-hidden="true"></a></h2><p>In scrapy, you create some spiders which is crawler in a project. You can create the spider by the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Generate code to scrape a new site</span></span><br><span class="line">scrapy genspider blogsider blog.scrapinghub.com</span><br></pre></td></tr></tbody></table></figure>
+<p>After the above command, please change <code>spiders/blogsider.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">'blogspider'</span></span><br><span class="line">    allowed_domains = [<span class="string">'blog.scrapinghub.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'https://blog.scrapinghub.com'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> title <span class="keyword">in</span> response.css(<span class="string">'h2.entry-title'</span>):</span><br><span class="line">            <span class="keyword">yield</span> {<span class="string">'title'</span>: title.css(<span class="string">'a ::text'</span>).extract_first()}</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> next_page <span class="keyword">in</span> response.css(<span class="string">'div.prev-post > a'</span>):</span><br><span class="line">            <span class="keyword">yield</span> response.follow(next_page, self.parse)</span><br></pre></td></tr></tbody></table></figure>
+<p>So, your spider can get title in entry list.</p>
+<h2 id="Run-the-cawler-in-local" class="article-heading">🐝 <a href="#Run-the-cawler-in-local" class="headerlink" title="Run the cawler in local"></a>Run the cawler in local<a class="article-anchor" href="#Run-the-cawler-in-local" aria-hidden="true"></a></h2><p>You can execute your crawler on local:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Execute scraping in local</span></span><br><span class="line">scrapy crawl blogspider</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Get-API-Key-on-Scrapinghub" class="article-heading"> 😎 <a href="#Get-API-Key-on-Scrapinghub" class="headerlink" title="Get API Key on Scrapinghub"></a>Get API Key on Scrapinghub<a class="article-anchor" href="#Get-API-Key-on-Scrapinghub" aria-hidden="true"></a></h2><p>If you create an account on <strong><a href="https://scrapinghub.com/scrapy-cloud#" target="_blank" rel="noopener">Scrapy Cloud - Scrapyinghub</a></strong>, you can deloy your code to there and execute it on theere.</p>
+<p><img src="/img/2018-06-28-scraping-hub-sign-in.png" alt></p>
+<p>After creating the account, please create project and confirm API key and Project Id.</p>
+<p><img src="/img/scrapinghub-scrapy-cloud-create-project.png" alt></p>
+<p><img src="/img/scrapinghub-scray-cloud-how-to-deploy.png" alt></p>
+<h2 id="Create-Scrapyinghub-Configuration" class="article-heading">🗻 <a href="#Create-Scrapyinghub-Configuration" class="headerlink" title="Create Scrapyinghub Configuration"></a>Create Scrapyinghub Configuration<a class="article-anchor" href="#Create-Scrapyinghub-Configuration" aria-hidden="true"></a></h2><p>Create <code>scrapinghub.yml</code>:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">projects:</span></span><br><span class="line"><span class="attr">  default:</span> <span class="string">YOUR_PROJECT_ID</span></span><br><span class="line"><span class="attr">stack:</span> <span class="attr">scrapy:1.5-py3</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Please set your project id and stack information which you want to use. If you want to know more detail of stack information, please see <strong><a href="https://github.com/scrapinghub/shub/blob/master/docs/deploying.rst" target="_blank" rel="noopener">shub/deploying</a></strong>.</p>
+<h2 id="Deploy-to-Scrapyinghub" class="article-heading"> 🐰 <a href="#Deploy-to-Scrapyinghub" class="headerlink" title="Deploy to Scrapyinghub"></a>Deploy to Scrapyinghub<a class="article-anchor" href="#Deploy-to-Scrapyinghub" aria-hidden="true"></a></h2><p>Let’s deply your code to Scrapyinghub with the API key:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Install a library for scrapying hub</span></span><br><span class="line">pip install shub</span><br><span class="line"></span><br><span class="line"><span class="comment"># Logging in Scrapinghub with <api key></api></span></span><br><span class="line">shub login</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy to Scrapinghub</span></span><br><span class="line">shub deploy <span class="comment"># Deploy the spider to Scrapy Cloud</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Execute spider on Scrapinghub</span></span><br><span class="line">shub schedule blogspider</span><br></pre></td></tr></tbody></table></figure>
+<p>After then, you can confirm the result items by Scrapyinghub screen.</p>
+<p><img src="/img/2018-06-28-scrapyinghub-scrapy-cloud-job-finsihed-items.png" alt></p>
+<h2 id="How-to-access-settings" class="article-heading">🐡 <a href="#How-to-access-settings" class="headerlink" title="How to access settings"></a>How to access settings<a class="article-anchor" href="#How-to-access-settings" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">print(<span class="string">"Existing settings: %s"</span> % self.settings.attributes.keys())</span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail, please see <a href="https://doc.scrapy.org/en/latest/topics/settings.html" target="_blank" rel="noopener">https://doc.scrapy.org/en/latest/topics/settings.html</a> .</p>
+<h2 id="Appendix" class="article-heading"> 🎂 <a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix<a class="article-anchor" href="#Appendix" aria-hidden="true"></a></h2><h3 id="Scrapy-Cloud-API" class="article-heading"><a href="#Scrapy-Cloud-API" class="headerlink" title="Scrapy Cloud API"></a>Scrapy Cloud API<a class="article-anchor" href="#Scrapy-Cloud-API" aria-hidden="true"></a></h3><p>Scrapy Cloud on Scrapyinghub has useful API. Please confirm as follows:</p>
+<p><a href="https://doc.scrapinghub.com/scrapy-cloud.html" target="_blank" rel="noopener">https://doc.scrapinghub.com/scrapy-cloud.html</a></p>
+<h3 id="Downloading-and-processing-files-and-images" class="article-heading"><a href="#Downloading-and-processing-files-and-images" class="headerlink" title="Downloading and processing files and images"></a>Downloading and processing files and images<a class="article-anchor" href="#Downloading-and-processing-files-and-images" aria-hidden="true"></a></h3><p>Scrapy provides reusable item pipelines for downloading files attached to a particular item.</p>
+<ul>
+<li>Download their images</li>
+<li>Create thumbnail</li>
+</ul>
+<p>If you want to know more detail, please see official document: <strong><a href="https://doc.scrapy.org/en/latest/topics/media-pipeline.html" target="_blank" rel="noopener">Downloading and processing files and images</a></strong>.</p>
+<h3 id="Scrapy-Configuration" class="article-heading"><a href="#Scrapy-Configuration" class="headerlink" title="Scrapy Configuration"></a>Scrapy Configuration<a class="article-anchor" href="#Scrapy-Configuration" aria-hidden="true"></a></h3><p>About <code>settings.py</code>:</p>
+<ul>
+<li><code>DEPTH_LIMIT</code> : Depth to scrape</li>
+<li><code>DOWNLOAD_DELAY</code> : Intervals for downloading data in scraping</li>
+</ul>
+<h3 id="Sentry" class="article-heading"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry<a class="article-anchor" href="#Sentry" aria-hidden="true"></a></h3><h4 id="Installation-1" class="article-heading"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation-1" aria-hidden="true"></a></h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install scrapy-sentry</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h4><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># sentry dsn</span></span><br><span class="line">SENTRY_DSN = <span class="string">'http://public:secret@example.com/1'</span></span><br><span class="line">EXTENSIONS = {</span><br><span class="line">    <span class="string">"scrapy_sentry.extensions.Errors"</span>:<span class="number">10</span>,</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Addons" class="article-heading"><a href="#Addons" class="headerlink" title="Addons"></a>Addons<a class="article-anchor" href="#Addons" aria-hidden="true"></a></h3><h4 id="Magic-Fields" class="article-heading"><a href="#Magic-Fields" class="headerlink" title="Magic Fields"></a>Magic Fields<a class="article-anchor" href="#Magic-Fields" aria-hidden="true"></a></h4><ul>
+<li><a href="https://github.com/scrapy-plugins/scrapy-magicfields" target="_blank" rel="noopener">https://github.com/scrapy-plugins/scrapy-magicfields</a></li>
+<li>It can add job_id, spider_name, created_at, etc to items.</li>
+</ul>
+<h4 id="Monitoring" class="article-heading"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring<a class="article-anchor" href="#Monitoring" aria-hidden="true"></a></h4><ul>
+<li>Monitor spiders and item validation check</li>
+<li>Enable to define scrapy stats values</li>
+<li>Get email and slack notifications</li>
+</ul>
+<h4 id="DotScrapy-Persistence" class="article-heading"><a href="#DotScrapy-Persistence" class="headerlink" title="DotScrapy Persistence"></a>DotScrapy Persistence<a class="article-anchor" href="#DotScrapy-Persistence" aria-hidden="true"></a></h4><ul>
+<li>Allows the crawler to access a persistent storage and share data among different runs of a spider by S3</li>
+<li>It ignore duplicated URL among some jobs of a spider.</li>
+<li>It is difficult to recover error sometimes, so please be careful to use it.</li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-07-19T22:36:54.000Z" itemprop="dateModified">Last updated: 2018-07-19</time>
+                <a href="basic-grammer-tips.html" class="article-footer-prev" title="Grammer Tips"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="library-django-docker-basic-tutorial.html" class="article-footer-next" title="Django"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Spider"><span class="toc-text">Create Spider</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-the-cawler-in-local"><span class="toc-text">Run the cawler in local</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-API-Key-on-Scrapinghub"><span class="toc-text">Get API Key on Scrapinghub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Scrapyinghub-Configuration"><span class="toc-text">Create Scrapyinghub Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deploy-to-Scrapyinghub"><span class="toc-text">Deploy to Scrapyinghub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-access-settings"><span class="toc-text">How to access settings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix"><span class="toc-text">Appendix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy-Cloud-API"><span class="toc-text">Scrapy Cloud API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Downloading-and-processing-files-and-images"><span class="toc-text">Downloading and processing files and images</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy-Configuration"><span class="toc-text">Scrapy Configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sentry"><span class="toc-text">Sentry</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Installation-1"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Addons"><span class="toc-text">Addons</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Magic-Fields"><span class="toc-text">Magic Fields</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Monitoring"><span class="toc-text">Monitoring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DotScrapy-Persistence"><span class="toc-text">DotScrapy Persistence</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-grammer-tips.html" class="sidebar-link">Grammer Tips</a><strong class="sidebar-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="sidebar-link current">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="sidebar-link">Django</a><a href="library-bigquery-google-cloud.html" class="sidebar-link">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="sidebar-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="sidebar-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="sidebar-link">Datefinder</a><a href="library-sentry-error-catch.html" class="sidebar-link">Sentry</a><strong class="sidebar-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="sidebar-link">Portia</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-grammer-tips.html" class="mobile-nav-link">Grammer Tips</a><strong class="mobile-nav-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="mobile-nav-link current">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="mobile-nav-link">Django</a><a href="library-bigquery-google-cloud.html" class="mobile-nav-link">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="mobile-nav-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="mobile-nav-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="mobile-nav-link">Datefinder</a><a href="library-sentry-error-catch.html" class="mobile-nav-link">Sentry</a><strong class="mobile-nav-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="mobile-nav-link">Portia</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

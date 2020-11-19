@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Installing Dokku to Vultr | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="“Dokku“ is a private PaaS OSS application like Heroku.“Vultr“ is a Cloud Hosting service especially VPS. This article desribe installation “Dokku“ to “Vultr“.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Installing Dokku to Vultr">
+<meta property="og:url" content="https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="“Dokku“ is a private PaaS OSS application like Heroku.“Vultr“ is a Cloud Hosting service especially VPS. This article desribe installation “Dokku“ to “Vultr“.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Installing Dokku to Vultr">
+<meta name="twitter:description" content="“Dokku“ is a private PaaS OSS application like Heroku.“Vultr“ is a Cloud Hosting service especially VPS. This article desribe installation “Dokku“ to “Vultr“.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Installing Dokku to Vultr</h1>
+    
+    <a href="/blog/dokku-isntall-vultr-pass-mini-heroku/" class="article-date"><time datetime="2016-10-10T04:00:00.000Z">2016-10-10</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>“<strong><a href="https://github.com/dokku/dokku" target="_blank" rel="noopener">Dokku</a></strong>“ is a private PaaS OSS application like Heroku.<br>“<strong><a href="http://www.vultr.com/?ref=7002809-3B" target="_blank" rel="noopener">Vultr</a></strong>“ is a Cloud Hosting service especially VPS.</p>
+<p>This article desribe installation “<strong><a href="https://github.com/dokku/dokku" target="_blank" rel="noopener">Dokku</a></strong>“ to “<strong><a href="http://www.vultr.com/?ref=7002809-3B" target="_blank" rel="noopener">Vultr</a></strong>“.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Setup-Server-on-Vultr" class="article-heading"> 🍮 <a href="#Setup-Server-on-Vultr" class="headerlink" title="Setup Server on Vultr"></a>Setup Server on Vultr<a class="article-anchor" href="#Setup-Server-on-Vultr" aria-hidden="true"></a></h2><ol>
+<li>Select “create New Server(e.g. 123.123.123.123)”, select “Ubuntu 14.04 LTS”<br></li>
+<li>Once your server has been created, wait for installation to complete.<br></li>
+<li>SSH into your Server as root and run the following commands:<br></li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># login server by SSH</span></span><br><span class="line">ssh root@dokku.me</span><br><span class="line"></span><br><span class="line"><span class="comment"># Updating apt-get</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get -qq upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing linux-image-virtual & linux-image-extra-virtual & language-pack-ja</span></span><br><span class="line">apt-get install -y git make linux-image-virtual linux-image-extra-virtual language-pack-ja dos2unix</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set Timezone for Server</span></span><br><span class="line">mv /etc/localtime /etc/localtime.bak</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime</span><br><span class="line">service cron restart</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Setup-swap-space" class="article-heading">🐡 <a href="#Setup-swap-space" class="headerlink" title="Setup swap space"></a>Setup swap space<a class="article-anchor" href="#Setup-swap-space" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># login server by SSH</span></span><br><span class="line">ssh root@dokku.me</span><br><span class="line"></span><br><span class="line">cat /proc/swaps</span><br><span class="line"><span class="comment"># Filename        Type    Size  Used  Priority</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create a folder for swap</span></span><br><span class="line">mkdir /var/swap</span><br><span class="line"></span><br><span class="line"><span class="comment"># create 2GB swap file</span></span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/var/swap/swap0 bs=1M count=2048</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set permission</span></span><br><span class="line">chmod 600 /var/swap/swap0</span><br><span class="line"></span><br><span class="line"><span class="comment"># Setup swap configuration</span></span><br><span class="line">mkswap /var/swap/swap0</span><br><span class="line">swapon /var/swap/swap0</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'/var/swap/swap0 swap swap defaults 0 0'</span> >> /etc/fstab</span><br><span class="line"></span><br><span class="line">cat /proc/swaps</span><br><span class="line"><span class="comment"># Filename        Type    Size  Used  Priority</span></span><br><span class="line"><span class="comment"># /var/swap/swap0                         file    2097148 211176  -1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Installation-for-Dokku" class="article-heading">😼 <a href="#Installation-for-Dokku" class="headerlink" title="Installation for Dokku"></a>Installation for Dokku<a class="article-anchor" href="#Installation-for-Dokku" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># login server by SSH</span></span><br><span class="line">ssh root@dokku.me</span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing Dokku</span></span><br><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">wget https://raw.githubusercontent.com/dokku/dokku/v0.7.2/bootstrap.sh</span><br><span class="line">DOKKU_TAG=v0.7.2 bash bootstrap.sh</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Submit-public-SSH-key-amp-domain-to-dokku-web-page" class="article-heading">🚕 <a href="#Submit-public-SSH-key-amp-domain-to-dokku-web-page" class="headerlink" title="Submit public SSH key & domain to dokku web page"></a>Submit public SSH key & domain to dokku web page<a class="article-anchor" href="#Submit-public-SSH-key-amp-domain-to-dokku-web-page" aria-hidden="true"></a></h2><p>Open <code>dokku.me</code> or <code>123.123.123.123</code> by your web browser and submit public SSH key & domain name.</p>
+<h2 id="Install-Postgress-on-Dokku" class="article-heading">🚌 <a href="#Install-Postgress-on-Dokku" class="headerlink" title="Install Postgress on Dokku"></a>Install Postgress on Dokku<a class="article-anchor" href="#Install-Postgress-on-Dokku" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># login server by SSH</span></span><br><span class="line">ssh root@dokku.me</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install PostgreSQL plugin on dokku</span></span><br><span class="line">dokku plugin:install https://github.com/dokku/dokku-postgres.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create instance of PostgreSQL</span></span><br><span class="line">dokku postgres:create dokku_sample_db</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create instance of Application</span></span><br><span class="line">dokku apps:create dokku_sample_app</span><br><span class="line"></span><br><span class="line"><span class="comment"># Relate PostgreSQL instance with the application</span></span><br><span class="line">dokku postgres:link dokku_sample_db dokku_sample_app</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Setup-DNS" class="article-heading">🗻 <a href="#Setup-DNS" class="headerlink" title="Setup DNS"></a>Setup DNS<a class="article-anchor" href="#Setup-DNS" aria-hidden="true"></a></h2><p>Setup domanin & IP to your DNS</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">dokku.me   A 123.123.123.123</span><br><span class="line">*.dokku.me A 123.123.123.123</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Set-domain-amp-IP-to-your-hosts" class="article-heading">🗽 <a href="#Set-domain-amp-IP-to-your-hosts" class="headerlink" title="Set domain & IP to your hosts"></a>Set domain & IP to your hosts<a class="article-anchor" href="#Set-domain-amp-IP-to-your-hosts" aria-hidden="true"></a></h2><p>Add your domain & IP to local <code>/etc/hosts</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">123.123.123.123 dokku.me</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Set-SSH-Configuration" class="article-heading"> 🎉 <a href="#Set-SSH-Configuration" class="headerlink" title="Set SSH Configuration"></a>Set SSH Configuration<a class="article-anchor" href="#Set-SSH-Configuration" aria-hidden="true"></a></h2><p>Add SSH Configuration to local <code>~/.ssh/config</code>:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Host dokku.me</span><br><span class="line">  HostName 123.123.123.123</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa.dokku.me</span><br><span class="line">  User root</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Deploy-your-app" class="article-heading">🐯 <a href="#Deploy-your-app" class="headerlink" title="Deploy your app"></a>Deploy your app<a class="article-anchor" href="#Deploy-your-app" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># From your local machine</span></span><br><span class="line">git <span class="built_in">clone</span> git@github.com:heroku/ruby-rails-sample.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># Each official datastore offers a `link` method to link a service to any application</span></span><br><span class="line">git remote add dokku dokku@dokku.me:ruby-rails-sample</span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing dokku command line tool</span></span><br><span class="line">gem install dokku-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set secret key for Rails</span></span><br><span class="line">bundle <span class="built_in">exec</span> rake secret</span><br><span class="line">dokku config:<span class="built_in">set</span> SECRET_KEY_BASE=<span class="string">"上で生成された文字列"</span></span><br><span class="line">dokku config:<span class="built_in">set</span> CURL_TIMEOUT=1200</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy</span></span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show app by browser</span></span><br><span class="line">dokku open</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="dokku-cli-Cheat-Sheat" class="article-heading">👽 <a href="#dokku-cli-Cheat-Sheat" class="headerlink" title="dokku-cli Cheat Sheat"></a>dokku-cli Cheat Sheat<a class="article-anchor" href="#dokku-cli-Cheat-Sheat" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Basic Commands</span></span><br><span class="line">dokku run <cmd>      <span class="comment"># Run a one-off command in the environment of the app</span></cmd></span><br><span class="line">dokku ssh            <span class="comment"># Start an SSH session as root user</span></span><br><span class="line">dokku logs [-t]      <span class="comment"># Display logs for the app (-t follows)</span></span><br><span class="line">dokku <span class="built_in">help</span> [COMMAND] <span class="comment"># Describe available commands or one specific command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configuration Commands</span></span><br><span class="line">dokku config                                    <span class="comment"># Display the app's environment variables</span></span><br><span class="line">dokku config:get KEY                            <span class="comment"># Display an environment variable value</span></span><br><span class="line">dokku config:<span class="built_in">set</span> KEY1=VALUE1 [KEY2=VALUE2 ...]  <span class="comment"># Set one or more environment variables</span></span><br><span class="line">dokku config:<span class="built_in">set</span>:file <path to file>            <span class="comment"># Set one or more environment variables from file</span></path></span><br><span class="line">dokku config:<span class="built_in">unset</span> KEY1 [KEY2 ...]              <span class="comment"># Unset one or more environment variables</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Process / Container Commands</span></span><br><span class="line">dokku ps           <span class="comment"># List processes running in app container(s)</span></span><br><span class="line">dokku ps:rebuild   <span class="comment"># Rebuild the app</span></span><br><span class="line">dokku ps:restart   <span class="comment"># Restart the app container</span></span><br><span class="line">dokku ps:start     <span class="comment"># Start the app container</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># その他便利コマンド</span></span><br><span class="line">dokku nginx:build <span class="comment"># (Re)builds nginx config for the app</span></span><br><span class="line">dokku open        <span class="comment"># Open the app in your default browser</span></span><br><span class="line">dokku url         <span class="comment"># Show the first URL for the app</span></span><br><span class="line">dokku urls        <span class="comment"># Show all URLs for the app</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Dokku-app-at-the-root-domain-of-the-dokku-server" class="article-heading">🐮 <a href="#Dokku-app-at-the-root-domain-of-the-dokku-server" class="headerlink" title="Dokku app at the root domain of the dokku server"></a>Dokku app at the root domain of the dokku server<a class="article-anchor" href="#Dokku-app-at-the-root-domain-of-the-dokku-server" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># login server by SSH</span></span><br><span class="line">ssh root@dokku.me</span><br><span class="line"></span><br><span class="line">dokku domains:add myapp mydomain.com</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Special-Thanks" class="article-heading"> 😎 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="http://stackoverflow.com/questions/31867978/how-to-point-a-dokku-app-at-the-root-domain-of-the-dokku-server" target="_blank" rel="noopener">nginx - How to point a Dokku app at the root domain of the dokku server - Stack Overflow</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

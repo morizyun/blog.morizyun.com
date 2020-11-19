@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic for Enum [Java/Kotlin] | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//java/basic-enum-7f34720937.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en//java/basic-enum-7f34720937.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="This article describes useful Enum value for Java and Kotlin. Useful Enum classenum class RecyclerType constructor(val int: Int) &amp;#123;  BODY(1),  HEADER(2)  FOOTER(3);  companion object &amp;#123;    //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic for Enum [Java&#x2F;Kotlin]">
+<meta property="og:url" content="https://blog.morizyun.com//java/basic-enum-7f34720937.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes useful Enum value for Java and Kotlin. Useful Enum classenum class RecyclerType constructor(val int: Int) &amp;#123;  BODY(1),  HEADER(2)  FOOTER(3);  companion object &amp;#123;    //">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2019-02-18T06:38:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic for Enum [Java&#x2F;Kotlin]">
+<meta name="twitter:description" content="This article describes useful Enum value for Java and Kotlin. Useful Enum classenum class RecyclerType constructor(val int: Int) &amp;#123;  BODY(1),  HEADER(2)  FOOTER(3);  companion object &amp;#123;    //">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic for Enum [Java/Kotlin]</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com//java/basic-enum-7f34720937.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com//java/basic-enum-7f34720937.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com//java/basic-enum-7f34720937.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>This article describes useful Enum value for Java and Kotlin.</p>
+<h2 id="Useful-Enum-class" class="article-heading"> 🎳 <a href="#Useful-Enum-class" class="headerlink" title="Useful Enum class"></a>Useful Enum class<a class="article-anchor" href="#Useful-Enum-class" aria-hidden="true"></a></h2><figure class="highlight kotlin"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">RecyclerType</span> <span class="keyword">constructor</span></span>(<span class="keyword">val</span> int: <span class="built_in">Int</span>) {</span><br><span class="line">  BODY(<span class="number">1</span>),</span><br><span class="line">  HEADER(<span class="number">2</span>)</span><br><span class="line">  FOOTER(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">companion</span> <span class="keyword">object</span> {</span><br><span class="line">    <span class="comment">// Convert to enum</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">fromInt</span><span class="params">(index: <span class="type">Int</span>)</span></span>: RecyclerType {</span><br><span class="line">      <span class="keyword">return</span> values().firstOrNull { it.int == index } ?: BODY</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> isBody: <span class="built_in">Boolean</span></span><br><span class="line">  <span class="keyword">get</span>() = <span class="keyword">this</span> == BODY</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> isFooter: <span class="built_in">Boolean</span></span><br><span class="line">  <span class="keyword">get</span>() = <span class="keyword">this</span> == FOOTER</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="References" class="article-heading">🐝 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://qiita.com/ijichi_y/items/61d32c0affb36dec8387" target="_blank" rel="noopener">https://qiita.com/ijichi_y/items/61d32c0affb36dec8387</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-02-18T06:38:03.000Z" itemprop="dateModified">Last updated: 2019-02-18</time>
+                <a href="basic-array.html" class="article-footer-next" title="Array"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Useful-Enum-class"><span class="toc-text">Useful Enum class</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-array.html" class="sidebar-link">Array</a><a href="basic-date.html" class="sidebar-link">Date</a><a href="basic-stream.html" class="sidebar-link">Stream</a><a href="basic-grammer.html" class="sidebar-link">Grammer</a><strong class="sidebar-title">Kotlin</strong><a href="kotlin-basic-grammer.html" class="sidebar-link">Basic Grammer</a><strong class="sidebar-title">Library</strong><a href="library-mybatis-tips.html" class="sidebar-link">MyBatis</a><a href="library-thymeleaf-tips.html" class="sidebar-link">Thymeleaf</a><a href="library-hamcrest-assertion-matcher.html" class="sidebar-link">Hamcrest</a><a href="library-jjwt-jwt-json-web-token.html" class="sidebar-link">jjwt/Kotlin</a><strong class="sidebar-title">Spring Framework</strong><a href="spring-resttemplate-debug-logging.html" class="sidebar-link">Logging for RestTemplate</a><a href="spring-framework-annotation.html" class="sidebar-link">Annotation</a><a href="spring-configuration-env-variable.html" class="sidebar-link">Environment Variables</a><a href="spring-configuration-transaction.html" class="sidebar-link">Transaction Management</a><strong class="sidebar-title">Setup</strong><a href="setup-intellij-code-check.html" class="sidebar-link">Setup tool with IntelliJ</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-array.html" class="mobile-nav-link">Array</a><a href="basic-date.html" class="mobile-nav-link">Date</a><a href="basic-stream.html" class="mobile-nav-link">Stream</a><a href="basic-grammer.html" class="mobile-nav-link">Grammer</a><strong class="mobile-nav-title">Kotlin</strong><a href="kotlin-basic-grammer.html" class="mobile-nav-link">Basic Grammer</a><strong class="mobile-nav-title">Library</strong><a href="library-mybatis-tips.html" class="mobile-nav-link">MyBatis</a><a href="library-thymeleaf-tips.html" class="mobile-nav-link">Thymeleaf</a><a href="library-hamcrest-assertion-matcher.html" class="mobile-nav-link">Hamcrest</a><a href="library-jjwt-jwt-json-web-token.html" class="mobile-nav-link">jjwt/Kotlin</a><strong class="mobile-nav-title">Spring Framework</strong><a href="spring-resttemplate-debug-logging.html" class="mobile-nav-link">Logging for RestTemplate</a><a href="spring-framework-annotation.html" class="mobile-nav-link">Annotation</a><a href="spring-configuration-env-variable.html" class="mobile-nav-link">Environment Variables</a><a href="spring-configuration-transaction.html" class="mobile-nav-link">Transaction Management</a><strong class="mobile-nav-title">Setup</strong><a href="setup-intellij-code-check.html" class="mobile-nav-link">Setup tool with IntelliJ</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

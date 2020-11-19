@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Spring Web MVC Reference & Tutorials day1 | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//blog/spring-web-mvc-reference-tutorial-java-day1/index-b9c7f71bf3.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Web MVC Reference &amp; Tutorials day1">
+<meta property="og:url" content="https://blog.morizyun.com//blog/spring-web-mvc-reference-tutorial-java-day1/index-b9c7f71bf3.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Web MVC Reference &amp; Tutorials day1">
+<meta name="twitter:description" content="I read Web MVC framework - Reference Guide.This article shows some basic ideas in Spring Web MVC.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Spring Web MVC Reference & Tutorials day1</h1>
+    
+    <a href="/blog/spring-web-mvc-reference-tutorial-java-day1/" class="article-date"><time datetime="2016-08-08T04:00:00.000Z">2016-08-08</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>I read <strong><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" target="_blank" rel="noopener">Web MVC framework - Reference Guide</a></strong>.<br>This article shows some basic ideas in Spring Web MVC.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Key-Design-Principle" class="article-heading">🐞 <a href="#Key-Design-Principle" class="headerlink" title="Key Design Principle"></a>Key Design Principle<a class="article-anchor" href="#Key-Design-Principle" aria-hidden="true"></a></h2><p>A key design principle in Spring Web MVC and in Spring in general is<br>the “Open for extension, closed for modification” principle.</p>
+<h2 id="Features" class="article-heading"> 🎉 <a href="#Features" class="headerlink" title="Features"></a>Features<a class="article-anchor" href="#Features" aria-hidden="true"></a></h2><ul>
+<li>Clear separation of roles</li>
+<li>Powerful and strightforward configuration of both framework and application class as JavaBeans</li>
+<li>Adaptability, non-insrusiveness, and flexibility</li>
+<li>Reusable business code, no need for duplication</li>
+<li>Customizable binding and validation</li>
+<li>Customizable handler mappning and view resolution</li>
+<li>Flexible model transfer</li>
+<li>Customizable locale, time zone and theme resolution</li>
+<li>A simple yet powerful JSP tag library, Spring tab library</li>
+<li>A JSP form tag library</li>
+<li>Beans whose lifecycle is scoped to the current HTTP request orf HTTP session</li>
+</ul>
+<h2 id="Front-Controller-Pattern" class="article-heading">🚕 <a href="#Front-Controller-Pattern" class="headerlink" title="Front Controller Pattern"></a>Front Controller Pattern<a class="article-anchor" href="#Front-Controller-Pattern" aria-hidden="true"></a></h2><p>Spring MVC Architecture use “Front Controller Pattern”.</p>
+<p>Front Controller do the following processes:</p>
+<ul>
+<li>Receive client request</li>
+<li>Convert request data to Java Object</li>
+<li>Run input check(Bean Validation)</li>
+<li>Call Handler(Controller)</li>
+<li>Find View</li>
+<li>Reply response data to client</li>
+<li>Handle exception</li>
+</ul>
+<p><img src="/img/2016-08-08-spring-web-mvc-reference-tutorial-java-day1_1.jpg" width="640" height="381" alt="spring-mvc-front-cotnroller-japanese"></p>
+<h2 id="Arguments-for-Handler" class="article-heading"> 🚜 <a href="#Arguments-for-Handler" class="headerlink" title="Arguments for Handler"></a>Arguments for Handler<a class="article-anchor" href="#Arguments-for-Handler" aria-hidden="true"></a></h2><ul>
+<li>Model : Interface having data to send to transition destination</li>
+<li>RedirectAttributes : Interface having data to redirect destination</li>
+<li>JavaBeans like Form Class : JavaBeans class having request parameter</li>
+<li>BuindingResult : Interface having validation result by form input</li>
+<li>MultipartFile : Interface having file info which was uploaded by using multipart-request</li>
+<li>HttpEntity<?> Interface having request header and request body</li>
+<li>java.util.Locale : Client Locale</li>
+<li>java.util.TimeZone / java.time.ZoneId : Client time zone when you use Java 8</li>
+<li>java.security.Principal : Inteface having authorized client user info</li>
+<li>UriComponetsBuilder : Interface to build URI</li>
+</ul>
+<h2 id="RequetMapping" class="article-heading"> 🎳 <a href="#RequetMapping" class="headerlink" title="RequetMapping"></a>RequetMapping<a class="article-anchor" href="#RequetMapping" aria-hidden="true"></a></h2><p>The some attributes in <code>@RequestMapping</code> are as follows:</p>
+<ul>
+<li>value: Set request path or path pattern</li>
+<li>path: Alias of value attribute</li>
+<li>method: HTTP Method (GET, POST, PUT) for mapping rule</li>
+<li>params: Request Parameter for mapping rule</li>
+<li>headers: Request header for mapping rule</li>
+<li>consumes: Context-Type Header in request for mapping rule</li>
+<li>produces: Accept Header in reqest for mapping rule</li>
+<li>name: Original name for the mapping</li>
+</ul>
+<h2 id="Argument-Annotation" class="article-heading">🐡 <a href="#Argument-Annotation" class="headerlink" title="Argument Annotation"></a>Argument Annotation<a class="article-anchor" href="#Argument-Annotation" aria-hidden="true"></a></h2><h3 id="Request-Data" class="article-heading"><a href="#Request-Data" class="headerlink" title="Request Data"></a>Request Data<a class="article-anchor" href="#Request-Data" aria-hidden="true"></a></h3><ul>
+<li>@PathValiable : Get value of path valiable in URL</li>
+<li>@MatrixVariable : Get matrix value in URL </li>
+<li>@RequestParam : Get value of request header</li>
+<li>@RequestHeader : Get value of request header</li>
+<li>@CookieValue : Get value in cookie</li>
+<li>@RequestBody : Get content of request body</li>
+</ul>
+<h3 id="Not-Request-Data" class="article-heading"><a href="#Not-Request-Data" class="headerlink" title="Not Request Data"></a>Not Request Data<a class="article-anchor" href="#Not-Request-Data" aria-hidden="true"></a></h3><ul>
+<li>@ModelAttribute : Get object of model as argment</li>
+<li>@Value : Ge value by replacing from place holder like (${})</li>
+</ul>
+<h2 id="Get-Request-Data" class="article-heading">👽 <a href="#Get-Request-Data" class="headerlink" title="Get Request Data"></a>Get Request Data<a class="article-anchor" href="#Get-Request-Data" aria-hidden="true"></a></h2><ul>
+<li>@PathVariable : Get path variable</li>
+<li>@RequestParam : Get value of specified request parameter</li>
+<li>@RequestHeader : Get value of specified request header</li>
+<li>@CookieValue: Get value of specified request cookie</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"detail"</span>, method = RequestMethod.Get)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">detail</span><span class="params">(@RequestParam String format)</span> </span>{</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Terms" class="article-heading">🐯 <a href="#Terms" class="headerlink" title="Terms"></a>Terms<a class="article-anchor" href="#Terms" aria-hidden="true"></a></h2><h3 id="JavaBeans" class="article-heading"><a href="#JavaBeans" class="headerlink" title="JavaBeans"></a>JavaBeans<a class="article-anchor" href="#JavaBeans" aria-hidden="true"></a></h3><p>JavaBeans are classes that encapsulate many objects into a sible object.<br>The name “Bean” was given to encompass this standard, which aims to create<br>resusable software components for Java.</p>
+<p><strong><a href="https://en.wikipedia.org/wiki/JavaBeans" target="_blank" rel="noopener">JavaBeans - Wikipedia, the free encyclopedia</a></strong></p>
+<h3 id="Nullary" class="article-heading"><a href="#Nullary" class="headerlink" title="Nullary"></a>Nullary<a class="article-anchor" href="#Nullary" aria-hidden="true"></a></h3><p>The number of arguments or operands taken by a function or operator.</p>
+<h3 id="instantiate" class="article-heading"><a href="#instantiate" class="headerlink" title="instantiate"></a>instantiate<a class="article-anchor" href="#instantiate" aria-hidden="true"></a></h3><p>To represent(an abstraction) by a concreate instance</p>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

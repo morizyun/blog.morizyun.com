@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Grammer Tips for Python 3 | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//blog/python-basic-grammer-tips/index-4c43e0fcc0.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="In this article, I would like to share some Python Grammer tips for beginner. StringIn Python, there are two type of string.  str = u&amp;#39;...&amp;#39; A sequence of Unicode characters (UTF-16 or UTF-32).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grammer Tips for Python 3">
+<meta property="og:url" content="https://blog.morizyun.com//blog/python-basic-grammer-tips/index-4c43e0fcc0.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="In this article, I would like to share some Python Grammer tips for beginner. StringIn Python, there are two type of string.  str = u&amp;#39;...&amp;#39; A sequence of Unicode characters (UTF-16 or UTF-32).">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-07-26T06:16:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Grammer Tips for Python 3">
+<meta name="twitter:description" content="In this article, I would like to share some Python Grammer tips for beginner. StringIn Python, there are two type of string.  str = u&amp;#39;...&amp;#39; A sequence of Unicode characters (UTF-16 or UTF-32).">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Grammer Tips for Python 3</h1>
+    
+    <a href="/blog/python-basic-grammer-tips/" class="article-date"><time datetime="2018-07-23T04:00:00.000Z">2018-07-23</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/python-basic-grammer-tips/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/python-basic-grammer-tips/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/python-basic-grammer-tips/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>In this article, I would like to share some Python Grammer tips for beginner.</p>
+<h2 id="String" class="article-heading">🚕 <a href="#String" class="headerlink" title="String"></a>String<a class="article-anchor" href="#String" aria-hidden="true"></a></h2><p>In Python, there are two type of string.</p>
+<ul>
+<li><code>str = u'...'</code><ul>
+<li>A sequence of Unicode characters (UTF-16 or UTF-32). It can recognize one character as one character.</li>
+</ul>
+</li>
+<li><code>bytes = b'...'</code><ul>
+<li>A sequence of one byte data (integers between 0 and 255)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># str => byte</span></span><br><span class="line"><span class="string">'あ'</span>.encode() <span class="comment">#=> b'\xe3\x81\x82'</span></span><br><span class="line"><span class="string">'\uFEFF'</span>.encode(<span class="string">'UTF-8'</span>) <span class="comment">#=> b'\xef\xbb\xbf'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># byte => str</span></span><br><span class="line"><span class="string">b'\xe3\x81\x82'</span>.decode(<span class="string">'UTF-8'</span>) <span class="comment">#=> 'あ'</span></span><br><span class="line"><span class="string">b'\xE2\x82\xAC'</span>.decode(<span class="string">'UTF-8'</span>) <span class="comment"># => '€'</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Search-substring" class="article-heading"><a href="#Search-substring" class="headerlink" title="Search substring"></a>Search substring<a class="article-anchor" href="#Search-substring" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">s = <span class="string">"This be a string"</span></span><br><span class="line"><span class="keyword">if</span> s.find(<span class="string">"is"</span>) == <span class="number">-1</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"No 'is' here!"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Found 'is' in the string."</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Check-whether-string-starts" class="article-heading"><a href="#Check-whether-string-starts" class="headerlink" title="Check whether string starts"></a>Check whether string starts<a class="article-anchor" href="#Check-whether-string-starts" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">str = <span class="string">"this is string example....wow!!!"</span>;</span><br><span class="line"><span class="keyword">print</span> str.startswith( <span class="string">'this'</span> ) <span class="comment">#=> True</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-string-to-lowercase" class="article-heading"><a href="#Convert-string-to-lowercase" class="headerlink" title="Convert string to lowercase"></a>Convert string to lowercase<a class="article-anchor" href="#Convert-string-to-lowercase" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">s = <span class="string">"Kilometer"</span></span><br><span class="line">print(s.lower()) <span class="comment">#=> kilometer</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Split-string-to-list" class="article-heading"><a href="#Split-string-to-list" class="headerlink" title="Split string to list"></a>Split string to list<a class="article-anchor" href="#Split-string-to-list" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="string">'blue,red,green'</span></span><br><span class="line">x.split(<span class="string">','</span>) <span class="comment">#=> ['blue', 'red', 'green']</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Remove-all-line-breaks-from-a-long-string-of-text" class="article-heading"><a href="#Remove-all-line-breaks-from-a-long-string-of-text" class="headerlink" title="Remove all line breaks from a long string of text"></a>Remove all line breaks from a long string of text<a class="article-anchor" href="#Remove-all-line-breaks-from-a-long-string-of-text" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">'test\n\r'</span>.replace(<span class="string">'\n'</span>, <span class="string">' '</span>).replace(<span class="string">'\r'</span>, <span class="string">''</span>) <span class="comment">#=> 'test'</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Variable-expansion-in-String" class="article-heading"><a href="#Variable-expansion-in-String" class="headerlink" title="Variable expansion in String"></a>Variable expansion in String<a class="article-anchor" href="#Variable-expansion-in-String" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">number=<span class="number">5</span></span><br><span class="line">text=<span class="string">'test'</span></span><br><span class="line"><span class="string">'Number is {0}、text is {1}'</span>.format(number, text)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Search-a-substring" class="article-heading"><a href="#Search-a-substring" class="headerlink" title="Search a substring"></a>Search a substring<a class="article-anchor" href="#Search-a-substring" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">s = <span class="string">"This be a string"</span></span><br><span class="line"><span class="keyword">if</span> s.find(<span class="string">"is"</span>) == <span class="number">-1</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"No 'is' here!"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">"is"</span> <span class="keyword">in</span> s:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"No 'is' here!"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Replace-substring" class="article-heading"><a href="#Replace-substring" class="headerlink" title="Replace substring"></a>Replace substring<a class="article-anchor" href="#Replace-substring" aria-hidden="true"></a></h3><p>This method returns a copy of the string with all occurrences of substring old replaced by new.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">str = <span class="string">"this is string example....wow!!! this is really string"</span></span><br><span class="line"><span class="keyword">print</span> str.replace(<span class="string">"is"</span>, <span class="string">"was"</span>) <span class="comment">#=> thwas was string example....wow!!! thwas was really string</span></span><br><span class="line"><span class="keyword">print</span> str.replace(<span class="string">"is"</span>, <span class="string">"was"</span>, <span class="number">3</span>) <span class="comment">#=> thwas was string example....wow!!! thwas is really string</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Trim-whitespace" class="article-heading"><a href="#Trim-whitespace" class="headerlink" title="Trim whitespace"></a>Trim whitespace<a class="article-anchor" href="#Trim-whitespace" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">' Hello '</span>.strip() <span class="comment">#=> 'Hello'</span></span><br><span class="line"><span class="string">' Hello'</span>.strip() <span class="comment">#=> 'Hello'</span></span><br><span class="line"><span class="string">'Bob has a cat'</span>.strip() <span class="comment">#=> 'Bob has a cat'</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Embedding-variable-in-Python-3-6-or-later" class="article-heading"><a href="#Embedding-variable-in-Python-3-6-or-later" class="headerlink" title="Embedding variable in Python 3.6 or later"></a>Embedding variable in Python 3.6 or later<a class="article-anchor" href="#Embedding-variable-in-Python-3-6-or-later" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = <span class="string">'sample'</span></span><br><span class="line">print(<span class="string">f'<span class="subst">{a}</span>'</span>) <span class="comment">#=> 'sample'</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="List-Array" class="article-heading">🗻 <a href="#List-Array" class="headerlink" title="List/Array"></a>List/Array<a class="article-anchor" href="#List-Array" aria-hidden="true"></a></h2><h3 id="List-comprehension" class="article-heading"><a href="#List-comprehension" class="headerlink" title="List comprehension"></a>List comprehension<a class="article-anchor" href="#List-comprehension" aria-hidden="true"></a></h3><p>A list comprehension consists of the following parts:</p>
+<ul>
+<li>An Input Sequence.</li>
+<li>A Variable representing members of the input sequence.</li>
+<li>An Optional Predicate expression.</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)] <span class="comment">#=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>] <span class="comment">#=> [0, 2, 4, 6, 8]</span></span><br><span class="line">[ i <span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span> <span class="keyword">else</span> str(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]  <span class="comment">#=> [0, '1', 2, '3', 4, '5', 6, '7', 8, '9']</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Append-element" class="article-heading"><a href="#Append-element" class="headerlink" title="Append element"></a>Append element<a class="article-anchor" href="#Append-element" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>]</span><br><span class="line">lst.append(<span class="string">'b'</span>) <span class="comment">#=> ['a', 'b']</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Get-the-number-of-elements-in-a-list" class="article-heading"><a href="#Get-the-number-of-elements-in-a-list" class="headerlink" title="Get the number of elements in a list"></a>Get the number of elements in a list<a class="article-anchor" href="#Get-the-number-of-elements-in-a-list" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">>> len([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) <span class="comment">#=> 3</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-list-to-string" class="article-heading"><a href="#Convert-list-to-string" class="headerlink" title="Convert list to string"></a>Convert list to string<a class="article-anchor" href="#Convert-list-to-string" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">list1 = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line">str1 = <span class="string">', '</span>.join(list1) <span class="comment">#=> '1, 2, 3'</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Flatten" class="article-heading"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten<a class="article-anchor" href="#Flatten" aria-hidden="true"></a></h3><p>Converting multi dimensional array to flatten array is as follows:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">l = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>], [<span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="keyword">for</span> sublist <span class="keyword">in</span> l:</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> sublist:</span><br><span class="line">        flat_list.append(item)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="How-to-make-a-comma-separated-string-from-a-list-of-strings" class="article-heading"><a href="#How-to-make-a-comma-separated-string-from-a-list-of-strings" class="headerlink" title="How to make a comma-separated string from a list of strings"></a>How to make a comma-separated string from a list of strings<a class="article-anchor" href="#How-to-make-a-comma-separated-string-from-a-list-of-strings" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">myList = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>]</span><br><span class="line">myString = <span class="string">','</span>.join(myList)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-list-to-set" class="article-heading"><a href="#Convert-list-to-set" class="headerlink" title="Convert list to set"></a>Convert list to set<a class="article-anchor" href="#Convert-list-to-set" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">s = set(lst) <span class="comment">#=> {'a', 'b', 'c'}</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Dict" class="article-heading">🚌 <a href="#Dict" class="headerlink" title="Dict"></a>Dict<a class="article-anchor" href="#Dict" aria-hidden="true"></a></h2><h3 id="Wether-find-key" class="article-heading"><a href="#Wether-find-key" class="headerlink" title="Wether find key"></a>Wether find key<a class="article-anchor" href="#Wether-find-key" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">"key"</span> <span class="keyword">in</span> dict:</span><br><span class="line">  <span class="comment"># do something</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Float-Decimal" class="article-heading">🐞 <a href="#Float-Decimal" class="headerlink" title="Float/Decimal"></a>Float/Decimal<a class="article-anchor" href="#Float-Decimal" aria-hidden="true"></a></h2><h3 id="Convert-float-to-Decimal" class="article-heading"><a href="#Convert-float-to-Decimal" class="headerlink" title="Convert float to Decimal"></a>Convert float to Decimal<a class="article-anchor" href="#Convert-float-to-Decimal" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">format(f, <span class="string">".15g"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Tuple" class="article-heading"> 🍄 <a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple<a class="article-anchor" href="#Tuple" aria-hidden="true"></a></h2><h3 id="Add-variable-to-tuple" class="article-heading"><a href="#Add-variable-to-tuple" class="headerlink" title="Add variable to tuple"></a>Add variable to tuple<a class="article-anchor" href="#Add-variable-to-tuple" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">a = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = a + (<span class="number">4</span>,) <span class="comment">#=> (1, 2, 3, 4)</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Regex" class="article-heading">🐯 <a href="#Regex" class="headerlink" title="Regex"></a>Regex<a class="article-anchor" href="#Regex" aria-hidden="true"></a></h2><h3 id="Extract-pattern-matches" class="article-heading"><a href="#Extract-pattern-matches" class="headerlink" title="Extract pattern matches"></a>Extract pattern matches<a class="article-anchor" href="#Extract-pattern-matches" aria-hidden="true"></a></h3><p><code>r'...'</code> is literal for Regex. It is better to use it for Regex.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">m = re.search(<span class="string">r'(?<=-)\w+'< span>, <span class="string">'spam-egg'</span>)</=-)\w+'<></span><br><span class="line">m.group(<span class="number">0</span>) <span class="comment">#=> 'egg'</span></span><br></span></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">p = re.compile(<span class="string">'name (.*) is valid'</span>)</span><br><span class="line">s = <span class="string">"""</span></span><br><span class="line"><span class="string">someline abc</span></span><br><span class="line"><span class="string">someother line</span></span><br><span class="line"><span class="string">name my_user_name is valid</span></span><br><span class="line"><span class="string">some more lines"""</span></span><br><span class="line">p.findall(s) <span class="comment">#=> ['my_user_name']</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="string-replace-with-regular-expression" class="article-heading"><a href="#string-replace-with-regular-expression" class="headerlink" title="string.replace with regular expression"></a>string.replace with regular expression<a class="article-anchor" href="#string-replace-with-regular-expression" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">line = re.sub(</span><br><span class="line">           <span class="string">r"(?i)^.*interfaceOpDataFile.*$"</span>,</span><br><span class="line">           <span class="string">"interfaceOpDataFile %s"</span> % fileIn,</span><br><span class="line">           line</span><br><span class="line">       )</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Remove-specific-pattern-from-text" class="article-heading"><a href="#Remove-specific-pattern-from-text" class="headerlink" title="Remove specific pattern from text"></a>Remove specific pattern from text<a class="article-anchor" href="#Remove-specific-pattern-from-text" aria-hidden="true"></a></h3><p>This is example for removing HTML tags/formatting from a string:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">strip_html_tag</span><span class="params">(data)</span>:</span></span><br><span class="line">    p = re.compile(<span class="string">r'<.*?>'</.*?></span>)</span><br><span class="line">    <span class="keyword">return</span> p.sub(<span class="string">''</span>, data)</span><br><span class="line"></span><br><span class="line">strip_html_tag(<span class="string">'<a href="foo.com" class="bar">I Want This <b>text!</b></a>'</span>)</span><br><span class="line"><span class="comment">#=> 'I Want This text!'</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Datetime" class="article-heading"> 🚜 <a href="#Datetime" class="headerlink" title="Datetime"></a>Datetime<a class="article-anchor" href="#Datetime" aria-hidden="true"></a></h2><h3 id="Now" class="article-heading"><a href="#Now" class="headerlink" title="Now"></a>Now<a class="article-anchor" href="#Now" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">datetime.datetime.now()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="String-to-Datetime" class="article-heading"><a href="#String-to-Datetime" class="headerlink" title="String to Datetime"></a>String to Datetime<a class="article-anchor" href="#String-to-Datetime" aria-hidden="true"></a></h3><p><code>pip install dateutil</code> and add the following code:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> dateutil <span class="keyword">import</span> parser</span><br><span class="line">dt = parser.parse(<span class="string">"Aug 28 1999 12:00AM"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-unix-timestamp-to-readable-date" class="article-heading"><a href="#Convert-unix-timestamp-to-readable-date" class="headerlink" title="Convert unix timestamp to readable date"></a>Convert unix timestamp to readable date<a class="article-anchor" href="#Convert-unix-timestamp-to-readable-date" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># No miliseconds</span></span><br><span class="line">datetime.fromtimestamp(<span class="number">1172969203.1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># With miliseconds</span></span><br><span class="line">s = <span class="number">1236472051807</span> / <span class="number">1000.0</span></span><br><span class="line">datetime.fromtimestamp(s).strftime(<span class="string">'%Y-%m-%d %H:%M:%S.%f'</span>) <span class="comment">#=> '2009-03-08 09:27:31.807000'</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Get-current-time-in-milliseconds" class="article-heading"><a href="#Get-current-time-in-milliseconds" class="headerlink" title="Get current time in milliseconds"></a>Get current time in milliseconds<a class="article-anchor" href="#Get-current-time-in-milliseconds" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">millis = int(round(time.time() * <span class="number">1000</span>))</span><br><span class="line"><span class="keyword">print</span> millis</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-datetime-to-unix-time" class="article-heading"><a href="#Convert-datetime-to-unix-time" class="headerlink" title="Convert datetime to unix time"></a>Convert datetime to unix time<a class="article-anchor" href="#Convert-datetime-to-unix-time" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">datetime.datetime(<span class="number">2012</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>).timestamp()</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Number-Float-Int" class="article-heading"> 🎃 <a href="#Number-Float-Int" class="headerlink" title="Number(Float/Int)"></a>Number(Float/Int)<a class="article-anchor" href="#Number-Float-Int" aria-hidden="true"></a></h2><h3 id="convert-x-to-a-plain-integer" class="article-heading"><a href="#convert-x-to-a-plain-integer" class="headerlink" title="convert x to a plain integer"></a>convert x to a plain integer<a class="article-anchor" href="#convert-x-to-a-plain-integer" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">int(x)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Grammar" class="article-heading"> 🏀 <a href="#Grammar" class="headerlink" title="Grammar"></a>Grammar<a class="article-anchor" href="#Grammar" aria-hidden="true"></a></h2><h3 id="Structure-for-sub-package" class="article-heading"><a href="#Structure-for-sub-package" class="headerlink" title="Structure for sub package"></a>Structure for sub package<a class="article-anchor" href="#Structure-for-sub-package" aria-hidden="true"></a></h3><p>The following code is little strange:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sys.path.append(os.path.dirname(os.path.abspath(__file__)) + <span class="string">'/../sub_package1'</span>)</span><br><span class="line"><span class="keyword">import</span> utils</span><br></pre></td></tr></tbody></table></figure>
+<p>Installing the whole root package and placing the sub packages under it will make the loading of the module natural.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">mkdir sample_project/root_package</span><br><span class="line">touch sample_project/root_package/__init__.py</span><br><span class="line">mv sample_project/{sub_package1, sub_package2}</span><br></pre></td></tr></tbody></table></figure>
+<p>The the above directory structure supports the following loading pattern.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> root_package.sub_package1 <span class="keyword">import</span> SubPackage1</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="classmethod" class="article-heading"><a href="#classmethod" class="headerlink" title="@classmethod"></a><code>@classmethod</code><a class="article-anchor" href="#classmethod" aria-hidden="true"></a></h3><p>With <code>@classmethod</code>, we don’t have to specify the class name internally.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_table</span><span class="params">(cls, lambda_name)</span>:</span></span><br><span class="line">    Base._create_table(</span><br><span class="line">        cls.__table_name(lambda_name),</span><br><span class="line">        cls.KEY_SCHEMA,</span><br><span class="line">        cls.ATTRIBUTE_DEFINITION</span><br><span class="line">    )</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="None-is-instead-of-null" class="article-heading"><a href="#None-is-instead-of-null" class="headerlink" title="None is instead of null"></a>None is instead of null<a class="article-anchor" href="#None-is-instead-of-null" aria-hidden="true"></a></h3><p>In Python, the <code>null</code> object is the singleton <code>None</code>.</p>
+<h3 id="Ternary-operator" class="article-heading"><a href="#Ternary-operator" class="headerlink" title="Ternary operator"></a>Ternary operator<a class="article-anchor" href="#Ternary-operator" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="string">"OK"</span> <span class="keyword">if</span> n == <span class="number">10</span> <span class="keyword">else</span> <span class="string">"NG"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Throw-Raise-Error" class="article-heading"><a href="#Throw-Raise-Error" class="headerlink" title="Throw/Raise Error"></a>Throw/Raise Error<a class="article-anchor" href="#Throw-Raise-Error" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">raise</span> RuntimeError(<span class="string">'specific message'</span>) <span class="keyword">from</span> error</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="super-init-methods" class="article-heading"><a href="#super-init-methods" class="headerlink" title="super().__init__() methods"></a><code>super().__init__()</code> methods<a class="article-anchor" href="#super-init-methods" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, id)</span>:</span></span><br><span class="line">        self.id = id</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span><span class="params">(Polygon)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, id, width, height)</span>:</span></span><br><span class="line">        super(self.__class__, self).__init__(id)</span><br><span class="line">        self.shape = (width, height)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Keyword-argument-for-method" class="article-heading"><a href="#Keyword-argument-for-method" class="headerlink" title="Keyword argument for method"></a>Keyword argument for method<a class="article-anchor" href="#Keyword-argument-for-method" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, *, option1=<span class="number">1</span>, option2=<span class="number">2</span>)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">func(a, b, option1=<span class="number">10</span>, option2=<span class="number">20</span>)</span><br><span class="line">func(a, b, c) <span class="comment"># エラー 固定変数は２つ</span></span><br><span class="line">func(a, b, opton1=<span class="number">10</span>) <span class="comment"># エラー 存在しないキーワード</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="How-to-import-the-class-in-same-dir" class="article-heading"><a href="#How-to-import-the-class-in-same-dir" class="headerlink" title="How to import the class in same dir"></a>How to import the class in same dir<a class="article-anchor" href="#How-to-import-the-class-in-same-dir" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> .user <span class="keyword">import</span> User</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Import-a-module-given-the-full-path" class="article-heading"><a href="#Import-a-module-given-the-full-path" class="headerlink" title="Import a module given the full path"></a>Import a module given the full path<a class="article-anchor" href="#Import-a-module-given-the-full-path" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">'/foo/bar/mock-0.3.1'</span>)</span><br><span class="line"><span class="keyword">import</span> Mock</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Get-type-information-of-object" class="article-heading"><a href="#Get-type-information-of-object" class="headerlink" title="Get type information of object"></a>Get type information of object<a class="article-anchor" href="#Get-type-information-of-object" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">isinstance([<span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>], list) <span class="comment">#=> True</span></span><br><span class="line">isinstance(<span class="number">50</span>, list) <span class="comment">#=> False</span></span><br><span class="line"></span><br><span class="line">type([]) <span class="keyword">is</span> list <span class="comment">#=> True</span></span><br><span class="line">type({}) <span class="keyword">is</span> dict <span class="comment">#=> True</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">"test"</span></span><br><span class="line">type(str)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Object-unique-identifier" class="article-heading"><a href="#Object-unique-identifier" class="headerlink" title="Object unique identifier"></a>Object unique identifier<a class="article-anchor" href="#Object-unique-identifier" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">id(x)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Etc" class="article-heading"> 🍮 <a href="#Etc" class="headerlink" title="Etc"></a>Etc<a class="article-anchor" href="#Etc" aria-hidden="true"></a></h2><h3 id="Load-multiple-JSON-object" class="article-heading"><a href="#Load-multiple-JSON-object" class="headerlink" title="Load multiple JSON object"></a>Load multiple JSON object<a class="article-anchor" href="#Load-multiple-JSON-object" aria-hidden="true"></a></h3><p>JSON decoder can not load multiple JSON object like this:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">{<span class="attr">"name"</span>: <span class="string">"foo"</span>}</span><br><span class="line">{<span class="attr">"name"</span>: <span class="string">"bar"</span>}</span><br></pre></td></tr></tbody></table></figure>
+<p>It makes some error <code>json.decoder.JSONDecodeError: Extra data..</code></p>
+<p>If you want to load multiple JSON object, please use as follows:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> json.decoder <span class="keyword">import</span> WHITESPACE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loads_iter</span><span class="params">(s)</span>:</span></span><br><span class="line">    size = len(s)</span><br><span class="line">    decoder = json.JSONDecoder()</span><br><span class="line"></span><br><span class="line">    end = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        idx = WHITESPACE.match(s[end:]).end()</span><br><span class="line">        i = end + idx</span><br><span class="line">        <span class="keyword">if</span> i >= size:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        ob, end = decoder.raw_decode(s, i)</span><br><span class="line">        <span class="keyword">yield</span> ob</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Generate-CSV-file" class="article-heading"><a href="#Generate-CSV-file" class="headerlink" title="Generate CSV file"></a>Generate CSV file<a class="article-anchor" href="#Generate-CSV-file" aria-hidden="true"></a></h3><p>Generate CSV file from list(array):</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">items = [</span><br><span class="line">    [<span class="string">'John'</span>, <span class="number">28</span>],</span><br><span class="line">    [<span class="string">'Sara'</span>, <span class="number">22</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'/app/job_items.csv'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    wr = csv.writer(f, quoting=csv.QUOTE_ALL, lineterminator=<span class="string">'\n'</span>)</span><br><span class="line">    wr.writerow([<span class="string">'name'</span>, <span class="string">'age'</span>])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">        wr.writerow(i)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Write string data as CSV</span></span><br><span class="line">        <span class="comment"># csvwriter.writerow([i])</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Write-data-to-file" class="article-heading"><a href="#Write-data-to-file" class="headerlink" title="Write data to file"></a>Write data to file<a class="article-anchor" href="#Write-data-to-file" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">file = open(“testfile.txt”, ”w”)  </span><br><span class="line">file.write(“Hello World”)</span><br><span class="line">file.close()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="How-to-access-environment-variables" class="article-heading"><a href="#How-to-access-environment-variables" class="headerlink" title="How to access environment variables"></a>How to access environment variables<a class="article-anchor" href="#How-to-access-environment-variables" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.environ[<span class="string">'HOME'</span>])</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Check-existence-of-an-environment-variable" class="article-heading"><a href="#Check-existence-of-an-environment-variable" class="headerlink" title="Check existence of an environment variable"></a>Check existence of an environment variable<a class="article-anchor" href="#Check-existence-of-an-environment-variable" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> os.environ.get(<span class="string">'abc'</span>):</span><br><span class="line">    <span class="comment">#abc is set to True</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Memoization" class="article-heading"><a href="#Memoization" class="headerlink" title="Memoization"></a>Memoization<a class="article-anchor" href="#Memoization" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"></span><br><span class="line"><span class="meta">@lru_cache(maxsize=1000)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib_memoized</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n < <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Convert-generator-object-to-list" class="article-heading"><a href="#Convert-generator-object-to-list" class="headerlink" title="Convert generator object to list"></a>Convert generator object to list<a class="article-anchor" href="#Convert-generator-object-to-list" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lst = list(gen)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="References" class="article-heading"> 🎳 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://stackoverflow.com/questions/1712227/how-to-get-the-number-of-elements-in-a-list-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/1712227/how-to-get-the-number-of-elements-in-a-list-in-python</a></li>
+<li><a href="https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string" target="_blank" rel="noopener">https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string</a></li>
+<li><a href="https://stackoverflow.com/questions/16566268/remove-all-line-breaks-from-a-long-string-of-text" target="_blank" rel="noopener">https://stackoverflow.com/questions/16566268/remove-all-line-breaks-from-a-long-string-of-text</a></li>
+<li><a href="https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method" target="_blank" rel="noopener">https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method</a></li>
+<li><a href="https://tonari-it.com/python-str-format/" target="_blank" rel="noopener">https://tonari-it.com/python-str-format/</a></li>
+<li><a href="https://qiita.com/junkoda/items/bfd35793c5cd33c600bc" target="_blank" rel="noopener">https://qiita.com/junkoda/items/bfd35793c5cd33c600bc</a></li>
+<li><a href="https://note.nkmk.me/python-type-isinstance/" target="_blank" rel="noopener">https://note.nkmk.me/python-type-isinstance/</a></li>
+<li><a href="https://stackoverflow.com/questions/15340582/python-extract-pattern-matches" target="_blank" rel="noopener">https://stackoverflow.com/questions/15340582/python-extract-pattern-matches</a></li>
+<li><a href="https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python</a></li>
+<li><a href="https://stackoverflow.com/questions/6269765/what-does-the-b-character-do-in-front-of-a-string-literal" target="_blank" rel="noopener">https://stackoverflow.com/questions/6269765/what-does-the-b-character-do-in-front-of-a-string-literal</a></li>
+<li><a href="https://stackoverflow.com/questions/31019854/typeerror-cant-use-a-string-pattern-on-a-bytes-like-object-in-re-findall" target="_blank" rel="noopener">https://stackoverflow.com/questions/31019854/typeerror-cant-use-a-string-pattern-on-a-bytes-like-object-in-re-findall</a></li>
+<li><a href="https://stackoverflow.com/questions/1380860/add-variables-to-tuple" target="_blank" rel="noopener">https://stackoverflow.com/questions/1380860/add-variables-to-tuple</a></li>
+<li><a href="https://stackoverflow.com/questions/3289601/null-object-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/3289601/null-object-in-python</a></li>
+<li><a href="https://qiita.com/howmuch515/items/bf6d21f603d9736fb4a5" target="_blank" rel="noopener">https://qiita.com/howmuch515/items/bf6d21f603d9736fb4a5</a></li>
+<li><a href="https://stackoverflow.com/questions/12451431/loading-and-parsing-a-json-file-with-multiple-json-objects-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/12451431/loading-and-parsing-a-json-file-with-multiple-json-objects-in-python</a></li>
+<li><a href="https://pod.hatenablog.com/entry/2017/08/31/035140" target="_blank" rel="noopener">https://pod.hatenablog.com/entry/2017/08/31/035140</a></li>
+<li><a href="https://stackoverflow.com/questions/952914/making-a-flat-list-out-of-list-of-lists-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/952914/making-a-flat-list-out-of-list-of-lists-in-python</a></li>
+<li><a href="http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python" target="_blank" rel="noopener">http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python</a></li>
+<li><a href="https://stackoverflow.com/questions/17053099/how-to-print-current-date-on-python3" target="_blank" rel="noopener">https://stackoverflow.com/questions/17053099/how-to-print-current-date-on-python3</a></li>
+<li><a href="https://stackoverflow.com/questions/3790848/fastest-way-to-convert-an-iterator-to-a-list" target="_blank" rel="noopener">https://stackoverflow.com/questions/3790848/fastest-way-to-convert-an-iterator-to-a-list</a></li>
+<li><a href="https://stackoverflow.com/questions/1816880/why-does-csvwriter-writerow-put-a-comma-after-each-character" target="_blank" rel="noopener">https://stackoverflow.com/questions/1816880/why-does-csvwriter-writerow-put-a-comma-after-each-character</a></li>
+<li><a href="https://stackoverflow.com/questions/466345/converting-string-into-datetime" target="_blank" rel="noopener">https://stackoverflow.com/questions/466345/converting-string-into-datetime</a></li>
+<li><a href="https://stackoverflow.com/questions/4142151/how-to-import-the-class-within-the-same-directory-or-sub-directory" target="_blank" rel="noopener">https://stackoverflow.com/questions/4142151/how-to-import-the-class-within-the-same-directory-or-sub-directory</a></li>
+<li><a href="https://stackoverflow.com/questions/4906977/how-do-i-access-environment-variables-from-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/4906977/how-do-i-access-environment-variables-from-python</a></li>
+<li><a href="https://stackoverflow.com/questions/44778/how-would-you-make-a-comma-separated-string-from-a-list-of-strings" target="_blank" rel="noopener">https://stackoverflow.com/questions/44778/how-would-you-make-a-comma-separated-string-from-a-list-of-strings</a></li>
+<li><a href="https://stackoverflow.com/questions/44505457/checking-if-an-environment-variable-exists-and-is-set-to-true" target="_blank" rel="noopener">https://stackoverflow.com/questions/44505457/checking-if-an-environment-variable-exists-and-is-set-to-true</a></li>
+<li><a href="https://stackoverflow.com/questions/3682748/converting-unix-timestamp-string-to-readable-date" target="_blank" rel="noopener">https://stackoverflow.com/questions/3682748/converting-unix-timestamp-string-to-readable-date</a></li>
+<li><a href="https://stackoverflow.com/questions/21787496/converting-epoch-time-with-milliseconds-to-datetime" target="_blank" rel="noopener">https://stackoverflow.com/questions/21787496/converting-epoch-time-with-milliseconds-to-datetime</a></li>
+<li><a href="https://stackoverflow.com/questions/316238/python-float-to-decimal-conversion" target="_blank" rel="noopener">https://stackoverflow.com/questions/316238/python-float-to-decimal-conversion</a></li>
+<li><a href="https://stackoverflow.com/questions/1252357/is-there-an-object-unique-identifier-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/1252357/is-there-an-object-unique-identifier-in-python</a></li>
+<li><a href="https://stackoverflow.com/questions/5998245/get-current-time-in-milliseconds-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/5998245/get-current-time-in-milliseconds-in-python</a></li>
+<li><a href="https://qiita.com/alchemist/items/c75174c41b0bcd31ecc6" target="_blank" rel="noopener">https://qiita.com/alchemist/items/c75174c41b0bcd31ecc6</a></li>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/datastructures.html</a></li>
+<li><a href="https://stackoverflow.com/questions/15768757/how-to-construct-a-set-out-of-list-items-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/15768757/how-to-construct-a-set-out-of-list-items-in-python</a></li>
+<li><a href="https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method" target="_blank" rel="noopener">https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method</a></li>
+<li><a href="https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python</a></li>
+<li><a href="https://www.tutorialspoint.com/python/string_replace.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/python/string_replace.htm</a></li>
+<li><a href="https://stackoverflow.com/questions/761804/how-do-i-trim-whitespace-from-a-python-string" target="_blank" rel="noopener">https://stackoverflow.com/questions/761804/how-do-i-trim-whitespace-from-a-python-string</a></li>
+<li><a href="https://docs.python.org/3.6/library/re.html#module-re" target="_blank" rel="noopener">https://docs.python.org/3.6/library/re.html#module-re</a></li>
+<li><a href="https://qiita.com/y__sama/items/a2c458de97c4aa5a98e7" target="_blank" rel="noopener">https://qiita.com/y__sama/items/a2c458de97c4aa5a98e7</a></li>
+<li><a href="https://www.tutorialspoint.com/python/python_numbers.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/python/python_numbers.htm</a></li>
+<li><a href="https://stackoverflow.com/questions/24130745/convert-generator-object-to-list-for-debugging" target="_blank" rel="noopener">https://stackoverflow.com/questions/24130745/convert-generator-object-to-list-for-debugging</a></li>
+<li><a href="https://stackoverflow.com/questions/11743019/convert-python-datetime-to-epoch-with-strftime" target="_blank" rel="noopener">https://stackoverflow.com/questions/11743019/convert-python-datetime-to-epoch-with-strftime</a></li>
+<li><a href="https://qiita.com/miyagaw61/items/0e8cc40d95bf6236729e" target="_blank" rel="noopener">https://qiita.com/miyagaw61/items/0e8cc40d95bf6236729e</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

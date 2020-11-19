@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Tutorial of RESTful APIs with Express.js and TypeScript | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//blog/typescript-express-tutorial-javascript-nodejs/index-eb57514e01.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="This is a tutorial about how to build RESTful APIs with Express.js and TypeScript. Prepare Node env on macOSIf you don’t have a development environment for Node.js, I recommend installing nvm. If you">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tutorial of RESTful APIs with Express.js and TypeScript">
+<meta property="og:url" content="https://blog.morizyun.com//blog/typescript-express-tutorial-javascript-nodejs/index-eb57514e01.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This is a tutorial about how to build RESTful APIs with Express.js and TypeScript. Prepare Node env on macOSIf you don’t have a development environment for Node.js, I recommend installing nvm. If you">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-06-23T18:40:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tutorial of RESTful APIs with Express.js and TypeScript">
+<meta name="twitter:description" content="This is a tutorial about how to build RESTful APIs with Express.js and TypeScript. Prepare Node env on macOSIf you don’t have a development environment for Node.js, I recommend installing nvm. If you">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Tutorial of RESTful APIs with Express.js and TypeScript</h1>
+    
+    <a href="/blog/typescript-express-tutorial-javascript-nodejs/" class="article-date"><time datetime="2018-06-09T04:00:00.000Z">2018-06-09</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/typescript-express-tutorial-javascript-nodejs/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/typescript-express-tutorial-javascript-nodejs/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/typescript-express-tutorial-javascript-nodejs/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>This is a tutorial about how to build RESTful APIs with Express.js and TypeScript.</p>
+<h2 id="Prepare-Node-env-on-macOS" class="article-heading"> 🎉 <a href="#Prepare-Node-env-on-macOS" class="headerlink" title="Prepare Node env on macOS"></a>Prepare Node env on macOS<a class="article-anchor" href="#Prepare-Node-env-on-macOS" aria-hidden="true"></a></h2><p>If you don’t have a development environment for Node.js, I recommend installing <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>. If you are interested, please see my post <strong><a href="https://blog.morizyun.com//javascript/library-nvm-7317375ddd.html">nvm: Node Version Manager</a></strong> .</p>
+<h2 id="Install-TypeScript" class="article-heading"> 🐹 <a href="#Install-TypeScript" class="headerlink" title="Install TypeScript"></a>Install TypeScript<a class="article-anchor" href="#Install-TypeScript" aria-hidden="true"></a></h2><p>Before we get started, we should install TypeScript and TypeScript Node:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yarn global add typescript ts-node <span class="comment"># npm install -g typescript ts-node</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Initiate-a-Project" class="article-heading"> 🍮 <a href="#Initiate-a-Project" class="headerlink" title="Initiate a Project"></a>Initiate a Project<a class="article-anchor" href="#Initiate-a-Project" aria-hidden="true"></a></h2><p>Create a project folder and initiate the npm project.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Create a folder and change directory to the folder</span></span><br><span class="line">mkdir nodejs-api-project & <span class="built_in">cd</span> nodejs-api-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initiate npm configuration</span></span><br><span class="line">yarn init <span class="comment"># npm init</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Install-Express" class="article-heading"> 🏀 <a href="#Install-Express" class="headerlink" title="Install Express"></a>Install Express<a class="article-anchor" href="#Install-Express" aria-hidden="true"></a></h2><p>Install Express.js and dependencies.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yarn add @types/express express body-parser <span class="comment"># npm install --save @types/express express body-parser</span></span><br><span class="line"></span><br><span class="line">yarn add --dev nodemon typescript ts-node <span class="comment"># npm install --save-dev nodemon typescript ts-node</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Configure-TypeScript" class="article-heading">🚕 <a href="#Configure-TypeScript" class="headerlink" title="Configure TypeScript"></a>Configure TypeScript<a class="article-anchor" href="#Configure-TypeScript" aria-hidden="true"></a></h2><p>Create <code>tsconfig.json</code> file.</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: {</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"commonjs"</span>,</span><br><span class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="attr">"pretty"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es6"</span>,</span><br><span class="line">    <span class="attr">"lib"</span>: [<span class="string">"dom"</span>, <span class="string">"esnext"</span>],</span><br><span class="line">    <span class="attr">"outDir"</span>: <span class="string">"./dist"</span>,</span><br><span class="line">    <span class="attr">"baseUrl"</span>: <span class="string">"./src"</span>,</span><br><span class="line">    <span class="attr">"alwaysStrict"</span>: <span class="literal">true</span></span><br><span class="line">  },</span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"src/**/*.ts"</span>],</span><br><span class="line">  <span class="attr">"exclude"</span>: [<span class="string">"node_modules"</span>]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-source-and-dist-folders" class="article-heading"> 😸 <a href="#Create-source-and-dist-folders" class="headerlink" title="Create source and dist folders"></a>Create source and dist folders<a class="article-anchor" href="#Create-source-and-dist-folders" aria-hidden="true"></a></h2><p>Create a folder to put TypeScript files. You will put your TypeScript files.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">mkdir src</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Configure-nodemon" class="article-heading"> 🎂 <a href="#Configure-nodemon" class="headerlink" title="Configure nodemon"></a>Configure nodemon<a class="article-anchor" href="#Configure-nodemon" aria-hidden="true"></a></h2><p>Create <code>nodemon.json</code> file.</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"watch"</span>: [<span class="string">"src"</span>],</span><br><span class="line">  <span class="attr">"ext"</span>: <span class="string">"ts"</span>,</span><br><span class="line">  <span class="attr">"ignore"</span>: [<span class="string">"src/**/*.spec.ts"</span>],</span><br><span class="line">  <span class="attr">"exec"</span>: <span class="string">"ts-node ./src/server.ts"</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Edit-script-configuration-in-package-json" class="article-heading">🐝 <a href="#Edit-script-configuration-in-package-json" class="headerlink" title="Edit script configuration in package.json"></a>Edit script configuration in package.json<a class="article-anchor" href="#Edit-script-configuration-in-package-json" aria-hidden="true"></a></h2><p>Edit <code>package.json</code> file to add script configuration.</p>
+<figure class="highlight"><table><tbody><tr><td class="code"><pre><span class="line">"scripts": {</span><br><span class="line">    "build": "tsc",</span><br><span class="line">    "dev": "nodemon -L",        </span><br><span class="line">    "start": "node ./dist/server.js"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-base-Express-code" class="article-heading"> 🐰 <a href="#Create-base-Express-code" class="headerlink" title="Create base Express code"></a>Create base Express code<a class="article-anchor" href="#Create-base-Express-code" aria-hidden="true"></a></h2><p>Create <code>src/app.ts</code> file.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">"express"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> bodyParser <span class="keyword">from</span> <span class="string">"body-parser"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> App {</span><br><span class="line">  <span class="keyword">public</span> app: express.Application;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">this</span>.app = express();</span><br><span class="line">    <span class="keyword">this</span>.config();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> config(): <span class="built_in">void</span> {</span><br><span class="line">    <span class="comment">// support application/json</span></span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.json());</span><br><span class="line">    <span class="comment">//support application/x-www-form-urlencoded post data</span></span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.urlencoded({ extended: <span class="literal">false</span> }));</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> App().app;</span><br></pre></td></tr></tbody></table></figure>
+<p>Additionally, generate <code>src/server.ts</code>.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">"./app"</span>;</span><br><span class="line"><span class="keyword">const</span> PORT = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line">app.listen(PORT, <span class="function"><span class="params">()</span> =></span> {</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Express server listening on port "</span> + PORT);</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>So, for your development, you can run a dev server by the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yarn dev</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://farm2.staticflickr.com/1721/27808881417_452318d387_b.jpg" alt="express-typescript-start-bash"></p>
+<h2 id="Create-routing-file" class="article-heading">😼 <a href="#Create-routing-file" class="headerlink" title="Create routing file"></a>Create routing file<a class="article-anchor" href="#Create-routing-file" aria-hidden="true"></a></h2><p>Create <code>src/routes</code> folder and add <code>src/routes/MainRoutes.ts</code> file.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> { Request, Response } <span class="keyword">from</span> <span class="string">"express"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MainController {</span><br><span class="line">  <span class="keyword">public</span> root(req: Request, res: Response) {</span><br><span class="line">    res.status(<span class="number">200</span>).send({</span><br><span class="line">      message: <span class="string">"GET request successful!!"</span></span><br><span class="line">    });</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> mainController = <span class="keyword">new</span> MainController();</span><br></pre></td></tr></tbody></table></figure>
+<p>After then, you should create <code>src/controllers</code> and add <code>src/controllers/MainController.ts</code> file.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">"express"</span>;</span><br><span class="line"><span class="keyword">import</span> { mainController } <span class="keyword">from</span> <span class="string">"../controllers/MainController"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> MainRoutes {</span><br><span class="line">  <span class="keyword">public</span> router: express.Router = express.Router();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">this</span>.config();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> config(): <span class="built_in">void</span> {</span><br><span class="line">    <span class="keyword">this</span>.router.get(<span class="string">"/"</span>, <span class="function">(<span class="params">req: express.Request, res: express.Response</span>) =></span></span><br><span class="line">      mainController.root(req, res)</span><br><span class="line">    );</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> mainRoutes = <span class="keyword">new</span> MainRoutes().router;</span><br></pre></td></tr></tbody></table></figure>
+<p>After creating the route file, we need to import it to <code>src/app.ts</code>:</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">"express"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> bodyParser <span class="keyword">from</span> <span class="string">"body-parser"</span>;</span><br><span class="line"><span class="keyword">import</span> { mainRoutes } <span class="keyword">from</span> <span class="string">"./routes/MainRoutes"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> App {</span><br><span class="line">  <span class="keyword">public</span> app: express.Application;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">this</span>.app = express();</span><br><span class="line">    <span class="keyword">this</span>.config();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> config(): <span class="built_in">void</span> {</span><br><span class="line">    <span class="comment">// support application/json</span></span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.json());</span><br><span class="line">    <span class="comment">//support application/x-www-form-urlencoded post data</span></span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.urlencoded({ extended: <span class="literal">false</span> }));</span><br><span class="line">    <span class="comment">// Routing</span></span><br><span class="line">    <span class="keyword">this</span>.app.use(<span class="string">"/"</span>, mainRoutes);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> App().app;</span><br></pre></td></tr></tbody></table></figure>
+<p>Now you can see the result in Browser (<code>http://localhost:3000</code>).</p>
+<p><img src="https://farm2.staticflickr.com/1724/40869344270_29725d66c2_b.jpg" alt="localhost-result"></p>
+<h2 id="Appendix-Dockerfile" class="article-heading">🐞 <a href="#Appendix-Dockerfile" class="headerlink" title="[Appendix] Dockerfile"></a>[Appendix] Dockerfile<a class="article-anchor" href="#Appendix-Dockerfile" aria-hidden="true"></a></h2><p>This is <code>Dockerfile</code> for TypeScript & Express.js.</p>
+<h2 id="Development" class="article-heading">🐮 <a href="#Development" class="headerlink" title="Development"></a>Development<a class="article-anchor" href="#Development" aria-hidden="true"></a></h2><figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create app directory</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir /app</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install app dependencies</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> package.json ./</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> yarn.lock ./</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install libraries</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yarn && yarn global add typescript ts-node</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundle app source</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Build dist folder</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yarn build</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">4000</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [ <span class="string">"yarn"</span>, <span class="string">"start"</span> ]</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Appendix-Basic-Authentication" class="article-heading">🚌 <a href="#Appendix-Basic-Authentication" class="headerlink" title="[Appendix] Basic Authentication"></a>[Appendix] Basic Authentication<a class="article-anchor" href="#Appendix-Basic-Authentication" aria-hidden="true"></a></h2><p><strong><a href="https://github.com/expressjs/basic-auth-connect" target="_blank" rel="noopener">basic-auth-connect</a></strong> supports basic authentication in Express v4 apps.</p>
+<p>Please run the following command:</p>
+<h3 id="Installation" class="article-heading"><a href="#Installation" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yarn add basic-auth-connect</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h3><p>Add following code:</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> basicAuth <span class="keyword">from</span> <span class="string">'basic-auth-connect'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">if</span> (process.env.BASIC_AUTH_USER || process.env.BASIC_AUTH_PASSWORD) {</span><br><span class="line">  app.all(</span><br><span class="line">    <span class="string">"/*"</span>,</span><br><span class="line">    basicAuth(<span class="function"><span class="keyword">function</span>(<span class="params">user, password</span>) </span>{</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        user === process.env.BASIC_AUTH_USER &&</span><br><span class="line">        password === process.env.BASIC_AUTH_PASSWORD</span><br><span class="line">      );</span><br><span class="line">    })</span><br><span class="line">  );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>After then, if you provide <code>BASIC_AUTH_USER</code> and <code>BASIC_AUTH_PASSWORD</code> environment variable, you can use basic authentication in Express app.</p>
+<h2 id="References" class="article-heading">🐡 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://itnext.io/building-restful-web-apis-with-node-js-express-mongodb-and-typescript-part-1-2-195bdaf129cf\" target="_blank" rel="noopener">https://itnext.io/building-restful-web-apis-with-node-js-express-mongodb-and-typescript-part-1-2-195bdaf129cf\</a></li>
+<li><a href="https://qiita.com/R-STYLE/items/6afd4aab417f973de961" target="_blank" rel="noopener">https://qiita.com/R-STYLE/items/6afd4aab417f973de961</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

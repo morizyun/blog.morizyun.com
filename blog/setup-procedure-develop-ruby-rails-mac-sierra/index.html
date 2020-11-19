@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Effective Procedures to Setup new Mac High Sierra For JSer/Rubyist | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="This article describes effective procedures for JSer / Rubyists to setup High Sierra of macOS.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Procedures to Setup new Mac High Sierra For JSer&#x2F;Rubyist">
+<meta property="og:url" content="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="This article describes effective procedures for JSer / Rubyists to setup High Sierra of macOS.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-10-01T13:29:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Effective Procedures to Setup new Mac High Sierra For JSer&#x2F;Rubyist">
+<meta name="twitter:description" content="This article describes effective procedures for JSer / Rubyists to setup High Sierra of macOS.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Effective Procedures to Setup new Mac High Sierra For JSer/Rubyist</h1>
+    
+    <a href="/blog/setup-procedure-develop-ruby-rails-mac-sierra/" class="article-date"><time datetime="2018-09-14T04:00:00.000Z">2018-09-14</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>This article describes effective procedures for JSer / Rubyists to setup High Sierra of macOS.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<h2 id="Install-some-applications" class="article-heading">🍣 <a href="#Install-some-applications" class="headerlink" title="Install some applications"></a>Install some applications<a class="article-anchor" href="#Install-some-applications" aria-hidden="true"></a></h2><h3 id="For-development" class="article-heading"><a href="#For-development" class="headerlink" title="For development"></a>For development<a class="article-anchor" href="#For-development" aria-hidden="true"></a></h3><ul>
+<li><strong><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a></strong> : Editor for programmer</li>
+<li><strong><a href="https://kapeli.com/dash" target="_blank" rel="noopener">Dash for macOS</a></strong> : API Documentation Browser</li>
+<li><strong><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="noopener">Docker for mac</a></strong> : Installer for docker tools</li>
+<li><strong><a href="https://insomnia.rest/" target="_blank" rel="noopener">Insomnia</a></strong> : HTTP and GraphQL Client</li>
+<li><strong><a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ IDEA the Java IDE</a></strong> : Capable and Ergonomic IDE for a lot of languages</li>
+<li><strong><a href="https://www.iterm2.com/" target="_blank" rel="noopener">iTerm</a></strong> : Modern and functional terminal app</li>
+<li><strong><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a></strong> : Free Git Client</li>
+<li><strong><a href="https://code.visualstudio.com/docs/editor/setup" target="_blank" rel="noopener">Visual Studio Code</a></strong> : Editor for programmer</li>
+<li><strong><a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">XCode</a></strong> : IDE for Swift and Objective-C</li>
+</ul>
+<h3 id="For-productivity" class="article-heading"><a href="#For-productivity" class="headerlink" title="For productivity"></a>For productivity<a class="article-anchor" href="#For-productivity" aria-hidden="true"></a></h3><ul>
+<li><strong><a href="https://freemacsoft.net/appcleaner/" target="_blank" rel="noopener">AppCleaner</a></strong> : Uninstaller for unwanted apps</li>
+<li><strong><a href="https://getbitbar.com/" target="_blank" rel="noopener">BitBar</a></strong> : Put anything in your Mac OS X menu bar</li>
+<li><strong><a href="https://www.google.co.jp/intl/ja/chrome/browser/" target="_blank" rel="noopener">Chrome</a></strong> : Effective browser</li>
+<li><strong><a href="https://evernote.com/?var=2&noredirect" target="_blank" rel="noopener">Evernote</a></strong> : Simplify cloud text editor</li>
+<li><strong><a href="https://meetfranz.com/" target="_blank" rel="noopener">Franz</a></strong> : your messaging app for many apps</li>
+<li><strong><a href="https://www.google.co.jp/ime/" target="_blank" rel="noopener">Google Japanese Input</a></strong> : IME for Japanese</li>
+<li><strong><a href="http://magnet.crowdcafe.com/" target="_blank" rel="noopener">Magnet</a></strong> : Window manager for Mac</li>
+<li><strong><a href="https://getstation.com/" target="_blank" rel="noopener">Station</a></strong> : Smart workstation for busy people</li>
+<li><strong><a href="https://www.tripmode.ch/" target="_blank" rel="noopener">TripMode</a></strong> : Reduce your mobile data consumption</li>
+</ul>
+<h2 id="Homebrew" class="article-heading">🗻 <a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew<a class="article-anchor" href="#Homebrew" aria-hidden="true"></a></h2><p>Before any installation, you should approve Xcode license agreement by the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sudo xcodebuild -license</span><br></pre></td></tr></tbody></table></figure>
+<p>You should execute the following command to install <strong><a href="http://brew.sh/" target="_blank" rel="noopener">Homebrew</a></strong>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>If you are asked about Xcode Command line tool while installing with Homebrew, please install it.</p>
+<h2 id="Oh-my-zsh" class="article-heading"> 🚜 <a href="#Oh-my-zsh" class="headerlink" title="Oh-my-zsh"></a>Oh-my-zsh<a class="article-anchor" href="#Oh-my-zsh" aria-hidden="true"></a></h2><p>If you want to use a coftable Zsh customized by the community, let’s install<br><strong><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">robbyrussell/oh-my-zsh</a></strong>.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Git" class="article-heading">🐮 <a href="#Git" class="headerlink" title="Git"></a>Git<a class="article-anchor" href="#Git" aria-hidden="true"></a></h2><p>You should install Git command line tool:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew install git</span><br><span class="line">git config --global user.name <span class="string">"USER_NAME"</span></span><br><span class="line">git config --global user.email email@example.com</span><br><span class="line">git config --global tag.sort version:refname</span><br></pre></td></tr></tbody></table></figure>
+<p>After installing Git, we recommend to set global <code>.gitignore</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># install generator for .gitignore</span></span><br><span class="line">brew install gibo</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set some unnecessary files of JetBrains and Mac to .gitignore</span></span><br><span class="line">gibo dump JetBrains macOS Ruby Rails Node > ~/.gitignore</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the .gitignore to set git global setting</span></span><br><span class="line">git config --global --add core.excludesfile <span class="string">"<span class="variable">$HOME</span>/.gitignore"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>You should set basic passwords to skip filling password by <code>vi ~/.netrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">machine github.com</span><br><span class="line">login USERNAME</span><br><span class="line">password PASSWORD</span><br></pre></td></tr></tbody></table></figure>
+<p>In addition, please add a alias <code>git push-f</code> to <code>vi ~/.gitconfig</code></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">  push<span class="_">-f</span> = push --force-with-lease</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="autojump" class="article-heading"> 🎳 <a href="#autojump" class="headerlink" title="autojump"></a>autojump<a class="article-anchor" href="#autojump" aria-hidden="true"></a></h2><p>If you want to fill a path more quickly,<br><strong><a href="https://github.com/wting/autojump" target="_blank" rel="noopener">wting/autojump</a></strong> is one of the greatest solutions.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew install autojump</span><br></pre></td></tr></tbody></table></figure>
+<p>After installing, set the following setting by <code>vi ~/.zshrc</code></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># autojump</span></span><br><span class="line">[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh</span><br></pre></td></tr></tbody></table></figure>
+<p>After the setting, execute the following command to reflect the setting:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Font-Ricty" class="article-heading">😼 <a href="#Font-Ricty" class="headerlink" title="Font Ricty"></a>Font Ricty<a class="article-anchor" href="#Font-Ricty" aria-hidden="true"></a></h2><p>Ricty is a fonts for programming, if you want to try it, please set the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Installing Ricty</span></span><br><span class="line">brew install automake</span><br><span class="line">brew tap sanemat/font</span><br><span class="line">brew install Caskroom/cask/xquartz</span><br><span class="line">brew install ricty</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy generated font information</span></span><br><span class="line">cp -f /usr/<span class="built_in">local</span>/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/</span><br><span class="line"><span class="built_in">fc</span>-cache -vf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Setting about anti-alias</span></span><br><span class="line">defaults -currentHost write -globalDomain AppleFontSmoothing -int 2</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="rbenv" class="article-heading">🐞 <a href="#rbenv" class="headerlink" title="rbenv"></a>rbenv<a class="article-anchor" href="#rbenv" aria-hidden="true"></a></h2><p>To avoid installing unnecessary documents, add the following setting <code>vim ~/.gemrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">install: --no-document</span><br><span class="line">update: --no-document</span><br></pre></td></tr></tbody></table></figure>
+<p>After the above setting, let’s install the following rbenv and Ruby-build:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># installing rbenv / ruby-build</span></span><br><span class="line">brew install rbenv ruby-build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Setting to installing gems when introducing new version</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins/rbenv-default-gems</span><br><span class="line"></span><br><span class="line"><span class="comment"># Setting default install gems</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'bundler\nrails\npg\npry'</span> > ~/.rbenv/default-gems</span><br></pre></td></tr></tbody></table></figure>
+<p>Edit the following setting by <code>vi ~/.zshrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># rbenv</span></span><br><span class="line">[[ -d ~/.rbenv  ]] && \</span><br><span class="line">  <span class="built_in">export</span> PATH=<span class="variable">${HOME}</span>/.rbenv/bin:<span class="variable">${PATH}</span> && \</span><br><span class="line">  <span class="built_in">eval</span> <span class="string">"<span class="variable">$(rbenv init -)</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>The setting is reflected by the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
+<p>Install Ruby by rbenv:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># show list of ruby versions which is able to install</span></span><br><span class="line">rbenv install -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install latest ruby version(e.g. 2.5.0)</span></span><br><span class="line">rbenv install 2.5.0</span><br><span class="line">rbenv global 2.5.0</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="PostgreSQL" class="article-heading"> 🎉 <a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL<a class="article-anchor" href="#PostgreSQL" aria-hidden="true"></a></h2><p>Install PostgreSQL:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew install postgresql</span><br><span class="line">brew services start postgresql</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Docker-Optional" class="article-heading"> 🎂 <a href="#Docker-Optional" class="headerlink" title="Docker (Optional)"></a>Docker (Optional)<a class="article-anchor" href="#Docker-Optional" aria-hidden="true"></a></h2><p>Please set alias to <code>vi .zshrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Docker</span></span><br><span class="line"><span class="built_in">alias</span> d=<span class="string">'docker'</span></span><br><span class="line"><span class="built_in">alias</span> dc=<span class="string">'docker-compose'</span></span><br><span class="line"><span class="built_in">alias</span> dm=<span class="string">'docker-machine'</span></span><br></pre></td></tr></tbody></table></figure>
+<p>After setting, reflect the upper settings:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Node-Version-Manager" class="article-heading"> 😸 <a href="#Node-Version-Manager" class="headerlink" title="Node Version Manager"></a>Node Version Manager<a class="article-anchor" href="#Node-Version-Manager" aria-hidden="true"></a></h2><p>Please refer to <strong><a href="https://blog.morizyun.com/javascript/library-nvm.html">nvm: Node Version Manager</a></strong> and install it.</p>
+<h2 id="Optional" class="article-heading">👽 <a href="#Optional" class="headerlink" title="Optional"></a>Optional<a class="article-anchor" href="#Optional" aria-hidden="true"></a></h2><h3 id="Java" class="article-heading"><a href="#Java" class="headerlink" title="Java"></a>Java<a class="article-anchor" href="#Java" aria-hidden="true"></a></h3><p>Download JDK from <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Java SE - Downloads / Oracle</a></strong> and install it.</p>
+<p>After install JDK, you should install Maven & gradle too.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew install maven32</span><br><span class="line">brew install gradle</span><br></pre></td></tr></tbody></table></figure>
+<p>After that, please write the bellow code in <code>.zshrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Java</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=`/usr/libexec/java_home -v 10.0.2`</span><br></pre></td></tr></tbody></table></figure>
+<p>.</p>
+<h3 id="Google-Cloud-Platform-SDK" class="article-heading"><a href="#Google-Cloud-Platform-SDK" class="headerlink" title="Google Cloud Platform SDK"></a>Google Cloud Platform SDK<a class="article-anchor" href="#Google-Cloud-Platform-SDK" aria-hidden="true"></a></h3><p>Please refer to <strong><a href="https://cloud.google.com/sdk/" target="_blank" rel="noopener">Cloud SDK | Cloud SDK</a></strong> and install it.</p>
+<h3 id="Heroku-CLI" class="article-heading"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI<a class="article-anchor" href="#Heroku-CLI" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew install heroku/brew/heroku</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Chromedriver" class="article-heading"><a href="#Chromedriver" class="headerlink" title="Chromedriver"></a>Chromedriver<a class="article-anchor" href="#Chromedriver" aria-hidden="true"></a></h3><p>If you use Chromedriver for selenium test or etc, please execute the follows:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">brew tap homebrew/cask</span><br><span class="line">brew cask install chromedriver</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="IntelliJ" class="article-heading"><a href="#IntelliJ" class="headerlink" title="IntelliJ"></a>IntelliJ<a class="article-anchor" href="#IntelliJ" aria-hidden="true"></a></h3><p>Please refer to the following articles and configure it.</p>
+<ul>
+<li><strong><a href="http://stackoverflow.com/questions/31215452/intellij-idea-importing-gradle-project-getting-java-home-not-defined-yet" target="_blank" rel="noopener">IntelliJ Idea: Importing Gradle project - getting JAVA_HOME not defined yet</a></strong></li>
+<li><strong><a href="https://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac" target="_blank" rel="noopener">How to increase IDE memory limit in IntelliJ IDEA on Mac?</a></strong></li>
+</ul>
+<h3 id="Shortcut-for-Ruby-dev" class="article-heading"><a href="#Shortcut-for-Ruby-dev" class="headerlink" title="Shortcut for Ruby dev"></a>Shortcut for Ruby dev<a class="article-anchor" href="#Shortcut-for-Ruby-dev" aria-hidden="true"></a></h3><p>Please write the bellow code in <code>.zshrc</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># nodebrew(Node.js)</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.nodebrew/current/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rails</span></span><br><span class="line"><span class="built_in">alias</span> rspec=<span class="string">"bundle exec rspec"</span></span><br><span class="line"><span class="built_in">alias</span> rake=<span class="string">"bundle exec rake"</span></span><br><span class="line"><span class="built_in">alias</span> rubocop=<span class="string">"bundle exec rubocop"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Shortcut-for-Source-Tree" class="article-heading"><a href="#Shortcut-for-Source-Tree" class="headerlink" title="Shortcut for Source Tree"></a>Shortcut for Source Tree<a class="article-anchor" href="#Shortcut-for-Source-Tree" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ln -s /Applications/SourceTree.app/Contents/Resources/stree /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-function-keys" class="article-heading"><a href="#Change-function-keys" class="headerlink" title="Change function keys"></a>Change function keys<a class="article-anchor" href="#Change-function-keys" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Keybord > Use all F1, F2, etc...</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-shortcut-to-change-active-window" class="article-heading"><a href="#Change-shortcut-to-change-active-window" class="headerlink" title="Change shortcut to change active window"></a>Change shortcut to change active window<a class="article-anchor" href="#Change-shortcut-to-change-active-window" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Keybord > Shortcut > Keybord > Move focus next window</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-shortcut-for-select-the-previous-source" class="article-heading"><a href="#Change-shortcut-for-select-the-previous-source" class="headerlink" title="Change shortcut for select the previous source"></a>Change shortcut for select the previous source<a class="article-anchor" href="#Change-shortcut-for-select-the-previous-source" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Keybord > Shortcut > Input Source > Select the previous <span class="built_in">source</span> > <span class="built_in">command</span> + space</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-shortcut-for-show-spotlight-search" class="article-heading"><a href="#Change-shortcut-for-show-spotlight-search" class="headerlink" title="Change shortcut for show spotlight search"></a>Change shortcut for show spotlight search<a class="article-anchor" href="#Change-shortcut-for-show-spotlight-search" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Keybord > Shortcut > Spotlight > Show spotlight search > control + space</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-computer-name" class="article-heading"><a href="#Change-computer-name" class="headerlink" title="Change computer name"></a>Change computer name<a class="article-anchor" href="#Change-computer-name" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Sharing > Computer Name</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Change-cursor-speed" class="article-heading"><a href="#Change-cursor-speed" class="headerlink" title="Change cursor speed"></a>Change cursor speed<a class="article-anchor" href="#Change-cursor-speed" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Application > System Preferences > Mouse > Tracking Speed</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="References" class="article-heading"> 🎃 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-command-line-tools-installation-failed/qaq-p/85023" target="_blank" rel="noopener">https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-command-line-tools-installation-failed/qaq-p/85023</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

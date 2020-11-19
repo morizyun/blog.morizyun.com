@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Deploy Rails 5 App to ElasticBeanstalk | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications. This article explains “How to deploy Ra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Rails 5 App to ElasticBeanstalk">
+<meta property="og:url" content="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications. This article explains “How to deploy Ra">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deploy Rails 5 App to ElasticBeanstalk">
+<meta name="twitter:description" content="“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications. This article explains “How to deploy Ra">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Deploy Rails 5 App to ElasticBeanstalk</h1>
+    
+    <a href="/blog/elastic-beans-talk-rails-cron/" class="article-date"><time datetime="2016-10-09T21:15:00.000Z">2016-10-09</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>“Elasticbeanstalk” supports quickly deploying and managing applications in the AWS Cloud without worrying about the infrastructure that runs those applications.</p>
+<p>This article explains “How to deploy Rails App to Elasticbeanstalk”.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Create-IAM" class="article-heading"> 🎳 <a href="#Create-IAM" class="headerlink" title="Create IAM"></a>Create IAM<a class="article-anchor" href="#Create-IAM" aria-hidden="true"></a></h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/iam/home" target="_blank" rel="noopener">IAM Console</a></strong>“ <br></li>
+<li>2) Goto “Users” > “Create New Users”</li>
+<li>3) Create user “elasticbean-deploy” and get <strong>Access Key ID</strong> & <strong>Secret Access Key</strong></li>
+<li>4) Setup attachment policy</li>
+</ul>
+<h2 id="Create-SSH-Key" class="article-heading"> 🚜 <a href="#Create-SSH-Key" class="headerlink" title="Create SSH Key"></a>Create SSH Key<a class="article-anchor" href="#Create-SSH-Key" aria-hidden="true"></a></h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/ec2/v2/home" target="_blank" rel="noopener">EC2 Console</a></strong>“</li>
+<li>2) Goto “Key Pairs” > “Create Key Pair”</li>
+<li>3) Get SSH Key(“xxx.pem” file)</li>
+</ul>
+<h2 id="Create-New-Environement" class="article-heading">🍣 <a href="#Create-New-Environement" class="headerlink" title="Create New Environement"></a>Create New Environement<a class="article-anchor" href="#Create-New-Environement" aria-hidden="true"></a></h2><ul>
+<li>1) Go to “<strong><a href="https://console.aws.amazon.com/elasticbeanstalk/home" target="_blank" rel="noopener">Elasticbeanstalk Console</a></strong>“</li>
+<li>2) Goto “Action” > “Create New Environement” > “Web server environment”</li>
+<li>3) Set configuration and create RDS instance</li>
+</ul>
+<h2 id="Istallation-EB-CLI" class="article-heading"> 🎉 <a href="#Istallation-EB-CLI" class="headerlink" title="Istallation EB CLI"></a>Istallation EB CLI<a class="article-anchor" href="#Istallation-EB-CLI" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ brew install awsebcli</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Preparation" class="article-heading">🐯 <a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation<a class="article-anchor" href="#Preparation" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Initialize</span></span><br><span class="line">$ eb init</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set DATABASE_URL to env variables</span></span><br><span class="line">$ eb setenv DATABASE_URL=postgres://ID:PASSWORD@HOST:PORT/DB_NAME</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set SECRET_KEY_BASE to env variables</span></span><br><span class="line">$ bundle <span class="built_in">exec</span> rake secret <span class="comment">#=> xxxx</span></span><br><span class="line">$ eb setenv SECRET_KEY_BASE=xxxx</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Set-Custom-Configuration" class="article-heading"> 🐰 <a href="#Set-Custom-Configuration" class="headerlink" title="Set Custom Configuration"></a>Set Custom Configuration<a class="article-anchor" href="#Set-Custom-Configuration" aria-hidden="true"></a></h2><h3 id="Setup-Tizezone" class="article-heading"><a href="#Setup-Tizezone" class="headerlink" title="Setup Tizezone"></a>Setup Tizezone<a class="article-anchor" href="#Setup-Tizezone" aria-hidden="true"></a></h3><p>Add the following <code>.ebextensions/00-set-timezone.config</code> to your project:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">commands:</span></span><br><span class="line"><span class="attr">  set_time_zone:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">ln</span> <span class="bullet">-f</span> <span class="bullet">-s</span> <span class="string">/usr/share/zoneinfo/Japan</span> <span class="string">/etc/localtime</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Setup-Swap-Space" class="article-heading"><a href="#Setup-Swap-Space" class="headerlink" title="Setup Swap Space"></a>Setup Swap Space<a class="article-anchor" href="#Setup-Swap-Space" aria-hidden="true"></a></h3><p>Add the following <code>.ebextensions/01-set-swap-space.config</code> to your project if you want to use crontab:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">commands:</span></span><br><span class="line">  <span class="number">000</span><span class="attr">_dd:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">dd</span> <span class="string">if=/dev/zero</span> <span class="string">of=/swapfile</span> <span class="string">bs=1M</span> <span class="string">count=3072</span></span><br><span class="line">  <span class="number">001</span><span class="attr">_mkswap:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">mkswap</span> <span class="string">/swapfile</span></span><br><span class="line">  <span class="number">002</span><span class="attr">_swapon:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">swapon</span> <span class="string">/swapfile</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Setup-Crontab" class="article-heading"><a href="#Setup-Crontab" class="headerlink" title="Setup Crontab"></a>Setup Crontab<a class="article-anchor" href="#Setup-Crontab" aria-hidden="true"></a></h3><p>Add the following <code>.ebextensions/02-set-crontab.config</code> to your project if you want to use crontab:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">files:</span></span><br><span class="line">  <span class="string">"/tmp/cron_jobs"</span> <span class="string">:</span></span><br><span class="line"><span class="attr">    mode:</span> <span class="string">"000777"</span></span><br><span class="line"><span class="attr">    content:</span> <span class="string">|</span></span><br><span class="line"><span class="string">      0 1 * * * /var/script/something.sh > /dev/null 2>&1</span></span><br><span class="line"><span class="string"></span><span class="attr">    encoding:</span> <span class="string">plain</span></span><br><span class="line"><span class="attr">container_commands:</span></span><br><span class="line">  <span class="number">01</span><span class="attr">_delete_cron_jobs:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">"crontab -r || exit 0"</span></span><br><span class="line">  <span class="number">02</span><span class="attr">_add_cron_jobs:</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">"crontab /tmp/cron_jobs"</span></span><br><span class="line"><span class="attr">    leader_only:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">option_settings:</span></span><br><span class="line"><span class="attr">  - option_name:</span> <span class="string">RAILS_ENV</span></span><br><span class="line"><span class="attr">    value:</span> <span class="string">production</span></span><br><span class="line"><span class="attr">  - option_name:</span> <span class="string">RACK_ENV</span></span><br><span class="line"><span class="attr">    value:</span> <span class="string">production</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Deployment" class="article-heading">🏈 <a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment<a class="article-anchor" href="#Deployment" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Put Souce code to server</span></span><br><span class="line">$ eb deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create Database</span></span><br><span class="line">$ eb ssh</span><br><span class="line">$ <span class="built_in">cd</span> /var/app/current</span><br><span class="line">$ RAILS_ENV=production DATABASE_URL=postgres://ID:PASSWORD@HOST:PORT/DB_NAME rake db:create</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">$ eb deploy</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Special-Thanks" class="article-heading"> 🍄 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><ul>
+<li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.html" target="_blank" rel="noopener">Getting Started Using Elastic Beanstalk - AWS Elastic Beanstalk</a></li>
+<li><a href="http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob" target="_blank" rel="noopener">amazon web services - AWS Elastic Beanstalk, running a cronjob - Stack Overflow</a></li>
+<li><a href="http://stackoverflow.com/questions/21467384/creating-a-swap-file-drive-on-ec2-micro-instance-on-elastic-beanstalk-deploy" target="_blank" rel="noopener">php - creating a swap file/drive on ec2 micro instance on elastic beanstalk deploy - Stack Overflow</a></li>
+<li><a href="http://qiita.com/yoneapp/items/a1bea9d3a21a5505ef03" target="_blank" rel="noopener">http://qiita.com/yoneapp/items/a1bea9d3a21a5505ef03</a></li>
+<li><a href="http://qiita.com/jr_qrank/items/aadc076ebf93a2692d14" target="_blank" rel="noopener">http://qiita.com/jr_qrank/items/aadc076ebf93a2692d14</a></li>
+<li><a href="http://qiita.com/tak_nishida/items/912fda099e54b0292667" target="_blank" rel="noopener">http://qiita.com/tak_nishida/items/912fda099e54b0292667</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

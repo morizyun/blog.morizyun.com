@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://blog.morizyun.com/about/index.html</loc>
+    
+    <lastmod>2020-08-23T09:50:40.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/library-sentry-docker-setup.html</loc>
+    
+    <lastmod>2020-04-15T11:17:42.658Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/gcp-google-cloud-storage-cdn-ssl-setup.html</loc>
+    
+    <lastmod>2020-04-15T11:03:19.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/server-setup-ssh-key-generation.html</loc>
+    
+    <lastmod>2020-04-15T01:05:21.139Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/library-certbot-ssl-certificates-lets-encrypt.html</loc>
+    
+    <lastmod>2020-02-21T07:22:20.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-mojave/</loc>
+    
+    <lastmod>2020-02-09T07:28:44.819Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/gcp-google-cloud-build-configuration-yml.html</loc>
+    
+    <lastmod>2019-08-10T01:48:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/library-squid3-proxy-server-centos-linux.html</loc>
+    
+    <lastmod>2019-07-20T06:18:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/basic-useful-grammer-snippets.html</loc>
+    
+    <lastmod>2019-07-20T06:08:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/bash-script-basic-tips.html</loc>
+    
+    <lastmod>2019-07-20T06:02:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/git-branch-remote-cleanup.html</loc>
+    
+    <lastmod>2019-05-09T11:57:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/security-web-app-attacks.html</loc>
+    
+    <lastmod>2019-05-09T11:50:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/kotlin-basic-grammer.html</loc>
+    
+    <lastmod>2019-05-09T03:24:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/basic-grammer.html</loc>
+    
+    <lastmod>2019-05-09T02:50:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/basic-date.html</loc>
+    
+    <lastmod>2019-05-08T10:08:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/library-jjwt-jwt.html</loc>
+    
+    <lastmod>2019-05-08T10:06:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/library-jjwt-jwt-json-web-token.html</loc>
+    
+    <lastmod>2019-05-01T05:28:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/rails-redis-session.html</loc>
+    
+    <lastmod>2019-03-22T00:15:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/basic-rails-grammer-tips.html</loc>
+    
+    <lastmod>2019-03-22T00:08:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/redis-configuration-tips.html</loc>
+    
+    <lastmod>2019-03-22T00:07:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/db/postgresql-configuration-tips.html</loc>
+    
+    <lastmod>2019-03-18T01:42:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/postgresql-dump-restore-for-rails.html</loc>
+    
+    <lastmod>2019-03-03T02:53:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/basic-enum.html</loc>
+    
+    <lastmod>2019-02-18T06:38:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/spring-resttemplate-debug-logging.html</loc>
+    
+    <lastmod>2019-02-05T00:45:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/spring-configuration-env-variable.html</loc>
+    
+    <lastmod>2019-02-05T00:22:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/spring-configuration-transaction.html</loc>
+    
+    <lastmod>2019-02-05T00:08:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-tslint-prettier-husky-git-hook.html</loc>
+    
+    <lastmod>2018-12-30T10:49:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/docker-helpful-tips.html</loc>
+    
+    <lastmod>2018-12-30T10:34:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/gitlab-ci-gitlab-ci-yml.html</loc>
+    
+    <lastmod>2018-12-30T09:30:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-npm-check-updates.html</loc>
+    
+    <lastmod>2018-12-29T07:34:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/setup-intellij-mac.html</loc>
+    
+    <lastmod>2018-12-29T07:31:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/gitlab-ci-add-runner.html</loc>
+    
+    <lastmod>2018-12-29T07:15:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-gcp-pub-sub-send-messages-google.html</loc>
+    
+    <lastmod>2018-11-20T03:21:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-sidekiq-job-queue-active-job.html</loc>
+    
+    <lastmod>2018-11-20T03:04:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-select2-rails-form-select-multiple.html</loc>
+    
+    <lastmod>2018-10-28T07:39:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/gcp-google-app-engine-flexible-environment.html</loc>
+    
+    <lastmod>2018-10-21T07:38:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-cloudinary-image-resize-optimize.html</loc>
+    
+    <lastmod>2018-10-21T07:25:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/library-rancher-docker-k8s-kubernetes.html</loc>
+    
+    <lastmod>2018-10-19T05:36:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-moment-js.html</loc>
+    
+    <lastmod>2018-10-18T07:32:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/library-fluentd-ui-install-mac.html</loc>
+    
+    <lastmod>2018-10-18T07:03:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nuxtjs.html</loc>
+    
+    <lastmod>2018-10-18T02:36:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-typeorm-or-mapper-db.html</loc>
+    
+    <lastmod>2018-10-16T23:29:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nuxt-sentry-error-tracking-typescript.html</loc>
+    
+    <lastmod>2018-10-08T07:04:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/typescript-tutorial-nuxt-firebase-bulma-navbar-vue.html</loc>
+    
+    <lastmod>2018-10-08T06:43:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/typescript-tutorial-firebase-auth-graphql-react.html</loc>
+    
+    <lastmod>2018-10-08T06:41:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/basic-security-tips-for-node-js.html</loc>
+    
+    <lastmod>2018-10-06T09:08:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/javascript-node-js-security-tips/</loc>
+    
+    <lastmod>2018-10-06T09:08:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/docker-dockerfile-basic-nodejs.html</loc>
+    
+    <lastmod>2018-10-01T13:45:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-sierra/</loc>
+    
+    <lastmod>2018-10-01T13:29:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/css-html-useful-tips.html</loc>
+    
+    <lastmod>2018-10-01T12:38:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/heroku-useful-tips.html</loc>
+    
+    <lastmod>2018-10-01T12:17:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/cold-fusion-basic-grammer.html</loc>
+    
+    <lastmod>2018-10-01T12:04:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/mac-development-helpful-tips.html</loc>
+    
+    <lastmod>2018-09-30T13:29:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/computer-science/basic-functional-programming.html</loc>
+    
+    <lastmod>2018-09-27T06:38:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/vue-js-healpful-tips.html</loc>
+    
+    <lastmod>2018-09-23T04:02:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/javascript-react-helpful-tips/</loc>
+    
+    <lastmod>2018-09-23T04:02:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/react-healpful-tips.html</loc>
+    
+    <lastmod>2018-09-23T04:02:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/basic-useful-typescript-tips.html</loc>
+    
+    <lastmod>2018-09-19T05:30:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/basic-package-json.html</loc>
+    
+    <lastmod>2018-09-19T05:17:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nvm.html</loc>
+    
+    <lastmod>2018-09-14T02:05:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nuxt-axios-plugin-module-typescript.html</loc>
+    
+    <lastmod>2018-08-09T09:44:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nuxt-cookie-universal-nuxt-typescript.html</loc>
+    
+    <lastmod>2018-08-09T09:38:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-create-react-app-ts.html</loc>
+    
+    <lastmod>2018-08-05T10:36:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-apollo-server-client-graphql.html</loc>
+    
+    <lastmod>2018-08-05T02:51:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/typescript-jest-unit-test-zero-config/</loc>
+    
+    <lastmod>2018-07-30T07:08:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-jest-unit-test.html</loc>
+    
+    <lastmod>2018-07-30T07:08:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-pino-logger.html</loc>
+    
+    <lastmod>2018-07-29T03:35:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/python-library-django-docker-basic-tutorial/</loc>
+    
+    <lastmod>2018-07-27T07:23:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-django-docker-basic-tutorial.html</loc>
+    
+    <lastmod>2018-07-27T07:23:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-sentry-error-catch.html</loc>
+    
+    <lastmod>2018-07-26T07:18:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-datefinder-date-finder-parser.html</loc>
+    
+    <lastmod>2018-07-26T06:18:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/python-basic-grammer-tips/</loc>
+    
+    <lastmod>2018-07-26T06:16:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/basic-grammer-tips.html</loc>
+    
+    <lastmod>2018-07-26T06:16:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-yapf-pyflakes-code-formatter-lint.html</loc>
+    
+    <lastmod>2018-07-25T09:36:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/git-reset-revert-rollback.html</loc>
+    
+    <lastmod>2018-07-25T08:51:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-lograge-log-format-ltsv.html</loc>
+    
+    <lastmod>2018-07-24T10:49:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/javascript-serverless-framework-aws-lambda-python-docker/</loc>
+    
+    <lastmod>2018-07-23T10:07:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-serverless-framework-aws-lambda.html</loc>
+    
+    <lastmod>2018-07-23T10:07:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-boto3-aws-dynamodb.html</loc>
+    
+    <lastmod>2018-07-23T09:48:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/libary-scrapy-scraping-framework.html</loc>
+    
+    <lastmod>2018-07-19T22:36:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/scrapy-scraping-crawler-python-library/</loc>
+    
+    <lastmod>2018-07-19T22:36:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-terminus.html</loc>
+    
+    <lastmod>2018-07-19T22:25:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-react-router-redux.html</loc>
+    
+    <lastmod>2018-07-19T22:25:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/typescript-tutorial-react-app-redux-firebase-authentication/</loc>
+    
+    <lastmod>2018-07-19T08:13:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/typescript-tutorial-react-app-redux-firebase-authentication.html</loc>
+    
+    <lastmod>2018-07-19T08:13:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/library-bigquery-google-cloud.html</loc>
+    
+    <lastmod>2018-07-07T10:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/library-bigquery-google-cloud-python/</loc>
+    
+    <lastmod>2018-07-07T10:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-sentry-raven-error-report-notification.html</loc>
+    
+    <lastmod>2018-06-29T22:46:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/python/memo-portia-scrapy-scraping-non-enginner.html</loc>
+    
+    <lastmod>2018-06-28T06:01:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/typescript-tutorial-react-app-firebase-authentication.html</loc>
+    
+    <lastmod>2018-06-27T07:55:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-dotenv-environment-variable.html</loc>
+    
+    <lastmod>2018-06-23T23:16:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-express-tutorial.html</loc>
+    
+    <lastmod>2018-06-23T18:40:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/typescript-express-tutorial-javascript-nodejs/</loc>
+    
+    <lastmod>2018-06-23T18:40:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/gitlab-ci-gitlab-ci-yml.html</loc>
+    
+    <lastmod>2018-06-23T06:08:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-typescript-raven-sentry-error-catch.html</loc>
+    
+    <lastmod>2018-06-17T06:03:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/docker-volume.html</loc>
+    
+    <lastmod>2018-06-11T06:43:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2017.html</loc>
+    
+    <lastmod>2018-06-09T21:45:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-prettier-code-formatter.html</loc>
+    
+    <lastmod>2018-04-08T07:22:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/cold-fusion-setup-mac.html</loc>
+    
+    <lastmod>2018-04-07T07:50:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/syntax-new-feature-ecma-script-2018.html</loc>
+    
+    <lastmod>2018-02-01T02:57:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/library-hamcrest-assertion-matcher.html</loc>
+    
+    <lastmod>2018-01-28T08:09:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/computer-science/basic-network-ip.html</loc>
+    
+    <lastmod>2018-01-28T07:59:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-whenever.html</loc>
+    
+    <lastmod>2018-01-28T05:58:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/basic-array.html</loc>
+    
+    <lastmod>2018-01-28T05:46:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/basic-stream.html</loc>
+    
+    <lastmod>2018-01-28T05:42:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/spring-framework-annotation.html</loc>
+    
+    <lastmod>2018-01-28T01:01:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-nextjs.html</loc>
+    
+    <lastmod>2018-01-21T10:34:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/setup-intellij-code-check.html</loc>
+    
+    <lastmod>2018-01-08T22:45:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/library-parsley-form-validation.html</loc>
+    
+    <lastmod>2018-01-08T07:01:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/computer-science/basic-b-tree.html</loc>
+    
+    <lastmod>2018-01-07T06:05:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/db/oracle-sql-tips.html</loc>
+    
+    <lastmod>2018-01-06T22:20:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/computer-science/basic-big-o-notation-beginner-guide.html</loc>
+    
+    <lastmod>2018-01-06T11:00:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/</loc>
+    
+    <lastmod>2018-01-06T11:00:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/computer-science/basic-latency-comparison-numbers.html</loc>
+    
+    <lastmod>2018-01-06T10:55:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/library-thymeleaf-tips.html</loc>
+    
+    <lastmod>2018-01-06T02:10:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/javascript/redux-saga-beginner-guide.html</loc>
+    
+    <lastmod>2018-01-05T10:39:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/infra/nginx-security-conf.html</loc>
+    
+    <lastmod>2018-01-01T06:59:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/java/library-mybatis-tips.html</loc>
+    
+    <lastmod>2017-12-17T23:10:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/db/basic-sql-join.html</loc>
+    
+    <lastmod>2017-12-17T22:52:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/redirect/japanese_blog/index.html</loc>
+    
+    <lastmod>2017-12-16T06:11:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/rails-model-active-record-reverse-polymorphic/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/scouter-easily-get-social-data-ruby-gems/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/tensor-flow-begineer-get-started-deep-learning-machine-2nd/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/overcommit-rubocop-brakeman-pre-ommit-push/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/casper-js-scraping-headless-browser/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/postgresql-reindex-null-last/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/eslint-react-js-es6-plus/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/react-bootstrap-javascript-css-framework/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/react-js-css-module/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/react-js-on-rails-installation/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/react-js-tips-useful-component/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/es6-plus-react-js-beginner-tips/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/rake-rspec-testing-rails-ruby/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/mock-stub-outline-rspec-ruby/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/copy-postgre-sql-csv-export-dump/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/setup-procedure-develop-ruby-rails-mac-el-captain/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/alternate-update_at-created_at-column-active-record/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/faraday-to-prevent-invalid-byte-sequence-error/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/redis-store-rails-rspec/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/redis-elasticbeanstalk-elasticcache-ruby/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/ruby-upload-gziped-file-to-s3/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/wercker-deploy-elasitic-beanstalk.1/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/android-httpurlconnection-post-multipart/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/android-httpurlconnection-get-post-url/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/dokku-isntall-vultr-pass-mini-heroku/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/rails-wercker-configuration/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/elastic-beans-talk-rails-cron/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/selenium-webdriver-ruby-browser-test/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/rspec-skip-tag-ignore/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/guard-ruby-rails-rspec-rubocop/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/rspec-logger-message-test/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/intellij-idea-rubymine-useful-cheet-sheet/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/junit-java-unit-test-get-start/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/spring-web-mvc-reference-tutorial-java-day1/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/spring-web-mvc-hello-world-java/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/spring-web-mvc-fill-form-and-show-the-post-result/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/tesorflow-installation-introduction/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/java8-brashup-grammer-beginner/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/mnist-beginner-for-tensorflow/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/python-setup-mac-el-capitan-virtualenv-matlab/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/useful-linux-tips-in-book-review/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/useful-linux-command-for-app-engineer/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/ruby-blogging-benefit-lighting-talk-red-dot-ruby-conf/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/action-mailer-rails-rspec-test/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/basic-english-grammer-esl-students-book-review/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/recording-audio-in-chrome-firefox-web-browser/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/four-keynote-templates-presentation-popular-japan/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/errbit-heroku-rails-slack-error-notifier/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/web-application-icon-ios-ipad-iphone-apple/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/dokku-letsencrypt-ssl-free-auto-renewal/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/upload-s3-gzip-cloudflare-ruby-aws-sdk/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/machanize-ruby-scrap/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/ruby/library-minimagick-square-thumbnail-ruby.html</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/dokku-cron-etire-exist-containt-docker-schedule/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/ruby-rails-rspec-travis-ci-public-free/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/feedly-feed-api-script-bitbar/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/machine-learning-introduction-google/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/setup-gitlab-docker-in-local-mac/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/re-start-to-learn-javascript-by-mdn-tutorial/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/ken-robinson-do-schools-kill-creativity/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/code-is-the-next-universal-language-linda-liukas-ted/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/best-way-to-learn-javascript-for-beginner/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/blog/http-status-cheker-ruby-gem/</loc>
+    
+    <lastmod>2017-12-16T02:34:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.morizyun.com/manifest.json</loc>
+    
+    <lastmod>2017-12-16T02:31:50.000Z</lastmod>
+    
+  </url>
+  
+</urlset>

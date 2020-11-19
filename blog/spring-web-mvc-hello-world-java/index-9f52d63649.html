@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Hello World App by Spring Web MVC | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//blog/spring-web-mvc-hello-world-java/index-9f52d63649.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="I created Hello World App by Spring Web MVC framework.This article is a description of sample code for Spring Web MVC.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello World App by Spring Web MVC">
+<meta property="og:url" content="https://blog.morizyun.com//blog/spring-web-mvc-hello-world-java/index-9f52d63649.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="I created Hello World App by Spring Web MVC framework.This article is a description of sample code for Spring Web MVC.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2017-12-16T02:34:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello World App by Spring Web MVC">
+<meta name="twitter:description" content="I created Hello World App by Spring Web MVC framework.This article is a description of sample code for Spring Web MVC.">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Hello World App by Spring Web MVC</h1>
+    
+    <a href="/blog/spring-web-mvc-hello-world-java/" class="article-date"><time datetime="2016-08-07T15:00:00.000Z">2016-08-07</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/spring-web-mvc-hello-world-java/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/spring-web-mvc-hello-world-java/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/spring-web-mvc-hello-world-java/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p>I created <code>Hello World</code> App by <strong><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" target="_blank" rel="noopener">Spring Web MVC framework</a></strong>.<br>This article is a description of sample code for Spring Web MVC.</p>
+<br style="clear:both;"><div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+ 
+<h2 id="Directory-Structure" class="article-heading">🗽 <a href="#Directory-Structure" class="headerlink" title="Directory Structure"></a>Directory Structure<a class="article-anchor" href="#Directory-Structure" aria-hidden="true"></a></h2><p><img src="/img/2016-08-07-spring-web-mvc-hello-world-java_1.jpg" width="548" height="608" alt="spring-mvc-hello-world-dir"></p>
+<h2 id="pom-xml" class="article-heading"> 😎 <a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml<a class="article-anchor" href="#pom-xml" aria-hidden="true"></a></h2><p>Main Configuration by maven is <code>./pom.xml</code> like this:</p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag"><<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">           http://maven.apache.org/POM/4.0.0</span></span></span><br><span class="line"><span class="tag"><span class="string">           http://maven.apache.org/maven-v4_0_0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">         "</span>></span></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">modelVersion</span>></span>4.0.0<span class="tag">modelVersion</span>></span><br><span class="line">    <span class="tag"><<span class="name">groupId</span>></span>example<span class="tag">groupId</span>></span><br><span class="line">    <span class="tag"><<span class="name">artifactId</span>></span>firstapp<span class="tag">artifactId</span>></span><br><span class="line">    <span class="tag"><<span class="name">packaging</span>></span>war<span class="tag">packaging</span>></span><br><span class="line">    <span class="tag"><<span class="name">version</span>></span>0.0.1-SNAPSHOT<span class="tag">version</span>></span><br><span class="line">    <span class="tag"><<span class="name">name</span>></span>firstapp Maven Webapp<span class="tag">name</span>></span><br><span class="line">    <span class="tag"><<span class="name">url</span>></span>http://maven.apache.org<span class="tag">url</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">dependencyManagement</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">dependencies</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">                <span class="tag"><<span class="name">groupId</span>></span>io.spring.platform<span class="tag">groupId</span>></span><br><span class="line">                <span class="tag"><<span class="name">artifactId</span>></span>platform-bom<span class="tag">artifactId</span>></span><br><span class="line">                <span class="tag"><<span class="name">version</span>></span>2.0.5.RELEASE<span class="tag">version</span>></span><br><span class="line">                <span class="tag"><<span class="name">type</span>></span>pom<span class="tag">type</span>></span><br><span class="line">                <span class="tag"><<span class="name">scope</span>></span>import<span class="tag">scope</span>></span><br><span class="line">            <span class="tag">dependency</span>></span><br><span class="line">        <span class="tag">dependencies</span>></span><br><span class="line">    <span class="tag">dependencyManagement</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">dependencies</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>javax.servlet<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>javax.servlet-api<span class="tag">artifactId</span>></span><br><span class="line">            <span class="tag"><<span class="name">scope</span>></span>provided<span class="tag">scope</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>org.apache.taglibs<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>taglibs-standard-jstlel<span class="tag">artifactId</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line"></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>org.springframework<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>spring-webmvc<span class="tag">artifactId</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>org.hibernate<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>hibernate-validator<span class="tag">artifactId</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>org.slf4j<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>jcl-over-slf4j<span class="tag">artifactId</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line">        <span class="tag"><<span class="name">dependency</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">groupId</span>></span>ch.qos.logback<span class="tag">groupId</span>></span><br><span class="line">            <span class="tag"><<span class="name">artifactId</span>></span>logback-classic<span class="tag">artifactId</span>></span><br><span class="line">        <span class="tag">dependency</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag">dependencies</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">build</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">finalName</span>></span>firstapp<span class="tag">finalName</span>></span><br><span class="line">        <span class="tag"><<span class="name">pluginManagement</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">plugins</span>></span></span><br><span class="line">                <span class="tag"><<span class="name">plugin</span>></span></span><br><span class="line">                    <span class="tag"><<span class="name">artifactId</span>></span>maven-compiler-plugin<span class="tag">artifactId</span>></span><br><span class="line">                    <span class="tag"><<span class="name">configuration</span>></span></span><br><span class="line">                        <span class="tag"><<span class="name">source</span>></span>1.8<span class="tag">source</span>></span><br><span class="line">                        <span class="tag"><<span class="name">target</span>></span>1.8<span class="tag">target</span>></span><br><span class="line">                    <span class="tag">configuration</span>></span><br><span class="line">                <span class="tag">plugin</span>></span><br><span class="line"></span><br><span class="line">                <span class="tag"><<span class="name">plugin</span>></span></span><br><span class="line">                    <span class="tag"><<span class="name">groupId</span>></span>org.mortbay.jetty<span class="tag">groupId</span>></span><br><span class="line">                    <span class="tag"><<span class="name">artifactId</span>></span>maven-jetty-plugin<span class="tag">artifactId</span>></span><br><span class="line">                    <span class="tag"><<span class="name">version</span>></span>6.1.7<span class="tag">version</span>></span><br><span class="line">                <span class="tag">plugin</span>></span><br><span class="line">            <span class="tag">plugins</span>></span><br><span class="line">        <span class="tag">pluginManagement</span>></span><br><span class="line">    <span class="tag">build</span>></span><br><span class="line"><span class="tag">project</span>></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="web-xml" class="article-heading">🐠 <a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml<a class="article-anchor" href="#web-xml" aria-hidden="true"></a></h2><p>In <code>src/main/java/WENB-INF/web.xml</code>, there are configurations for initialize servlet and etc.</p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta"><?xml version="1.0" encoding="UTF-8"?></span></span><br><span class="line"><span class="tag"><<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">      http://java.sun.com/xml/ns/javaee</span></span></span><br><span class="line"><span class="tag"><span class="string">      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">    "</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"3.0"</span>></span></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">listener</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">listener-class</span>></span></span><br><span class="line">            org.springframework.web.context.ContextLoaderListener</span><br><span class="line">        <span class="tag">listener-class</span>></span><br><span class="line">    <span class="tag">listener</span>></span><br><span class="line">    <span class="tag"><<span class="name">context-param</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">param-name</span>></span>contextClass<span class="tag">param-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">param-value</span>></span></span><br><span class="line">            org.springframework.web.context.support.AnnotationConfigWebApplicationContext</span><br><span class="line">        <span class="tag">param-value</span>></span><br><span class="line">    <span class="tag">context-param</span>></span><br><span class="line">    <span class="tag"><<span class="name">context-param</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">param-name</span>></span>contextConfigLocation<span class="tag">param-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">param-value</span>></span>example.config.AppConfig<span class="tag">param-value</span>></span><br><span class="line">    <span class="tag">context-param</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">filter</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">filter-name</span>></span>CharacterEncodingFilter<span class="tag">filter-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">filter-class</span>></span></span><br><span class="line">            org.springframework.web.filter.CharacterEncodingFilter</span><br><span class="line">        <span class="tag">filter-class</span>></span><br><span class="line">        <span class="tag"><<span class="name">init-param</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">param-name</span>></span>encoding<span class="tag">param-name</span>></span><br><span class="line">            <span class="tag"><<span class="name">param-value</span>></span>UTF-8<span class="tag">param-value</span>></span><br><span class="line">        <span class="tag">init-param</span>></span><br><span class="line">        <span class="tag"><<span class="name">init-param</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">param-name</span>></span>forceEncoding<span class="tag">param-name</span>></span><br><span class="line">            <span class="tag"><<span class="name">param-value</span>></span>true<span class="tag">param-value</span>></span><br><span class="line">        <span class="tag">init-param</span>></span><br><span class="line">    <span class="tag">filter</span>></span><br><span class="line">    <span class="tag"><<span class="name">filter-mapping</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">filter-name</span>></span>CharacterEncodingFilter<span class="tag">filter-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">url-pattern</span>></span>/*<span class="tag">url-pattern</span>></span><br><span class="line">    <span class="tag">filter-mapping</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">servlet</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">servlet-name</span>></span>app<span class="tag">servlet-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">servlet-class</span>></span></span><br><span class="line">            org.springframework.web.servlet.DispatcherServlet</span><br><span class="line">        <span class="tag">servlet-class</span>></span><br><span class="line">        <span class="tag"><<span class="name">init-param</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">param-name</span>></span>contextClass<span class="tag">param-name</span>></span><br><span class="line">            <span class="tag"><<span class="name">param-value</span>></span></span><br><span class="line">                org.springframework.web.context.support.AnnotationConfigWebApplicationContext</span><br><span class="line">            <span class="tag">param-value</span>></span><br><span class="line">        <span class="tag">init-param</span>></span><br><span class="line">        <span class="tag"><<span class="name">init-param</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">param-name</span>></span>contextConfigLocation<span class="tag">param-name</span>></span><br><span class="line">            <span class="tag"><<span class="name">param-value</span>></span>example.config.WebMvcConfig<span class="tag">param-value</span>></span><br><span class="line">        <span class="tag">init-param</span>></span><br><span class="line">        <span class="tag"><<span class="name">load-on-startup</span>></span>1<span class="tag">load-on-startup</span>></span><br><span class="line">    <span class="tag">servlet</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">servlet-mapping</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">servlet-name</span>></span>app<span class="tag">servlet-name</span>></span><br><span class="line">        <span class="tag"><<span class="name">url-pattern</span>></span>/<span class="tag">url-pattern</span>></span><br><span class="line">    <span class="tag">servlet-mapping</span>></span><br><span class="line"></span><br><span class="line">    <span class="tag"><<span class="name">jsp-config</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">jsp-property-group</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">url-pattern</span>></span>*.jsp<span class="tag">url-pattern</span>></span><br><span class="line">            <span class="tag"><<span class="name">page-encoding</span>></span>UTF-8<span class="tag">page-encoding</span>></span><br><span class="line">            <span class="tag"><<span class="name">include-prelude</span>></span>/WEB-INF/include.jsp<span class="tag">include-prelude</span>></span><br><span class="line">        <span class="tag">jsp-property-group</span>></span><br><span class="line">    <span class="tag">jsp-config</span>></span><br><span class="line"></span><br><span class="line"><span class="tag">web-app</span>></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="AppConfig" class="article-heading">🚕 <a href="#AppConfig" class="headerlink" title="AppConfig"></a>AppConfig<a class="article-anchor" href="#AppConfig" aria-hidden="true"></a></h2><p>A configuration for the specific app is in <code>src/main/java/example/config/AppConfig.java</code>:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> example.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppConfig</span> </span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="WebMvcConfig" class="article-heading"> 🎃 <a href="#WebMvcConfig" class="headerlink" title="WebMvcConfig"></a>WebMvcConfig<a class="article-anchor" href="#WebMvcConfig" aria-hidden="true"></a></h2><p>A configuration for Spring Mvc is in <code>src/main/java/example/config/WebMvcConfig.java</code>:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> example.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.EnableWebMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ViewResolverRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebMvc</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(<span class="string">"example.app"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureViewResolvers</span><span class="params">(ViewResolverRegistry registry)</span> </span>{</span><br><span class="line">        registry.jsp();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Taglibs-for-view" class="article-heading">😀 <a href="#Taglibs-for-view" class="headerlink" title="Taglibs for view"></a>Taglibs for view<a class="article-anchor" href="#Taglibs-for-view" aria-hidden="true"></a></h2><p>You should write list of <code>Taglibs</code> which you want to use like this:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag"><<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">prefix</span>=<span class="string">"c"</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %></span></span><br><span class="line"><span class="tag"><<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">prefix</span>=<span class="string">"spring"</span> <span class="attr">uri</span>=<span class="string">"http://www.springframework.org/tags"</span> %></span></span><br><span class="line"><span class="tag"><<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">prefix</span>=<span class="string">"form"</span> <span class="attr">uri</span>=<span class="string">"http://www.springframework.org/tags/form"</span> %></span></span><br></pre></td></tr></tbody></table></figure>
+<p>You can use the tags in your all view jsp files.</p>
+<h2 id="WelcomeController" class="article-heading"> 🎉 <a href="#WelcomeController" class="headerlink" title="WelcomeController"></a>WelcomeController<a class="article-anchor" href="#WelcomeController" aria-hidden="true"></a></h2><p>A controller(<code>src/main/java/example/app/WelcomeController.java</code>) to get a request in MVC is as follows:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> example.app;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WelcomeController</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="View" class="article-heading">🐡 <a href="#View" class="headerlink" title="View"></a>View<a class="article-anchor" href="#View" aria-hidden="true"></a></h2><p>A view for the <code>helloController#home</code> is in <code>src/webapp/WEB-INF/index.jsp</code> like this:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag"><<span class="name">html</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">body</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">h1</span>></span>Hello World!<span class="tag">h1</span>></span><br><span class="line">    <span class="tag">body</span>></span><br><span class="line"><span class="tag">html</span>></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Run-Hello-AppConfig" class="article-heading"> 🐰 <a href="#Run-Hello-AppConfig" class="headerlink" title="Run Hello AppConfig"></a>Run Hello AppConfig<a class="article-anchor" href="#Run-Hello-AppConfig" aria-hidden="true"></a></h2><p>You can run your web app by the following command:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mvn jetty:run</span><br></pre></td></tr></tbody></table></figure>
+<p>So, you can see your hello world apps:</p>
+<p><img src="/img/2016-08-07-spring-web-mvc-hello-world-java_2.jpg" width="640" height="238" alt="spring-mvc-hello-world-browser"></p>
+<h2 id="Sample-source" class="article-heading"> 🐹 <a href="#Sample-source" class="headerlink" title="Sample source"></a>Sample source<a class="article-anchor" href="#Sample-source" aria-hidden="true"></a></h2><p><strong><a href="https://github.com/morizyun/spring_web_mvc_sample_codes" target="_blank" rel="noopener">morizyun/spring_web_mvc_sample_codes: Sample Codes by Spring Web MVC</a></strong></p>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

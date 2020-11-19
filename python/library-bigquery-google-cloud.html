@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic tutorial for BigQuery with Python | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/python/library-bigquery-google-cloud.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en/python/library-bigquery-google-cloud.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="BigQuery is a fully-managed enterprise data warehouse for analystics.It is cheap and high-scalable. In this article, I would like to share basic tutorial for BigQuery with Python. Installationpip inst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic tutorial for BigQuery with Python">
+<meta property="og:url" content="https://blog.morizyun.com/python/library-bigquery-google-cloud.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="BigQuery is a fully-managed enterprise data warehouse for analystics.It is cheap and high-scalable. In this article, I would like to share basic tutorial for BigQuery with Python. Installationpip inst">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-07-07T10:53:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic tutorial for BigQuery with Python">
+<meta name="twitter:description" content="BigQuery is a fully-managed enterprise data warehouse for analystics.It is cheap and high-scalable. In this article, I would like to share basic tutorial for BigQuery with Python. Installationpip inst">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic tutorial for BigQuery with Python</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/python/library-bigquery-google-cloud.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/python/library-bigquery-google-cloud.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/python/library-bigquery-google-cloud.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><strong><a href="https://cloud.google.com/bigquery/" target="_blank" rel="noopener">BigQuery</a></strong> is a fully-managed enterprise data warehouse for analystics.<br>It is cheap and high-scalable. In this article, I would like to share basic tutorial for BigQuery with Python.</p>
+<h2 id="Installation" class="article-heading"> 🎃 <a href="#Installation" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install google-cloud-bigquery</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-credentials" class="article-heading"> 🎉 <a href="#Create-credentials" class="headerlink" title="Create credentials"></a>Create credentials<a class="article-anchor" href="#Create-credentials" aria-hidden="true"></a></h2><p>please see <a href="https://cloud.google.com/bigquery/docs/reference/libraries" target="_blank" rel="noopener">https://cloud.google.com/bigquery/docs/reference/libraries</a> .</p>
+<p>Additionally, please set the PATH to environment variables.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> GOOGLE_APPLICATION_CREDENTIALS=<span class="string">"/home/user/Downloads/[FILE_NAME].json"</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-a-dataset-if-not-existing" class="article-heading"> 🍮 <a href="#Create-a-dataset-if-not-existing" class="headerlink" title="Create a dataset if not existing"></a>Create a dataset if not existing<a class="article-anchor" href="#Create-a-dataset-if-not-existing" aria-hidden="true"></a></h2><p>Create a dataset if there is not the dataset:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> bigquery</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bq_create_dataset</span><span class="params">()</span>:</span></span><br><span class="line">    bigquery_client = bigquery.Client()</span><br><span class="line">    dataset_ref = bigquery_client.dataset(<span class="string">'my_datasset_id'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        bigquery_client.get_dataset(dataset_ref)</span><br><span class="line">    <span class="keyword">except</span> NotFound:</span><br><span class="line">        dataset = bigquery.Dataset(dataset_ref)</span><br><span class="line">        dataset = bigquery_client.create_dataset(dataset)</span><br><span class="line">        print(<span class="string">'Dataset {} created.'</span>.format(dataset.dataset_id))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-a-table-if-not-existing" class="article-heading">🍣 <a href="#Create-a-table-if-not-existing" class="headerlink" title="Create a table if not existing"></a>Create a table if not existing<a class="article-anchor" href="#Create-a-table-if-not-existing" aria-hidden="true"></a></h2><p>Create a table if there is not the table:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> bigquery</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bq_create_table</span><span class="params">()</span>:</span></span><br><span class="line">    bigquery_client = bigquery.Client()</span><br><span class="line">    dataset_ref = bigquery_client.dataset(<span class="string">'my_datasset_id'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Prepares a reference to the table</span></span><br><span class="line">    table_ref = dataset_ref.table(<span class="string">'my_table_name'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        bigquery_client.get_table(table_ref)</span><br><span class="line">    <span class="keyword">except</span> NotFound:</span><br><span class="line">        schema = [</span><br><span class="line">            bigquery.SchemaField(<span class="string">'name'</span>, <span class="string">'STRING'</span>, mode=<span class="string">'REQUIRED'</span>),</span><br><span class="line">            bigquery.SchemaField(<span class="string">'age'</span>, <span class="string">'INTEGER'</span>, mode=<span class="string">'REQUIRED'</span>),</span><br><span class="line">        ]</span><br><span class="line">        table = bigquery.Table(table_ref, schema=schema)</span><br><span class="line">        table = bigquery_client.create_table(table)</span><br><span class="line">        print(<span class="string">'table {} created.'</span>.format(table.table_id))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Schema-info" class="article-heading"> 🤔 <a href="#Schema-info" class="headerlink" title="Schema info"></a>Schema info<a class="article-anchor" href="#Schema-info" aria-hidden="true"></a></h2><p>You can add description or required option to schema information.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">BQ_TABLE_SCHEMA = [</span><br><span class="line">    bigquery.SchemaField(<span class="string">'age'</span>, <span class="string">'INTEGER'</span>, mode=<span class="string">'REQUIRED'</span>, description=<span class="string">'Age'</span>),</span><br><span class="line">    bigquery.SchemaField(<span class="string">'name'</span>, <span class="string">'STRING'</span>, description=<span class="string">'Name'</span>),</span><br><span class="line">    bigquery.SchemaField(<span class="string">'created_at'</span>, <span class="string">'TIMESTAMP'</span>, mode=<span class="string">'REQUIRED'</span>, description=<span class="string">'Date and time when the record was created'</span>)</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to know more detail for <code>SchemaField</code> method, please see <strong><a href="https://google-cloud-python.readthedocs.io/en/latest/bigquery/generated/google.cloud.bigquery.schema.SchemaField.html" target="_blank" rel="noopener">bigquery.schema.SchemaField</a></strong></p>
+<h2 id="Insert-rows" class="article-heading">🚕 <a href="#Insert-rows" class="headerlink" title="Insert rows"></a>Insert rows<a class="article-anchor" href="#Insert-rows" aria-hidden="true"></a></h2><p>Upload tuple object to BigQuery. It use stream buffer, so I don’t recommend it.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> bigquery</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_items_to_bigquery</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># Instantiates a client</span></span><br><span class="line">    bigquery_client = bigquery.Client()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Prepares a reference to the dataset</span></span><br><span class="line">    dataset_ref = bigquery_client.dataset(<span class="string">'my_datasset_id'</span>)</span><br><span class="line"></span><br><span class="line">    table_ref = dataset_ref.table(<span class="string">'my_table_id'</span>)</span><br><span class="line">    table = bigquery_client.get_table(table_ref)  <span class="comment"># API call</span></span><br><span class="line"></span><br><span class="line">    rows_to_insert = [</span><br><span class="line">        (<span class="string">u'Phred Phlyntstone'</span>, <span class="number">32</span>),</span><br><span class="line">        (<span class="string">u'Wylma Phlyntstone'</span>, <span class="number">29</span>),</span><br><span class="line">    ]</span><br><span class="line">    errors = bigquery_client.insert_rows(table, rows_to_insert)  <span class="comment"># API request</span></span><br><span class="line">    <span class="keyword">assert</span> errors == []</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Check-data-exist" class="article-heading"> 😸 <a href="#Check-data-exist" class="headerlink" title="Check data exist"></a>Check data exist<a class="article-anchor" href="#Check-data-exist" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> bigquery</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exist_record</span><span class="params">()</span></span></span><br><span class="line">    bigquery_client = bigquery.Client()</span><br><span class="line"></span><br><span class="line">    query = (<span class="string">'SELECT id FROM `{}.{}.{}` WHERE id="{}" LIMIT 1'</span></span><br><span class="line">            .format(<span class="string">'my_project_id'</span>, <span class="string">'my_datasset_id'</span>, <span class="string">'my_table_id'</span>, <span class="string">'my_selected_id'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        query_job = bigquery_client.query(query)</span><br><span class="line">        is_exist = len(list(query_job.result())) >= <span class="number">1</span></span><br><span class="line">        print(<span class="string">'Exist id: {}'</span>.format(<span class="string">'my_selected_id'</span>) <span class="keyword">if</span> is_exist <span class="keyword">else</span> <span class="string">'Not exist id: {}'</span>.format(<span class="string">'my_selected_id'</span>))</span><br><span class="line">        <span class="keyword">return</span> is_exist</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">"Error"</span>)</span><br><span class="line">        print(e)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Upload-a-csv-to-google-cloud-storage-and-load-the-csv" class="article-heading">🐠 <a href="#Upload-a-csv-to-google-cloud-storage-and-load-the-csv" class="headerlink" title="Upload a csv to google cloud storage and load the csv"></a>Upload a csv to google cloud storage and load the csv<a class="article-anchor" href="#Upload-a-csv-to-google-cloud-storage-and-load-the-csv" aria-hidden="true"></a></h2><p>This is a sample which is uploading a CSV file to google cloud storage and load the CSV file to BigQuery.</p>
+<p>Before coding, please execute as follows:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install google-cloud-storage</span><br></pre></td></tr></tbody></table></figure>
+<p>After installing <code>google-cloud-storage</code>, add following functions:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> bigquery</span><br><span class="line"><span class="keyword">from</span> google.cloud <span class="keyword">import</span> storage</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcs_upload_blob</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""Uploads a file to the bucket."""</span></span><br><span class="line">    storage_client = storage.Client()</span><br><span class="line">    bucket = storage_client.get_bucket(<span class="string">'my_bucket_name'</span>)</span><br><span class="line">    blob = bucket.blob(<span class="string">'gs://path/to/file.name'</span>)</span><br><span class="line"></span><br><span class="line">    blob.upload_from_filename(<span class="string">'/path/to/source.file'</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'File {} uploaded to {}.'</span>.format(</span><br><span class="line">        <span class="string">'/path/to/source.csv'</span>,</span><br><span class="line">        <span class="string">'gs://path/to/upload.csv'</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bq_load_csv_in_gcs</span><span class="params">()</span>:</span></span><br><span class="line">    bigquery_client = bigquery.Client()</span><br><span class="line">    dataset_ref = bigquery_client.dataset()</span><br><span class="line"></span><br><span class="line">    job_config = bigquery.LoadJobConfig()</span><br><span class="line">    schema = [</span><br><span class="line">        bigquery.SchemaField(<span class="string">'name'</span>, <span class="string">'STRING'</span>, mode=<span class="string">'REQUIRED'</span>),</span><br><span class="line">        bigquery.SchemaField(<span class="string">'age'</span>, <span class="string">'INTEGER'</span>, mode=<span class="string">'REQUIRED'</span>),</span><br><span class="line">    ]</span><br><span class="line">    job_config.schema = schema</span><br><span class="line">    job_config.skip_leading_rows = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    load_job = bigquery_client.load_table_from_uri(</span><br><span class="line">        <span class="string">'gs://path/to/upload.csv'</span>,</span><br><span class="line">        dataset_ref.table(<span class="string">'my_table_id'</span>),</span><br><span class="line">        job_config=job_config)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">assert</span> load_job.job_type == <span class="string">'load'</span></span><br><span class="line"></span><br><span class="line">    load_job.result()  <span class="comment"># Waits for table load to complete.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">assert</span> load_job.state == <span class="string">'DONE'</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Appendix" class="article-heading"> 🏀 <a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix<a class="article-anchor" href="#Appendix" aria-hidden="true"></a></h2><h3 id="Web-Console-Enable-to-standardSQL" class="article-heading"><a href="#Web-Console-Enable-to-standardSQL" class="headerlink" title="Web Console / Enable to standardSQL"></a>Web Console / Enable to standardSQL<a class="article-anchor" href="#Web-Console-Enable-to-standardSQL" aria-hidden="true"></a></h3><p>If you want to delete some records in BigQuery, please add <code>#standardSQL</code>, like this:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#standardSQL</span></span><br><span class="line"><span class="keyword">DELETE</span> articles <span class="keyword">WHERE</span> title = <span class="string">'sample'</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong><a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/enabling-standard-sql#bigquery-enable-sql-web" target="_blank" rel="noopener">More Detail: Setting a query prefix</a></strong></p>
+<h2 id="References" class="article-heading">😼 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://github.com/GoogleCloudPlatform/python-docs-samples/blob/19f7f65c7badc37e23ad9f0663da8bd78823a1d7/bigquery/cloud-client/quickstart.py" target="_blank" rel="noopener">https://github.com/GoogleCloudPlatform/python-docs-samples/blob/19f7f65c7badc37e23ad9f0663da8bd78823a1d7/bigquery/cloud-client/quickstart.py</a></li>
+<li><a href="https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv?hl=ja#bigquery-load-table-gcs-csv-create-python" target="_blank" rel="noopener">https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv?hl=ja#bigquery-load-table-gcs-csv-create-python</a></li>
+<li><a href="https://qiita.com/pyr_revs/items/55cec7ff435bddffc352" target="_blank" rel="noopener">https://qiita.com/pyr_revs/items/55cec7ff435bddffc352</a></li>
+<li><a href="https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv?hl=ja#bigquery-load-table-gcs-csv-create-python" target="_blank" rel="noopener">https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv?hl=ja#bigquery-load-table-gcs-csv-create-python</a></li>
+<li><a href="https://googlecloudplatform.github.io/google-cloud-python/latest/_modules/google/cloud/bigquery/schema.html" target="_blank" rel="noopener">https://googlecloudplatform.github.io/google-cloud-python/latest/_modules/google/cloud/bigquery/schema.html</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-07-07T10:53:29.000Z" itemprop="dateModified">Last updated: 2018-07-07</time>
+                <a href="library-django-docker-basic-tutorial.html" class="article-footer-prev" title="Django"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="library-boto3-aws-dynamodb.html" class="article-footer-next" title="Boto3 (DynamoDB)"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-credentials"><span class="toc-text">Create credentials</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-a-dataset-if-not-existing"><span class="toc-text">Create a dataset if not existing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-a-table-if-not-existing"><span class="toc-text">Create a table if not existing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Schema-info"><span class="toc-text">Schema info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert-rows"><span class="toc-text">Insert rows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Check-data-exist"><span class="toc-text">Check data exist</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Upload-a-csv-to-google-cloud-storage-and-load-the-csv"><span class="toc-text">Upload a csv to google cloud storage and load the csv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix"><span class="toc-text">Appendix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-Console-Enable-to-standardSQL"><span class="toc-text">Web Console / Enable to standardSQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-grammer-tips.html" class="sidebar-link">Grammer Tips</a><strong class="sidebar-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="sidebar-link">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="sidebar-link">Django</a><a href="library-bigquery-google-cloud.html" class="sidebar-link current">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="sidebar-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="sidebar-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="sidebar-link">Datefinder</a><a href="library-sentry-error-catch.html" class="sidebar-link">Sentry</a><strong class="sidebar-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="sidebar-link">Portia</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-grammer-tips.html" class="mobile-nav-link">Grammer Tips</a><strong class="mobile-nav-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="mobile-nav-link">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="mobile-nav-link">Django</a><a href="library-bigquery-google-cloud.html" class="mobile-nav-link current">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="mobile-nav-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="mobile-nav-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="mobile-nav-link">Datefinder</a><a href="library-sentry-error-catch.html" class="mobile-nav-link">Sentry</a><strong class="mobile-nav-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="mobile-nav-link">Portia</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

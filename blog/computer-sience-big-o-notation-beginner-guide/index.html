@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Beiginner's guide for Big O notation | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="Big O notation describes the performance or complexity of an algorithm. It shows the worst-case scenario and the execution time required or the storage space used by an algorithm too. Hopefully, this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beiginner&#39;s guide for Big O notation">
+<meta property="og:url" content="https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/index.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="Big O notation describes the performance or complexity of an algorithm. It shows the worst-case scenario and the execution time required or the storage space used by an algorithm too. Hopefully, this">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-01-06T11:00:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Beiginner&#39;s guide for Big O notation">
+<meta name="twitter:description" content="Big O notation describes the performance or complexity of an algorithm. It shows the worst-case scenario and the execution time required or the storage space used by an algorithm too. Hopefully, this">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="main-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="main-nav-link">Ruby</a><a href="/java/basic-stream.html" class="main-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="main-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="main-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="main-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Beiginner's guide for Big O notation</h1>
+    
+    <a href="/blog/computer-sience-big-o-notation-beginner-guide/" class="article-date"><time datetime="2018-01-06T05:00:00.000Z">2018-01-06</time></a>
+    <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com/blog/computer-sience-big-o-notation-beginner-guide/"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><strong>Big O notation</strong> describes the performance or complexity of an algorithm. It shows the worst-case scenario and the execution time required or the storage space used by an algorithm too.</p>
+<p>Hopefully, this article will help you understand the basic of Big O notation with JavaScript sample code.</p>
+<h2 id="O-1" class="article-heading"> 😸 <a href="#O-1" class="headerlink" title="O(1)"></a><code>O(1)</code><a class="article-anchor" href="#O-1" aria-hidden="true"></a></h2><p><code>O(1)</code> shows the execution time(or space) of an algorithm is always same regardless of the size of the input data set.</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFirstElementNull</span>(<span class="params">elements</span>) </span>{</span><br><span class="line">  <span class="keyword">return</span> elements[<span class="number">0</span>] === <span class="literal">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="O-N" class="article-heading">🗻 <a href="#O-N" class="headerlink" title="O(N)"></a><code>O(N)</code><a class="article-anchor" href="#O-N" aria-hidden="true"></a></h2><p><code>O(N)</code> illustrates an algorithm’s performance will grow linearly and in direct proportion to the size of the input data set. The example is as follows:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findValue</span>(<span class="params">elements, expect</span>) </span>{</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> e <span class="keyword">of</span> elements) {</span><br><span class="line">    <span class="keyword">if</span> (e === expect) { <span class="keyword">return</span> <span class="literal">true</span>; }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>In Big O notation, we should always assume the upper limit where the algorithm will perform the maximum number of iterations. So, in that case, the worst case is <code>return false</code> after finishing the loop.</p>
+<h2 id="O-N-2" class="article-heading"> 🎉 <a href="#O-N-2" class="headerlink" title="O(N**2)"></a><code>O(N**2)</code><a class="article-anchor" href="#O-N-2" aria-hidden="true"></a></h2><p><code>O(N**2)</code>(N squared) describes an algorithm whose performance is directly proportional to the square of the size of the input data set. This is common with algorithms that involve nested iterations. O Notation of deeper nested iteration will be <code>O(N**3)</code>, <code>O(N**4)</code> or etc.</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasDuplicatedValue</span>(<span class="params">elements</span>) </span>{</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> outerIndex = <span class="number">0</span>; outerIndex < elements.length; outerIndex++) {</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> innerIndex = <span class="number">0</span>; innerIndex < elements.length; innerIndex++) {</span><br><span class="line">      <span class="keyword">if</span> (outerIndex !== innerIndex && elements[outerIndex] === elements[innerIndex]) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="O-2-N" class="article-heading">🏈 <a href="#O-2-N" class="headerlink" title="O(2**N)"></a><code>O(2**N)</code><a class="article-anchor" href="#O-2-N" aria-hidden="true"></a></h2><p><code>O(2**N)</code> represents an algorithm whose growth doubles with each addition to the input data set and it’s exponential.</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">number</span>) </span>{</span><br><span class="line">  <span class="keyword">if</span> (number <= <span class="number">1</=></span>) <span class="keyword">return</span> number;<br><span class="line">  <span class="keyword">return</span> fibonacci(number - <span class="number">2</span>) + fibonacci(number - <span class="number">1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="O-log-N" class="article-heading">🐯 <a href="#O-log-N" class="headerlink" title="O(log N)"></a><code>O(log N)</code><a class="article-anchor" href="#O-log-N" aria-hidden="true"></a></h2><p>Big O notation of <strong><a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank" rel="noopener">Binary search</a></strong> like following example is <code>O(log N)</code>.</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">elements, expect</span>) </span>{</span><br><span class="line">  <span class="keyword">let</span> firstIndex = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> lastIndex = elements.length - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> middleIndex = <span class="built_in">Math</span>.floor((lastIndex + firstIndex)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(elements[middleIndex] !== expect && firstIndex < lastIndex) {</span><br><span class="line">    <span class="keyword">if</span> (expect < elements[middleIndex]) {</span><br><span class="line">      lastIndex = middleIndex - <span class="number">1</span>;</span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (expect > elements[middleIndex]) {</span><br><span class="line">      firstIndex = middleIndex + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    middleIndex = <span class="built_in">Math</span>.floor((lastIndex + firstIndex)/<span class="number">2</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (elements[middleIndex] === expect) ? middleIndex : <span class="number">-1</span> ;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> elements = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="built_in">console</span>.log(binarySearch(elements, <span class="number">5</span>)); <span class="comment">// => 4</span></span><br><span class="line"><span class="built_in">console</span>.log(binarySearch(elements, <span class="number">10</span>)); <span class="comment">// => -1</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>O(log N)</code> algorithm like the binary search denotes produces a growth curve that peaks at the beginning and slowly flattens out as the size of the data sets increase. This makes algorithms extremely efficient when processing with large data sets.</p>
+<h2 id="Special-Thanks" class="article-heading"> 🐹 <a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks<a class="article-anchor" href="#Special-Thanks" aria-hidden="true"></a></h2><p>I wrote this article referencing <strong><a href="https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/" target="_blank" rel="noopener">A beginner’s guide to Big O notation - Rob Bell</a></strong>.</p>
+<p>In addition, I could understand it with the following articles:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="noopener">for…of - JavaScript</a></li>
+</ul>
+</body></html>
+    <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+  </div>
+  
+</article>
+<!-- .replace(/<a id="more"><\/a>/g, '<br style="clear:both;"/>' + partial('partial/google_ads')).replace(/<p>/, '<p>' + partial('partial/asin')) }} -->
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/javascript/basic-security-tips-for-node-js.html" class="mobile-nav-link">JavaScript</a><a href="/ruby/library-sidekiq-job-queue-active-job.html" class="mobile-nav-link">Ruby</a><a href="/java/basic-stream.html" class="mobile-nav-link">Java</a><a href="/python/basic-grammer-tips.html" class="mobile-nav-link">Python</a><a href="/computer-science/basic-big-o-notation-beginner-guide.html" class="mobile-nav-link">CS</a><a href="/infra/security-web-app-attacks.html" class="mobile-nav-link">Infra</a><a href="/db/basic-sql-join.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/scrollingelement.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>

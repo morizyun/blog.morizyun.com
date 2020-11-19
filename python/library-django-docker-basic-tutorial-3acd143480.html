@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Basic tutorial for Django with Docker[Python3] | No Programming, No Life!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.morizyun.com//python/library-django-docker-basic-tutorial-3acd143480.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://blog.morizyun.com/en//python/library-django-docker-basic-tutorial-3acd143480.html">
+    
+  
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="build/css/navy.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="No Programming, No Life!">
+  <!-- Open Graph -->
+  <meta name="description" content="Django is the most famous web framework for Python.In this article, I would like to share basic tutorial of Django for beginner. Create Project Directorymkdir PROJECT_DIRcd PROJECT_DIR Create requirem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic tutorial for Django with Docker[Python3]">
+<meta property="og:url" content="https://blog.morizyun.com//python/library-django-docker-basic-tutorial-3acd143480.html">
+<meta property="og:site_name" content="No Programming, No Life!">
+<meta property="og:description" content="Django is the most famous web framework for Python.In this article, I would like to share basic tutorial of Django for beginner. Create Project Directorymkdir PROJECT_DIRcd PROJECT_DIR Create requirem">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta property="og:updated_time" content="2018-07-27T07:23:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic tutorial for Django with Docker[Python3]">
+<meta name="twitter:description" content="Django is the most famous web framework for Python.In this article, I would like to share basic tutorial of Django for beginner. Create Project Directorymkdir PROJECT_DIRcd PROJECT_DIR Create requirem">
+<meta name="twitter:image" content="https://blog.morizyun.com/img/og_image.png">
+<meta name="twitter:site" content="morizyune">
+<meta property="fb:app_id" content="183897648417956">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36299115-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Github Button -->
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/blog" id="logo">No Programming No Life</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="main-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="main-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="main-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="main-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="main-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="main-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="main-nav-link">DB</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <form id="cse-search-box" action="//google.com/cse" style="display: inline-block;">
+          <input type="hidden" name="cx" value="001974309344846181418:eb0kee0rmfi">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="search" id="search-input" name="q" placeholder="Search" style="width: 100px;">
+        </form>
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical>
+        
+          <option value="en" selected>English</option>
+        
+        <option value="redirect/japanese_blog">Japanese</option>
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Basic tutorial for Django with Docker[Python3]</h1>
+              </header>
+              <div class="sharing social_box">
+  <ul class="social" style="margin-left: 0;margin-top: 10px;">
+    <li class="twitter">
+      <a href="//twitter.com/share" class="twitter-share-button" data-url="https://blog.morizyun.com//python/library-django-docker-basic-tutorial-3acd143480.html" data-via="zyunnosuke" data-counturl="https://blog.morizyun.com//python/library-django-docker-basic-tutorial-3acd143480.html">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li class="facebook">
+      <div class="fb-like" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana" data-href="https://blog.morizyun.com//python/library-django-docker-basic-tutorial-3acd143480.html"></div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#appId=183897648417956&xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    </li>
+    <li class="feedly">
+      <a href="//feedly.com/i/discover/sources/search/morizyun.github.io" target="blank"><img id="theButton" src="https://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png" alt="follow" width="66" height="20"></a>
+    </li>
+  </ul>
+</div>
+<br style="clear=both;">
+
+              <div class="article-content" itemprop="articleBody">
+                <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><p><strong><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a></strong> is the most famous web framework for Python.<br>In this article, I would like to share basic tutorial of Django for beginner.</p>
+<h2 id="Create-Project-Directory" class="article-heading">👽 <a href="#Create-Project-Directory" class="headerlink" title="Create Project Directory"></a>Create Project Directory<a class="article-anchor" href="#Create-Project-Directory" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">mkdir PROJECT_DIR</span><br><span class="line"><span class="built_in">cd</span> PROJECT_DIR</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-requirements-txt" class="article-heading"> 😸 <a href="#Create-requirements-txt" class="headerlink" title="Create requirements.txt"></a>Create requirements.txt<a class="article-anchor" href="#Create-requirements-txt" aria-hidden="true"></a></h2><p>Create <code>requirements.txt</code>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Django==2.0.7</span><br><span class="line">django-bootstrap4==0.0.6</span><br></pre></td></tr></tbody></table></figure>
+<p>You will install following libraries:</p>
+<ul>
+<li><a href="https://pypi.org/project/Django/" target="_blank" rel="noopener">https://pypi.org/project/Django/</a></li>
+<li><a href="https://pypi.org/project/django-bootstrap4/" target="_blank" rel="noopener">https://pypi.org/project/django-bootstrap4/</a></li>
+</ul>
+<h2 id="Dockerfile" class="article-heading"> 🚜 <a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile<a class="article-anchor" href="#Dockerfile" aria-hidden="true"></a></h2><p>Add <code>Dockerfile</code>:</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python</span><br><span class="line"></span><br><span class="line"><span class="comment"># Environment variable</span></span><br><span class="line"><span class="keyword">ENV</span> PYTHONUNBUFFERED <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># update apt-get</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update -y && apt-get upgrade -y</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># install libraries</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y groff-base</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># change work directory</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir -p /app</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> requirements.txt /app/</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> pip install -r requirements.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> $PORT</span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"manage.py runserver 0.0.0.0:<span class="variable">$PORT</span>"</span>]</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="docker-compose-yml" class="article-heading">🍣 <a href="#docker-compose-yml" class="headerlink" title="docker-compose.yml"></a>docker-compose.yml<a class="article-anchor" href="#docker-compose-yml" aria-hidden="true"></a></h2><p>Add <code>docker-compose.yml</code>:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.5'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  app:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">.</span></span><br><span class="line"><span class="attr">    tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    stdin_open:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    expose:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8000"</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8000:8000"</span></span><br><span class="line"><span class="attr">    links:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">db</span></span><br><span class="line"><span class="attr">    working_dir:</span> <span class="string">/app</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">.:/app</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">./ssh:/root/.ssh</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">./manage.py</span> <span class="string">runserver</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8000</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  db:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="attr">postgres:10.4</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Start-Docker-container" class="article-heading">🐡 <a href="#Start-Docker-container" class="headerlink" title="Start Docker container"></a>Start Docker container<a class="article-anchor" href="#Start-Docker-container" aria-hidden="true"></a></h2><p>Start a Docker container and use bash in the container by the following terminal commands:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br><span class="line">docker-compose <span class="built_in">exec</span> app /bin/bash</span><br></pre></td></tr></tbody></table></figure>
+<p>If you want to stop the docker containers, please execute <code>docker-compose down</code>.</p>
+<h2 id="Create-Django-project" class="article-heading"> 🐰 <a href="#Create-Django-project" class="headerlink" title="Create Django project"></a>Create Django project<a class="article-anchor" href="#Create-Django-project" aria-hidden="true"></a></h2><p>In docker container, please execute it:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">django-admin.py startproject myapp</span><br><span class="line"><span class="built_in">cd</span> myapp</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-Application-in-the-Project" class="article-heading">🐮 <a href="#Create-Application-in-the-Project" class="headerlink" title="Create Application in the Project"></a>Create Application in the Project<a class="article-anchor" href="#Create-Application-in-the-Project" aria-hidden="true"></a></h2><p>Create new application in your project:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">python manage.py startapp cms</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Initial-configuration" class="article-heading">🐝 <a href="#Initial-configuration" class="headerlink" title="Initial configuration"></a>Initial configuration<a class="article-anchor" href="#Initial-configuration" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Start-server" class="article-heading">🚌 <a href="#Start-server" class="headerlink" title="Start server"></a>Start server<a class="article-anchor" href="#Start-server" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></tbody></table></figure>
+<p>After then, please execute <code>open http://$(docker-machine ip):8000/</code> in your local terminal(not docker container).</p>
+<h2 id="Configuration-for-project" class="article-heading">🐞 <a href="#Configuration-for-project" class="headerlink" title="Configuration for project"></a>Configuration for project<a class="article-anchor" href="#Configuration-for-project" aria-hidden="true"></a></h2><p>Configure <code>myapp/setting.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">ALLOWED_HOSTS = [<span class="string">'DOCKER_MACHINE_IP'</span>] <span class="comment"># Please add docker machine ip</span></span><br><span class="line"></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'cms'</span>, <span class="comment"># your application</span></span><br><span class="line">    <span class="string">'bootstrap4'</span>, <span class="comment"># django-bootstrap4</span></span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Create-superuser-and-logging-into-admin" class="article-heading"> 🎳 <a href="#Create-superuser-and-logging-into-admin" class="headerlink" title="Create superuser and logging into admin"></a>Create superuser and logging into admin<a class="article-anchor" href="#Create-superuser-and-logging-into-admin" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Input user id and password</span></span><br><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></tbody></table></figure>
+<p>You can logging into admin by <code>open http://$(docker-machine ip):8000/admin</code> with the above user id and password</p>
+<h2 id="Admin-configuration" class="article-heading">🐠 <a href="#Admin-configuration" class="headerlink" title="Admin configuration"></a>Admin configuration<a class="article-anchor" href="#Admin-configuration" aria-hidden="true"></a></h2><p>Modify <code>cms/admin.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> cms.models <span class="keyword">import</span> Book, Impression</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = (<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'publisher'</span>, <span class="string">'page'</span>,)</span><br><span class="line">    list_display_links = (<span class="string">'id'</span>, <span class="string">'name'</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ImpressionAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = (<span class="string">'id'</span>, <span class="string">'comment'</span>,)</span><br><span class="line">    list_display_links = (<span class="string">'id'</span>, <span class="string">'comment'</span>,)</span><br><span class="line">    raw_id_fields = (<span class="string">'book'</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">admin.site.register(Book, BookAdmin)</span><br><span class="line">admin.site.register(Impression, ImpressionAdmin)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Model" class="article-heading"> 🎃 <a href="#Model" class="headerlink" title="Model"></a>Model<a class="article-anchor" href="#Model" aria-hidden="true"></a></h2><p>Modify <code>cms/models.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(<span class="string">'title'</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    publisher = models.CharField(<span class="string">'publisher'</span>, max_length=<span class="number">255</span>, blank=<span class="literal">True</span>)</span><br><span class="line">    page = models.IntegerField(<span class="string">'page_number'</span>, blank=<span class="literal">True</span>, default=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Impression</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    book = models.ForeignKey(Book, verbose_name=<span class="string">'book'</span>, related_name=<span class="string">'impressions'</span>, on_delete=models.CASCADE)</span><br><span class="line">    comment = models.TextField(<span class="string">'comment'</span>, blank=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.comment</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Execute-migration" class="article-heading">😀 <a href="#Execute-migration" class="headerlink" title="Execute migration"></a>Execute migration<a class="article-anchor" href="#Execute-migration" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Create migration file</span></span><br><span class="line">python manage.py makemigrations cms</span><br><span class="line"></span><br><span class="line"><span class="comment"># Confirm SQL of the migration</span></span><br><span class="line">python manage.py sqlmigrate cms 0001</span><br><span class="line"></span><br><span class="line"><span class="comment"># Execute the Migration</span></span><br><span class="line">python manage.py migrate cms</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Views" class="article-heading"> 😎 <a href="#Views" class="headerlink" title="Views"></a>Views<a class="article-anchor" href="#Views" aria-hidden="true"></a></h2><p>Modify <code>cms/views.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, get_object_or_404, redirect</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> cms.models <span class="keyword">import</span> Book</span><br><span class="line"><span class="keyword">from</span> cms.forms <span class="keyword">import</span> BookForm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    books = Book.objects.all().order_by(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request,</span><br><span class="line">                  <span class="string">'cms/book_list.html'</span>,</span><br><span class="line">                  {<span class="string">'books'</span>: books})</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_edit</span><span class="params">(request, book_id=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> book_id:</span><br><span class="line">        book = get_object_or_404(Book, pk=book_id)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        book = Book()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        form = BookForm(request.POST, instance=book)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            book = form.save(commit=<span class="literal">False</span>)</span><br><span class="line">            book.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">'cms:book_list'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = BookForm(instance=book)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'cms/book_edit.html'</span>, dict(form=form, book_id=book_id))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_del</span><span class="params">(request, book_id)</span>:</span></span><br><span class="line">    book = get_object_or_404(Book, pk=book_id)</span><br><span class="line">    book.delete()</span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">'cms:book_list'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>Create <code>cms/templates/cms/base.html</code>:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line">{% load i18n static %}</span><br><span class="line"><span class="meta"><!DOCTYPE html></span>{% get_current_language as LANGUAGE_CODE %}</span><br><span class="line"><span class="tag"><<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"{{ LANGUAGE_CODE|default:"</span><span class="attr">en-us</span>" }}"></span></span><br><span class="line"><span class="tag"><<span class="name">head</span>></span></span><br><span class="line">  <span class="tag"><<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>></span></span><br><span class="line">  <span class="tag"><<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, shrink-to-fit=no"</span>></span></span><br><span class="line">  <span class="tag"><<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"</span>></span></span><br><span class="line">  {% block extra_css %}{% endblock %}</span><br><span class="line">  <span class="tag"><<span class="name">title</span>></span>{% block title %}My books{% endblock %}<span class="tag">title</span>></span><br><span class="line"><span class="tag">head</span>></span><br><span class="line"><span class="tag"><<span class="name">body</span>></span></span><br><span class="line"><span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>></span></span><br><span class="line">  {% block content %}</span><br><span class="line">  {{ content }}</span><br><span class="line">  {% endblock %}</span><br><span class="line"><span class="tag">div</span>></span><br><span class="line"><span class="tag"><<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.3.1.min.js"</span>></span><span class="undefined"></span><span class="tag">script</span>></span><br><span class="line"><span class="tag"><<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"</span>></span><span class="undefined"></span><span class="tag">script</span>></span><br><span class="line">{% block extra_js %}{% endblock %}</span><br><span class="line"><span class="tag">body</span>></span><br><span class="line"><span class="tag">html</span>></span><br></pre></td></tr></tbody></table></figure>
+<p>Create <code>cms/templates/cms/book_list.html</code>:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line">{% extends "cms/base.html" %}</span><br><span class="line"></span><br><span class="line">{% block title %}List of books{% endblock title %}</span><br><span class="line"></span><br><span class="line">{% block content %}</span><br><span class="line"><span class="tag"><<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"mt-4 border-bottom"</span>></span>List of books<span class="tag">h4</span>></span><br><span class="line"><span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"{% url 'cms:book_add' %}"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-sm my-3"</span>></span>Add<span class="tag">a</span>></span><br><span class="line"><span class="tag"><<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-striped table-bordered"</span>></span></span><br><span class="line">  <span class="tag"><<span class="name">thead</span>></span></span><br><span class="line">  <span class="tag"><<span class="name">tr</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>></span>ID<span class="tag">th</span>></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>></span>Title<span class="tag">th</span>></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>></span>Publisher<span class="tag">th</span>></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>></span>Page number<span class="tag">th</span>></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>></span>Control<span class="tag">th</span>></span><br><span class="line">  <span class="tag">tr</span>></span><br><span class="line">  <span class="tag">thead</span>></span><br><span class="line">  <span class="tag"><<span class="name">tbody</span>></span></span><br><span class="line">  {% for book in books %}</span><br><span class="line">  <span class="tag"><<span class="name">tr</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"row"</span>></span>{{ book.id }}<span class="tag">th</span>></span><br><span class="line">    <span class="tag"><<span class="name">td</span>></span>{{ book.name }}<span class="tag">td</span>></span><br><span class="line">    <span class="tag"><<span class="name">td</span>></span>{{ book.publisher }}<span class="tag">td</span>></span><br><span class="line">    <span class="tag"><<span class="name">td</span>></span>{{ book.page }}<span class="tag">td</span>></span><br><span class="line">    <span class="tag"><<span class="name">td</span>></span></span><br><span class="line">      <span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"{% url 'cms:book_mod' book_id=book.id %}"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary btn-sm"</span>></span>Edit<span class="tag">a</span>></span><br><span class="line">      <span class="tag"><<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-danger btn-sm del_confirm"</span> <span class="attr">data-toggle</span>=<span class="string">"modal"</span> <span class="attr">data-target</span>=<span class="string">"#deleteModal"</span> <span class="attr">data-pk</span>=<span class="string">"{{ book.id }}"</span> <span class="attr">data-url</span>=<span class="string">"{% url 'cms:book_del' book_id=book.id %}"</span>></span>Delete<span class="tag">button</span>></span><br><span class="line">    <span class="tag">td</span>></span><br><span class="line">  <span class="tag">tr</span>></span><br><span class="line">  {% endfor %}</span><br><span class="line"></span><br><span class="line">  {# Confirmation dialog #}</span><br><span class="line">  <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade"</span> <span class="attr">id</span>=<span class="string">"deleteModal"</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span> <span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"deleteModalLabel"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog"</span> <span class="attr">role</span>=<span class="string">"document"</span>></span></span><br><span class="line">      <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-header"</span>></span></span><br><span class="line">          <span class="tag"><<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"modal-title"</span> <span class="attr">id</span>=<span class="string">"deleteModalLabel"</span>></span>Confirmation<span class="tag">h5</span>></span><br><span class="line">          <span class="tag"><<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span> <span class="attr">aria-label</span>=<span class="string">"Close"</span>></span><span class="tag"><<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>></span>&times;<span class="tag">span</span>></span><span class="tag">button</span>><br><span class="line">        <span class="tag">div</span>></span><br><span class="line">        <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-body"</span>></span></span><br><span class="line">          <span class="tag"><<span class="name">p</span>></span>Delete ID: <span class="tag"><<span class="name">span</span> <span class="attr">id</span>=<span class="string">"del_pk"</span>></span><span class="tag">span</span>></span>?<span class="tag">p</span>><br><span class="line">        <span class="tag">div</span>></span><br><span class="line">        <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-footer"</span>></span></span><br><span class="line">          <span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">id</span>=<span class="string">"del_url"</span>></span>OK<span class="tag">a</span>></span><br><span class="line">          <span class="tag"><<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-secondary"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>></span>Cancel<span class="tag">button</span>></span><br><span class="line">        <span class="tag">div</span>></span><br><span class="line">      <span class="tag">div</span>></span><br><span class="line">    <span class="tag">div</span>></span><br><span class="line">  <span class="tag">div</span>></span><br><span class="line">  <span class="tag">tbody</span>></span><br><span class="line"><span class="tag">table</span>></span><br><span class="line">{% endblock content %}</span><br><span class="line"></span><br><span class="line">{% block extra_js %}</span><br><span class="line"><span class="tag"><<span class="name">script</span>></span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">    $(<span class="string">'.del_confirm'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      $(<span class="string">"#del_pk"</span>).text($(<span class="keyword">this</span>).data(<span class="string">"pk"</span>));</span></span><br><span class="line"><span class="javascript">      $(<span class="string">'#del_url'</span>).attr(<span class="string">'href'</span>, $(<span class="keyword">this</span>).data(<span class="string">"url"</span>));</span></span><br><span class="line"><span class="undefined">    });</span></span><br><span class="line"><span class="undefined">  });</span></span><br><span class="line"><span class="undefined"></span><span class="tag">script</span>></span><br><span class="line">{% endblock %}</span><br></pre></td></tr></tbody></table></figure>
+<p>Create <code>cms/templates/cms/book_edit.html</code>:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line">{% extends "cms/base.html" %}</span><br><span class="line">{% load bootstrap4 %}</span><br><span class="line"></span><br><span class="line">{% block title %}Edit book{% endblock title %}</span><br><span class="line"></span><br><span class="line">{% block content %}</span><br><span class="line"><span class="tag"><<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"mt-4 mb-5 border-bottom"</span>></span>Edit book<span class="tag">h4</span>></span><br><span class="line">{% if book_id %}</span><br><span class="line"><span class="tag"><<span class="name">form</span> <span class="attr">action</span>=<span class="string">"{% url 'cms:book_mod' book_id=book_id %}"</span> <span class="attr">method</span>=<span class="string">"post"</span>></span></span><br><span class="line">{% else %}</span><br><span class="line"><span class="tag"><<span class="name">form</span> <span class="attr">action</span>=<span class="string">"{% url 'cms:book_add' %}"</span> <span class="attr">method</span>=<span class="string">"post"</span>></span></span><br><span class="line">{% endif %}</span><br><span class="line">  {% csrf_token %}</span><br><span class="line">  {% bootstrap_form form layout='horizontal' %}</span><br><span class="line">  <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group row"</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"offset-md-3 col-md-9"</span>></span></span><br><span class="line">      <span class="tag"><<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>></span>Send<span class="tag">button</span>></span><br><span class="line">    <span class="tag">div</span>></span><br><span class="line">  <span class="tag">div</span>></span><br><span class="line"><span class="tag">form</span>></span><br><span class="line"><span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"{% url 'cms:book_list' %}"</span> <span class="attr">class</span>=<span class="string">"btn btn-secondary btn-sm"</span>></span>Back<span class="tag">a</span>></span><br><span class="line">{% endblock content %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Form" class="article-heading"> 🐹 <a href="#Form" class="headerlink" title="Form"></a>Form<a class="article-anchor" href="#Form" aria-hidden="true"></a></h2><p>Create <code>cms/forms.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.forms <span class="keyword">import</span> ModelForm</span><br><span class="line"><span class="keyword">from</span> cms.models <span class="keyword">import</span> Book</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookForm</span><span class="params">(ModelForm)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Book</span><br><span class="line">        fields = (<span class="string">'name'</span>, <span class="string">'publisher'</span>, <span class="string">'page'</span>,)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="URL-Routing" class="article-heading">🐯 <a href="#URL-Routing" class="headerlink" title="URL Routing"></a>URL Routing<a class="article-anchor" href="#URL-Routing" aria-hidden="true"></a></h2><p>Create <code>cms/urls.py</code></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> cms <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'cms'</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># Book</span></span><br><span class="line">    path(<span class="string">'book/'</span>, views.book_list, name=<span class="string">'book_list'</span>), <span class="comment"># list</span></span><br><span class="line">    path(<span class="string">'book/add/'</span>, views.book_edit, name=<span class="string">'book_add'</span>), <span class="comment"># create</span></span><br><span class="line">    path(<span class="string">'book/mod/<int:book_id>/'</int:book_id></span>, views.book_edit, name=<span class="string">'book_mod'</span>), <span class="comment"># edit</span></span><br><span class="line">    path(<span class="string">'book/del/<int:book_id>/'</int:book_id></span>, views.book_del, name=<span class="string">'book_del'</span>), <span class="comment"># delete</span></span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>Modify <code>admin/urls.py</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'cms/'</span>, include(<span class="string">'cms.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Confirmation-CRUD-pages" class="article-heading"> 🍮 <a href="#Confirmation-CRUD-pages" class="headerlink" title="Confirmation CRUD pages"></a>Confirmation CRUD pages<a class="article-anchor" href="#Confirmation-CRUD-pages" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">http://$(docker-machine ip):8000/cms/book/</span><br><span class="line">http://$(docker-machine ip):8000/cms/book/add/</span><br><span class="line">http://$(docker-machine ip):8000/cms/book/mod/1/</span><br><span class="line">http://$(docker-machine ip):8000/cms/book/del/2/</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="References" class="article-heading">🗻 <a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><ul>
+<li><a href="https://qiita.com/kaki_k/items/511611cadac1d0c69c54" target="_blank" rel="noopener">https://qiita.com/kaki_k/items/511611cadac1d0c69c54</a></li>
+</ul>
+</body></html>
+                <div style="margin: 5px 0 30px 0">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive-auto -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4186413323075068" data-ad-slot="4457377393" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                <div>
+    <h2>🖥 Recommended VPS Service</h2>
+    <p>
+    <a href="//www.vultr.com/?ref=6808408" target="_blank"><b>VULTR</b></a> provides high performance cloud compute environment for you.
+    Vultr has 15 data-centers strategically placed around the globe, you can use a VPS with 512 MB memory for just $ 2.5 / month ($ 0.004 / hour).
+    In addition, Vultr is up to 4 times faster than the competition, so please check it => <a href="//www.vultr.com/benchmarks/?ref=6808408"><b>Check Benchmark Results</b></a>!!
+    <br><br>
+    <a href="//www.vultr.com/?ref=6808408"><img src="//www.vultr.com/media/banner_1.png"></a>
+    </p>
+</div>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-07-27T07:23:29.000Z" itemprop="dateModified">Last updated: 2018-07-27</time>
+                <a href="libary-scrapy-scraping-framework.html" class="article-footer-prev" title="Scrapy"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="library-bigquery-google-cloud.html" class="article-footer-next" title="BigQuery"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Project-Directory"><span class="toc-text">Create Project Directory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-requirements-txt"><span class="toc-text">Create requirements.txt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile"><span class="toc-text">Dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose-yml"><span class="toc-text">docker-compose.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Start-Docker-container"><span class="toc-text">Start Docker container</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Django-project"><span class="toc-text">Create Django project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Application-in-the-Project"><span class="toc-text">Create Application in the Project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initial-configuration"><span class="toc-text">Initial configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Start-server"><span class="toc-text">Start server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-for-project"><span class="toc-text">Configuration for project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-superuser-and-logging-into-admin"><span class="toc-text">Create superuser and logging into admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Admin-configuration"><span class="toc-text">Admin configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Model"><span class="toc-text">Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Execute-migration"><span class="toc-text">Execute migration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Views"><span class="toc-text">Views</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Form"><span class="toc-text">Form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL-Routing"><span class="toc-text">URL Routing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Confirmation-CRUD-pages"><span class="toc-text">Confirmation CRUD pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Basic</strong><a href="basic-grammer-tips.html" class="sidebar-link">Grammer Tips</a><strong class="sidebar-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="sidebar-link">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="sidebar-link current">Django</a><a href="library-bigquery-google-cloud.html" class="sidebar-link">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="sidebar-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="sidebar-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="sidebar-link">Datefinder</a><a href="library-sentry-error-catch.html" class="sidebar-link">Sentry</a><strong class="sidebar-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="sidebar-link">Portia</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="//blog.morizyun.com/about" target="_blank">morizyune</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="//twitter.com/morizyune" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//github.com/morizyun" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="//blog.morizyun.com/atom.xml" class="footer-link" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="//javascript/basic-security-tips-for-node-js-682003b93b.html" class="mobile-nav-link">JavaScript</a><a href="//ruby/library-sidekiq-job-queue-active-job-e6a8782ce0.html" class="mobile-nav-link">Ruby</a><a href="//java/basic-stream-b17ed58390.html" class="mobile-nav-link">Java</a><a href="//python/basic-grammer-tips-7d9a41a0f4.html" class="mobile-nav-link">Python</a><a href="//computer-science/basic-big-o-notation-beginner-guide-b139a8917a.html" class="mobile-nav-link">CS</a><a href="//infra/security-web-app-attacks-617313212c.html" class="mobile-nav-link">Infra</a><a href="//db/basic-sql-join-6ed7f7fa50.html" class="mobile-nav-link">DB</a>
+      <li class="mobile-nav-item">
+        <a href="//github.com/morizyun" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Basic</strong><a href="basic-grammer-tips.html" class="mobile-nav-link">Grammer Tips</a><strong class="mobile-nav-title">Library</strong><a href="libary-scrapy-scraping-framework.html" class="mobile-nav-link">Scrapy</a><a href="library-django-docker-basic-tutorial.html" class="mobile-nav-link current">Django</a><a href="library-bigquery-google-cloud.html" class="mobile-nav-link">BigQuery</a><a href="library-boto3-aws-dynamodb.html" class="mobile-nav-link">Boto3 (DynamoDB)</a><a href="library-yapf-pyflakes-code-formatter-lint.html" class="mobile-nav-link">Yapf/PyFlakes</a><a href="library-datefinder-date-finder-parser.html" class="mobile-nav-link">Datefinder</a><a href="library-sentry-error-catch.html" class="mobile-nav-link">Sentry</a><strong class="mobile-nav-title">Memo</strong><a href="library-portia-scrapy-scraping-non-enginner.html" class="mobile-nav-link">Portia</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="build/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+
+</body>
+</html>
